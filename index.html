@@ -51,21 +51,29 @@
   /* ---- Hero ---- */
   .hero {
     position: relative;
-    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
     color: #fff;
     padding: 4.5rem 1.5rem 7.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
-    overflow: hidden;
   }
-  .hero::before, .hero::after {
+  .hero-bg {
+    position: absolute;
+    top: -8rem;
+    left: 0;
+    right: 0;
+    bottom: .5rem;
+    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
+    transform: skewY(-1.3deg);
+    transform-origin: top left;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .hero-bg::before, .hero-bg::after {
     content: "";
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, .07);
-    pointer-events: none;
   }
-  .hero::before { width: 34rem; height: 34rem; top: -18rem; right: -8rem; }
-  .hero::after  { width: 22rem; height: 22rem; bottom: -12rem; left: -6rem; }
+  .hero-bg::before { width: 34rem; height: 34rem; top: -10rem; right: -8rem; }
+  .hero-bg::after  { width: 22rem; height: 22rem; bottom: -12rem; left: -6rem; }
   .hero-inner {
     max-width: 68rem;
     margin: 0 auto;
@@ -90,6 +98,27 @@
     max-width: 38rem;
     font-size: 1.1rem;
     opacity: .92;
+  }
+  .hero-logos {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-logos img {
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: .95;
+  }
+  .hero-logos .otobo-logo { height: 2.8rem; margin: -0.4rem 0; }
+  .hero-logos .monitos { display: flex; align-items: center; gap: .55rem; }
+  .hero-logos .monitos img { height: 1.7rem; }
+  .hero-logos .monitos span {
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    opacity: .85;
   }
 
   /* ---- Search (overlaps hero edge) ---- */
@@ -219,10 +248,18 @@
 <body>
 
 <header class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="brand">Freicon</div>
     <h1>OTOBO Add-ons &amp; Dokumentation</h1>
     <p>Handbücher und Dokumentation zu unseren Erweiterungen für das Ticketsystem OTOBO — entwickelt von der FREICON GmbH &amp; Co. KG.</p>
+    <div class="hero-logos">
+      <img class="otobo-logo" src="assets/otobo-logo.png" alt="OTOBO">
+      <span class="monitos">
+        <img src="assets/monitos-icon.png" alt="monitos">
+        <span>monitos ITSM by FREICON</span>
+      </span>
+    </div>
   </div>
 </header>
 
