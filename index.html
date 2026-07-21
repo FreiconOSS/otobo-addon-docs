@@ -6,65 +6,144 @@
 <title>FREICON OTOBO Add-ons — Dokumentation</title>
 <style>
   :root {
-    --bg: #f6f7f9;
+    --cyan: #2d9fc7;
+    --cyan-dark: #1b6f8f;
+    --navy: #16384c;
+    --bg: #f4f7f9;
     --card-bg: #ffffff;
-    --text: #1c2733;
-    --muted: #5a6b7d;
-    --accent: #0f6cbd;
-    --accent-soft: #e3f0fb;
-    --border: #dde3ea;
-    --shadow: 0 1px 3px rgba(16, 32, 48, .08);
-    --shadow-hover: 0 6px 18px rgba(16, 32, 48, .14);
+    --text: #1c2b36;
+    --muted: #5c7183;
+    --border: #dfe7ec;
+    --badge-doc-bg: #e0f2fa;
+    --badge-doc-fg: #176d90;
+    --badge-oss-bg: #e6f4ea;
+    --badge-oss-fg: #23744a;
+    --shadow: 0 1px 3px rgba(22, 56, 76, .08);
+    --shadow-hover: 0 12px 28px rgba(22, 56, 76, .16);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #141a21;
-      --card-bg: #1d2630;
-      --text: #e8edf2;
-      --muted: #9fb0c0;
-      --accent: #5aa9e6;
-      --accent-soft: #1e3a52;
-      --border: #2c3742;
+      --cyan: #45b4da;
+      --cyan-dark: #16556e;
+      --navy: #0e222e;
+      --bg: #101c24;
+      --card-bg: #182833;
+      --text: #e6eef3;
+      --muted: #93aab9;
+      --border: #243947;
+      --badge-doc-bg: #144053;
+      --badge-doc-fg: #6cc4e4;
+      --badge-oss-bg: #16402a;
+      --badge-oss-fg: #6fce97;
       --shadow: 0 1px 3px rgba(0, 0, 0, .4);
-      --shadow-hover: 0 6px 18px rgba(0, 0, 0, .5);
+      --shadow-hover: 0 12px 28px rgba(0, 0, 0, .5);
     }
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.55;
+    line-height: 1.6;
   }
-  header {
-    padding: 3.5rem 1.5rem 2.5rem;
-    text-align: center;
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
+    color: #fff;
+    padding: 4.5rem 1.5rem 7.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5rem), 0 100%);
+    overflow: hidden;
   }
-  header h1 {
-    margin: 0 0 .5rem;
-    font-size: 2rem;
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .07);
+    pointer-events: none;
+  }
+  .hero::before { width: 34rem; height: 34rem; top: -18rem; right: -8rem; }
+  .hero::after  { width: 22rem; height: 22rem; bottom: -12rem; left: -6rem; }
+  .hero-inner {
+    max-width: 68rem;
+    margin: 0 auto;
+    position: relative;
+  }
+  .brand {
+    font-size: .95rem;
+    font-weight: 700;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    opacity: .9;
+  }
+  .hero h1 {
+    margin: .9rem 0 .6rem;
+    font-size: clamp(2rem, 5vw, 3.1rem);
     font-weight: 700;
     letter-spacing: -.02em;
+    line-height: 1.15;
   }
-  header p {
-    margin: 0 auto;
-    max-width: 42rem;
-    color: var(--muted);
+  .hero p {
+    margin: 0;
+    max-width: 38rem;
+    font-size: 1.1rem;
+    opacity: .92;
+  }
+
+  /* ---- Search (overlaps hero edge) ---- */
+  .search-wrap {
+    max-width: 68rem;
+    margin: -5.4rem auto 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .95rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(22, 56, 76, .18);
+  }
+  .search-box svg {
+    flex: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    stroke: var(--muted);
+  }
+  .search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font: inherit;
     font-size: 1.05rem;
+    color: var(--text);
   }
+  .search-box input::placeholder { color: var(--muted); }
+  .search-box:focus-within {
+    border-color: var(--cyan);
+    box-shadow: 0 10px 30px rgba(45, 159, 199, .3);
+  }
+
+  /* ---- Content ---- */
   main {
     max-width: 68rem;
     margin: 0 auto;
-    padding: 0 1.5rem 4rem;
+    padding: 2.5rem 1.5rem 4rem;
   }
-  h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 2.5rem 0 1rem;
+  .section-title {
+    font-size: .85rem;
+    font-weight: 700;
+    margin: 2.2rem 0 1rem;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: .06em;
+    letter-spacing: .14em;
   }
   .grid {
     display: grid;
@@ -74,110 +153,173 @@
   .tile {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .55rem;
     background: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: .75rem;
-    padding: 1.4rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
     text-decoration: none;
     color: inherit;
     box-shadow: var(--shadow);
-    transition: box-shadow .15s ease, transform .15s ease;
+    transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
   }
   .tile:hover {
     box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
-  }
-  .tile .icon {
-    font-size: 1.8rem;
-    line-height: 1;
-  }
-  .tile h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  .tile p {
-    margin: 0;
-    font-size: .92rem;
-    color: var(--muted);
-    flex-grow: 1;
-  }
-  .tile .cta {
-    font-size: .88rem;
-    font-weight: 600;
-    color: var(--accent);
+    transform: translateY(-3px);
+    border-color: var(--cyan);
   }
   .badge {
     align-self: flex-start;
     font-size: .72rem;
-    font-weight: 600;
-    padding: .15rem .55rem;
-    border-radius: 1rem;
-    background: var(--accent-soft);
-    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: .2rem .65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
   }
-  footer {
-    text-align: center;
-    padding: 2rem 1.5rem 3rem;
+  .badge.doc { background: var(--badge-doc-bg); color: var(--badge-doc-fg); }
+  .badge.oss { background: var(--badge-oss-bg); color: var(--badge-oss-fg); }
+  .tile h3 {
+    margin: .2rem 0 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+  }
+  .tile p {
+    margin: 0;
+    font-size: .93rem;
     color: var(--muted);
-    font-size: .85rem;
+    flex-grow: 1;
   }
-  footer a { color: var(--accent); text-decoration: none; }
+  .tile .cta {
+    margin-top: .3rem;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--cyan);
+  }
+  .no-results {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 3rem 1rem;
+    font-size: 1.05rem;
+  }
+  .no-results a { color: var(--cyan); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem 1.5rem 2.5rem;
+    color: var(--muted);
+    font-size: .88rem;
+  }
+  footer a { color: var(--cyan); text-decoration: none; font-weight: 600; }
 </style>
 </head>
 <body>
-<header>
-  <h1>FREICON OTOBO Add-ons</h1>
-  <p>Dokumentation und Handbücher zu unseren Erweiterungen für das Ticketsystem OTOBO.</p>
-</header>
-<main>
-  <h2>Handbücher</h2>
-  <div class="grid">
-    <a class="tile" href="documents/">
-      <span class="icon">📄</span>
-      <h3>OTOBO Documents</h3>
-      <p>Dokumentenmanagement direkt in OTOBO — Vorlagen, Kapitel, Versionierung und PDF-Erzeugung.</p>
-      <span class="cta">Zum Handbuch →</span>
-    </a>
-    <a class="tile" href="kanban/">
-      <span class="icon">🗂️</span>
-      <h3>OTOBO Kanban Board</h3>
-      <p>Visuelles Workflow-Management für Tickets — Spalten, Drag &amp; Drop und Echtzeit-Updates.</p>
-      <span class="cta">Zum Handbuch →</span>
-    </a>
-  </div>
 
-  <h2>Open Source</h2>
-  <div class="grid">
-    <a class="tile" href="https://github.com/FreiconOSS/otobo-textmodule">
-      <span class="badge">Open Source</span>
-      <h3>TextModule</h3>
-      <p>Textbausteine für Agenten — schnelles Einfügen vordefinierter Antworten im Ticket.</p>
-      <span class="cta">Auf GitHub ansehen →</span>
-    </a>
-    <a class="tile" href="https://github.com/FreiconOSS/otobo-template-extended">
-      <span class="badge">Open Source</span>
-      <h3>Template Extended</h3>
-      <p>Erweiterte Ticket-Template-Funktionalität für wiederkehrende Vorgänge.</p>
-      <span class="cta">Auf GitHub ansehen →</span>
-    </a>
-    <a class="tile" href="https://github.com/FreiconOSS/otobo-dark-skin">
-      <span class="badge">Open Source</span>
-      <h3>Dark Skin</h3>
-      <p>Dunkles Design für die OTOBO-Agentenoberfläche.</p>
-      <span class="cta">Auf GitHub ansehen →</span>
-    </a>
-    <a class="tile" href="https://github.com/FreiconOSS/otobo-prometheus">
-      <span class="badge">Open Source</span>
-      <h3>Prometheus Exporter</h3>
-      <p>Metriken aus OTOBO für Monitoring mit Prometheus und Grafana.</p>
-      <span class="cta">Auf GitHub ansehen →</span>
-    </a>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">Freicon</div>
+    <h1>OTOBO Add-ons &amp; Dokumentation</h1>
+    <p>Handbücher und Dokumentation zu unseren Erweiterungen für das Ticketsystem OTOBO — entwickelt von der FREICON GmbH &amp; Co. KG.</p>
   </div>
+</header>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+    </svg>
+    <input type="search" id="addon-search" placeholder="Add-on suchen … (z. B. Kanban, Dokumente, Textbausteine)" autocomplete="off" aria-label="Add-ons durchsuchen">
+  </div>
+</div>
+
+<main>
+  <section data-section>
+    <h2 class="section-title">Handbücher</h2>
+    <div class="grid">
+      <a class="tile" href="documents/" data-search="documents dokumente dokumentenmanagement handbuch vorlagen kapitel versionierung pdf dokumentenlenkung">
+        <span class="badge doc">Handbuch</span>
+        <h3>OTOBO Documents</h3>
+        <p>Dokumentenmanagement direkt in OTOBO — Vorlagen, Kapitel, Versionierung und PDF-Erzeugung.</p>
+        <span class="cta">Zum Handbuch →</span>
+      </a>
+      <a class="tile" href="kanban/" data-search="kanban board handbuch workflow spalten drag drop tickets agile">
+        <span class="badge doc">Handbuch</span>
+        <h3>OTOBO Kanban Board</h3>
+        <p>Visuelles Workflow-Management für Tickets — Spalten, Drag &amp; Drop und Echtzeit-Updates.</p>
+        <span class="cta">Zum Handbuch →</span>
+      </a>
+    </div>
+  </section>
+
+  <section data-section>
+    <h2 class="section-title">Open Source</h2>
+    <div class="grid">
+      <a class="tile" href="https://github.com/FreiconOSS/otobo-textmodule" data-search="textmodule textbausteine text module antworten vorlagen agenten open source github">
+        <span class="badge oss">Open Source</span>
+        <h3>TextModule</h3>
+        <p>Textbausteine für Agenten — schnelles Einfügen vordefinierter Antworten im Ticket.</p>
+        <span class="cta">Auf GitHub ansehen →</span>
+      </a>
+      <a class="tile" href="https://github.com/FreiconOSS/otobo-template-extended" data-search="template extended ticket templates vorlagen wiederkehrende vorgänge open source github">
+        <span class="badge oss">Open Source</span>
+        <h3>Template Extended</h3>
+        <p>Erweiterte Ticket-Template-Funktionalität für wiederkehrende Vorgänge.</p>
+        <span class="cta">Auf GitHub ansehen →</span>
+      </a>
+      <a class="tile" href="https://github.com/FreiconOSS/otobo-dark-skin" data-search="dark skin dunkles design theme darkmode agentenoberfläche open source github">
+        <span class="badge oss">Open Source</span>
+        <h3>Dark Skin</h3>
+        <p>Dunkles Design für die OTOBO-Agentenoberfläche.</p>
+        <span class="cta">Auf GitHub ansehen →</span>
+      </a>
+      <a class="tile" href="https://github.com/FreiconOSS/otobo-prometheus" data-search="prometheus exporter metriken monitoring grafana open source github">
+        <span class="badge oss">Open Source</span>
+        <h3>Prometheus Exporter</h3>
+        <p>Metriken aus OTOBO für Monitoring mit Prometheus und Grafana.</p>
+        <span class="cta">Auf GitHub ansehen →</span>
+      </a>
+    </div>
+  </section>
+
+  <p class="no-results" id="no-results">Kein Add-on gefunden. Andere Suchbegriffe probieren — oder <a href="https://freicon.de/">sprechen Sie uns an</a>.</p>
 </main>
+
 <footer>
   <a href="https://freicon.de/">FREICON GmbH &amp; Co. KG</a> — Add-on-Entwicklung &amp; Consulting für OTOBO
 </footer>
+
+<script>
+(function () {
+  var input = document.getElementById('addon-search');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-section]'));
+  var noResults = document.getElementById('no-results');
+
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    var anyVisible = false;
+
+    sections.forEach(function (section) {
+      var tiles = Array.prototype.slice.call(section.querySelectorAll('.tile'));
+      var sectionVisible = false;
+
+      tiles.forEach(function (tile) {
+        var haystack = (tile.textContent + ' ' + (tile.getAttribute('data-search') || '')).toLowerCase();
+        var match = !q || haystack.indexOf(q) !== -1;
+        tile.style.display = match ? '' : 'none';
+        if (match) sectionVisible = true;
+      });
+
+      section.style.display = sectionVisible ? '' : 'none';
+      if (sectionVisible) anyVisible = true;
+    });
+
+    noResults.style.display = anyVisible ? 'none' : 'block';
+  });
+})();
+</script>
+
 </body>
 </html>
