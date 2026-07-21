@@ -48,46 +48,96 @@
     line-height: 1.6;
   }
 
-  /* ---- Hero ---- */
-  .hero {
-    position: relative;
+  /* ---- Sticky header with search ---- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 100%);
     color: #fff;
-    padding: 4.5rem 1.5rem 7.5rem;
+    box-shadow: 0 2px 12px rgba(22, 56, 76, .25);
   }
-  .hero-bg {
-    position: absolute;
-    top: -8rem;
-    left: 0;
-    right: 0;
-    bottom: .5rem;
-    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
-    transform: skewY(-1.3deg);
-    transform-origin: top left;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .hero-bg::before, .hero-bg::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, .07);
-  }
-  .hero-bg::before { width: 34rem; height: 34rem; top: -10rem; right: -8rem; }
-  .hero-bg::after  { width: 22rem; height: 22rem; bottom: -12rem; left: -6rem; }
-  .hero-inner {
+  .topbar-inner {
     max-width: 68rem;
     margin: 0 auto;
-    position: relative;
+    padding: .8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
   .brand {
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: .28em;
     text-transform: uppercase;
-    opacity: .9;
+    white-space: nowrap;
+  }
+  .brand small {
+    display: block;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: none;
+    opacity: .85;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 14rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 999px;
+    padding: .5rem 1.1rem;
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .search-box svg {
+    flex: none;
+    width: 1.1rem;
+    height: 1.1rem;
+    stroke: rgba(255, 255, 255, .8);
+  }
+  .search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font: inherit;
+    font-size: .98rem;
+    color: #fff;
+  }
+  .search-box input::placeholder { color: rgba(255, 255, 255, .75); }
+  .search-box:focus-within {
+    background: rgba(255, 255, 255, .24);
+    border-color: rgba(255, 255, 255, .6);
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    color: #fff;
+    padding: 3.8rem 1.5rem 4.2rem;
+    background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
+    overflow: hidden;
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .07);
+    pointer-events: none;
+  }
+  .hero::before { width: 34rem; height: 34rem; top: -16rem; right: -8rem; }
+  .hero::after  { width: 22rem; height: 22rem; bottom: -14rem; left: -6rem; }
+  .hero-inner {
+    max-width: 68rem;
+    margin: 0 auto;
+    position: relative;
   }
   .hero h1 {
-    margin: .9rem 0 .6rem;
+    margin: 0 0 .6rem;
     font-size: clamp(2rem, 5vw, 3.1rem);
     font-weight: 700;
     letter-spacing: -.02em;
@@ -121,50 +171,11 @@
     opacity: .85;
   }
 
-  /* ---- Search (overlaps hero edge) ---- */
-  .search-wrap {
-    max-width: 68rem;
-    margin: -5.4rem auto 0;
-    padding: 0 1.5rem;
-    position: relative;
-    z-index: 2;
-  }
-  .search-box {
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: .95rem 1.5rem;
-    box-shadow: 0 10px 30px rgba(22, 56, 76, .18);
-  }
-  .search-box svg {
-    flex: none;
-    width: 1.25rem;
-    height: 1.25rem;
-    stroke: var(--muted);
-  }
-  .search-box input {
-    flex: 1;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    font: inherit;
-    font-size: 1.05rem;
-    color: var(--text);
-  }
-  .search-box input::placeholder { color: var(--muted); }
-  .search-box:focus-within {
-    border-color: var(--cyan);
-    box-shadow: 0 10px 30px rgba(45, 159, 199, .3);
-  }
-
   /* ---- Content ---- */
   main {
     max-width: 68rem;
     margin: 0 auto;
-    padding: 2.5rem 1.5rem 4rem;
+    padding: 1.5rem 1.5rem 4rem;
   }
   .section-title {
     font-size: .85rem;
@@ -247,10 +258,20 @@
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-bg"></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Freicon<small>OTOBO Add-ons</small></div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line>
+      </svg>
+      <input type="search" id="addon-search" placeholder="Add-on suchen … (z. B. Kanban, Dokumente, Textbausteine)" autocomplete="off" aria-label="Add-ons durchsuchen">
+    </div>
+  </div>
+</header>
+
+<section class="hero">
   <div class="hero-inner">
-    <div class="brand">Freicon</div>
     <h1>OTOBO Add-ons &amp; Dokumentation</h1>
     <p>Handbücher und Dokumentation zu unseren Erweiterungen für das Ticketsystem OTOBO — entwickelt von der FREICON GmbH &amp; Co. KG.</p>
     <div class="hero-logos">
@@ -261,16 +282,7 @@
       </span>
     </div>
   </div>
-</header>
-
-<div class="search-wrap">
-  <div class="search-box">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line>
-    </svg>
-    <input type="search" id="addon-search" placeholder="Add-on suchen … (z. B. Kanban, Dokumente, Textbausteine)" autocomplete="off" aria-label="Add-ons durchsuchen">
-  </div>
-</div>
+</section>
 
 <main>
   <section data-section>
