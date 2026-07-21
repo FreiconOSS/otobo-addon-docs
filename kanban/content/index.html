@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OTOBO Kanban Board &#8212; OTOBO Kanban Board  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <img alt="../_images/otobo-logo.png" class="align-center" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-kanban-board">
+<h1>OTOBO Kanban Board<a class="headerlink" href="#otobo-kanban-board" title="Link to this heading">¶</a></h1>
+</section>
+<section id="description">
+<h1>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h1>
+<p>The Kanban Board in OTOBO is a powerful visual tool designed to help teams manage and optimize their workflows effectively.
+It provides a clear and intuitive interface for tracking the progress of tasks, tickets, or issues in real-time, ensuring that team members are aligned and work is flowing smoothly from start to finish.</p>
+<ul class="simple">
+<li><p><strong>Visual Workflow Management:</strong> The board provides a visual representation of tasks, allowing users to easily see which tasks are in progress, completed, or pending.</p></li>
+<li><p><strong>Customizable Columns:</strong> Define and customize the columns to match the specific stages of your team’s workflow.</p></li>
+<li><p><strong>Drag and Drop Functionality:</strong> Easily move cards from one column to another by dragging and dropping, simplifying task updates.</p></li>
+<li><p><strong>Card Details and Comments:</strong> Click on any card to view detailed information, add comments, or attach files, enhancing collaboration.</p></li>
+<li><p><strong>Real-Time Updates:</strong> All changes made to the Kanban Board are instantly updated for all team members, ensuring transparency and up-to-date information.</p></li>
+<li><p><strong>Filtering and Search Options:</strong> Use advanced filters and search options to quickly find specific cards or tasks.</p></li>
+</ul>
+</section>
+<section id="system-requirements">
+<h1>System requirements<a class="headerlink" href="#system-requirements" title="Link to this heading">¶</a></h1>
+<section id="framework">
+<h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
+<p>OTOBO 11.0.x</p>
+</section>
+<section id="packages">
+<h2>Packages<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h2>
+</section>
+<section id="third-party-software">
+<h2>Third-party software<a class="headerlink" href="#third-party-software" title="Link to this heading">¶</a></h2>
+<p>-</p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p><strong>Admin Guide</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#accessing-kanban-board-management"><span class="std std-ref">Accessing Kanban Board Management</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-board-management-interface"><span class="std std-ref">Kanban Board Management Interface</span></a></p></li>
+<li><p><a class="reference internal" href="#general-settings"><span class="std std-ref">General Settings</span></a></p></li>
+<li><p><a class="reference internal" href="#sorting-options"><span class="std std-ref">Sorting Options</span></a></p></li>
+<li><p><a class="reference internal" href="#completing-board-configuration"><span class="std std-ref">Completing Board Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="#swimlanes-configuration"><span class="std std-ref">Swimlanes Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="#quick-filters"><span class="std std-ref">Quick Filters</span></a></p></li>
+<li><p><a class="reference internal" href="#ticket-card-configuration"><span class="std std-ref">Ticket Card Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="#ticket-details-configuration"><span class="std std-ref">Ticket Details Configuration</span></a></p></li>
+<li><p><a class="reference internal" href="#board-links"><span class="std std-ref">Board Links</span></a></p></li>
+<li><p><a class="reference internal" href="#admin-kanban-card-settings"><span class="std std-ref">Admin Kanban Card Settings</span></a></p></li>
+</ul>
+<p><strong>Overview - All Kanban Card Settings</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#kanban-ticket-card-color-setting"><span class="std std-ref">Kanban Ticket Card Color Setting</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-ticket-card-highlighting-setting"><span class="std std-ref">Kanban Ticket Card Highlighting Setting</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-ticket-card-hover-effect-setting"><span class="std std-ref">Kanban Ticket Card Hover Effect Setting</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-card-icon-settings"><span class="std std-ref">Kanban Card Icon Settings</span></a></p></li>
+</ul>
+<p><strong>KanbanTags - Visual Tag Management</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#kanbantags-visual-tag-management"><span class="std std-ref">KanbanTags Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#kanbantags-admin-setup"><span class="std std-ref">Administrator Setup</span></a></p></li>
+<li><p><a class="reference internal" href="#kanbantags-managing-tags"><span class="std std-ref">Managing and Extending Tags</span></a></p></li>
+<li><p><a class="reference internal" href="#kanbantags-ticket-screens"><span class="std std-ref">Using KanbanTags in Ticket Screens</span></a></p></li>
+<li><p><a class="reference internal" href="#kanbantags-user-guide"><span class="std std-ref">Using KanbanTags on Kanban Cards</span></a></p></li>
+<li><p><a class="reference internal" href="#kanbantags-best-practices"><span class="std std-ref">Best Practices</span></a></p></li>
+</ul>
+<p><strong>User Guide</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#user-guide-kanban-board"><span class="std std-ref">User Guide</span></a></p></li>
+</ul>
+<p><strong>Kanban Board Layout Overview</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#kanban-card-overview"><span class="std std-ref">Kanban Card Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-card-details-overview"><span class="std std-ref">Kanban Card Details Overview</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-card-color-settings"><span class="std std-ref">Kanban Card Color Settings</span></a></p></li>
+<li><p><a class="reference internal" href="#kanban-card-avatar"><span class="std std-ref">Kanban Card Avatar</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h1>
+<p>To get the most out of your Kanban Board, the following requirements must be met:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/installation/11.0/en/content/installation.html">OTOBO must be installed:</a>  Ensure that OTOBO is installed.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/administration/package-manager.html?highlight=package">How To - Package Manager</a></p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/users-groups-roles/agents.html?highlight=agent">Agents must be created:</a>  Ensure that all relevant agents have been set up in the system.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/users-groups-roles/groups.html?highlight=groups">Groups must be established:</a>  Define and create the necessary groups for organization.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/users-groups-roles/agents-groups.html?highlight=groups">Agents must be assigned to groups</a>: Make sure each agent is properly assigned to the appropriate group.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/users-groups-roles/customers.html?highlight=customer">A customer must be created</a>: Register the necessary customer in the system.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/users-groups-roles/customer-users.html">A customer user must be created</a>: Set up a user account for the customer to enable access.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/processes-automation/process-management.html?highlight=process">Processes must be created</a> or already exist in order to create a Process Kanban Board.</p></li>
+<li><p><a class="reference external" href="https://doc.otobo.org/manual/admin/11.0/en/content/administration-area/processes-automation/dynamic-fields.html?highlight=dynamic">Dynamic Fields must be created</a>  or already exist in order to create a Dynamic Field Kanban Board.</p></li>
+</ul>
+</div>
+<p>By ensuring these steps are completed beforehand, you can seamlessly implement and operate the Kanban Board.</p>
+</section>
+<section id="admin-guide">
+<span id="id1"></span><h1>Admin Guide<a class="headerlink" href="#admin-guide" title="Link to this heading">¶</a></h1>
+<p>This guide provides a step-by-step instruction on how to configure and manage Kanban Boards after successfully installing the Kanban module using the package manager.</p>
+<section id="accessing-kanban-board-management">
+<span id="id2"></span><h2>Accessing Kanban Board Management<a class="headerlink" href="#accessing-kanban-board-management" title="Link to this heading">¶</a></h2>
+<p>To access the Kanban Board Management interface:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the <strong>Admin</strong> area located in the top-left corner of the navigation bar and <strong>select Overview</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id24">
+<img alt="Kanban navigation bar" src="../_images/image2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id24" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>You can either search for “Kanban” using the search function in the top left or find the tile under “Miscellaneous”.</p></li>
+</ol>
+<figure class="align-default" id="id25">
+<img alt="Kanban Module" src="../_images/image3.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Admin Overview - Ticket Settings - Kanban Modul</span><a class="headerlink" href="#id25" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="kanban-board-management-interface">
+<span id="id3"></span><h2>Kanban Board Management Interface<a class="headerlink" href="#kanban-board-management-interface" title="Link to this heading">¶</a></h2>
+<p>In the Kanban Board Management interface, you have the following options:</p>
+<figure class="align-default" id="id26">
+<img alt="Add Kanban Board" src="../_images/image4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Kanban Board Management - Add Kanban Board</span><a class="headerlink" href="#id26" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Create new boards</strong></p></li>
+<li><p><strong>Manage existing boards</strong></p></li>
+<li><p><strong>Arrange the order of Kanban Boards</strong> via drag and drop.</p></li>
+</ul>
+<p>Click on <strong>Add Kanban Board</strong> to create your first <strong>Kanban Board</strong>.</p>
+</section>
+<section id="general-settings">
+<span id="id4"></span><h2>General Settings<a class="headerlink" href="#general-settings" title="Link to this heading">¶</a></h2>
+<p>Under the <strong>General</strong> menu, you can configure the basic settings for your first Kanban Board.</p>
+<ul class="simple">
+<li><p><strong>Board</strong>: The configuration begins by entering the <strong>Board Name</strong>.</p></li>
+</ul>
+<figure class="align-default" id="id27">
+<img alt="Kanban General settings - Board Name" src="../_images/image5.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Add Kanban Board - General - Board Name</span><a class="headerlink" href="#id27" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Board Type</strong>: You have the option to <strong>choose from different board types</strong>. Special Note: If the board type <strong>“Processes”</strong> is selected, the list will <strong>expand</strong> to show a <strong>selection field</strong> with your existing processes.</p></li>
+</ul>
+<figure class="align-default" id="id28">
+<img alt="Kanban General settings - Board Type" src="../_images/image6.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Add Kanban Board - General - Board Type</span><a class="headerlink" href="#id28" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the board type <strong>Processes</strong>, the processes must also be <strong>defined</strong>, which are then <strong>displayed</strong> under the <strong>board type selection</strong> - as soon as the board type Processes is <strong>selected</strong>.
+The <strong>activities</strong> associated with the <strong>process</strong> are then available as <strong>columns</strong>.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Groups</strong>: You can define which <strong>users</strong> have <strong>access to the Kanban Board</strong>. Note that the group <strong>“Kanban”</strong> is <strong>required</strong> for permissions to the Kanban module. <strong>Further access control</strong> can be managed through <strong>additional groups</strong>.</p></li>
+</ul>
+<figure class="align-default" id="id29">
+<img alt="Kanban General settings - Groups" src="../_images/image7.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Add Kanban Board - General - Groups</span><a class="headerlink" href="#id29" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Validity</strong>: Use this option to <strong>activate, deactivate,</strong> or <strong>temporarily lock boards</strong>.</p></li>
+</ul>
+<figure class="align-default" id="id30">
+<img alt="Kanban General settings - Validity" src="../_images/image8.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Add Kanban Board - General - Validity</span><a class="headerlink" href="#id30" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sorting-options">
+<span id="id5"></span><h2>Sorting Options<a class="headerlink" href="#sorting-options" title="Link to this heading">¶</a></h2>
+<p>Sorting allows you to configure the Kanban Board according to the desired criteria.</p>
+<figure class="align-default" id="id31">
+<img alt="Kanban General settings - Sorting options" src="../_images/image9.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Add Kanban Board - General - Sorting options</span><a class="headerlink" href="#id31" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>You can define the order as ascending or descending.</p></li>
+</ul>
+<figure class="align-default" id="id32">
+<img alt="Kanban General settings - Order" src="../_images/image10.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Add Kanban Board - General - Order</span><a class="headerlink" href="#id32" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Standard Sorting by State Type: Allows you to further filter options based on the ticket state.</p></li>
+</ul>
+<figure class="align-default" id="id33">
+<img alt="Kanban General settings - State Type" src="../_images/image11.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Add Kanban Board - General - State Type</span><a class="headerlink" href="#id33" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Ticket Display Options: You can choose to display all tickets, only archived, or only non-archived tickets.</p></li>
+</ul>
+<figure class="align-default" id="id34">
+<img alt="Kanban General settings - Archived" src="../_images/image12.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Add Kanban Board - General - Archived</span><a class="headerlink" href="#id34" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Standard Filter “Owner”: Allows you to create boards assigned to you. Save the created board by clicking on the <strong>Save</strong> button.</p></li>
+</ul>
+<figure class="align-default" id="id35">
+<img alt="Kanban General settings - Owner" src="../_images/image13.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Add Kanban Board - General - Owner</span><a class="headerlink" href="#id35" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="completing-board-configuration">
+<span id="id6"></span><h2>Completing Board Configuration<a class="headerlink" href="#completing-board-configuration" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>After creating your first board, select your board to proceed with further settings by clicking on the boards name.</p></li>
+</ul>
+<figure class="align-default" id="id36">
+<img alt="Board Overview" src="../_images/image14.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Kanban Board Management - Board Overview</span><a class="headerlink" href="#id36" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>If you have already clicked on the Kanban icon in the navigation bar, you will be notified about the missing configuration.</p></li>
+</ul>
+<figure class="align-default" id="id37">
+<img alt="Missing Kanban Board Configuration Info" src="../_images/image15.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Kanban Board Management - Missing Kanban Board Configuration Info</span><a class="headerlink" href="#id37" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="column-configuration">
+<span id="id7"></span><h2>Column Configuration<a class="headerlink" href="#column-configuration" title="Link to this heading">¶</a></h2>
+<p>Under the <strong>Columns</strong> menu:</p>
+<figure class="align-default" id="id38">
+<img alt="Kanban Columns settings" src="../_images/image16.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Edit Kanban Board - Columns</span><a class="headerlink" href="#id38" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>You can <strong>change</strong> the <strong>board type</strong> again via the board type selection.</p></li>
+<li><p>Use the <strong>search function</strong> to filter columns.</p></li>
+<li><p>Select / de-select all columns at once using the <strong>square brackets</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id39">
+<img alt="Order Columns by Drag &amp; Drop" src="../_images/image17.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Edit Kanban Board - Drag &amp; Drop Columns</span><a class="headerlink" href="#id39" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Select a single column</strong> using <strong>drag &amp; drop</strong> and place them in the <strong>order</strong> you want them to be <strong>displayed</strong> on the <strong>kanban board</strong>. After making your selection, make sure to click <strong>Save</strong>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you select <strong>dynamic fields</strong> as the <strong>board type</strong>, you must also select a dynamic field whose <strong>selection options</strong> can then be <strong>configured as columns</strong>. This is done via a <strong>drop-down menu</strong> which appears above the drag &amp; drop area.</p>
+</div>
+</section>
+<section id="swimlanes-configuration">
+<span id="id8"></span><h2>Swimlanes Configuration<a class="headerlink" href="#swimlanes-configuration" title="Link to this heading">¶</a></h2>
+<p>Swimlanes are divided into three categories: <strong>Priority</strong>, <strong>Owner</strong>, and <strong>Queue</strong>, each with corresponding selection options.</p>
+<figure class="align-default" id="id40">
+<img alt="Edit Kanban Board - Swimlanes" src="../_images/image18.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Edit Kanban Board - Swimlanes</span><a class="headerlink" href="#id40" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Changing</strong> the category results in the <strong>associated swimlanes</strong> being loaded.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If no specific swimlanes are defined, all tickets are displayed in one large lane.</p></li>
+</ul>
+</div>
+</section>
+<section id="quick-filters">
+<span id="id9"></span><h2>Quick Filters<a class="headerlink" href="#quick-filters" title="Link to this heading">¶</a></h2>
+<p>Use Quick Filters to create custom filters that are easily accessible right on your board.</p>
+<p>To create a new filter:</p>
+<ol class="arabic simple">
+<li><p>Click on <strong>New Filter</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id41">
+<img alt="Add new Quick Filter" src="../_images/image19.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Edit Kanban Board - Quick Filter - New Filter</span><a class="headerlink" href="#id41" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Choose a name, describe your filter, and use your desired filter query.</p></li>
+</ol>
+<figure class="align-default" id="id42">
+<img alt="Configure new Quick Filter" src="../_images/image20.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Edit Kanban Board - Quick Filter Configuration</span><a class="headerlink" href="#id42" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Filters are defined as a chained string of key-value pairs.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">=</span><span class="n">Junk</span><span class="p">,</span><span class="n">Postmaster</span><span class="p">,</span><span class="n">Raw</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">State</span><span class="o">=</span><span class="n">new</span><span class="p">;</span><span class="n">Priority</span><span class="o">=</span><span class="mi">3</span> <span class="n">normal</span>
+</pre></div>
+</div>
+<p>Negation is also supported.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">=</span><span class="n">Junk</span><span class="p">,</span><span class="n">Postmaster</span><span class="p">,</span><span class="n">Raw</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">State</span><span class="o">!=</span><span class="n">new</span><span class="p">;</span><span class="n">Priority</span><span class="o">!=</span> <span class="mi">5</span> <span class="n">very</span> <span class="n">high</span>
+</pre></div>
+</div>
+<p>Everything can be combined.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Queue</span><span class="o">=</span><span class="n">Misc</span><span class="p">,</span><span class="n">Junk</span><span class="p">;</span><span class="n">Priority</span><span class="o">!=</span><span class="mi">3</span> <span class="n">normal</span>
+</pre></div>
+</div>
+<p>Available filters:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">State</span>
+<span class="o">-</span> <span class="n">Queue</span>
+<span class="o">-</span> <span class="n">Priority</span>
+<span class="o">-</span> <span class="n">Type</span>
+<span class="o">-</span> <span class="n">Service</span> <span class="n">Type</span>
+<span class="o">-</span> <span class="n">SLA</span>
+</pre></div>
+</div>
+<p>For own tickets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Owner</span><span class="o">=</span><span class="n">Self</span><span class="p">,</span><span class="n">LoginName</span><span class="p">,</span><span class="n">OtherLoginName</span><span class="p">,</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Dynamic fields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DynamicField_Name</span><span class="o">=</span><span class="n">Value1</span><span class="p">,</span><span class="n">Value2</span><span class="p">,</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Wildcard support:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span><span class="n">Value1</span><span class="o">*</span><span class="p">,</span> <span class="o">*</span><span class="n">Value2</span><span class="p">,</span> <span class="n">Value3</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A wildcard must always be used for dynamic fields with a multiple selection in order to obtain correct results:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DynamicField_MultipleSelect</span><span class="o">=*</span><span class="n">Value1</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="n">Value2</span><span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<p>You can also adjust the order of the quick filters displayed on the board using drag and drop. Make sure to click <strong>Save</strong> after making changes.</p>
+<figure class="align-default" id="id43">
+<img alt="Drag &amp; Drop Quick Filter" src="../_images/image21.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Edit Kanban Board - Drag &amp; Drop Quick Filter</span><a class="headerlink" href="#id43" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ticket-card-configuration">
+<span id="id10"></span><h2>Ticket Card Configuration<a class="headerlink" href="#ticket-card-configuration" title="Link to this heading">¶</a></h2>
+<p>Under the <strong>Ticket Cards</strong> menu:</p>
+<figure class="align-default" id="id44">
+<img alt="Ticket Card Configuration" src="../_images/image22.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Edit Kanban Board - Ticket Card Field Configuration</span><a class="headerlink" href="#id44" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>You can flexibly configure the contents of the cards.</p></li>
+<li><p>Don’t forget to <strong>save</strong> your selection.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="ticket-details-configuration">
+<span id="id11"></span><h2>Ticket Details Configuration<a class="headerlink" href="#ticket-details-configuration" title="Link to this heading">¶</a></h2>
+<p>Under the <strong>Ticket Details</strong> menu:</p>
+<figure class="align-default" id="id45">
+<img alt="Ticket Details Configuration" src="../_images/image23.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Edit Kanban Board - Ticket Details Configuration</span><a class="headerlink" href="#id45" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>You can flexibly configure the details displayed when a card is clicked on the Kanban Board.</p></li>
+<li><p>Remember to <strong>save</strong> your selection.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="board-links">
+<span id="id12"></span><h2>Board Links<a class="headerlink" href="#board-links" title="Link to this heading">¶</a></h2>
+<p>The <strong>Board Links</strong> menu allows you to create custom buttons with links to keep all necessary functions just a click away.</p>
+<figure class="align-default" id="id46">
+<img alt="Add new board link" src="../_images/image24.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Edit Kanban Board - Board Links - New link</span><a class="headerlink" href="#id46" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>Start by creating a new board link.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id47">
+<img alt="Board Link configuration" src="../_images/image25.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Edit Kanban Board - Board Links Configuration</span><a class="headerlink" href="#id47" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Predefined link quick selection</p></li>
+</ol>
+<ul class="simple">
+<li><p>Click on one of the icons to create a predefined link</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Board Link Configuration</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Board Links Information:</strong></p>
+<ul class="simple">
+<li><p>Board links are defined by an <strong>action</strong>, and optionally, a <strong>parameter (sub-action)</strong>.</p></li>
+<li><p>Example of an internal link: <cite>/otobo/index.pl?Action=AdminAppointmentCalendarManage;Subaction=Overview</cite>.</p></li>
+<li><p>Extract from your desired link, as in this example, the <strong>Action</strong> “AdminAppointmentCalendarManage” and the <strong>Subaction</strong> as parameter “Overview”. Then mark the <strong>“internal” field</strong> to create a personalized link.</p></li>
+<li><p>For an external link, such as to Google Search, use <strong>“www.google.de”</strong> as the Action and <strong>“webhp”</strong> as the Parameter. The <strong>“Internal” field</strong> remains unmarked since it is an external request. The link will be created as follows: <cite>https://www.google.de/webhp</cite>.</p></li>
+</ul>
+</div>
+<p>3. Board Link Icon Configuration
+- You can flexibly configure your own icons by using <a class="reference external" href="https://fontawesome.com/v4/icons/">Font-Awesome 4 Icons</a>.</p>
+<p>You can also adjust the order of the board links displayed on the board using drag and drop. Make sure to click <strong>Save</strong> after making changes.</p>
+<figure class="align-default" id="id48">
+<img alt="Kanban navigation bar" src="../_images/image26.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Edit Kanban Board - Order Board Links  by Drag &amp; Drop</span><a class="headerlink" href="#id48" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Board Link System Configuration</strong></p>
+<p>In the System Configuration - Kanban - BoardLinkIcons, you also have the option to customize the default board link colors,
+default board link icons, and default button text colors according to your preferences.
+For more details, refer to <a class="reference internal" href="#system-configuration-board-links"><span class="std std-ref">System Configuration - Board Links</span></a>.</p>
+</div>
+</section>
+<section id="congratulations">
+<span id="id13"></span><h2>Congratulations!<a class="headerlink" href="#congratulations" title="Link to this heading">¶</a></h2>
+<p>You have now completed the configuration of your first Kanban Board.</p>
+<figure class="align-default" id="id49">
+<img alt="Kanban navigation bar" src="../_images/image99.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Kanban Board view - My first board</span><a class="headerlink" href="#id49" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="board-management">
+<h2>Board Management<a class="headerlink" href="#board-management" title="Link to this heading">¶</a></h2>
+<figure class="align-default">
+<img alt="Board Management" src="../_images/image102.png" />
+</figure>
+<p>It is possible to copy boards with all settings.
+This can be very useful when creating multiple boards with similar definitions, eliminating the need to manually configure everything each time.</p>
+</section>
+<section id="system-configuration-kanban-settings">
+<h2>System Configuration - Kanban Settings<a class="headerlink" href="#system-configuration-kanban-settings" title="Link to this heading">¶</a></h2>
+<figure class="align-default" id="id50">
+<img alt="Kanban Board view showing dynamic field selection" src="../_images/image54.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Kanban Board View - Dynamic Field Selection</span><a class="headerlink" href="#id50" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>You can set selectable dynamic fields for cards, such as “DynamicField_Name”.</p>
+<figure class="align-default" id="id51">
+<img alt="Kanban Board view with default sorting options" src="../_images/image55.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Kanban Board View - Default Sorting Options</span><a class="headerlink" href="#id51" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Set the default sorting criteria for new boards. Supported sorting fields include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Created</p></li>
+<li><p>Owner</p></li>
+<li><p>Responsible</p></li>
+<li><p>CustomerID</p></li>
+<li><p>State</p></li>
+<li><p>TicketNumber</p></li>
+<li><p>Queue</p></li>
+<li><p>Priority</p></li>
+<li><p>Age</p></li>
+<li><p>Type</p></li>
+<li><p>Lock</p></li>
+<li><p>Changed</p></li>
+<li><p>Title</p></li>
+<li><p>Service</p></li>
+<li><p>SLA</p></li>
+<li><p>PendingTime</p></li>
+<li><p>EscalationTime</p></li>
+<li><p>EscalationUpdateTime</p></li>
+<li><p>EscalationResponseTime</p></li>
+<li><p>EscalationSolutionTime</p></li>
+<li><p>Supported order: ascending | descending.</p></li>
+</ul>
+</div></blockquote>
+<figure class="align-default" id="id52">
+<img alt="Kanban Board view with secondary sorting options" src="../_images/image56.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Kanban Board View - Secondary Sorting Options</span><a class="headerlink" href="#id52" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Set the secondary sorting criteria for new boards. Supported sorting fields and orders are the same as for the primary sorting.</p>
+<figure class="align-default" id="id53">
+<img alt="Kanban Board view showing caching settings" src="../_images/image57.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Kanban Board View - Caching Settings</span><a class="headerlink" href="#id53" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Configure the caching time for boards in minutes.</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Examples:</dt><dd><ul>
+<li><p>60 = 1 hour</p></li>
+<li><p>720 = 12 hours</p></li>
+<li><p>1440 = 1 day</p></li>
+<li><p>0 = caching deactivated</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<figure class="align-default" id="id54">
+<img alt="Kanban Board view with card limit settings" src="../_images/image58.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Kanban Board View - Card Limit</span><a class="headerlink" href="#id54" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Set the maximum number of cards that can be displayed on a board.</p>
+<figure class="align-default" id="id55">
+<img alt="Kanban Board view showing default groups configuration" src="../_images/image59.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Kanban Board View - Default Groups</span><a class="headerlink" href="#id55" title="Link to this image">¶</a></p>
+<div class="legend">
+<p>Assign default groups for new boards.</p>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id56">
+<img alt="Kanban Board view showing default pending reminder time" src="../_images/image60.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Kanban Board View - Default Pending Reminder Time</span><a class="headerlink" href="#id56" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Set the default time in minutes for tickets moved to the pending reminder state.</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Example:</dt><dd><ul>
+<li><p>7 * 24 * 60 for one week</p></li>
+<li><p>1440 for one day (default setting).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<figure class="align-default" id="id57">
+<img alt="Kanban Board view showing dynamic field filter settings" src="../_images/image61.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Kanban Board View - Dynamic Field Filtering</span><a class="headerlink" href="#id57" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Configure a dynamic field of type “SingleSelect” to filter tickets based on selectable values.</p>
+</section>
+<section id="system-configuration-card-settings">
+<span id="admin-kanban-card-settings"></span><h2>System Configuration - Card Settings<a class="headerlink" href="#system-configuration-card-settings" title="Link to this heading">¶</a></h2>
+<p>In the admin area, you can access further Kanban card settings:</p>
+<ul class="simple">
+<li><p>Therefore you have to navigate to Admin - Overview.</p></li>
+</ul>
+<figure class="align-default" id="id58">
+<img alt="Kanban navigation bar" src="../_images/image2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id58" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>Search for <strong>System Configuration</strong></p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id59">
+<img alt="Kanban Module" src="../_images/image36.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Admin Overview - Ticket Settings - Kanban Modul</span><a class="headerlink" href="#id59" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p>Select <strong>Kanban -&gt; Card</strong> to open the card settings.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id60">
+<img alt="Navigation - Kanban -&gt; Card" src="../_images/image37.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Navigation - Kanban -&gt; Card</span><a class="headerlink" href="#id60" title="Link to this image">¶</a></p>
+<div class="legend">
+<blockquote>
+<div><p><strong>Overview - All kanban card settings</strong></p>
+</div></blockquote>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id61">
+<img alt="Kanban Card Settings" src="../_images/image38.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">System Configuration - Kanban Card Settings</span><a class="headerlink" href="#id61" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<blockquote id="kanban-ticket-card-color-setting">
+<div><p><strong>Kanban Ticket Card Color Setting</strong></p>
+<p>You have the option to customize the color of a Kanban card in various ways:</p>
+</div></blockquote>
+<figure class="align-default" id="id62">
+<img alt="Ticket Card Color Settings" src="../_images/image39.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Kanban Ticket Card Color Settings</span><a class="headerlink" href="#id62" title="Link to this image">¶</a></p>
+<div class="legend">
+<ul class="simple">
+<li><p><strong>Deactivated</strong>: Turn off color effects if you prefer a simpler appearance.</p></li>
+<li><p><strong>Only Header</strong>: Change the color of the card’s header.</p></li>
+<li><p><strong>Only Body</strong>: Adjust the color of the card’s body.</p></li>
+<li><p><strong>Complete Card</strong>: Apply a color to the entire card.</p></li>
+</ul>
+</div>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Initially, default pastel-colors are loaded and applied to the cards, which the user can customize through their personal preferences.</p>
+</div>
+<blockquote id="kanban-ticket-card-highlighting-setting">
+<div><p><strong>Kanban Ticket Card Highlighting Setting</strong></p>
+</div></blockquote>
+<figure class="align-default" id="id63">
+<img alt="Ticket Card Highlight Setting" src="../_images/image40.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Kanban Ticket Card Highlight Setting</span><a class="headerlink" href="#id63" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>When this <strong>effect</strong> is enabled, the selected Kanban card will be <strong>highlighted</strong> in a distinct <strong>color</strong> when its ticket <strong>details are opened</strong>. This feature helps users easily <strong>identify</strong> the <strong>active card</strong> they are working on.</p>
+<blockquote id="kanban-ticket-card-hover-effect-setting">
+<div><p><strong>Kanban Ticket Card Hover Effect Setting</strong></p>
+</div></blockquote>
+<figure class="align-default" id="id64">
+<img alt="Kanban Ticket Card Hover Effect Setting" src="../_images/image41.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Kanban Ticket Card Hover Effect Setting</span><a class="headerlink" href="#id64" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The <strong>hover effect</strong> allows users to easily identify and interact with Kanban cards by changing their <strong>appearance</strong> when the cursor is <strong>hovered</strong> over them. When this effect is <strong>enabled</strong>, the card will display a subtle <strong>highlight</strong> and <strong>shadow</strong>, making it visually distinct from other cards. This helps users quickly locate and focus on specific cards while navigating the Kanban Board.</p>
+</section>
+<section id="system-configuration-card-icon-settings">
+<span id="kanban-card-icon-settings"></span><h2>System Configuration - Card Icon Settings<a class="headerlink" href="#system-configuration-card-icon-settings" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>To activate the icons you have to enable them first.</p></li>
+</ol>
+</div></blockquote>
+<figure class="align-default" id="id65">
+<img alt="Setting - Kanban Card Enable" src="../_images/image42.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Enable Kanban Ticket Card Icons</span><a class="headerlink" href="#id65" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="2">
+<li><p>Choose individual icons you want to hide.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id66">
+<img alt="Setting - Display Kanban Card Icons" src="../_images/image43.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Display Kanban Ticket Card Icons</span><a class="headerlink" href="#id66" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="3">
+<li><p>You can hide the owner in the card if the avatar or initials are active.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id67">
+<img alt="Setting - Hide Kanban Card attribute owner" src="../_images/image44.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Hide Kanban Card attribute owner</span><a class="headerlink" href="#id67" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="4">
+<li><p>Choose your own symbols (<a class="reference external" href="https://fontawesome.com/v4/icons/">Font-Awesome 4 Icons</a>) and colors (hex) for the priority icons.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id68">
+<img alt="Kanban Card Icon Priority Settings" src="../_images/image45.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Kanban Card Icon Priority Settings</span><a class="headerlink" href="#id68" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="5">
+<li><p>For <strong>Icon Type</strong>, you also have options to flexibly configure the icons and the color.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id69">
+<img alt="Kanban Card Icon Type Settings" src="../_images/image46.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">Kanban Card Icon Type Settings</span><a class="headerlink" href="#id69" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Remember to click the confirmation button after making changes to the settings; otherwise, the deployment will not be executed, and the editing will remain open.</p>
+<blockquote>
+<div><ol class="arabic simple" start="6">
+<li><p>Click on the <strong>banner</strong> under the <strong>dashboard navigation</strong> which now informs you to deploy the undeployed settings.</p></li>
+</ol>
+</div></blockquote>
+<figure class="align-default" id="id70">
+<img alt="Info - Undeployed changes" src="../_images/image48.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Info - Undeployed changes</span><a class="headerlink" href="#id70" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="7">
+<li><p>Select the changes you want to deploy and click on “Deploy selected changes” to confirm and make them effective.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id71">
+<img alt="Changes Deployment - Changes Overview" src="../_images/image49.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">Changes Deployment - Changes Overview - Deploy selected changes</span><a class="headerlink" href="#id71" title="Link to this image">¶</a></p>
+<div class="legend">
+<ol class="arabic simple" start="8">
+<li><p>After reloading the Kanban board, your configured Kanban card is displayed.</p></li>
+</ol>
+</div>
+</figcaption>
+</figure>
+<figure class="align-default" id="id72">
+<img alt="Kanban Card" src="../_images/image50.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text">Kanban Card</span><a class="headerlink" href="#id72" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="system-configuration-board-links">
+<span id="id15"></span><h2>System Configuration - Board Links<a class="headerlink" href="#system-configuration-board-links" title="Link to this heading">¶</a></h2>
+<p>In the System Configuration - Kanban - BoardLinkIcons, you also have the option to customize the default board link colors,
+default board link icons, and default button text colors according to your preferences.</p>
+<p>You can flexibly configure the default icons by using <a class="reference external" href="https://fontawesome.com/v4/icons/">Font-Awesome 4 Icons</a>.</p>
+<p><strong>Default Board Link Colors:</strong></p>
+<figure class="align-default" id="id73">
+<img alt="Default Board Link Colors - Configuration" src="../_images/image98.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Default Board Link Colors - Configuration</span><a class="headerlink" href="#id73" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Default Board Link Icons:</strong></p>
+<figure class="align-default" id="id74">
+<img alt="Default Board Link Icons - Configuration" src="../_images/image97.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Default Board Link Icons - Configuration</span><a class="headerlink" href="#id74" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Default Button Text Color (Icon Color)</strong></p>
+<figure class="align-default" id="id75">
+<img alt="Default Button Text Color - Configuration" src="../_images/image96.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Default Button Text Color - Configuration</span><a class="headerlink" href="#id75" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Custom Card Links</strong></p>
+<figure class="align-default">
+<img alt="Additional popup links in card header" src="../_images/image100.png" />
+</figure>
+<p>Two links have been added to the header, pointing to ‘Note’ and ‘Classify Ticket’.
+This allows for quick modifications to the ticket directly from the Kanban Board.
+You can find the same links under the ticket details as well.</p>
+<figure class="align-default">
+<img alt="SysConfig for custom card links" src="../_images/image101.png" />
+</figure>
+<p>It is also possible to define links in the system configuration that open a popup window for the corresponding ticket.
+A maximum of three links can be added to avoid overloading the header.</p>
+</section>
+<section id="kanbantags-visual-tag-management">
+<span id="id17"></span><h2>KanbanTags - Visual Tag Management<a class="headerlink" href="#kanbantags-visual-tag-management" title="Link to this heading">¶</a></h2>
+<p>The <strong>KanbanTags</strong> feature provides a visual tag management system that allows users to categorize and organize tickets directly on the Kanban board using colorful badge-style tags. This feature is implemented as a custom Dynamic Field type that integrates seamlessly with the Kanban board interface.</p>
+<p><strong>Key Features:</strong></p>
+<ul class="simple">
+<li><p>Visual badge-style tags with customizable colors and icons</p></li>
+<li><p>Inline tag editor directly on Kanban cards</p></li>
+<li><p>Multiple tags per ticket with icon and color support</p></li>
+<li><p>Easy tag management without opening ticket detail view</p></li>
+<li><p>Font Awesome 4 icon support for visual enhancement</p></li>
+</ul>
+<section id="administrator-setup">
+<span id="kanbantags-admin-setup"></span><h3>Administrator Setup<a class="headerlink" href="#administrator-setup" title="Link to this heading">¶</a></h3>
+<p><strong>Pre-installed Dynamic Field</strong></p>
+<p>The <strong>KanbanTags</strong> Dynamic Field is automatically created during the Kanban package installation or update. The field is pre-configured and ready to use - no manual field creation is required.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The KanbanTags field is created automatically with the name <code class="docutils literal notranslate"><span class="pre">KanbanTags</span></code> and is available immediately after package installation. You can start configuring tags right away.</p>
+</div>
+<p><strong>Accessing the KanbanTags Configuration</strong></p>
+<p>To configure or extend the available tags:</p>
+<ol class="arabic simple">
+<li><p>Navigate to <strong>Admin → Dynamic Fields</strong></p></li>
+<li><p>Locate the <strong>KanbanTags</strong> field in the Dynamic Fields list</p></li>
+<li><p>Click on the field name to open the configuration screen</p></li>
+</ol>
+<figure class="align-default" id="id76">
+<img alt="Access KanbanTags Dynamic Field Configuration" src="../_images/kanbantags-admin-edit-field.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Locate and open the KanbanTags field in Dynamic Fields management</span><a class="headerlink" href="#id76" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Configuring Available Tags</strong></p>
+<p>In the Dynamic Field configuration screen, you can define the available tags that users can apply to their tickets:</p>
+<figure class="align-default" id="id77">
+<img alt="KanbanTags Tag Configuration Interface" src="../_images/kanbantags-admin-tag-configuration.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">Tag configuration interface with Value, Color, and Icon columns</span><a class="headerlink" href="#id77" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>For each tag, configure:</p>
+<ul class="simple">
+<li><p><strong>Value</strong>: The tag label text (e.g., <code class="docutils literal notranslate"><span class="pre">Urgent</span></code>, <code class="docutils literal notranslate"><span class="pre">Bug</span></code>, <code class="docutils literal notranslate"><span class="pre">Feature</span></code>)</p></li>
+<li><p><strong>Color</strong>: Hex color code for the badge background (e.g., <code class="docutils literal notranslate"><span class="pre">#FF5733</span></code>, <code class="docutils literal notranslate"><span class="pre">#28A745</span></code>)</p></li>
+<li><p><strong>Icon</strong>: Font Awesome 4 icon class (e.g., <code class="docutils literal notranslate"><span class="pre">fa-bug</span></code>, <code class="docutils literal notranslate"><span class="pre">fa-star</span></code>, <code class="docutils literal notranslate"><span class="pre">fa-rocket</span></code>)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the color picker to select colors visually, or enter hex codes directly for brand consistency.</p>
+</div>
+<p><strong>Icon Selection</strong></p>
+<p>When adding or editing tags, you can select icons from the Font Awesome 4 library:</p>
+<figure class="align-default" id="id78">
+<img alt="KanbanTags Icon Picker" src="../_images/kanbantags-admin-icon-picker.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">Icon picker with autocomplete functionality</span><a class="headerlink" href="#id78" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Start typing to filter available icons (e.g., type “bug” to find <code class="docutils literal notranslate"><span class="pre">fa-bug</span></code>)</p></li>
+<li><p>Click on an icon to select it</p></li>
+<li><p>Preview shows the icon with the selected color</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>KanbanTags uses <a class="reference external" href="https://fontawesome.com/v4/icons/">Font Awesome 4 Icons</a>. Make sure to use the correct icon class names (e.g., <code class="docutils literal notranslate"><span class="pre">fa-bug</span></code>, not <code class="docutils literal notranslate"><span class="pre">bug</span></code>).</p>
+</div>
+<p><strong>Saving Changes</strong></p>
+<ol class="arabic simple">
+<li><p>Click <strong>Save</strong> to apply your tag configuration</p></li>
+<li><p>The tags are immediately available on the Kanban board interface</p></li>
+<li><p>Users can start applying the configured tags to their tickets</p></li>
+</ol>
+</section>
+<section id="managing-and-extending-tags">
+<span id="kanbantags-managing-tags"></span><h3>Managing and Extending Tags<a class="headerlink" href="#managing-and-extending-tags" title="Link to this heading">¶</a></h3>
+<p><strong>Adding New Tags to Existing Field</strong></p>
+<p>To add new tags or modify existing ones after the initial setup:</p>
+<ol class="arabic simple">
+<li><p>Navigate to <strong>Admin → Dynamic Fields</strong></p></li>
+<li><p>Find your KanbanTags field in the list</p></li>
+<li><p>Click on the field name to open the configuration screen</p></li>
+</ol>
+<figure class="align-default" id="id79">
+<img alt="Edit existing KanbanTags Dynamic Field" src="../_images/kanbantags-admin-edit-field.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">Edit existing KanbanTags field</span><a class="headerlink" href="#id79" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>In the tag configuration table, you can:</p>
+<ul class="simple">
+<li><p><strong>Add new tags</strong>: Click the <strong>+</strong> button to add a new row</p></li>
+<li><p><strong>Edit existing tags</strong>: Modify the Value, Color, or Icon directly in the table</p></li>
+<li><p><strong>Remove tags</strong>: Click the <strong>-</strong> (minus) button next to a tag</p></li>
+<li><p><strong>Reorder tags</strong>: Use drag-and-drop to change the display order</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Save</strong> to apply your changes</p></li>
+<li><p>The new tags are immediately available on the Kanban board and in ticket screens</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When adding tags to an existing field, all previously assigned tags on tickets remain intact. New tags simply expand the available options.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Deleting tags</strong>: If you remove a tag that is currently assigned to tickets, those assignments will be preserved in the database but will no longer be visible in the tag editor. Only remove tags if you’re certain they are no longer in use.</p>
+</div>
+</section>
+<section id="using-kanbantags-in-ticket-screens">
+<span id="kanbantags-ticket-screens"></span><h3>Using KanbanTags in Ticket Screens<a class="headerlink" href="#using-kanbantags-in-ticket-screens" title="Link to this heading">¶</a></h3>
+<p><strong>Dynamic Field Integration</strong></p>
+<p>KanbanTags fields work like standard Dynamic Fields and can be used in all ticket screens (create, edit, zoom, etc.). The field can be configured through the standard <strong>Dynamic Fields Screens</strong> interface in the Admin area.</p>
+<p><strong>Enabling in Ticket Screens</strong></p>
+<p>To make the KanbanTags field visible in ticket screens, use the <strong>Dynamic Fields Screens</strong> management:</p>
+<ol class="arabic simple">
+<li><p>Navigate to <strong>Admin → Dynamic Fields</strong></p></li>
+<li><p>Click on <strong>Dynamic Fields Screens</strong> in the left sidebar</p></li>
+<li><p>Select the screen where you want to enable the field (e.g., <strong>Default - AgentTicketNote</strong>)</p></li>
+<li><p>Find your KanbanTags field in the available fields list</p></li>
+<li><p>Set the display level using the WYSIWYG interface:</p>
+<ul class="simple">
+<li><p><strong>Disabled</strong> (unchecked) = Hidden from this screen</p></li>
+<li><p><strong>Enabled</strong> (checked) = Available on this screen</p></li>
+<li><p><strong>Required</strong> (required checkbox) = Mandatory field</p></li>
+</ul>
+</li>
+</ol>
+<p>The changes are applied immediately and the field becomes available in the selected ticket screens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Administrators familiar with OTOBO will recognize this as the standard process for managing Dynamic Field visibility across all ticket screens. No System Configuration changes are required.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Two ways to manage tags:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>On Kanban Board</strong>: Quick inline editor for rapid tag changes</p></li>
+<li><p><strong>In Ticket Screens</strong>: Standard Dynamic Field interface for detailed ticket editing</p></li>
+</ol>
+<p>Both methods update the same field and stay synchronized.</p>
+</div>
+<p><strong>Use Cases:</strong></p>
+<ul class="simple">
+<li><p><strong>During Ticket Creation</strong>: Pre-assign tags when creating new tickets (e.g., <code class="docutils literal notranslate"><span class="pre">Bug</span></code>, <code class="docutils literal notranslate"><span class="pre">High</span> <span class="pre">Priority</span></code>)</p></li>
+<li><p><strong>During Ticket Processing</strong>: Add or remove tags as ticket progresses through workflow</p></li>
+<li><p><strong>In Ticket History</strong>: Tag changes are logged in ticket history for audit purposes</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Enable KanbanTags in the <strong>AgentTicketZoom</strong> screen to allow agents to quickly add tags while reviewing ticket details, complementing the Kanban board editor.</p>
+</div>
+</section>
+<section id="using-kanbantags-on-kanban-cards">
+<span id="kanbantags-user-guide"></span><h3>Using KanbanTags on Kanban Cards<a class="headerlink" href="#using-kanbantags-on-kanban-cards" title="Link to this heading">¶</a></h3>
+<p><strong>Opening the Tag Editor</strong></p>
+<p>On the Kanban board, each card displays the currently applied tags as colorful badges. To edit tags:</p>
+<ol class="arabic simple">
+<li><p>Locate the tag section on a Kanban card</p></li>
+<li><p>Click on the <strong>tag badge area</strong> or the <strong>plus icon</strong> (if no tags are assigned)</p></li>
+</ol>
+<figure class="align-default" id="id80">
+<img alt="KanbanTags Display on Kanban Card" src="../_images/kanbantags-card-display.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 57 </span><span class="caption-text">Tags displayed as colorful badges on Kanban cards</span><a class="headerlink" href="#id80" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>The inline tag editor modal opens</p></li>
+</ol>
+<figure class="align-default" id="id81">
+<img alt="KanbanTags Editor Modal" src="../_images/kanbantags-editor-modal.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Tag editor modal with active and available tags</span><a class="headerlink" href="#id81" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Tag Editor Interface</strong></p>
+<p>The tag editor modal consists of two sections:</p>
+<ul class="simple">
+<li><p><strong>Active Tags</strong> (top section): Currently assigned tags for this ticket</p>
+<ul>
+<li><p>Click on a tag badge to remove it</p></li>
+<li><p>Tags are displayed with their configured colors and icons</p></li>
+<li><p>Scrollable container for many active tags</p></li>
+</ul>
+</li>
+<li><p><strong>Available Tags</strong> (bottom section): All defined tags that can be added</p>
+<ul>
+<li><p>Click on a tag badge to add it to the ticket</p></li>
+<li><p>Only tags not already active are shown</p></li>
+<li><p>Scrollable container for large tag collections</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Adding Tags</strong></p>
+<ol class="arabic simple">
+<li><p>In the <strong>Available Tags</strong> section, click on any tag badge</p></li>
+<li><p>The tag instantly moves to the <strong>Active Tags</strong> section</p></li>
+<li><p>Changes are saved automatically</p></li>
+</ol>
+<p><strong>Removing Tags</strong></p>
+<ol class="arabic simple">
+<li><p>In the <strong>Active Tags</strong> section, click on any tag badge you want to remove</p></li>
+<li><p>The tag instantly moves back to the <strong>Available Tags</strong> section</p></li>
+<li><p>Changes are saved automatically</p></li>
+</ol>
+<p><strong>Keyboard Shortcuts</strong></p>
+<ul class="simple">
+<li><p><strong>ESC</strong>: Close the tag editor modal</p></li>
+<li><p><strong>Click outside modal</strong>: Close the tag editor modal</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Tag changes are saved automatically via AJAX - there’s no need to click a “Save” button or refresh the page.</p>
+</div>
+</section>
+<section id="best-practices">
+<span id="kanbantags-best-practices"></span><h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">¶</a></h3>
+<p><strong>Tag Organization</strong></p>
+<ul class="simple">
+<li><p><strong>Limit tag count</strong>: Avoid creating too many tags (15-25 recommended for optimal usability)</p></li>
+<li><p><strong>Use clear names</strong>: Choose short, descriptive tag labels (e.g., <code class="docutils literal notranslate"><span class="pre">Bug</span></code>, <code class="docutils literal notranslate"><span class="pre">P1</span></code>, <code class="docutils literal notranslate"><span class="pre">Review</span></code>)</p></li>
+<li><p><strong>Color coding</strong>: Use consistent color schemes (e.g., red for urgent, green for completed)</p></li>
+<li><p><strong>Icon consistency</strong>: Use recognizable icons that match tag meaning</p></li>
+</ul>
+<p><strong>Color Recommendations</strong></p>
+<ul class="simple">
+<li><p><strong>Status tags</strong>: Green (#28A745), Yellow (#FFC107), Red (#DC3545)</p></li>
+<li><p><strong>Priority tags</strong>: Red (#FF0000), Orange (#FF8C00), Blue (#007BFF)</p></li>
+<li><p><strong>Category tags</strong>: Use brand colors or distinct hues for easy visual scanning</p></li>
+</ul>
+<p><strong>Performance Considerations</strong></p>
+<ul class="simple">
+<li><p>KanbanTags are loaded efficiently using direct Dynamic Field queries</p></li>
+<li><p>The tag editor uses AJAX for instant updates without page reload</p></li>
+<li><p>Scrollable tag containers prevent UI issues with large tag collections</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>KanbanTags values are stored as YAML in the Dynamic Field backend and support unlimited tag assignments per ticket.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="user-guide">
+<span id="user-guide-kanban-board"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">¶</a></h1>
+<section id="kanban-board-layout-overview">
+<span id="id19"></span><h2>Kanban Board Layout Overview<a class="headerlink" href="#kanban-board-layout-overview" title="Link to this heading">¶</a></h2>
+<figure class="align-default" id="id82">
+<img alt="Kanban navigation bar" src="../_images/image51.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id82" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p><strong>Boards Display</strong>: The top row displays the available boards.</p></li>
+<li><p><strong>Quick Filters</strong>: Below the boards, there are flexibly configurable quick filters. The “My Tickets” filter is set as the default.</p></li>
+<li><p><strong>Collapse Filters and Boards</strong>: Click on the triangle icon to collapse the filters and boards for a cleaner view.</p></li>
+<li><p><strong>Sorting Options</strong>: Below the quick filters, you will find additional sorting options and the ability to set the order.</p></li>
+<li><p><strong>Apply Extra Filters</strong>: Enter any extra filter values as needed and apply them to refine the board view.</p></li>
+<li><p><strong>Reload the Page</strong>: Refresh the page as needed to update the displayed information.</p></li>
+<li><p><strong>Board Link Buttons</strong>: Use the board link buttons to quickly and easily navigate to your desired destination.</p></li>
+</ol>
+</section>
+<section id="kanban-card-overview">
+<span id="id20"></span><h2>Kanban Card Overview<a class="headerlink" href="#kanban-card-overview" title="Link to this heading">¶</a></h2>
+<figure class="align-default" id="id83">
+<img alt="Kanban navigation bar" src="../_images/image52.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id83" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p><strong>Ticket Number</strong>: Click on the ticket number to open the ticket in a new window.</p></li>
+<li><p><strong>Ticket Classification</strong>: Opens a pop-up window with options to classify the ticket.</p></li>
+<li><p><strong>Lock Info</strong>: Indicates a locked ticket.</p></li>
+<li><p><strong>Pending Reminder</strong>: Shows if a reminder is pending.</p></li>
+<li><p><strong>Ticket Age</strong>: Displays the age of the ticket.</p></li>
+<li><p><strong>Priority Icon</strong>: Visual representation of the ticket’s priority level.</p></li>
+<li><p><strong>Type Icon</strong>: Displays the type of ticket.</p></li>
+<li><p><strong>User Initials</strong>: Shows the initials of the user associated with the ticket.</p></li>
+</ol>
+</section>
+<section id="kanban-card-details-overview">
+<span id="id21"></span><h2>Kanban Card Details Overview<a class="headerlink" href="#kanban-card-details-overview" title="Link to this heading">¶</a></h2>
+<figure class="align-default" id="id84">
+<img alt="Kanban navigation bar" src="../_images/image53.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id84" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>By <strong>clicking</strong> on a <strong>ticket</strong>,
+A <strong>detailed view</strong> of the ticket opens in the right screen section, including a description and associated articles.</p>
+</section>
+<section id="kanban-card-color-settings">
+<span id="id22"></span><h2>Kanban Card Color Settings<a class="headerlink" href="#kanban-card-color-settings" title="Link to this heading">¶</a></h2>
+<p>To customize your <strong>Kanban Card</strong> according to your preferences:</p>
+<figure class="align-default" id="id85">
+<img alt="Kanban navigation bar" src="../_images/image30.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id85" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Click on your <strong>profile</strong> to open the drop down menu with the <strong>personal preferences</strong></p></li>
+</ol>
+<figure class="align-default" id="id86">
+<img alt="Kanban navigation bar" src="../_images/image31.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id86" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Navigate from <strong>Personal Preferences</strong> to <strong>Miscellaneous</strong>.</p></li>
+</ol>
+<figure class="align-default" id="id87">
+<img alt="Kanban navigation bar" src="../_images/image32.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id87" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Open the color picker to choose your desired card color.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pastel colors are recommended for user interfaces because they provide a soft,
+calming aesthetic that reduces visual strain and creates a pleasant, neutral environment for users to focus on content.
+Additionally, they are versatile due to their subtlety and can be adapted to fit various design preferences.</p>
+</div>
+<figure class="align-default" id="id88">
+<img alt="Kanban navigation bar" src="../_images/image33.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id88" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Confirm the process and <strong>save</strong> the changes.</p></li>
+</ol>
+<figure class="align-default" id="id89">
+<img alt="Kanban navigation bar" src="../_images/image34.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id89" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="kanban-card-avatar">
+<span id="id23"></span><h2>Kanban Card Avatar<a class="headerlink" href="#kanban-card-avatar" title="Link to this heading">¶</a></h2>
+<p>The avatar allows you to personalize tickets by selecting your image.
+To display the avatar, this feature must be enabled in the administration area.</p>
+<figure class="align-default" id="id90">
+<img alt="Kanban navigation bar" src="../_images/image35.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Kanban navigation bar</span><a class="headerlink" href="#id90" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Step-by-Step Guide:</strong></p>
+<p>Go to Gravatar’s Website: Visit Gravatar.com.</p>
+<p>Sign In or Create an Account:</p>
+<p>If you already have a WordPress.com account, you can log in with those credentials.
+If you don’t have an account, click on Create Your Gravatar and sign up using your email address.
+Verify Your Email: After signing up, you’ll receive a confirmation email. Open it and click the verification link to confirm your account.</p>
+<p>Upload Your Picture:</p>
+<p>Once logged in, click on Add a New Image.
+You can upload an image from your computer, take a photo using your webcam, or import one from a URL.
+Choose an Image Rating:</p>
+<p>Gravatar allows you to rate your image based on its content (G, PG, R, X). Select an appropriate rating (most websites only accept G-rated images).
+Assign Your Image to an Email Address:</p>
+<p>After uploading your image, assign it to your email address by selecting it from your profile.
+Finish: Your Gravatar image will now appear on any website that supports Gravatar when you use the assigned email address.</p>
+<p>That’s it! You’ve successfully set up your Gravatar profile picture.</p>
+</section>
+</section>
+<section id="about">
+<h1>About<a class="headerlink" href="#about" title="Link to this heading">¶</a></h1>
+<section id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Link to this heading">¶</a></h2>
+<div class="line-block">
+<div class="line">FREICON GmbH &amp; Co. KG</div>
+<div class="line">Email: <a class="reference external" href="mailto:info&#37;&#52;&#48;freicon&#46;de">info<span>&#64;</span>freicon<span>&#46;</span>de</a></div>
+<div class="line">Web: <a class="reference external" href="https://www.freicon.de">https://www.freicon.de</a></div>
+</div>
+</section>
+<section id="version">
+<h2>Version<a class="headerlink" href="#version" title="Link to this heading">¶</a></h2>
+<p>Author: FREICON GmbH &amp; Co. KG / Version: 1.0 / Date of release: 18.09.2024</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">OTOBO Kanban Board</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Freicon.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/content/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

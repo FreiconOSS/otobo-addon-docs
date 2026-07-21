@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FREICON OTOBO Add-ons — Dokumentation</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card-bg: #ffffff;
+    --text: #1c2733;
+    --muted: #5a6b7d;
+    --accent: #0f6cbd;
+    --accent-soft: #e3f0fb;
+    --border: #dde3ea;
+    --shadow: 0 1px 3px rgba(16, 32, 48, .08);
+    --shadow-hover: 0 6px 18px rgba(16, 32, 48, .14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141a21;
+      --card-bg: #1d2630;
+      --text: #e8edf2;
+      --muted: #9fb0c0;
+      --accent: #5aa9e6;
+      --accent-soft: #1e3a52;
+      --border: #2c3742;
+      --shadow: 0 1px 3px rgba(0, 0, 0, .4);
+      --shadow-hover: 0 6px 18px rgba(0, 0, 0, .5);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  header {
+    padding: 3.5rem 1.5rem 2.5rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 .5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+  }
+  header p {
+    margin: 0 auto;
+    max-width: 42rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  main {
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1.25rem;
+  }
+  .tile {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    padding: 1.4rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow);
+    transition: box-shadow .15s ease, transform .15s ease;
+  }
+  .tile:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+  .tile .icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .tile h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .tile p {
+    margin: 0;
+    font-size: .92rem;
+    color: var(--muted);
+    flex-grow: 1;
+  }
+  .tile .cta {
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .badge {
+    align-self: flex-start;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 1rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem 3rem;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>FREICON OTOBO Add-ons</h1>
+  <p>Dokumentation und Handbücher zu unseren Erweiterungen für das Ticketsystem OTOBO.</p>
+</header>
+<main>
+  <h2>Handbücher</h2>
+  <div class="grid">
+    <a class="tile" href="documents/">
+      <span class="icon">📄</span>
+      <h3>OTOBO Documents</h3>
+      <p>Dokumentenmanagement direkt in OTOBO — Vorlagen, Kapitel, Versionierung und PDF-Erzeugung.</p>
+      <span class="cta">Zum Handbuch →</span>
+    </a>
+    <a class="tile" href="kanban/">
+      <span class="icon">🗂️</span>
+      <h3>OTOBO Kanban Board</h3>
+      <p>Visuelles Workflow-Management für Tickets — Spalten, Drag &amp; Drop und Echtzeit-Updates.</p>
+      <span class="cta">Zum Handbuch →</span>
+    </a>
+  </div>
+
+  <h2>Open Source</h2>
+  <div class="grid">
+    <a class="tile" href="https://github.com/FreiconOSS/otobo-textmodule">
+      <span class="badge">Open Source</span>
+      <h3>TextModule</h3>
+      <p>Textbausteine für Agenten — schnelles Einfügen vordefinierter Antworten im Ticket.</p>
+      <span class="cta">Auf GitHub ansehen →</span>
+    </a>
+    <a class="tile" href="https://github.com/FreiconOSS/otobo-template-extended">
+      <span class="badge">Open Source</span>
+      <h3>Template Extended</h3>
+      <p>Erweiterte Ticket-Template-Funktionalität für wiederkehrende Vorgänge.</p>
+      <span class="cta">Auf GitHub ansehen →</span>
+    </a>
+    <a class="tile" href="https://github.com/FreiconOSS/otobo-dark-skin">
+      <span class="badge">Open Source</span>
+      <h3>Dark Skin</h3>
+      <p>Dunkles Design für die OTOBO-Agentenoberfläche.</p>
+      <span class="cta">Auf GitHub ansehen →</span>
+    </a>
+    <a class="tile" href="https://github.com/FreiconOSS/otobo-prometheus">
+      <span class="badge">Open Source</span>
+      <h3>Prometheus Exporter</h3>
+      <p>Metriken aus OTOBO für Monitoring mit Prometheus und Grafana.</p>
+      <span class="cta">Auf GitHub ansehen →</span>
+    </a>
+  </div>
+</main>
+<footer>
+  <a href="https://freicon.de/">FREICON GmbH &amp; Co. KG</a> — Add-on-Entwicklung &amp; Consulting für OTOBO
+</footer>
+</body>
+</html>
