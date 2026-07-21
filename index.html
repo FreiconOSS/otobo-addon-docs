@@ -118,7 +118,7 @@
   .hero {
     position: relative;
     color: #fff;
-    padding: 3.8rem 1.5rem 4.2rem;
+    padding: 2.2rem 1.5rem 2.4rem;
     background: linear-gradient(130deg, var(--cyan-dark) 0%, var(--cyan) 70%, #55c0e2 100%);
     overflow: hidden;
   }
@@ -149,26 +149,29 @@
     font-size: 1.1rem;
     opacity: .92;
   }
-  .hero-logos {
+  .topbar-logos {
     display: flex;
     align-items: center;
-    gap: 2.2rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
+    gap: 1.4rem;
+    flex: none;
   }
-  .hero-logos img {
+  .topbar-logos img {
     display: block;
     filter: brightness(0) invert(1);
     opacity: .95;
   }
-  .hero-logos .otobo-logo { height: 2.8rem; margin: -0.4rem 0; }
-  .hero-logos .monitos { display: flex; align-items: center; gap: .55rem; }
-  .hero-logos .monitos img { height: 1.7rem; }
-  .hero-logos .monitos span {
-    font-size: .95rem;
+  .topbar-logos .otobo-logo { height: 2.1rem; margin: -0.3rem 0; }
+  .topbar-logos .monitos { display: flex; align-items: center; gap: .5rem; }
+  .topbar-logos .monitos img { height: 1.35rem; }
+  .topbar-logos .monitos span {
+    font-size: .85rem;
     font-weight: 600;
     letter-spacing: .02em;
     opacity: .85;
+    white-space: nowrap;
+  }
+  @media (max-width: 44rem) {
+    .topbar-logos .monitos span { display: none; }
   }
 
   /* ---- Content ---- */
@@ -267,6 +270,13 @@
       </svg>
       <input type="search" id="addon-search" placeholder="Add-on suchen … (z. B. Kanban, Dokumente, Textbausteine)" autocomplete="off" aria-label="Add-ons durchsuchen">
     </div>
+    <div class="topbar-logos">
+      <img class="otobo-logo" src="assets/otobo-logo.png" alt="OTOBO">
+      <span class="monitos">
+        <img src="assets/monitos-icon.png" alt="monitos">
+        <span>monitos ITSM by FREICON</span>
+      </span>
+    </div>
   </div>
 </header>
 
@@ -274,13 +284,6 @@
   <div class="hero-inner">
     <h1>OTOBO Add-ons &amp; Dokumentation</h1>
     <p>Handbücher und Dokumentation zu unseren Erweiterungen für das Ticketsystem OTOBO — entwickelt von der FREICON GmbH &amp; Co. KG.</p>
-    <div class="hero-logos">
-      <img class="otobo-logo" src="assets/otobo-logo.png" alt="OTOBO">
-      <span class="monitos">
-        <img src="assets/monitos-icon.png" alt="monitos">
-        <span>monitos ITSM by FREICON</span>
-      </span>
-    </div>
   </div>
 </section>
 
