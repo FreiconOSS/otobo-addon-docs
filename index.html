@@ -351,6 +351,15 @@
   var sections = Array.prototype.slice.call(document.querySelectorAll('[data-section]'));
   var noResults = document.getElementById('no-results');
 
+  sections.forEach(function (section) {
+    var grid = section.querySelector('.grid');
+    Array.prototype.slice.call(grid.querySelectorAll('.tile'))
+      .sort(function (a, b) {
+        return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'de');
+      })
+      .forEach(function (tile) { grid.appendChild(tile); });
+  });
+
   input.addEventListener('input', function () {
     var q = input.value.trim().toLowerCase();
     var anyVisible = false;
