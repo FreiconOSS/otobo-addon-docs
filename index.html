@@ -303,6 +303,18 @@
         <p>Visuelles Workflow-Management für Tickets — Spalten, Drag &amp; Drop und Echtzeit-Updates.</p>
         <span class="cta">Zum Handbuch →</span>
       </a>
+      <a class="tile" href="greenbone/" data-search="greenbone connector openvas gmp schwachstellen schwachstellenscan vulnerability scan security sicherheit cmdb config item ssh snmp scanner handbuch">
+        <span class="badge doc">Handbuch</span>
+        <h3>OTOBO Greenbone Connector</h3>
+        <p>Schwachstellen-Scans aus Greenbone am Config Item — Scanauftrag, Ergebnisse und nächtlicher Abgleich.</p>
+        <span class="cta">Zum Handbuch →</span>
+      </a>
+      <a class="tile" href="pdf-sign/" data-sort="OTOBO Documents 2" data-search="pdf sign and store unterschrift unterschreiben signatur signieren digitale unterschrift übergabeprotokoll dokument handbuch">
+        <span class="badge doc">Handbuch</span>
+        <h3>OTOBO PDF Sign &amp; Store</h3>
+        <p>PDFs direkt in OTOBO unterschreiben — Unterschrift auf dem Dokument, Ablage am Ticket und Config Item.</p>
+        <span class="cta">Zum Handbuch →</span>
+      </a>
     </div>
   </section>
 
@@ -351,11 +363,18 @@
   var sections = Array.prototype.slice.call(document.querySelectorAll('[data-section]'));
   var noResults = document.getElementById('no-results');
 
+  // Tiles are sorted alphabetically by title, so the order in the HTML does not
+  // matter. A tile that belongs next to a particular neighbour regardless of its
+  // name can override the key with data-sort (see PDF Sign & Store).
+  function sortKey(tile) {
+    return tile.getAttribute('data-sort') || tile.querySelector('h3').textContent;
+  }
+
   sections.forEach(function (section) {
     var grid = section.querySelector('.grid');
     Array.prototype.slice.call(grid.querySelectorAll('.tile'))
       .sort(function (a, b) {
-        return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'de');
+        return sortKey(a).localeCompare(sortKey(b), 'de');
       })
       .forEach(function (tile) { grid.appendChild(tile); });
   });

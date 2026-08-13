@@ -1,0 +1,1320 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO Greenbone Connector Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6e2df08" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO Greenbone Connector  Dokumentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO Greenbone Connector  Dokumentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-greenbone-connector">
+<h1>OTOBO Greenbone Connector<a class="headerlink" href="#otobo-greenbone-connector" title="Link to this heading">¶</a></h1>
+</section>
+<section id="beschreibung">
+<h1>Beschreibung<a class="headerlink" href="#beschreibung" title="Link to this heading">¶</a></h1>
+<p>Der <strong>Greenbone Connector</strong> verbindet die OTOBO-CMDB mit einem Greenbone-Schwachstellenscanner
+(vormals OpenVAS). Schwachstellen-Scans werden dort eingerichtet, gestartet und gelesen, wo das
+Gerät ohnehin verwaltet wird: <strong>am Config Item</strong>. Es gibt keine zweite Oberfläche, keine zweite
+Geräteliste und keine Pflege derselben Daten an zwei Stellen.</p>
+<p>Wer ein Config Item öffnet, sieht eine Section <strong>Schwachstellen</strong> mit den letzten Scans, dem
+höchsten gefundenen Schweregrad, der Anzahl der Funde nach Stufe und einem Link auf den
+vollständigen Bericht in Greenbone. Wer das Recht dazu hat, startet den Scan von dort aus auch.</p>
+<p>Die Verbindung läuft über <strong>GMP 22.7</strong>, wahlweise über eine SSH-Verbindung (Standard) oder direkt
+über einen TLS-Socket. Mehrere Greenbone-Server lassen sich parallel betreiben — etwa einer je
+Standort — und jedes Config Item verweist auf den Server, der es scannt.</p>
+<p>Was das Paket mitbringt:</p>
+<ul class="simple">
+<li><p><strong>Serververwaltung</strong> im Admin-Bereich, mit Verbindungstest vor dem Speichern</p></li>
+<li><p><strong>Zugangsdatenverwaltung</strong> für authentifizierte Scans, in allen vier Greenbone-Formaten</p></li>
+<li><p><strong>Scan-Einstellungen am Config Item</strong> — Server, Scan-Konfiguration, Zeitplan, Portliste, Scanner,
+vier Zugangsdaten-Felder und eine Ausschlussliste; die Auswahllisten kommen live vom gewählten
+Server</p></li>
+<li><p><strong>Section „Schwachstellen“</strong> am Config Item mit den letzten Berichten, Funden und Fehlergründen</p></li>
+<li><p><strong>Scan auf Anforderung starten</strong>, unabhängig vom hinterlegten Zeitplan</p></li>
+<li><p><strong>Bericht öffnen und herunterladen</strong> in allen Formaten, die der Greenbone-Server anbietet</p></li>
+<li><p><strong>Geerbte Netzscans</strong>: ein Gerät ohne eigenen Scan zeigt die Funde, die der Scan seines
+IP-Netzes für seine Adressen geliefert hat</p></li>
+<li><p><strong>Gespeicherte Ergebnisse für Listen und Suche</strong>, damit Übersichten den Schweregrad zeigen
+können, ohne Greenbone je Zeile zu fragen</p></li>
+</ul>
+</section>
+<section id="einsatzszenarien">
+<h1>Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Schwachstellenmanagement ohne zweites Werkzeug.</strong> Der Betrieb sieht Scan-Ergebnisse dort, wo er
+ohnehin arbeitet. Wer nur wissen will, wie es um einen Server steht, braucht keinen
+Greenbone-Zugang.</p></li>
+<li><p><strong>Nachweispflicht gegenüber Audit und Zertifizierung.</strong> Für jedes Gerät ist belegbar, wann es
+zuletzt gescannt wurde, was gefunden wurde und wo der Bericht liegt. Der Bericht selbst lässt sich
+als PDF herunterladen und einem Ticket anhängen.</p></li>
+<li><p><strong>Ticket aus einem Fund.</strong> Weil Config Item und Ticketsystem dasselbe System sind, entsteht aus
+einem Fund ohne Medienbruch ein Ticket am betroffenen Gerät.</p></li>
+<li><p><strong>Netzweite Scans mit gerätescharfer Auswertung.</strong> Ein Scan über ein ganzes IP-Netz genügt; jedes
+Gerät im Netz zeigt anschließend die Funde, die zu seinen eigenen Adressen gehören.</p></li>
+<li><p><strong>Mehrere Standorte, mehrere Scanner.</strong> Jeder Standort bekommt seinen Greenbone-Server, die
+Auswertung bleibt an einer Stelle.</p></li>
+<li><p><strong>Priorisierung nach Schweregrad.</strong> Weil das Ergebnis in Feldern des Config Items steht, lässt
+sich eine CMDB-Übersicht nach „Kritisch“ filtern und sortieren.</p></li>
+</ul>
+</section>
+<section id="systemvoraussetzungen">
+<h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
+<section id="framework">
+<h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
+<p>OTOBO 11.0.x</p>
+</section>
+<section id="pakete">
+<h2>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 20.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Paket</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>Anmerkung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ITSMConfigurationManagement</span></code></p></td>
+<td><p>11.0.x</p></td>
+<td><p>Zwingend. Der Connector erweitert die CMDB, er bringt keine eigene mit.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ITSMPublicCMDB</span></code></p></td>
+<td><p><strong>mindestens 11.0.4</strong></p></td>
+<td><p>Nur falls installiert — siehe Warnung unten.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ist <code class="docutils literal notranslate"><span class="pre">ITSMPublicCMDB</span></code> in einer Version <strong>vor 11.0.4</strong> installiert, bleibt die Section
+„Schwachstellen“ <strong>still leer</strong>: ohne Fehlermeldung, ohne Log-Eintrag, nur eine leere Kachel.
+Ältere Versionen legen eine veraltete Kopie von
+<code class="docutils literal notranslate"><span class="pre">Kernel/Output/HTML/ITSMConfigItem/DynamicField.pm</span></code> nach <code class="docutils literal notranslate"><span class="pre">Custom/</span></code>, in der der
+Erweiterungspunkt für Sections noch fehlt.</p>
+<p>Vor der Installation prüfen, in <em>Admin → Paketverwaltung</em> oder auf der Kommandozeile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Admin</span><span class="p">::</span><span class="n">Package</span><span class="p">::</span><span class="n">List</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">A1</span> <span class="n">ITSMPublicCMDB</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="software-von-drittanbietern">
+<h2>Software von Drittanbietern<a class="headerlink" href="#software-von-drittanbietern" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Greenbone / OpenVAS mit GMP 22.7.</strong> Der Connector spricht die Schnittstelle Greenbone Management
+Protocol an, nicht die Weboberfläche.</p></li>
+<li><p><strong>Für den SSH-Weg (Standard):</strong> ein SSH-Client auf dem OTOBO-System — das offizielle OTOBO-Image
+bringt einen mit — und auf dem Greenbone-Server der freigeschaltete Benutzer <code class="docutils literal notranslate"><span class="pre">gmp</span></code>, dessen
+erzwungenes Kommando die GMP-Schnittstelle auf stdin und stdout legt.</p></li>
+<li><p><strong>Für den TLS-Weg:</strong> ein erreichbarer GMP-Port, üblicherweise 9390. Viele Installationen halten
+ihn geschlossen; deshalb ist SSH die Vorgabe.</p></li>
+</ul>
+</section>
+<section id="uberblick">
+<span id="ueberblick"></span><h2>Überblick<a class="headerlink" href="#uberblick" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installation"><span class="std std-ref">Installation</span></a> — Paket einspielen und Hostschlüssel hinterlegen</p></li>
+<li><p><a class="reference internal" href="#konfiguration"><span class="std std-ref">Konfiguration</span></a> — alle Einstellungen des Pakets</p></li>
+<li><p><a class="reference internal" href="#admin-guide"><span class="std std-ref">Admin-Handbuch</span></a> — Server und Zugangsdaten einrichten, Klassen scanbar machen, Listenspalten
+und der nächtliche Abgleich</p></li>
+<li><p><a class="reference internal" href="#user-guide"><span class="std std-ref">Anwender-Handbuch</span></a> — Scan am Config Item einrichten, Ergebnisse lesen, Scan starten, Bericht holen</p></li>
+<li><p><a class="reference internal" href="#referenz"><span class="std std-ref">Referenz</span></a> — Berechtigungen, Vererbung, was in Greenbone angelegt wird</p></li>
+</ul>
+</section>
+</section>
+<section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>Das Paket wird wie jedes OTOBO-Paket installiert, über <em>Admin → Paketverwaltung</em> oder auf der
+Kommandozeile:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Admin</span><span class="p">::</span><span class="n">Package</span><span class="p">::</span><span class="n">Install</span> <span class="o">/</span><span class="n">pfad</span><span class="o">/</span><span class="n">zu</span><span class="o">/</span><span class="n">GreenboneConnector</span><span class="o">.</span><span class="n">opm</span>
+</pre></div>
+</div>
+<p>Bei der Installation legt das Paket an:</p>
+<ul class="simple">
+<li><p>die <strong>dynamischen Felder</strong> für die Scan-Einstellungen, gebündelt in einem Set <code class="docutils literal notranslate"><span class="pre">GreenboneScan</span></code></p></li>
+<li><p>die dynamischen Felder für das <strong>gespeicherte Scan-Ergebnis</strong> (Schweregrad, Stufe, Scanstatus,
+Scan-Datum, Bericht, Herkunft)</p></li>
+<li><p>die Config-Item-Rolle <strong>Greenbone</strong> mit den Sections <code class="docutils literal notranslate"><span class="pre">Scan</span> <span class="pre">Settings</span></code>, <code class="docutils literal notranslate"><span class="pre">Scan</span> <span class="pre">Result</span></code> und
+<code class="docutils literal notranslate"><span class="pre">Vulnerabilities</span></code></p></li>
+<li><p>zwei Datenbanktabellen: <code class="docutils literal notranslate"><span class="pre">greenbone_server</span></code> und <code class="docutils literal notranslate"><span class="pre">greenbone_ci_scan</span></code></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Das Paket entscheidet <strong>nicht</strong>, welche Klassen gescannt werden. Das legt der Administrator je
+Klasse fest — siehe <a class="reference internal" href="#klassen-scanbar-machen"><span class="std std-ref">Klassen scanbar machen</span></a>.</p>
+</div>
+<section id="hostschlussel-hinterlegen">
+<h2>Hostschlüssel hinterlegen<a class="headerlink" href="#hostschlussel-hinterlegen" title="Link to this heading">¶</a></h2>
+<p>Vor der ersten SSH-Verbindung muss der Fingerabdruck jedes Greenbone-Servers hinterlegt sein. Der
+Webbenutzer hat kein nutzbares Home-Verzeichnis, deshalb tritt eine eigene Datei an die Stelle der
+üblichen <code class="docutils literal notranslate"><span class="pre">~/.ssh/known_hosts</span></code>. Einmal je Server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">otobo</span> <span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;ssh-keyscan -H &lt;greenbone-server&gt; &gt;&gt; /opt/otobo/var/greenbone/known_hosts&#39;</span>
+</pre></div>
+</div>
+<p>Fehlt der Eintrag, nennt die Fehlermeldung des Verbindungstests genau diesen Befehl.</p>
+</section>
+</section>
+<section id="konfiguration">
+<span id="id2"></span><h1>Konfiguration<a class="headerlink" href="#konfiguration" title="Link to this heading">¶</a></h1>
+<p>Alle Einstellungen stehen in <em>Admin → Systemkonfiguration</em> unter <code class="docutils literal notranslate"><span class="pre">Core</span> <span class="pre">→</span> <span class="pre">GreenboneConnector</span></code>. Die
+Vorgabewerte sind für den Normalbetrieb gedacht; keiner davon muss angefasst werden, damit das Paket
+arbeitet.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/sysconfig.png"><img alt="../_images/sysconfig.png" src="../_images/sysconfig.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Die Einstellungen des Connectors in der Systemkonfiguration. Jede trägt ihre Begründung mit.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="verbindung">
+<h2>Verbindung<a class="headerlink" href="#verbindung" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32.0%" />
+<col style="width: 12.0%" />
+<col style="width: 56.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Einstellung</p></th>
+<th class="head"><p>Standard</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::Timeout</span></code></p></td>
+<td><p>30</p></td>
+<td><p>Sekunden bis zur vollständigen Antwort, bevor die Verbindung aufgegeben wird.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::ReportTimeout</span></code></p></td>
+<td><p>300</p></td>
+<td><p>Sekunden, wenn Greenbone einen Bericht als Datei erzeugen soll. Bewusst getrennt vom
+allgemeinen Zeitlimit: eine Zusammenfassung zu lesen dauert Sekundenbruchteile, denselben
+Bericht als PDF zu erzeugen dauert Sekunden, über ein ganzes Netz deutlich länger.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::SSHUser</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gmp</span></code></p></td>
+<td><p>Login für den SSH-Weg. Auf einer Greenbone-Installation überall gleich; nur bei angepasstem
+Aufbau zu ändern.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::SSHOptions</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BatchMode=yes</span></code></p></td>
+<td><p>Zusätzliche Optionen des SSH-Clients, jede so, wie sie hinter <code class="docutils literal notranslate"><span class="pre">-o</span></code> stünde. BatchMode
+verhindert, dass der Client auf eine Eingabe wartet, die in einem Web-Request niemand tippen
+kann.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::KnownHostsFile</span></code></p></td>
+<td><p><em>(leer)</em></p></td>
+<td><p>Abweichender Pfad für die akzeptierten Hostschlüssel. Leer bedeutet
+<code class="docutils literal notranslate"><span class="pre">&lt;Home&gt;/var/greenbone/known_hosts</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::TLSVerifyCertificate</span></code></p></td>
+<td><p>aus</p></td>
+<td><p>Ob beim TLS-Weg das Zertifikat geprüft wird. Greenbone-Installationen bringen üblicherweise
+ein selbstsigniertes Zertifikat mit, deshalb ist die Prüfung ab Werk aus.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="was-gescannt-wird">
+<h2>Was gescannt wird<a class="headerlink" href="#was-gescannt-wird" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32.0%" />
+<col style="width: 12.0%" />
+<col style="width: 56.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Einstellung</p></th>
+<th class="head"><p>Standard</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::HostFields</span></code></p></td>
+<td><p><em>(drei Felder)</em></p></td>
+<td><p>Welche Felder eines Config Items sagen, was gescannt wird — der Reihe nach; das erste Feld
+mit Inhalt gewinnt. Ein Feld innerhalb eines Sets wird als <code class="docutils literal notranslate"><span class="pre">SetName::Feldname</span></code>
+geschrieben. Die Vorgaben sind die Felder der mitgelieferten CMDB: die IP-Adresse eines
+Geräts und das Netz eines IP-Netzes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::NetworkReferenceFields</span></code></p></td>
+<td><p><em>(ein Feld)</em></p></td>
+<td><p>Welches Feld auf das IP-Netz zeigt, zu dem ein Gerät gehört. Über diese Referenz erbt ein
+Gerät den Scan seines Netzes. Weil das Netz über die Referenz aufgelöst wird und nicht über
+die Adresse, kann eine doppelt vergebene IP in einem anderen Netz keine fremden Ergebnisse
+hereinziehen.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::SetFieldName</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GreenboneScan</span></code></p></td>
+<td><p>Name des Feld-Sets am Config Item. Nur zu ändern, wenn das Set umbenannt wurde.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::ServerFieldName</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GreenboneServer</span></code></p></td>
+<td><p>Name des Server-Feldes darin. Die übrigen Auswahllisten werden von genau dem Server gelesen,
+auf den dieses Feld zeigt.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::NamePrefix</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">otobo</span></code></p></td>
+<td><p>Präfix der in Greenbone angelegten Ziel- und Auftragsnamen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::SSHCredentialPort</span></code></p></td>
+<td><p>22</p></td>
+<td><p>Port, auf dem Greenbone die SSH-Zugangsdaten eines Ziels für einen authentifizierten Scan
+verwendet.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="anzeige-und-zwischenspeicher">
+<h2>Anzeige und Zwischenspeicher<a class="headerlink" href="#anzeige-und-zwischenspeicher" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32.0%" />
+<col style="width: 12.0%" />
+<col style="width: 56.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Einstellung</p></th>
+<th class="head"><p>Standard</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::MinQoD</span></code></p></td>
+<td><p>70</p></td>
+<td><p>Erkennungsgüte, ab der ein Fund gezählt wird (0–100). Ein niedrigerer Wert zeigt mehr Funde,
+dafür mit geringerer Sicherheit. <strong>Das ist der übliche Grund dafür, dass die Zahlen am Config
+Item von denen in der Greenbone-Oberfläche abweichen</strong> — dort lässt sich der Wert je Ansicht
+ändern.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::SectionReportLimit</span></code></p></td>
+<td><p>5</p></td>
+<td><p>Wie viele Berichte des eigenen Scans die Section auflistet, neueste zuerst. Jeder Bericht
+kostet eine Abfrage an Greenbone.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::EntityCacheTTL</span></code></p></td>
+<td><p>300</p></td>
+<td><p>Sekunden, für die die Auswahllisten aus Greenbone gehalten werden. Ohne Zwischenspeicher
+bedeutet das Öffnen der Bearbeiten-Maske fünf Abfragen nacheinander. Was in Greenbone neu
+angelegt wurde, erscheint spätestens nach dieser Zeit. Null schaltet den Zwischenspeicher ab.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneConnector::ResultPageSize</span></code></p></td>
+<td><p>50</p></td>
+<td><p>Wie viele Funde je Anfrage geholt werden, wenn ein Netz-Bericht auf ein einzelnes Gerät
+heruntergefiltert wird. <strong>Klein lassen</strong>: die Verbindung trägt rund ein viertel Megabyte je
+Antwort, darüber kommt gar nichts mehr zurück statt einer Fehlermeldung. Das Paket halbiert
+den Wert selbstständig, wenn eine Antwort ausbleibt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="admin-handbuch">
+<span id="admin-guide"></span><h1>Admin-Handbuch<a class="headerlink" href="#admin-handbuch" title="Link to this heading">¶</a></h1>
+<section id="greenbone-server-einrichten">
+<h2>Greenbone-Server einrichten<a class="headerlink" href="#greenbone-server-einrichten" title="Link to this heading">¶</a></h2>
+<p><em>Admin → CMDB-Einstellungen → Greenbone-Server</em></p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/admin-kacheln.png"><img alt="../_images/admin-kacheln.png" src="../_images/admin-kacheln.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Der Connector bringt zwei Einträge im Admin-Bereich mit, beide unter „CMDB-Einstellungen“.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Die Übersicht zeigt alle eingerichteten Server mit Host, Verbindungsweg, GMP-Benutzer und
+Gültigkeit. Der Hinweis daneben nennt den Befehl für den Hostschlüssel — den braucht jeder Server
+einmal, bevor die erste SSH-Verbindung zustande kommt.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/admin-serverliste.png"><img alt="../_images/admin-serverliste.png" src="../_images/admin-serverliste.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Die Serverübersicht. Mehrere Server sind ausdrücklich vorgesehen, etwa einer je Standort.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Beim Anlegen sind nur <strong>Name</strong> und <strong>Host</strong> Pflicht. Der Name ist der, unter dem der Server überall
+sonst erscheint — insbesondere am Config Item.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/admin-server-add.png"><img alt="../_images/admin-server-add.png" src="../_images/admin-server-add.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Die Anlegemaske. Jedes Feld trägt seine Erklärung unter sich.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 78.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feld</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Name</strong></p></td>
+<td><p>Erscheint überall dort, wo ein Server auszuwählen ist, zum Beispiel am Config Item.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Host</strong></p></td>
+<td><p>Adresse oder Name des Greenbone-Servers.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Verbindungsweg</strong></p></td>
+<td><p><em>SSH</em> meldet sich als Benutzer <code class="docutils literal notranslate"><span class="pre">gmp</span></code> am Greenbone-Server an. <em>TLS</em> spricht direkt mit dem
+GMP-Port, der in vielen Installationen zu ist.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Port</strong></p></td>
+<td><p>Leer bedeutet 22 für SSH und 9390 für TLS.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Benutzer</strong></p></td>
+<td><p>Der <strong>GMP</strong>-Benutzer, nicht der SSH-Benutzer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Passwort</strong></p></td>
+<td><p>Beim Bearbeiten leer lassen, um das gespeicherte zu behalten; ein neuer Eintrag ersetzt es.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Berichtslink</strong></p></td>
+<td><p>Wohin der Link „Öffnen“ am Config Item führt. Leer bedeutet <code class="docutils literal notranslate"><span class="pre">https://{server}/report/{id}</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gültigkeit</strong></p></td>
+<td><p>Ein ungültiger Server verschwindet aus den Auswahllisten, bleibt aber erhalten.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="verbindungstest">
+<h3>Verbindungstest<a class="headerlink" href="#verbindungstest" title="Link to this heading">¶</a></h3>
+<p>Der Knopf <strong>Verbindung testen</strong> prüft die Werte, die gerade im Formular stehen — ein Server lässt
+sich also ausprobieren, bevor er gespeichert wird. Bei Erfolg antwortet er mit der GMP-Version des
+Servers.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/admin-server-test.png"><img alt="../_images/admin-server-test.png" src="../_images/admin-server-test.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Ein erfolgreicher Verbindungstest nennt die GMP-Version — damit ist belegt, dass Netzweg,
+Anmeldung und Protokoll stimmen.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Schlägt der Test fehl, sagt die Meldung, <strong>wo</strong> zu suchen ist:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Meldung</p></th>
+<th class="head"><p>Wo der Fehler liegt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>„Der Server war nicht erreichbar.“</p></td>
+<td><p>Netzweg, Firewall, Name oder Port. Bei SSH auch: der Hostschlüssel fehlt.</p></td>
+</tr>
+<tr class="row-odd"><td><p>„Die Anmeldung wurde abgewiesen.“</p></td>
+<td><p>GMP-Benutzer oder Passwort. Der Netzweg steht.</p></td>
+</tr>
+<tr class="row-even"><td><p>„Der Server hat nicht rechtzeitig geantwortet.“</p></td>
+<td><p>Greenbone ist erreichbar, aber überlastet oder hängt. Notfalls <code class="docutils literal notranslate"><span class="pre">Timeout</span></code> erhöhen.</p></td>
+</tr>
+<tr class="row-odd"><td><p>„Der Server hat geantwortet, aber nicht wie erwartet.“</p></td>
+<td><p>Am anderen Ende sitzt kein GMP 22.7 — falscher Port oder falscher Dienst.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="zugangsdaten-verwalten">
+<span id="zugangsdaten"></span><h2>Zugangsdaten verwalten<a class="headerlink" href="#zugangsdaten-verwalten" title="Link to this heading">¶</a></h2>
+<p><em>Admin → CMDB-Einstellungen → Greenbone-Zugangsdaten</em></p>
+<p>Ein <strong>authentifizierter Scan</strong> meldet sich am Zielsystem an und sieht deutlich mehr als ein Scan von
+außen — installierte Pakete, Patchstände, Konfiguration. Dafür braucht Greenbone Zugangsdaten.</p>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p><strong>Zugangsdaten liegen in Greenbone, nicht in OTOBO.</strong> Was in dieser Maske eingetragen wird, wird
+an Greenbone weitergereicht und im Ticketsystem <strong>nicht gespeichert</strong>. Deshalb gibt Greenbone ein
+Geheimnis auch nie wieder heraus: Beim Bearbeiten sind die Geheimnisfelder leer, und leer heißt
+„behalten“.</p>
+</div>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/admin-credentials-liste.png"><img alt="../_images/admin-credentials-liste.png" src="../_images/admin-credentials-liste.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Die Zugangsdaten eines Servers. Die Spalte „In Benutzung“ sagt, ob ein Scan-Ziel sie verwendet.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Greenbone kennt vier Formate:</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/admin-credential-typen.png"><img alt="../_images/admin-credential-typen.png" src="../_images/admin-credential-typen.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Die vier Formate. Der Typ lässt sich nachträglich <strong>nicht</strong> ändern.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 72.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>Wofür</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Benutzername und Passwort</strong></p></td>
+<td><p>Der Normalfall — SSH, SMB und ESXi lassen sich damit bedienen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Benutzername und SSH-Schlüssel</strong></p></td>
+<td><p>Privater Schlüssel mit optionaler Passphrase, für Linux-Systeme.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Client-Zertifikat</strong></p></td>
+<td><p>Zertifikat und privater Schlüssel; beide lassen sich nur gemeinsam austauschen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SNMP</strong></p></td>
+<td><p>Netzwerkgeräte. Fragt nach der <strong>Version</strong> statt nach einem Algorithmus — siehe unten.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Greenbone prüft Schlüssel und Zertifikat schon beim Speichern.</strong> Eine falsche Passphrase wird
+sofort abgewiesen und nicht erst Monate später in einem Scan. Bei drei der vier Formate ist die
+Eingabe damit belastbar geprüft.</p>
+</div>
+<section id="snmp-ist-die-ausnahme">
+<h3>SNMP ist die Ausnahme<a class="headerlink" href="#snmp-ist-die-ausnahme" title="Link to this heading">¶</a></h3>
+<p>Bei SNMP nimmt Greenbone <strong>jede</strong> Kombination an; erst der Scan weist sie zurück. Deshalb fragt die
+Maske nach der Version, statt einen Algorithmus zur freien Wahl zu stellen:</p>
+<ul class="simple">
+<li><p><strong>v1 / v2c</strong> kennen nur die <em>Community</em>.</p></li>
+<li><p><strong>v3</strong> braucht <em>Benutzer</em>, <em>Passwort</em> und einen <em>Authentifizierungsalgorithmus</em>. Ohne ihn
+speichert Greenbone die Zugangsdaten klaglos — und jeder Scan damit scheitert.</p></li>
+</ul>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/admin-credential-snmp.png"><img alt="../_images/admin-credential-snmp.png" src="../_images/admin-credential-snmp.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 8 </span><span class="caption-text">SNMP v3 mit den Feldern, die die Version verlangt. Verschlüsselungspasswort und -algorithmus
+gehören zusammen: eines ohne das andere schützt nichts.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Zwei Änderungen bestätigt Greenbone, ohne sie auszuführen — die Maske fängt beide vorher ab und
+sagt es, statt einen Erfolg zu melden, den es nicht gibt:</p>
+<ul class="simple">
+<li><p>Der <strong>Typ</strong> einer Zugangsdaten-Angabe lässt sich nicht wechseln.</p></li>
+<li><p>Zugangsdaten, die bereits <strong>SNMP v3</strong> sind, lassen sich nicht auf v1/v2c zurückstellen.</p></li>
+</ul>
+<p>In beiden Fällen: neue Zugangsdaten anlegen.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Namen sind in Greenbone nicht eindeutig.</strong> Am Config Item werden Zugangsdaten über ihren Namen
+ausgewählt, und zwei gleiche Namen sind dort nicht auseinanderzuhalten. Die Übersicht markiert
+Doppelnamen deshalb.</p>
+<p>Zugangsdaten, die ein Scan-Ziel benutzt, lassen sich nicht löschen — Greenbone weist das ab.</p>
+</div>
+</section>
+</section>
+<section id="klassen-scanbar-machen">
+<span id="id3"></span><h2>Klassen scanbar machen<a class="headerlink" href="#klassen-scanbar-machen" title="Link to this heading">¶</a></h2>
+<p>Das Paket bringt die Felder und die Rolle <code class="docutils literal notranslate"><span class="pre">Greenbone</span></code> mit, entscheidet aber nicht, <strong>welche</strong>
+Klassen gescannt werden. Das legt der Administrator je Klasse fest — Server, Client, Router,
+IP Network, was auch immer gescannt werden soll.</p>
+<p>Zwei Stellen, beide in <em>Admin → Configuration Items → Klassendefinition</em>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Roles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Greenbone</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Greenbone</span>
+</pre></div>
+</div>
+<p>und in der <code class="docutils literal notranslate"><span class="pre">Content</span></code>-Liste <strong>der Seite</strong>, auf der die Einstellungen erscheinen sollen:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Greenbone::Scan Settings</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Greenbone::Vulnerabilities</span>
+</pre></div>
+</div>
+<p>Danach steht am Config Item ein Block „Greenbone“ mit den Scan-Einstellungen und darunter die
+Section „Schwachstellen“.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><strong>Bestehende Config Items zeigen die neue Section erst nach dem nächsten Speichern.</strong> Die Ansicht
+rendert die Definition der angezeigten Version, nicht die aktuelle der Klasse. Wer die Section
+einträgt und sich wundert, warum an einem vorhandenen Gerät nichts erscheint: einmal bearbeiten
+und speichern genügt.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Die Reihenfolge der beiden Sections bestimmt, was oben steht. Üblich ist, die Einstellungen zu
+den Netzwerkangaben zu legen und die Schwachstellen darunter — die Section braucht die volle
+Breite.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><strong>Bieten die vier Zugangsdaten-Felder jeweils alle Zugangsdaten an, ist die Klassendefinition
+älter als das Paket.</strong> Richtig ist: <em>SSH</em> zeigt Benutzer/Passwort und SSH-Schlüssel, <em>SMB</em> und
+<em>ESXi</em> nur Benutzer/Passwort, <em>SNMP</em> nur SNMP-Zugangsdaten. Steht in jedem Feld alles — bis hin
+zu einem Client-Zertifikat, das in keines davon gehört — dann greift die Einschränkung nicht.</p>
+<p>Der Grund: Eine Klassendefinition speichert eine <strong>Kopie</strong> der Feldkonfiguration, und innerhalb
+der Scan-Einstellungen ist diese Kopie das, was die Maske anzeigt. Eine Definition, die vor dem
+Paket-Upgrade gespeichert wurde, kennt die Einschränkung schlicht nicht.</p>
+<p>Das Upgrade zieht die Definition selbst nach. Übersprungen wird sie nur dort, wo die Einstellung
+am Feld bereits gesetzt war — dann gibt es aus Sicht des Upgrades nichts zu tun. Abhilfe in dem
+Fall: die Klassendefinition <strong>einmal öffnen und speichern</strong>, ohne etwas zu ändern. Danach
+stimmen die Listen.</p>
+<p>Folgenlos ist die falsche Auswahl nicht: Greenbone nimmt eine unpassende Kombination beim
+Speichern des Scan-Ziels nicht an, und die Meldung erreicht den Anwender lange nach der
+Entscheidung und weit weg von dem Feld, in dem er sie getroffen hat.</p>
+</div>
+</section>
+<section id="ergebnisse-in-listen-zeigen">
+<h2>Ergebnisse in Listen zeigen<a class="headerlink" href="#ergebnisse-in-listen-zeigen" title="Link to this heading">¶</a></h2>
+<p>Das gespeicherte Scan-Ergebnis steht in Feldern des Config Items und lässt sich damit als Spalte
+einer CMDB-Übersicht einblenden, danach filtern und sortieren. Freigeschaltet wird eine Spalte in
+der Systemkonfiguration unter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ITSMConfigItem</span><span class="p">::</span><span class="n">Frontend</span><span class="p">::</span><span class="n">AgentITSMConfigItem</span><span class="c1">###DefaultColumns</span>
+</pre></div>
+</div>
+<p>Wert <strong>1</strong> blendet die Spalte anwählbar ein, Wert <strong>2</strong> zeigt sie von vornherein.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Diese Einstellung liefert das Paket bewusst <strong>nicht</strong> mit: Sie gehört der CMDB, nicht dem
+Connector. Wer sie mitlieferte, überschriebe die Spaltenauswahl des Kunden.</p>
+</div>
+<p>Zur Auswahl stehen:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 66.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feld</p></th>
+<th class="head"><p>Inhalt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneSeverity</span></code></p></td>
+<td><p>Höchster Schweregrad des jüngsten abgeschlossenen Scans, als Zahl.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneSeverityLevel</span></code></p></td>
+<td><p>Die Stufe dazu: Kritisch, Hoch, Mittel, Niedrig, Hinweis, Fehlalarm, Nicht bewertet.
+<strong>Danach filtern, nicht nach der Zahl</strong> — als Text sortiert sich 10.0 vor 4.8.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneScanState</span></code></p></td>
+<td><p>Wie der Scan geendet hat: Fertig, Angehalten, Abgebrochen. Angehalten oder abgebrochen
+heißt, dass die Werte aus einem unvollständigen Lauf stammen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneScanDate</span></code></p></td>
+<td><p>Ende des Scans, aus dem die Werte stammen — sagt, wie alt die Zahl daneben ist.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneReportID</span></code></p></td>
+<td><p>Der Bericht, aus dem gezählt wurde.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GreenboneScanSource</span></code></p></td>
+<td><p>Ob die Werte aus einem eigenen Scan stammen oder aus dem Scan des Netzes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="nachtlichen-abgleich-einschalten">
+<span id="nachtlicher-abgleich"></span><h2>Nächtlichen Abgleich einschalten<a class="headerlink" href="#nachtlichen-abgleich-einschalten" title="Link to this heading">¶</a></h2>
+<p>Die Felder oben füllt ein Konsolenbefehl, den der OTOBO-Daemon nachts anstößt. Er ist im Paket
+enthalten, aber <strong>ab Werk ausgeschaltet</strong>: Sinnvoll ist er erst, wenn ein Greenbone-Server
+eingerichtet ist — vorher würde er jede Nacht scheitern.</p>
+<p>Einschalten in der Systemkonfiguration unter
+<code class="docutils literal notranslate"><span class="pre">Daemon::SchedulerCronTaskManager::Task###GreenboneStatusSync</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p><strong>Der Zeitplan gehört hinter die Scans.</strong> Der Vorgabewert 04:20 Uhr geht davon aus, dass die
+nächtlichen Scans bis dahin durch sind. Wer seine Scans später fahren lässt, muss den Abgleich
+nach hinten schieben — sonst schreibt er jede Nacht das Ergebnis des Vortages.</p>
+</div>
+<p>Der Befehl lässt sich auch von Hand starten:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># jedes Config Item mit eigenem Scan</span>
+<span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Maint</span><span class="p">::</span><span class="n">Greenbone</span><span class="p">::</span><span class="n">StatusSync</span>
+
+<span class="c1"># anzeigen, was geschrieben würde, ohne zu schreiben</span>
+<span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Maint</span><span class="p">::</span><span class="n">Greenbone</span><span class="p">::</span><span class="n">StatusSync</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span>
+
+<span class="c1"># auch Geräte füllen, die keinen eigenen Scan haben, aber in einem gescannten Netz liegen</span>
+<span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Maint</span><span class="p">::</span><span class="n">Greenbone</span><span class="p">::</span><span class="n">StatusSync</span> <span class="o">--</span><span class="n">inherited</span>
+
+<span class="c1"># nur die Config Items eines Greenbone-Servers</span>
+<span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Maint</span><span class="p">::</span><span class="n">Greenbone</span><span class="p">::</span><span class="n">StatusSync</span> <span class="o">--</span><span class="n">server</span><span class="o">-</span><span class="nb">id</span> <span class="mi">3</span>
+
+<span class="c1"># ein einzelnes Config Item, zum Ausprobieren</span>
+<span class="nb">bin</span><span class="o">/</span><span class="n">otobo</span><span class="o">.</span><span class="n">Console</span><span class="o">.</span><span class="n">pl</span> <span class="n">Maint</span><span class="p">::</span><span class="n">Greenbone</span><span class="p">::</span><span class="n">StatusSync</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">item</span><span class="o">-</span><span class="nb">id</span> <span class="mi">3597</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p><code class="docutils literal notranslate"><span class="pre">--inherited</span></code> gehört in die Parameter des Daemon-Tasks, wenn die Übersicht auch für Geräte ohne
+eigenen Scan eine Aussage treffen soll. Das ist der häufigere Fall, als man denkt: Ein frisch
+importiertes Gerät hat den Schalter auf „Nein“ stehen, und die geerbten Funde sind dann die
+einzigen, die es gibt.</p>
+</div>
+</section>
+<section id="sicherheitshinweise">
+<span id="sicherheit"></span><h2>Sicherheitshinweise<a class="headerlink" href="#sicherheitshinweise" title="Link to this heading">¶</a></h2>
+<p><strong>Einen eigenen GMP-Benutzer anlegen, nicht</strong> <code class="docutils literal notranslate"><span class="pre">admin</span></code> <strong>verwenden.</strong> Das ist die Maßnahme, die am
+meisten trägt. Der Connector braucht nur die Rechte, die er tatsächlich nutzt: Ziele und Aufträge
+verwalten, Scans starten, Berichte lesen, Zugangsdaten pflegen.</p>
+<p><strong>Zum GMP-Passwort:</strong> Es steht nicht im Klartext in der Datenbank, sondern läuft durch dieselbe
+Mechanik, mit der OTOBO das Datenbankpasswort in <code class="docutils literal notranslate"><span class="pre">Kernel/Config.pm</span></code> ablegt.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Das ist <strong>Verschleierung, keine Verschlüsselung</strong> — eine Bitinvertierung ohne Schlüssel, und der
+Quelltext ist offen. Sie schützt gegen den Blick über die Schulter und gegen ein Passwort, das in
+einem Datenbank-Dump lesbar herumliegt. Sie schützt <strong>nicht</strong> gegen jemanden, der die Datenbank
+in der Hand hat.</p>
+<p>Echte Verschlüsselung wurde geprüft und verworfen: Auf einem OTOBO-System steht keine
+Krypto-Bibliothek zur Verfügung, und <code class="docutils literal notranslate"><span class="pre">scripts/backup.pl</span></code> packt Konfiguration und
+Datenbank-Dump nebeneinander — eine Schlüsseldatei läge im selben Backup.</p>
+<p><strong>Der Hebel, der wirklich trägt, ist der eigene GMP-Benutzer.</strong></p>
+</div>
+</section>
+</section>
+<section id="anwender-handbuch">
+<span id="user-guide"></span><h1>Anwender-Handbuch<a class="headerlink" href="#anwender-handbuch" title="Link to this heading">¶</a></h1>
+<section id="scan-an-einem-config-item-einrichten">
+<h2>Scan an einem Config Item einrichten<a class="headerlink" href="#scan-an-einem-config-item-einrichten" title="Link to this heading">¶</a></h2>
+<p>Am Config Item steht in der Bearbeiten-Maske ein Block <strong>Greenbone</strong>. Er erscheint auf der Seite,
+auf der der Administrator die Section eingetragen hat — in der mitgelieferten CMDB üblicherweise bei
+den Netzwerk-Informationen.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../_images/ci-edit-greenbone.png"><img alt="../_images/ci-edit-greenbone.png" src="../_images/ci-edit-greenbone.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 9 </span><span class="caption-text">Die Scan-Einstellungen am Config Item. Die Auswahllisten kommen live vom gewählten Server; ein
+Serverwechsel lädt sie neu.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 74.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feld</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Mit Greenbone scannen</strong></p></td>
+<td><p>Ob dieses Config Item überhaupt an Greenbone übergeben wird. Steht es auf <em>Nein</em>, wird beim
+Speichern nichts angelegt — und ein vorhandener Auftrag wieder entfernt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Greenbone-Server</strong></p></td>
+<td><p>Der Server, der den Scan ausführt. <strong>Die Listen darunter kommen von ihm.</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Scan-Konfiguration</strong></p></td>
+<td><p>Welchen Satz von Tests Greenbone ausführt, zum Beispiel <em>Full and fast</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Zeitplan</strong></p></td>
+<td><p>Wann der Scan von allein läuft. Leer bedeutet: nur auf Anforderung.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Portliste</strong></p></td>
+<td><p>Welche Ports betrachtet werden. <strong>Ohne Portliste legt Greenbone kein Ziel an.</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Scanner</strong></p></td>
+<td><p>Welcher Scanner die Arbeit macht.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Zugangsdaten SSH / SMB / SNMP / ESXi</strong></p></td>
+<td><p>Für einen authentifizierten Scan. Gepflegt werden sie unter <a class="reference internal" href="#zugangsdaten"><span class="std std-ref">Zugangsdaten verwalten</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ausgeschlossene Hosts</strong></p></td>
+<td><p>Adressen, Bereiche oder Netze, die ausgelassen werden, durch Komma getrennt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die vier Zugangsdaten-Felder sind nach ihrer <strong>Verwendung</strong> benannt, Greenbone kennt vier
+<strong>Formate</strong>. Das ist nicht dasselbe: Ein Eintrag vom Format „Benutzername und Passwort“ kann an
+allen vier Stellen stehen.</p>
+</div>
+<section id="was-beim-speichern-passiert">
+<h3>Was beim Speichern passiert<a class="headerlink" href="#was-beim-speichern-passiert" title="Link to this heading">¶</a></h3>
+<p><strong>Das Speichern der Einstellungen ist das Anlegen von Ziel und Auftrag in Greenbone.</strong> Es läuft
+sofort und nicht im Hintergrund, damit ein Tippfehler in der Ausschlussliste oder ein nicht
+erreichbarer Scanner unmittelbar als Meldung am Config Item steht statt nur im Log.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Geändert wurde</p></th>
+<th class="head"><p>Was in Greenbone passiert</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Hosts, Ausschlussliste oder Portliste</p></td>
+<td><p>Ein neues Ziel entsteht, der Auftrag zieht um, das alte Ziel wird entfernt. <strong>Die bisherigen
+Berichte bleiben erhalten.</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Scan-Konfiguration, Zeitplan oder Scanner</p></td>
+<td><p>Nur der Auftrag wird geändert, das Ziel bleibt.</p></td>
+</tr>
+<tr class="row-even"><td><p>„Mit Greenbone scannen“ auf <em>Nein</em></p></td>
+<td><p>Auftrag und Ziel verschwinden. Die Einstellungen am Config Item bleiben stehen.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Der Greenbone-Server wurde gewechselt</p></td>
+<td><p>Auf dem neuen Server entstehen Ziel und Auftrag. <strong>Ziel und Auftrag auf dem bisherigen Server
+bleiben stehen und müssen dort entfernt werden</strong> — die Meldung sagt das auch.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Häufige Meldungen beim Speichern:</p>
+<ul class="simple">
+<li><p><em>„Das Config Item hat keine IP-Adresse und kein Netz zum Scannen“</em> — es gibt nichts, woraus sich
+ein Ziel bauen ließe. Erst die Netzwerkangaben füllen.</p></li>
+<li><p><em>„Ohne Portliste legt Greenbone kein Ziel an“</em> — eine Portliste auswählen.</p></li>
+<li><p><em>„In der Ausschlussliste übergangen, weder Adresse noch Bereich noch Netz: …“</em> — ein Eintrag ist
+keine gültige Angabe und wurde ausgelassen. Der Rest wurde übernommen.</p></li>
+</ul>
+</section>
+</section>
+<section id="ergebnisse-lesen">
+<h2>Ergebnisse lesen<a class="headerlink" href="#ergebnisse-lesen" title="Link to this heading">¶</a></h2>
+<p>Die Section <strong>Schwachstellen</strong> zeigt, was Greenbone über das Gerät weiß.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="../_images/ci-zoom-gesamt.png"><img alt="../_images/ci-zoom-gesamt.png" src="../_images/ci-zoom-gesamt.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 10 </span><span class="caption-text">Das Config Item mit den Scan-Einstellungen und der Section darunter.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="../_images/ci-section-reports.png"><img alt="../_images/ci-section-reports.png" src="../_images/ci-section-reports.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 11 </span><span class="caption-text">Die letzten Berichte, neueste zuerst. Unter dem Datum steht die Dauer des Laufs.</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Spalte</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Scan</strong></p></td>
+<td><p>Zeitpunkt und darunter die Dauer des Laufs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Herkunft</strong></p></td>
+<td><p><em>Eigener Scan</em> oder <em>Netzscan</em>. Beide stehen in derselben Tabelle — in zwei getrennten
+Tabellen liest man leicht die kleinere Zahl als die ganze Wahrheit.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Status</strong></p></td>
+<td><p>Wie der Lauf geendet hat. Meldet er Fehler, steht darunter ein Link.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Schweregrad</strong></p></td>
+<td><p>Der höchste Wert des Berichts, farblich hinterlegt.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Funde</strong></p></td>
+<td><p>Die Anzahl je Stufe. <strong>Gezählt werden nur die Funde, die zu den Adressen dieses Config Items
+gehören</strong> — auch bei einem Netzscan.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Bericht</strong></p></td>
+<td><p><em>Öffnen</em> führt in die Greenbone-Oberfläche, <em>Herunterladen</em> holt die Datei.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Section wird <strong>nachgeladen</strong>, nicht mit der Seite gerendert. Einen Bericht zu lesen sind
+mehrere Runden über die Verbindung; würde das im Seitenaufbau passieren, hielte ein langsames
+oder totes Greenbone die komplette Config-Item-Ansicht auf — für alle, auch für die, die nie in
+die Section schauen. Solange geladen wird, steht dort „Die Scan-Ergebnisse werden von Greenbone
+gelesen.“</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p><strong>Weichen die Zahlen von denen in Greenbone ab?</strong> Dann liegt es fast immer an der Erkennungsgüte:
+Der Connector zählt ab <code class="docutils literal notranslate"><span class="pre">MinQoD</span></code> (Vorgabe 70), in der Greenbone-Oberfläche lässt sich der Wert
+je Ansicht ändern.</p>
+</div>
+<section id="wenn-ein-scan-fehler-meldet">
+<h3>Wenn ein Scan Fehler meldet<a class="headerlink" href="#wenn-ein-scan-fehler-meldet" title="Link to this heading">¶</a></h3>
+<p>Meldet ein Bericht Fehler, steht unter dem Status ein Link. Ein Klick darauf zeigt den Grund im
+Klartext — nicht nur die Zahl.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="../_images/ci-section-fehlergrund.png"><img alt="../_images/ci-section-fehlergrund.png" src="../_images/ci-section-fehlergrund.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 12 </span><span class="caption-text">Der Grund, so wie Greenbone ihn nennt. Hier fehlt am SNMP-Credential der
+Authentifizierungsalgorithmus.</span><a class="headerlink" href="#id16" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p>Ein Fehler heißt <strong>nicht</strong> zwangsläufig „Host nicht erreichbar“. Er kann auch am Auftrag selbst
+hängen, etwa an Zugangsdaten, die Greenbone nicht verwerten kann. Solange der Fehler steht,
+<strong>fehlen die betroffenen Prüfungen im Ergebnis — das Gerät sieht sauberer aus, als es ist.</strong></p>
+<p>Solche Fehler gehören in Greenbone behoben, nicht in OTOBO.</p>
+</div>
+</section>
+</section>
+<section id="bericht-offnen-und-herunterladen">
+<h2>Bericht öffnen und herunterladen<a class="headerlink" href="#bericht-offnen-und-herunterladen" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Öffnen</strong> führt in die Greenbone-Oberfläche, auf genau diesen Bericht. Wohin der Link zeigt,
+bestimmt der <em>Berichtslink</em> am Server.</p></li>
+<li><p><strong>Herunterladen</strong> holt den Bericht als Datei. Zur Auswahl stehen die Formate, die der
+Greenbone-Server anbietet.</p></li>
+</ul>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="../_images/ci-report-formate.png"><img alt="../_images/ci-report-formate.png" src="../_images/ci-report-formate.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 13 </span><span class="caption-text">Die Formatauswahl. Welche Formate erscheinen, entscheidet der Greenbone-Server.</span><a class="headerlink" href="#id17" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Beim <strong>Netzscan</strong> unterscheiden sich die beiden Wege bewusst:</p>
+<ul class="simple">
+<li><p><em>Öffnen</em> zeigt in Greenbone den Bericht des ganzen Netzes — dort gibt es keine gerätescharfe
+Ansicht.</p></li>
+<li><p><em>Herunterladen</em> liefert den Bericht <strong>eingegrenzt auf die Adressen dieses Config Items</strong>, also
+genau die Funde, die die Zeile daneben zählt.</p></li>
+</ul>
+</div>
+</section>
+<section id="scan-von-hand-starten">
+<h2>Scan von Hand starten<a class="headerlink" href="#scan-von-hand-starten" title="Link to this heading">¶</a></h2>
+<p>In der Section steht der Knopf <strong>Scan starten</strong>. Er löst denselben Lauf aus, den auch der Zeitplan
+anstößt — unabhängig davon, wann der das nächste Mal dran wäre.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Der Knopf erscheint nur, wenn man <strong>Schreibrecht</strong> auf das Config Item hat. Die Funde zu lesen
+deckt ein Leserecht ab, sie zu verursachen nicht: Ein Scan belastet die Maschine und das Netz, in
+dem sie steht.</p>
+</div>
+<p>Gesperrt ist der Knopf in zwei Fällen, und er bleibt dabei sichtbar statt zu verschwinden — der
+Grund steht im Tooltip:</p>
+<ul class="simple">
+<li><p><strong>Greenbone arbeitet gerade an diesem Auftrag.</strong> Ein zweiter Start würde denselben Rechner ein
+zweites Mal scannen; Greenbone nähme das klaglos an und schriebe einen weiteren Bericht.</p></li>
+<li><p><strong>Greenbone ist nicht erreichbar.</strong> Dann ist schlicht unbekannt, ob der Scan läuft.</p></li>
+</ul>
+<p>Nach dem Start meldet die Oberfläche, dass Greenbone den Scan angenommen hat. Bis der erste Bericht
+erscheint, dauert es je nach Umfang Minuten bis Stunden — <strong>Neu laden</strong> in der Section holt den
+Stand nach.</p>
+</section>
+</section>
+<section id="referenz">
+<span id="id4"></span><h1>Referenz<a class="headerlink" href="#referenz" title="Link to this heading">¶</a></h1>
+<section id="berechtigungen">
+<h2>Berechtigungen<a class="headerlink" href="#berechtigungen" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Was</p></th>
+<th class="head"><p>Wer darf es</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Server und Zugangsdaten verwalten</p></td>
+<td><p>Gruppe <code class="docutils literal notranslate"><span class="pre">admin</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Scan-Einstellungen am Config Item ändern</p></td>
+<td><p>Schreibrecht auf das Config Item (Gruppe <code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Section lesen, Bericht öffnen und herunterladen</p></td>
+<td><p>Leserecht auf das Config Item</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scan starten</p></td>
+<td><p><strong>Schreibrecht</strong> auf das Config Item</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Prüfung sitzt jeweils im Backend, nicht nur in der Oberfläche. Ein ausgegrauter Knopf ist
+eine Höflichkeit gegenüber dem Anwender, keine Kontrolle — die Anfrage dahinter ließe sich
+abschicken, ohne die Seite je gesehen zu haben. Auch eine Berichts-ID ist keine Berechtigung:
+Geprüft wird, ob der Bericht zum eigenen oder zum Netz-Auftrag des Config Items gehört.</p>
+</div>
+</section>
+<section id="was-in-greenbone-angelegt-wird">
+<h2>Was in Greenbone angelegt wird<a class="headerlink" href="#was-in-greenbone-angelegt-wird" title="Link to this heading">¶</a></h2>
+<p>Zu jedem Config Item mit eingeschaltetem Scan gehören ein <strong>Ziel</strong> (Target) und ein <strong>Auftrag</strong>
+(Task). Beide heißen <code class="docutils literal notranslate"><span class="pre">otobo_&lt;CI-Name&gt;_&lt;CI-ID&gt;</span></code>, damit in der Greenbone-Oberfläche sofort erkennbar
+ist, woher ein Auftrag stammt.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Über den Namen wird nie etwas nachgeschlagen.</strong> Welches Ziel und welcher Auftrag zu einem
+Config Item gehören, steht in der Tabelle <code class="docutils literal notranslate"><span class="pre">greenbone_ci_scan</span></code>. Ein Auftrag, der in Greenbone
+umbenannt wird, funktioniert weiter.</p>
+</div>
+<p>Der Auftrag wird als <code class="docutils literal notranslate"><span class="pre">alterable</span></code> angelegt. Nur so lässt sich ein Auftrag mit vorhandenen Berichten
+auf ein anderes Ziel legen — ohne das kostet jede Änderung an den Hosts alle bisherigen Berichte.</p>
+</section>
+<section id="vererbung-aus-dem-netz">
+<h2>Vererbung aus dem Netz<a class="headerlink" href="#vererbung-aus-dem-netz" title="Link to this heading">¶</a></h2>
+<p>Ein Gerät ohne eigenen Scan zeigt trotzdem Funde, wenn das <strong>IP-Netz</strong>, zu dem es gehört, gescannt
+wird. Dafür braucht es zweierlei:</p>
+<ol class="arabic simple">
+<li><p>Ein Config Item der Klasse <em>IP Network</em> mit eingeschaltetem Scan.</p></li>
+<li><p>Am Gerät ein Feld, das auf dieses Netz zeigt — welches, sagt
+<code class="docutils literal notranslate"><span class="pre">GreenboneConnector::NetworkReferenceFields</span></code>.</p></li>
+</ol>
+<p>Aus dem Netz-Bericht werden dann die Funde herausgefiltert, die zu den Adressen des Geräts gehören.
+Weil das Netz über die <strong>Referenz</strong> aufgelöst wird und nicht über die Adresse, kann eine doppelt
+vergebene IP in einem anderen Netz keine fremden Ergebnisse hereinziehen.</p>
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="../_images/ci-vererbung.png"><img alt="../_images/ci-vererbung.png" src="../_images/ci-vererbung.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 14 </span><span class="caption-text">Ein Gerät ohne eigenen Scan. In der Spalte <em>Herkunft</em> steht der Name des Netzes, aus dem die
+Funde stammen — und weil kein eigener Auftrag existiert, gibt es hier auch keinen Knopf
+„Scan starten“.</span><a class="headerlink" href="#id18" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Die Zahlen sind gefiltert, nicht die des ganzen Netzes.</strong> Im Beispiel oben meldet der Scan
+über das gesamte Netz den Schweregrad 4.8 mit 68 Funden; am einzelnen Gerät stehen 2.6 und 35 —
+genau das, was auf seine Adresse entfällt.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Der Export-Schalter am Gerät steuert nur dessen <strong>eigenen</strong> Scan. Der geerbte Netzscan wird auch
+dann angezeigt, wenn am Gerät kein eigener Scan eingeschaltet ist — und genau dieser Fall ist der
+häufigste.</p>
+</div>
+</section>
+<section id="datenbanktabellen">
+<h2>Datenbanktabellen<a class="headerlink" href="#datenbanktabellen" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 72.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tabelle</p></th>
+<th class="head"><p>Inhalt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">greenbone_server</span></code></p></td>
+<td><p>Die eingerichteten Greenbone-Server.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">greenbone_ci_scan</span></code></p></td>
+<td><p>Je Config Item: Server, Ziel- und Auftrags-UUID, die gescannten Adressen und das Ergebnis
+des letzten Abgleichs.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Beim Deinstallieren werden beide Tabellen entfernt. Die dynamischen Felder und die Rolle
+<code class="docutils literal notranslate"><span class="pre">Greenbone</span></code> <strong>bleiben stehen</strong> — sie zu entfernen nähme ihre Werte mit und machte jede
+Klassendefinition unbrauchbar, die noch auf sie verweist. Ein Hinweis im Log sagt das auch.</p>
+</section>
+</section>
+<section id="uber">
+<h1>Über<a class="headerlink" href="#uber" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Hersteller:</strong> Freicon GmbH &amp; Co.KG</div>
+<div class="line"><strong>Web:</strong> <a class="reference external" href="https://freicon.de">https://freicon.de</a></div>
+<div class="line"><strong>Kontakt:</strong> Bei Fragen zu Einrichtung, Schulung und Betrieb unterstützt Sie das
+Freicon-Consulting-Team.</div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
