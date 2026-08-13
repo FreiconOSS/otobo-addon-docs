@@ -1,0 +1,705 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO ConfigItem Report Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5354a6a6" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO ConfigItem Report  Dokumentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO ConfigItem Report  Dokumentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-configitem-report">
+<h1>OTOBO ConfigItem Report<a class="headerlink" href="#otobo-configitem-report" title="Link to this heading">¶</a></h1>
+</section>
+<section id="beschreibung">
+<h1>Beschreibung<a class="headerlink" href="#beschreibung" title="Link to this heading">¶</a></h1>
+<p>Wer eine CMDB pflegt, tut das nicht um der Ordnung willen, sondern um Fragen beantworten zu können: <em>Welche Server haben weniger als 32 GB RAM? Welche Clients stehen noch auf einem alten Betriebssystem? Was steht am Standort Karlsruhe im Rack?</em> Die Standardsuche von OTOBO beantwortet solche Fragen nur mit Mühe — sie sucht in einer Klasse, mit festen Feldern, und das Ergebnis ist nach dem nächsten Klick wieder verloren.</p>
+<p><strong>ConfigItem Report</strong> bringt einen Report-Editor direkt in die CMDB-Übersicht. Kein eigener Menüpunkt, keine zweite Oberfläche: Die Bedienelemente sitzen in der gewohnten Werkzeugleiste über der CI-Liste. Ein Agent stellt seine Frage einmal als Bedingung zusammen, speichert sie als Template und ruft sie danach mit einem Klick wieder auf. Öffentliche Templates stehen dem ganzen Team zur Verfügung — so entsteht mit der Zeit eine Bibliothek von Standardauswertungen, die jeder ausführen kann, ohne sie zu verstehen.</p>
+<p>Das Addon ist an den Report-Manager aus i-doit angelehnt und richtet sich an Organisationen, die von dort auf die OTOBO-CMDB wechseln.</p>
+<ul class="simple">
+<li><p>🔍 <strong>Klassenübergreifende Abfragen</strong> — ein Report über Server <em>und</em> Clients gleichzeitig</p></li>
+<li><p>🧩 <strong>Bedingungsblöcke</strong> — Regeln frei mit UND/ODER verknüpfen, Blöcke wirken wie Klammern</p></li>
+<li><p>📊 <strong>Berechnete Felder</strong> — Gesamt-RAM, Grafikspeicher und Gesamtspeicher filtern, obwohl sie nirgends gespeichert sind</p></li>
+<li><p>🔗 <strong>Referenzfelder im Klartext</strong> — nach dem Namen des verknüpften CIs suchen statt nach seiner ID</p></li>
+<li><p>📋 <strong>Templates</strong> — speichern, wiederverwenden, privat halten oder für alle freigeben</p></li>
+<li><p>🎯 <strong>Eigene Ergebnistabelle</strong> — sortierbar, mit Sofortfilter über alle sichtbaren Spalten</p></li>
+<li><p>🔒 <strong>Berechtigungen bleiben gültig</strong> — jeder Report zeigt nur CIs, die der Agent auch sehen darf</p></li>
+</ul>
+</section>
+<section id="einsatzszenarien">
+<h1>Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Hardware-Lebenszyklus</strong> — „Alle Server mit weniger als 32 GB RAM“ als Grundlage für die Aufrüstungsplanung; einmal als Template hinterlegt, jederzeit aktuell abrufbar.</p></li>
+<li><p><strong>Migrationsvorbereitung</strong> — „Alle Clients mit Betriebssystem <em>Windows 10</em>“, um den Umfang eines Rollouts zu beziffern.</p></li>
+<li><p><strong>Standortinventur</strong> — „Alles am Standort <em>Karlsruhe</em>, Klasse Server und Switch“, als Vorbereitung für einen Umzug oder eine Begehung.</p></li>
+<li><p><strong>Wartungsfenster</strong> — „Alle CIs im Status <em>Wartung</em>“, damit im Betriebsmeeting niemand raten muss.</p></li>
+<li><p><strong>Datenqualität</strong> — „Server ohne Seriennummer“ macht Lücken in der CMDB sichtbar, statt sie zu vermuten.</p></li>
+<li><p><strong>Wiederkehrende Berichte</strong> — der Consultant hinterlegt beim Kunden fünf öffentliche Templates; das Team arbeitet damit, ohne selbst Bedingungen bauen zu müssen.</p></li>
+</ul>
+</section>
+<section id="systemvoraussetzungen">
+<h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
+<section id="framework">
+<h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
+<p>OTOBO 11.0.x</p>
+</section>
+<section id="pakete">
+<h2>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ITSMConfigurationManagement</span></code> (11.0.x) — die CMDB selbst</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FreiconCMDBCustomizing</span></code> (ab 11.0.3) — liefert die Werkzeugleiste der CI-Übersicht, in die sich der Report einfügt</p></li>
+</ul>
+</section>
+<section id="software-von-drittanbietern">
+<h2>Software von Drittanbietern<a class="headerlink" href="#software-von-drittanbietern" title="Link to this heading">¶</a></h2>
+<p>-</p>
+</section>
+<section id="uberblick">
+<span id="ueberblick"></span><h2>Überblick<a class="headerlink" href="#uberblick" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#admin-guide"><span class="std std-ref">Admin-Handbuch</span></a> — Installation, Einstellungen, Berechtigungen, An- und Abschalten</p></li>
+<li><p><a class="reference internal" href="#user-guide"><span class="std std-ref">Anwender-Handbuch</span></a> — Report bauen, ausführen, auswerten, als Template teilen</p></li>
+<li><p><a class="reference internal" href="#referenz"><span class="std std-ref">Referenz</span></a> — Operatoren, berechnete Felder, Spaltenreihenfolge, Grenzen</p></li>
+</ul>
+</section>
+</section>
+<section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>Das Addon wird als OPM-Paket über die Paketverwaltung installiert:</p>
+<ol class="arabic simple">
+<li><p><strong>Admin → Paketverwaltung</strong> aufrufen.</p></li>
+<li><p>Die Datei <code class="docutils literal notranslate"><span class="pre">ITSMConfigItemReport-11.0.x.opm</span></code> hochladen und <strong>Paket installieren</strong> wählen.</p></li>
+</ol>
+<p>Alternativ auf der Konsole:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/otobo/bin/otobo.Console.pl<span class="w"> </span>Admin::Package::Install<span class="w"> </span>/pfad/zu/ITSMConfigItemReport-11.0.5.opm
+</pre></div>
+</div>
+<p>Die Installation legt die Tabelle <code class="docutils literal notranslate"><span class="pre">configitem_report_template</span></code> an, in der die gespeicherten Reports liegen. Weitere Einrichtungsschritte sind nicht nötig — nach dem Neuladen der CMDB-Übersicht ist die Report-Auswahl vorhanden.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die beiden vorausgesetzten Pakete müssen <strong>vor</strong> diesem Addon installiert sein. Fehlt <code class="docutils literal notranslate"><span class="pre">FreiconCMDBCustomizing</span></code>, erscheinen die Bedienelemente zwar, das Suchfeld für die Ergebnisse fehlt jedoch (siehe <a class="reference internal" href="#zusammenspiel-suche"><span class="std std-ref">Zusammenspiel mit dem Suchfeld</span></a>).</p>
+</div>
+</section>
+<section id="konfiguration">
+<h1>Konfiguration<a class="headerlink" href="#konfiguration" title="Link to this heading">¶</a></h1>
+<p>Das Addon kommt mit drei Einstellungen aus. Alle liegen in der Systemkonfiguration unter <strong>Admin → Systemkonfiguration</strong>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItemReport::MaxResults</span></code></dt><dd><p><em>Standard:</em> 10000 — Obergrenze der Treffer je Report und CI-Klasse. Schützt Server und Browser vor Auswertungen, die versehentlich die halbe CMDB laden.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Module###AgentITSMConfigItemReportAJAX</span></code></dt><dd><p><em>Standard:</em> gültig — Registrierung des Moduls, das Templates lädt, speichert und Reports ausführt. Ohne diese Registrierung bleibt die Oberfläche ohne Funktion.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Loader::Module::AgentITSMConfigItem###ITSMConfigItemReport</span></code></dt><dd><p><em>Standard:</em> gültig — lädt JavaScript und CSS in die CMDB-Übersicht. Hierüber wird die Report-Funktion sichtbar bzw. unsichtbar.</p>
+</dd>
+</dl>
+</section>
+<section id="admin-handbuch">
+<span id="admin-guide"></span><h1>Admin-Handbuch<a class="headerlink" href="#admin-handbuch" title="Link to this heading">¶</a></h1>
+<section id="wo-der-report-sitzt">
+<h2>Wo der Report sitzt<a class="headerlink" href="#wo-der-report-sitzt" title="Link to this heading">¶</a></h2>
+<p>Die Report-Funktion hat keinen eigenen Menüpunkt. Sie erscheint in der Werkzeugleiste der CMDB-Übersicht, erreichbar über <strong>CMDB → Übersicht</strong> in der Navigationsleiste.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/uebersicht-werkzeugleiste.png"><img alt="../_images/uebersicht-werkzeugleiste.png" src="../_images/uebersicht-werkzeugleiste.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Die Werkzeugleiste der CMDB-Übersicht: Klassenreiter, Suchfeld und Report-Auswahl</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Die Leiste enthält von links nach rechts:</p>
+<ul class="simple">
+<li><p>die <strong>Klassenreiter</strong> (Alle, Arbeitsplatz, Infrastruktur …) aus dem ITSM-Standard,</p></li>
+<li><p>das <strong>Suchfeld</strong> aus <code class="docutils literal notranslate"><span class="pre">FreiconCMDBCustomizing</span></code>,</p></li>
+<li><p>die <strong>Report-Auswahl</strong> mit den Knöpfen <strong>+</strong> (neues Template), <strong>✏️</strong> (Template bearbeiten) und <strong>✖️</strong> (Report zurücksetzen).</p></li>
+</ul>
+<p>Bearbeiten und Zurücksetzen erscheinen erst, sobald ein Report aktiv ist.</p>
+</section>
+<section id="berechtigungen">
+<h2>Berechtigungen<a class="headerlink" href="#berechtigungen" title="Link to this heading">¶</a></h2>
+<p>Das Addon bringt <strong>keine eigene Gruppe</strong> mit. Es gelten die Berechtigungen, die ohnehin für die CMDB vergeben sind:</p>
+<ul class="simple">
+<li><p>Wer die CMDB-Übersicht sehen darf, sieht auch die Report-Auswahl.</p></li>
+<li><p>Ein Report liefert ausschließlich CIs aus Klassen, für die der Agent Leserecht hat. Ein Report über alle Klassen liefert bei zwei Agenten mit unterschiedlichen Rechten also unterschiedlich viele Zeilen — das ist beabsichtigt und keine Fehlfunktion.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Sichtbarkeit <strong>privat/öffentlich</strong> steuert, welche Templates in der Auswahlliste erscheinen. Sie ist keine Zugriffssperre: Ein Agent, der die technische ID eines fremden privaten Templates kennt, kann es laden. Vertrauliches gehört deshalb nicht in den Namen eines Templates.</p>
+</div>
+</section>
+<section id="ergebnisgrenze-festlegen">
+<h2>Ergebnisgrenze festlegen<a class="headerlink" href="#ergebnisgrenze-festlegen" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ITSMConfigItemReport::MaxResults</span></code> begrenzt, wie viele CIs ein Report je Klasse zurückgibt. Der Standard von 10.000 ist für die meisten Installationen großzügig bemessen. Zu beachten ist:</p>
+<ul class="simple">
+<li><p>Die Grenze greift <strong>je Klasse</strong>, nicht je Report. Ein Report über fünf Klassen kann im Extremfall das Fünffache liefern.</p></li>
+<li><p>Wird die Grenze erreicht, gibt es <strong>keine Warnung</strong> in der Oberfläche — das Ergebnis ist dann stillschweigend unvollständig. Bei sehr großen CMDBs empfiehlt es sich, die Agenten auf enger gefasste Bedingungen hinzuweisen, statt die Grenze anzuheben.</p></li>
+</ul>
+</section>
+<section id="zusammenspiel-mit-dem-suchfeld">
+<span id="zusammenspiel-suche"></span><h2>Zusammenspiel mit dem Suchfeld<a class="headerlink" href="#zusammenspiel-mit-dem-suchfeld" title="Link to this heading">¶</a></h2>
+<p>Das Suchfeld links neben der Report-Auswahl gehört nicht zu diesem Addon, sondern zu <code class="docutils literal notranslate"><span class="pre">FreiconCMDBCustomizing</span></code>. Beide arbeiten zusammen:</p>
+<ul class="simple">
+<li><p><strong>Ohne aktiven Report</strong> sucht das Feld wie gewohnt über den Server nach Name, Kunde und Kontakt.</p></li>
+<li><p><strong>Mit aktivem Report</strong> übernimmt der Report das Feld: Der Platzhaltertext wechselt zu „Report-Ergebnisse filtern…“, und die Eingabe filtert die geladenen Ergebnisse direkt im Browser über alle sichtbaren Spalten.</p></li>
+</ul>
+<p>Fehlt <code class="docutils literal notranslate"><span class="pre">FreiconCMDBCustomizing</span></code>, funktioniert der Report weiterhin — nur ohne dieses Filterfeld.</p>
+</section>
+<section id="report-abschalten">
+<h2>Report abschalten<a class="headerlink" href="#report-abschalten" title="Link to this heading">¶</a></h2>
+<p>Beide Funktionen lassen sich unabhängig voneinander abschalten. Für den Report genügt eine Einstellung:</p>
+<ol class="arabic simple">
+<li><p><strong>Admin → Systemkonfiguration</strong> öffnen und nach <code class="docutils literal notranslate"><span class="pre">Loader::Module::AgentITSMConfigItem###ITSMConfigItemReport</span></code> suchen.</p></li>
+<li><p>Die Einstellung auf <strong>ungültig</strong> setzen und die Änderung aktivieren.</p></li>
+</ol>
+<p>Damit werden JavaScript und CSS nicht mehr geladen; Auswahlliste und Knöpfe verschwinden, die Suche bleibt vollständig erhalten. Wer zusätzlich die Schnittstelle schließen möchte, setzt auch <code class="docutils literal notranslate"><span class="pre">Frontend::Module###AgentITSMConfigItemReportAJAX</span></code> auf ungültig. Gespeicherte Templates bleiben in beiden Fällen erhalten und stehen nach dem Wiedereinschalten unverändert zur Verfügung.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Umgekehrt gilt das nicht spiegelbildlich: Die Einstellung <code class="docutils literal notranslate"><span class="pre">Loader::Module::AgentITSMConfigItem###FreiconCMDBCustomizing</span></code> lädt neben dem Suchfeld auch die verstellbaren Spaltenbreiten der CI-Liste. Wer nur die Suche abschalten will, entfernt aus dieser Liste gezielt die Datei <code class="docutils literal notranslate"><span class="pre">Filter/AgentITSMConfigItem/Core.Agent.FreiconCMDBCustomizing.ConfigItemFilter.js</span></code>, statt die ganze Einstellung ungültig zu setzen.</p>
+</div>
+</section>
+</section>
+<section id="anwender-handbuch">
+<span id="user-guide"></span><h1>Anwender-Handbuch<a class="headerlink" href="#anwender-handbuch" title="Link to this heading">¶</a></h1>
+<section id="die-oberflache-im-uberblick">
+<h2>Die Oberfläche im Überblick<a class="headerlink" href="#die-oberflache-im-uberblick" title="Link to this heading">¶</a></h2>
+<p>Alles spielt sich in der CMDB-Übersicht ab. Solange kein Report läuft, sieht die Seite aus wie immer.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/uebersicht-werkzeugleiste.png"><img alt="../_images/uebersicht-werkzeugleiste.png" src="../_images/uebersicht-werkzeugleiste.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Ohne aktiven Report zeigt die Leiste nur den Knopf für ein neues Template</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="schritt-1-neues-template-anlegen">
+<h2>Schritt 1 — Neues Template anlegen<a class="headerlink" href="#schritt-1-neues-template-anlegen" title="Link to this heading">¶</a></h2>
+<p>Ein Klick auf <strong>+</strong> öffnet den Report-Editor. Er besteht aus drei Bereichen: Kopfdaten, Bedingungen und Aktionsknöpfe.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/editor-leer.png"><img alt="../_images/editor-leer.png" src="../_images/editor-leer.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Der Report-Editor: Kopfdaten, Bedingungen, Aktionen</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Name</strong> — vergeben Sie eine sprechende Bezeichnung, etwa „Server unter 32 GB RAM“. Unter diesem Namen erscheint der Report später in der Auswahlliste; er ist für Kollegen oft die einzige Erklärung, was der Report tut.</p>
+<p><strong>Klassen</strong> — wählen Sie die CI-Klassen aus, die durchsucht werden sollen. Ausgewählte Klassen erscheinen als blaue Kacheln. Über <strong>Alle auswählen</strong> und <strong>Alle abwählen</strong> geht es schneller, das Suchfeld darüber grenzt lange Klassenlisten ein, und <strong>Nur ausgewählte / Alle anzeigen</strong> schaltet zwischen beiden Ansichten um.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/klassen-auswahl.png"><img alt="../_images/klassen-auswahl.png" src="../_images/klassen-auswahl.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Ausgewählte Klassen erscheinen als blaue Kachel; darunter die Sichtbarkeit</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Keine Auswahl bedeutet <strong>alle Klassen</strong>. Das ist bequem, aber langsam — bei einer großen CMDB lohnt es sich, die Klassen einzugrenzen.</p>
+</div>
+<p><strong>Sichtbarkeit</strong> — <strong>Privat</strong> hält den Report in Ihrer eigenen Auswahlliste, <strong>Öffentlich</strong> stellt ihn allen Agenten zur Verfügung. In der Liste sind beide an einem Symbol zu erkennen: 🔒 für privat, 🌐 für öffentlich.</p>
+</section>
+<section id="schritt-2-bedingungen-zusammenstellen">
+<h2>Schritt 2 — Bedingungen zusammenstellen<a class="headerlink" href="#schritt-2-bedingungen-zusammenstellen" title="Link to this heading">¶</a></h2>
+<p>Eine Bedingung besteht immer aus <strong>Feld</strong>, <strong>Operator</strong> und <strong>Wert</strong>.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/bedingung-einfach.png"><img alt="../_images/bedingung-einfach.png" src="../_images/bedingung-einfach.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Eine Bedingung besteht aus Feld, Operator und Wert</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Die Feldauswahl enthält die Standardfelder (Name, Nummer, Verwendungsstatus, Vorfallstatus) und alle Felder der ausgewählten Klassen, alphabetisch sortiert und in der Sprache der Oberfläche beschriftet. Welche Operatoren sinnvoll sind, hängt vom Feld ab — die vollständige Liste steht unter <a class="reference internal" href="#referenz"><span class="std std-ref">Referenz</span></a>.</p>
+<p><strong>Mehrere Bedingungen</strong> — mit <strong>+ Bedingung</strong> kommt eine weitere Zeile hinzu. Zwischen zwei Zeilen steht ein Schalter <strong>UND/ODER</strong>, der beide verknüpft. UND heißt: beide müssen zutreffen. ODER heißt: eine von beiden genügt.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/block-und-oder.png"><img alt="../_images/block-und-oder.png" src="../_images/block-und-oder.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Innerhalb eines Blocks verknüpft der Schalter zwei Bedingungen</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Mehrere Blöcke</strong> — ein Block wirkt wie eine Klammer. Über <strong>+ Konditionsblock hinzufügen</strong> entsteht ein zweiter Block; auch zwischen Blöcken steht ein UND/ODER-Schalter. So lässt sich formulieren, was mit einer flachen Liste von Bedingungen nicht ginge:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>( Gesamt-RAM ≥ 64 )
+ODER
+( CI Name enthält &quot;sw-core&quot; )
+</pre></div>
+</div>
+<p>Gelesen: alle gut bestückten Maschinen — und zusätzlich die Core-Switches, ganz gleich, wie viel Speicher für sie hinterlegt ist.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die <strong>Klassen</strong> gehören nicht in die Bedingungen; sie werden einmal oben im Editor für den ganzen Report ausgewählt. Ein Block enthält ausschließlich Feldbedingungen.</p>
+</div>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/zwei-bloecke-oder.png"><img alt="../_images/zwei-bloecke-oder.png" src="../_images/zwei-bloecke-oder.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Zwei Blöcke, verknüpft mit ODER — jeder Block wirkt wie eine Klammer</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="berechnete-felder">
+<h3>Berechnete Felder<a class="headerlink" href="#berechnete-felder" title="Link to this heading">¶</a></h3>
+<p>Manche Werte stehen nirgends in der Datenbank, weil OTOBO sie erst beim Anzeigen ausrechnet — der Gesamt-RAM etwa ergibt sich aus <em>Anzahl der Module × Kapazität</em>. Genau solche Werte lassen sich mit den <strong>berechneten Feldern</strong> trotzdem filtern. Sie sind in der Feldauswahl an einem 📊 zu erkennen:</p>
+<ul class="simple">
+<li><p>📊 <strong>Gesamt-RAM (GB)</strong></p></li>
+<li><p>📊 <strong>Gesamt-Grafikkarten-RAM (GB)</strong></p></li>
+<li><p>📊 <strong>Gesamt-Speicher (GB)</strong></p></li>
+</ul>
+<p>Sie vertragen die numerischen Operatoren <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">!=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">≤</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code>. Unterschiedliche Einheiten in den Quelldaten sind kein Problem: „2TB“, „2048 GB“ und „2048“ ergeben denselben Wert, das Addon rechnet alles in Gigabyte um.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><strong>Fehlende Angaben zählen als 0.</strong> Ein CI, für das kein Arbeitsspeicher hinterlegt ist — ein Switch etwa, oder ein unvollständig gepflegter Server —, geht mit dem Wert 0 in die Rechnung ein. Die Bedingung <code class="docutils literal notranslate"><span class="pre">Gesamt-RAM</span> <span class="pre">&lt;</span> <span class="pre">32</span></code> findet deshalb nicht nur knapp bestückte Maschinen, sondern <strong>auch alles ohne RAM-Angabe</strong>. Für „klein ausgestattet“ grenzen Sie die Klassen ein oder kombinieren die Bedingung mit einer zweiten; für „gut ausgestattet“ ist <code class="docutils literal notranslate"><span class="pre">≥</span></code> unproblematisch.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>In der Feldauswahl stehen zwei ähnlich benannte Einträge: <strong>Gesamt RAM (GB)</strong> ohne Symbol und <strong>📊 Gesamt-RAM (GB)</strong> mit Symbol. Der obere ist das Anzeigefeld der CMDB — OTOBO rechnet es erst beim Öffnen des CIs aus, in der Datenbank steht dazu nichts, eine Bedingung darauf findet nichts. Zum Filtern taugt nur der Eintrag <strong>mit</strong> dem Symbol.</p>
+</div>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/berechnete-felder.png"><img alt="../_images/berechnete-felder.png" src="../_images/berechnete-felder.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 8 </span><span class="caption-text">Berechnete Felder tragen ein Diagramm-Symbol; die gleichnamigen Felder darüber lassen sich nicht filtern</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="referenzfelder">
+<h3>Referenzfelder<a class="headerlink" href="#referenzfelder" title="Link to this heading">¶</a></h3>
+<p>Felder wie <em>Betriebssystem</em>, <em>Standort</em> oder <em>Gebäude</em> verweisen auf ein anderes CI. Technisch steht dort eine ID, die niemand auswendig kennt. Im Report geben Sie stattdessen einfach den <strong>Namen</strong> des verknüpften CIs ein — die Auflösung passiert im Hintergrund.</p>
+<p><strong>Beispiel:</strong> <code class="docutils literal notranslate"><span class="pre">Betriebssystem</span></code> <code class="docutils literal notranslate"><span class="pre">enthält</span></code> <code class="docutils literal notranslate"><span class="pre">Ubuntu</span></code> findet alle CIs, deren Betriebssystem-Verweis auf ein Ubuntu-CI zeigt. In der Ergebnistabelle steht später ebenfalls der Name, nicht die ID.</p>
+</section>
+</section>
+<section id="schritt-3-report-ausfuhren">
+<h2>Schritt 3 — Report ausführen<a class="headerlink" href="#schritt-3-report-ausfuhren" title="Link to this heading">¶</a></h2>
+<p>Am unteren Rand des Editors stehen drei Knöpfe:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Knopf</p></th>
+<th class="head"><p>Wirkung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Ausführen</strong></p></td>
+<td><p>Führt den Report sofort aus, <strong>ohne</strong> ihn zu speichern — für eine einmalige Frage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Speichern &amp; Ausführen</strong></p></td>
+<td><p>Legt das Template an bzw. aktualisiert es und führt es anschließend aus.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Löschen</strong></p></td>
+<td><p>Entfernt das Template endgültig. Erscheint nur bei einem gespeicherten Template.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/bedingung-einfach.png"><img alt="../_images/bedingung-einfach.png" src="../_images/bedingung-einfach.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 9 </span><span class="caption-text">Ausführen, Speichern &amp; Ausführen, Abbrechen am unteren Rand des Editors</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="schritt-4-ergebnisse-auswerten">
+<h2>Schritt 4 — Ergebnisse auswerten<a class="headerlink" href="#schritt-4-ergebnisse-auswerten" title="Link to this heading">¶</a></h2>
+<p>Nach dem Ausführen ersetzt die Ergebnistabelle die gewohnte CI-Liste. Darüber steht ein Hinweisstreifen: <strong>Report aktiv: &lt;Name&gt; (&lt;Anzahl&gt; Ergebnisse)</strong>.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/ergebnistabelle.png"><img alt="../_images/ergebnistabelle.png" src="../_images/ergebnistabelle.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 10 </span><span class="caption-text">Die Ergebnistabelle ersetzt die gewohnte Liste; der Streifen nennt Template und Trefferzahl</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Sortieren</strong> — ein Klick auf eine Spaltenüberschrift sortiert auf- oder absteigend.</p></li>
+<li><p><strong>Zeile öffnen</strong> — ein Klick auf eine Zeile öffnet das CI in einem neuen Browsertab. Der Report bleibt dabei erhalten.</p></li>
+<li><p><strong>Filtern</strong> — das Suchfeld oben filtert die geladenen Ergebnisse sofort über alle sichtbaren Spalten; der Suchbegriff wird in den Treffern gelb hervorgehoben. <strong>Esc</strong> leert den Filter.</p></li>
+<li><p><strong>Zurücksetzen</strong> — der Knopf <strong>✖️</strong> beendet den Report und stellt die normale Übersicht wieder her.</p></li>
+</ul>
+<p>Welche Spalten erscheinen, ist nicht zufällig — die Reihenfolge steht unter <a class="reference internal" href="#spalten"><span class="std std-ref">Spalten der Ergebnistabelle</span></a>.</p>
+</section>
+<section id="schritt-5-templates-wiederverwenden">
+<h2>Schritt 5 — Templates wiederverwenden<a class="headerlink" href="#schritt-5-templates-wiederverwenden" title="Link to this heading">¶</a></h2>
+<p>Gespeicherte Reports stehen in der Auswahlliste, alphabetisch sortiert und mit 🔒 bzw. 🌐 gekennzeichnet.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/template-auswahl.png"><img alt="../_images/template-auswahl.png" src="../_images/template-auswahl.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 11 </span><span class="caption-text">Gespeicherte Reports mit Schloss- bzw. Weltkugel-Symbol</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Ein Klick auf einen Eintrag <strong>führt den Report sofort aus</strong> — ein zusätzlicher Startknopf ist nicht nötig. Über <strong>✏️</strong> lässt sich das aktive Template bearbeiten; nach <strong>Speichern &amp; Ausführen</strong> gilt die Änderung für alle, die es nutzen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Wer regelmäßig dieselben Fragen beantwortet, legt sie als öffentliche Templates ab und gibt ihnen sprechende Namen. Für das Team ist eine Liste wie „Server unter 32 GB RAM“, „Clients Windows 10“, „CIs in Wartung“ schneller zu nutzen als jede Suchmaske.</p>
+</div>
+</section>
+</section>
+<section id="referenz">
+<span id="id1"></span><h1>Referenz<a class="headerlink" href="#referenz" title="Link to this heading">¶</a></h1>
+<section id="operatoren">
+<h2>Operatoren<a class="headerlink" href="#operatoren" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14.0%" />
+<col style="width: 30.0%" />
+<col style="width: 56.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Bedeutung</p></th>
+<th class="head"><p>Sinnvoll bei</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td><p>genau gleich</p></td>
+<td><p>Auswahllisten, Zahlen, exakte Namen</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">!=</span></code></p></td>
+<td><p>ungleich</p></td>
+<td><p>Auswahllisten, Zahlen</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">enthält</span></code></p></td>
+<td><p>Teiltext, Platzhalter <code class="docutils literal notranslate"><span class="pre">*</span></code> erlaubt</p></td>
+<td><p>Textfelder, Namen, Referenzfelder</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td><p>kleiner / größer</p></td>
+<td><p>Zahlen und berechnete Felder</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">≤</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code></p></td>
+<td><p>kleiner-gleich / größer-gleich</p></td>
+<td><p>Zahlen und berechnete Felder</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Angeboten werden alle sieben Operatoren zu jedem Feld. Ein Größenvergleich auf einem Textfeld liefert kein sinnvolles Ergebnis — die Auswahl passender Operatoren bleibt beim Anwender.</p>
+</section>
+<section id="berechnete-felder-im-detail">
+<h2>Berechnete Felder im Detail<a class="headerlink" href="#berechnete-felder-im-detail" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 30.0%" />
+<col style="width: 36.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feld</p></th>
+<th class="head"><p>Rechenweg</p></th>
+<th class="head"><p>Quellfelder</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gesamt-RAM (GB)</p></td>
+<td><p>Anzahl × Kapazität</p></td>
+<td><p>Anzahl der RAM-Module, Kapazität</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gesamt-Grafikkarten-RAM (GB)</p></td>
+<td><p>Anzahl × Speichergröße</p></td>
+<td><p>Anzahl Grafikkarten, Speichergröße</p></td>
+</tr>
+<tr class="row-even"><td><p>Gesamt-Speicher (GB)</p></td>
+<td><p>Summe aller Einträge</p></td>
+<td><p>Speicherkapazität</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Alle Werte werden auf Gigabyte normiert; <code class="docutils literal notranslate"><span class="pre">TB</span></code>, <code class="docutils literal notranslate"><span class="pre">GB</span></code>, <code class="docutils literal notranslate"><span class="pre">MB</span></code> und <code class="docutils literal notranslate"><span class="pre">KB</span></code> werden erkannt, ebenso Angaben ganz ohne Einheit.</p>
+</section>
+<section id="spalten-der-ergebnistabelle">
+<span id="spalten"></span><h2>Spalten der Ergebnistabelle<a class="headerlink" href="#spalten-der-ergebnistabelle" title="Link to this heading">¶</a></h2>
+<p>Die Tabelle stellt ihre Spalten in dieser Reihenfolge zusammen:</p>
+<ol class="arabic simple">
+<li><p><strong>Berechnete Werte</strong> — aber nur, wenn der Report auch danach filtert.</p></li>
+<li><p><strong>Ihre eigenen Spalten</strong> — die Auswahl, die Sie über das Zahnrad der CI-Übersicht eingestellt haben.</p></li>
+<li><p><strong>Gesuchte Felder</strong> — jedes Feld, das in einer Bedingung vorkommt, damit nachvollziehbar bleibt, warum eine Zeile im Ergebnis steht.</p></li>
+</ol>
+</section>
+<section id="grenzen">
+<h2>Grenzen<a class="headerlink" href="#grenzen" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Kein Export</strong> — CSV oder Excel sind derzeit nicht vorgesehen; für einen Ausdruck dient die Druckfunktion des Browsers.</p></li>
+<li><p><strong>Lens-Felder</strong> werden nicht unterstützt, also Felder, die einen Wert über eine Referenz aus einem anderen CI holen (etwa der Vertragstyp am verknüpften Vertrag).</p></li>
+<li><p><strong>Berechnete Felder sind fest vorgegeben</strong> — die drei genannten stehen zur Verfügung, weitere lassen sich derzeit nicht konfigurieren.</p></li>
+<li><p><strong>Fehlende Werte zählen als 0</strong> — CIs ohne Quelldaten erfüllen jede <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>- und <code class="docutils literal notranslate"><span class="pre">≤</span></code>-Bedingung auf ein berechnetes Feld.</p></li>
+<li><p><strong>Ergebnisgrenze ohne Hinweis</strong> — wird <code class="docutils literal notranslate"><span class="pre">ITSMConfigItemReport::MaxResults</span></code> erreicht, bleibt das Ergebnis ohne Meldung unvollständig.</p></li>
+</ul>
+</section>
+</section>
+<section id="uber">
+<h1>Über<a class="headerlink" href="#uber" title="Link to this heading">¶</a></h1>
+<p>Dieses Handbuch beschreibt das Addon <strong>ITSMConfigItemReport</strong> für OTOBO 11.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Hersteller<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Freicon GmbH &amp; Co.KG, <a class="reference external" href="https://freicon.de">https://freicon.de</a></p>
+</dd>
+<dt class="field-even">Stand<span class="colon">:</span></dt>
+<dd class="field-even"><p>August 2026</p>
+</dd>
+</dl>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
