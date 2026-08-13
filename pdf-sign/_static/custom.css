@@ -1,3 +1,6 @@
+/* wider content column so the 1100px screenshots are shown at full size */
+:root { --content-width: 68em; }
+
 /* The OTOBO logo is a dark blue PNG and disappears against the dark theme.
    Invert it there — once for the explicit toggle, once for the system setting. */
 body[data-theme="dark"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }

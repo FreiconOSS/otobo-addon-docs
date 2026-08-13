@@ -1,3 +1,6 @@
+/* wider content column so the 1100px screenshots are shown at full size */
+:root { --content-width: 68em; }
+
 body[data-theme="dark"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
 @media (prefers-color-scheme: dark) {
   body[data-theme="auto"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
