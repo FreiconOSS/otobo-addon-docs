@@ -1,0 +1,792 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO 11.1 — Was ist neu</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d62e1945" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO 11.1 — Was ist neu</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO 11.1 — Was ist neu</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-11-1-was-ist-neu">
+<h1>OTOBO 11.1 — Was ist neu<a class="headerlink" href="#otobo-11-1-was-ist-neu" title="Link to this heading">¶</a></h1>
+<p>Diese Seite fasst die Neuerungen von <strong>OTOBO 11.1</strong> zusammen: was dazugekommen
+ist, was sich im Verhalten ändert und worauf beim Upgrade eines bestehenden
+Systems zu achten ist.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Stand: August 2026 — OTOBO 11.1 ist in der Beta-Phase.</strong> Der vollständige
+Release ist für die kommenden Monate angekündigt. Einzelne Beschriftungen und
+Übersetzungen sind noch nicht final; an ein, zwei Stellen ist derzeit noch ein
+Workaround nötig (siehe <a class="reference internal" href="#upgrade"><span class="std std-ref">Upgrade und Betrieb</span></a>). Die verbindliche Quelle bleiben die
+Release Notes von Rother OSS.</p>
+</div>
+</section>
+<section id="auf-einen-blick">
+<h1>Auf einen Blick<a class="headerlink" href="#auf-einen-blick" title="Link to this heading">¶</a></h1>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Thema</p></th>
+<th class="head"><p>Worum es geht</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#ticketbearbeitung"><span class="std std-ref">Ticketbearbeitung</span></a></p></td>
+<td><p>Mehr Überblick, schneller am Ziel — ähnliche Tickets, präzisere Suche,
+nachträglich bearbeitbare Artikel, Mehrfachfilter in den Übersichten.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#prozessmanagement"><span class="std std-ref">Prozessmanagement</span></a></p></td>
+<td><p>Präzise modellieren, sicher steuern — Namensräume und prozessspezifische
+Elemente räumen die Prozessverwaltung auf, Übergänge können deutlich mehr.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#dynamische-felder"><span class="std std-ref">Dynamische Felder</span></a></p></td>
+<td><p>Informationen genau dort, wo sie gebraucht werden — mehr Feldtypen in Sets,
+verkettbare Linsenfelder, Hide/Show an neuen Stellen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sicherheit"><span class="std std-ref">Sicherheit</span></a></p></td>
+<td><p>Moderne Authentifizierung, sichere Anbindung — OpenID Connect, zentrale
+OAuth-2-Verwaltung, verschlüsselte Datenbankverbindung.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#integration"><span class="std std-ref">Datenaustausch und Integration</span></a></p></td>
+<td><p>Datenaustausch deutlich vereinfacht — Multipart-Uploads, erzwingbare Arrays,
+Konfiguration als YAML exportieren, ganze Use Cases als Paket schnüren.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#upgrade"><span class="std std-ref">Upgrade und Betrieb</span></a></p></td>
+<td><p><strong>Pflichtlektüre vor jedem Upgrade</strong> — die Ordnerstruktur wird neu angelegt,
+und die OAuth-2-Anbindungen müssen von Hand neu eingerichtet werden.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ein wiederkehrendes Motiv dieser Version: <strong>Zusatzpakete wandern in den Standard.</strong>
+Rother OSS hat 11.1 genutzt, um Funktionen, die seit 11.0 als Einzelpakete für
+Kunden entstanden sind, ins Framework aufzunehmen — Patch-Level bleiben für Fixes
+und Security-Releases reserviert, neue Funktionen brauchen ein Minor-Release.
+Wer bisher eines dieser Pakete eingesetzt hat, findet die Funktion künftig ohne
+Paket wieder — bei OAuth 2 allerdings mit Handarbeit, siehe <a class="reference internal" href="#upgrade"><span class="std std-ref">Upgrade und Betrieb</span></a>.</p>
+</section>
+<section id="ticketbearbeitung">
+<span id="id1"></span><h1>Ticketbearbeitung<a class="headerlink" href="#ticketbearbeitung" title="Link to this heading">¶</a></h1>
+<section id="widget-ahnliche-tickets">
+<h2>Widget „Ähnliche Tickets“<a class="headerlink" href="#widget-ahnliche-tickets" title="Link to this heading">¶</a></h2>
+<p>In der Ticket-Zoom-Ansicht erscheint rechts unter den Ticket-Informationen ein
+neues Widget <strong>Ähnliche Tickets</strong>. Es zeigt über eine Annäherungssuche der
+Elasticsearch syntaktisch ähnliche Tickets an — hilfreich, um im laufenden
+Vorgang zu erkennen, ob dasselbe Problem noch anderswo aufgeschlagen ist, und um
+größere Störungen früher als solche zu erkennen.</p>
+<p>Das Widget setzt eine laufende <strong>Elasticsearch</strong> voraus. Perspektivisch sollen
+die Vorschläge auch über die OTOBO-KI kommen; diese befindet sich derzeit
+ebenfalls in der Beta-Phase.</p>
+</section>
+<section id="erweiterte-suchsyntax">
+<h2>Erweiterte Suchsyntax<a class="headerlink" href="#erweiterte-suchsyntax" title="Link to this heading">¶</a></h2>
+<p>Die Elasticsearch-Suche ist nicht länger eine reine Volltextsuche. Begriffe
+lassen sich mit <code class="docutils literal notranslate"><span class="pre">AND</span></code> und <code class="docutils literal notranslate"><span class="pre">OR</span></code> verknüpfen, und es gibt Filter, mit denen
+gezielt in einzelnen Feldern gesucht wird — etwa nur im <strong>Titel</strong> oder nur im
+<strong>Body</strong>. Damit lassen sich Suchen deutlich präziser formulieren als bisher.</p>
+</section>
+<section id="artikel-bearbeiten-loschen-und-versionieren">
+<h2>Artikel bearbeiten, löschen und versionieren<a class="headerlink" href="#artikel-bearbeiten-loschen-und-versionieren" title="Link to this heading">¶</a></h2>
+<p>Bislang waren Artikel aus Gründen der Revisionssicherheit unveränderlich. In
+11.1 lassen sie sich <strong>nachträglich bearbeiten</strong> — revisionssicher, weil jede
+Änderung eine neue <strong>Version</strong> erzeugt und die vorherige Fassung im Artikel
+weiterhin einsehbar bleibt.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/artikel-bearbeiten.png"><img alt="../_images/artikel-bearbeiten.png" src="../_images/artikel-bearbeiten.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Der Dialog <em>Artikel bearbeiten</em> — Betreff und Text lassen sich ändern,
+optional werden weitere Agenten über die Änderung benachrichtigt.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Mitbearbeitet werden können auch Angaben, die bisher festgeschrieben waren:</p>
+<ul class="simple">
+<li><p><strong>Zeiteinheiten</strong> — nachträglich erfasste Zeit wird auf die bereits gebuchte
+aufaddiert (aus 15 Minuten werden nach einer Nachbuchung von 10 Minuten
+25 Minuten).</p></li>
+<li><p><strong>Artikel-bezogene dynamische Felder</strong>.</p></li>
+</ul>
+<p>Artikel lassen sich außerdem <strong>löschen</strong>. Sie werden dabei nicht wirklich
+entfernt, sondern in einen separaten Bereich der Datenbank verschoben. Über den
+Menüpunkt <em>Gelöschte Artikel anzeigen</em> werden sie wieder sichtbar und können von
+dort <strong>wiederhergestellt</strong> werden.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/artikel-uebersicht.png"><img alt="../_images/artikel-uebersicht.png" src="../_images/artikel-uebersicht.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Die Artikelübersicht mit dem neuen Menüpunkt zum Ein- und Ausblenden
+gelöschter Artikel.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="artikel-anpinnen">
+<h2>Artikel anpinnen<a class="headerlink" href="#artikel-anpinnen" title="Link to this heading">¶</a></h2>
+<p>Ein angepinnter Artikel wird <strong>immer zuoberst</strong> angezeigt, unabhängig davon, wie
+viele Artikel danach noch dazukommen. Die Funktion ähnelt dem früheren
+<em>Markieren</em>, verwendet aber ein Stecknadel-Symbol statt der roten Markierung —
+und ersetzt sie in der Praxis. Typischer Einsatz: eine Zusammenfassungsnotiz oder
+eine Information, die im Ticketverlauf nicht untergehen darf.</p>
+</section>
+<section id="mehrfachauswahl-in-den-ubersichtsfiltern">
+<h2>Mehrfachauswahl in den Übersichtsfiltern<a class="headerlink" href="#mehrfachauswahl-in-den-ubersichtsfiltern" title="Link to this heading">¶</a></h2>
+<p>Die filterbaren Spalten der Ticket-Übersichten (Ansicht nach Queue, nach Service,
+nach Eskalation, Suchergebnisse …) akzeptieren jetzt <strong>mehrere Werte
+gleichzeitig</strong>. Damit lässt sich zum Beispiel in einem Schritt nach <em>neu</em> <strong>und</strong>
+<em>offen</em> filtern, oder nach mehreren Agenten beziehungsweise mehreren Services.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/filter-mehrfachauswahl.png"><img alt="../_images/filter-mehrfachauswahl.png" src="../_images/filter-mehrfachauswahl.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Der Spaltenfilter erlaubt jetzt die Auswahl mehrerer Werte; über
+<em>Alle auswählen</em> / <em>Alles löschen</em> / <em>Bestätigen</em> wird die Auswahl gesetzt.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Ein gesetzter Filter ist an der Umrandung und der dunkelgrauen Markierung der
+Spalte erkennbar; das Mülltonnen-Symbol verwirft alle gesetzten Filter auf
+einmal.</p>
+</section>
+</section>
+<section id="prozessmanagement">
+<span id="id2"></span><h1>Prozessmanagement<a class="headerlink" href="#prozessmanagement" title="Link to this heading">¶</a></h1>
+<p>Die Änderungen am Prozessmanagement sind die, die sich im Alltag von Consultants
+am deutlichsten bemerkbar machen — vor allem in Systemen mit mehreren Prozessen.</p>
+<section id="namensraume-fur-prozesselemente">
+<h2>Namensräume für Prozesselemente<a class="headerlink" href="#namensraume-fur-prozesselemente" title="Link to this heading">¶</a></h2>
+<p>Die mit 11.0 für dynamische Felder eingeführten <strong>Namespaces</strong> gelten jetzt auch
+für Prozesselemente. Angelegt werden sie in der Systemkonfiguration, wahlweise
+für dynamische Felder, für das Prozessmanagement oder <strong>global</strong> für beides.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/namespaces-sysconfig.png"><img alt="../_images/namespaces-sysconfig.png" src="../_images/namespaces-sysconfig.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Namensräume in der Systemkonfiguration — hier die Einstellung
+<code class="docutils literal notranslate"><span class="pre">Namespaces###Global</span></code> mit zwei Namensräumen.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Ein Namensraum darf nur alphanumerische Zeichen enthalten und höchstens
+64 Zeichen lang sein. Namensraum plus Feldname dürfen zusammen 190 Zeichen
+nicht überschreiten.</p>
+</div>
+<p>Beim Anlegen eines Prozesselements wird der Namensraum als eigenes Feld
+ausgewählt und dem Namen mit einem Bindestrich als Präfix vorangestellt.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/aktivitaet-namensraum.png"><img alt="../_images/aktivitaet-namensraum.png" src="../_images/aktivitaet-namensraum.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Beim Anlegen einer Aktivität stehen die neuen Felder <em>Namensraum</em> und
+<em>Global</em> zur Verfügung.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Der Nutzen zeigt sich, sobald derselbe Elementname mehrfach vorkommt: Zwei
+Aktivitätsdialoge namens <em>Genehmigung</em> — einmal für die Manager-, einmal für die
+IT-Leiter-Genehmigung — sind in der Prozessverwaltung als
+<code class="docutils literal notranslate"><span class="pre">Manager</span> <span class="pre">–</span> <span class="pre">Genehmigung</span></code> und <code class="docutils literal notranslate"><span class="pre">IT-Leitung</span> <span class="pre">–</span> <span class="pre">Genehmigung</span></code> sauber
+auseinanderzuhalten. <strong>Der Agent im Ticket sieht weiterhin nur den hinteren
+Teil</strong>, also die Beschriftung <em>Genehmigung</em>.</p>
+</section>
+<section id="global-oder-prozessspezifisch">
+<h2>Global oder prozessspezifisch<a class="headerlink" href="#global-oder-prozessspezifisch" title="Link to this heading">¶</a></h2>
+<p>Bisher waren Prozesselemente <strong>immer</strong> global: Jede Aktivität, jeder
+Aktivitätsdialog, jeder Übergang stand in allen Prozessen zur Auswahl. Das war
+praktisch für die Wiederverwendung, hat die Auswahllisten aber spätestens ab dem
+zweiten Prozess unbenutzbar lang gemacht.</p>
+<p>In 11.1 ist das umgekehrt: Elemente sind standardmäßig <strong>prozessspezifisch</strong> und
+werden erst durch das Häkchen <strong>Global</strong> systemweit sichtbar. Ein
+Onboarding-Artikel bleibt damit im Onboarding-Prozess, während ein
+Allerwelts-Übergang wie „Queue ist gefüllt“ einmal global angelegt und überall
+wiederverwendet wird.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/prozess-elemente.png"><img alt="../_images/prozess-elemente.png" src="../_images/prozess-elemente.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Die Seitenleiste <em>Verfügbare Prozesselemente</em> zeigt nur noch die Elemente
+dieses Prozesses plus die global markierten — hier zwei Übergangs-Aktionen
+statt einer langen Gesamtliste. Die Namensräume sind an den Präfixen im
+Diagramm zu erkennen.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ubergangsbedingungen-alle-irgendeiner-negiert">
+<h2>Übergangsbedingungen: alle, irgendeiner, negiert<a class="headerlink" href="#ubergangsbedingungen-alle-irgendeiner-negiert" title="Link to this heading">¶</a></h2>
+<p>Bedingungen in Prozessübergängen konnten bisher gegen einen <strong>String</strong> oder einen
+<strong>regulären Ausdruck</strong> prüfen. Neu ist, dass beide Varianten in drei Abstufungen
+zur Verfügung stehen:</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/uebergang-typ.png"><img alt="../_images/uebergang-typ.png" src="../_images/uebergang-typ.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Die Auswahl <em>Typ</em> in der Übergangsbedingung. Oben im Dialog sind zugleich die
+neuen Felder <em>Namensraum</em> und <em>Global</em> zu sehen.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Genauer Treffer</dt><dd><p>Mindestens ein Wert muss exakt dem angegebenen Wert entsprechen. Bei einem
+einfachen Feld ist das das bisherige Verhalten.</p>
+</dd>
+<dt>Genauer Treffer – alle</dt><dd><p><strong>Alle</strong> Werte müssen exakt entsprechen.</p>
+</dd>
+<dt>Genauer Treffer – negiert</dt><dd><p><strong>Kein</strong> Wert darf entsprechen.</p>
+</dd>
+<dt>Regulärer Ausdruck / – alle / – negiert</dt><dd><p>Dasselbe Schema für reguläre Ausdrücke: mindestens einer, alle, oder keiner.</p>
+</dd>
+<dt>Transition-Validierungs-Modul</dt><dd><p>Wie bisher, aber nicht mehr der voreingestellte erste Eintrag der Liste — das
+ist jetzt <em>Genauer Treffer</em>.</p>
+</dd>
+</dl>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/uebergang-legende.png"><img alt="../_images/uebergang-legende.png" src="../_images/uebergang-legende.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 8 </span><span class="caption-text">Neu im Übergangsdialog: eine Legende, die jede Option erklärt. (Die
+Übersetzung ins Deutsche stand zum Zeitpunkt der Beta noch aus.)</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Die Abstufungen <em>alle</em> und <em>negiert</em> zielen auf <strong>Multi-Value-Felder</strong> — also
+dynamische Felder, bei denen <em>Mehrfachwerte</em> auf <em>Ja</em> steht und über Plus/Minus
+mehrere Werte erfasst werden (nicht zu verwechseln mit einem
+Mehrfachauswahl-Feld). Typische Anwendung:</p>
+<ul class="simple">
+<li><p><strong>alle</strong> — erst wenn <em>alle</em> Positionen auf <em>Genehmigt</em> stehen, geht es in den
+Prozessabschluss.</p></li>
+<li><p><strong>irgendeiner</strong> (die Grundvariante) — sobald <em>eine</em> Position auf <em>geleistet</em>
+steht, wird eine Zwischenrechnung gestellt.</p></li>
+<li><p><strong>negiert</strong> — prüft, dass ein Wert <em>nicht</em> zutrifft.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p><strong>Prüfen, ob ein Feld leer ist</strong>, geht damit endlich direkt: ein negierter
+regulärer Ausdruck auf das Feld. Bisher war dafür ein Trick nötig — man prüfte
+das Feld auf einen Wert, verknüpfte die Bedingung per <code class="docutils literal notranslate"><span class="pre">XOR</span></code> mit einer
+Bedingung, die immer zutrifft (etwa „die Queue hat irgendeinen Wert“), und
+kehrte die Aussage so um. Bei Prozessen mit zehn oder zwanzig zu prüfenden
+Feldern brauchte man dafür teilweise mehrere Übergänge.</p>
+</div>
+</section>
+<section id="weitere-anderungen">
+<h2>Weitere Änderungen<a class="headerlink" href="#weitere-anderungen" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>Felder innerhalb von Sets ansprechbar</dt><dd><p>Verwendet ein Prozess dynamische Felder vom Typ <em>Set</em>, lassen sich jetzt auch
+die <strong>einzelnen Felder innerhalb des Sets</strong> direkt ansprechen. Das ging vorher
+nicht.</p>
+</dd>
+<dt>Vorlagen in Prozessdialogen</dt><dd><p>In Prozessdialogen stehen jetzt <strong>Textvorlagen</strong> zur Verfügung — praktisch,
+wenn Texte vorbereitet werden sollen.</p>
+</dd>
+<dt>Prozessinformation im Kundenbereich ausblendbar</dt><dd><p>Im Customer-Ticket-Zoom war bisher immer sichtbar, in welchem Prozess und
+welcher Aktivität sich ein Ticket befindet. Diese Anzeige lässt sich nun
+ausblenden, indem die entsprechenden dynamischen Felder der Kundenoberfläche
+nicht mehr zugeordnet werden.</p>
+</dd>
+<dt>Bessere Sortierung</dt><dd><p>Prozesselemente werden in den Listen sinnvoll sortiert statt, wie bisher, in
+mehr oder weniger zufälliger Reihenfolge.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="dynamische-felder">
+<span id="id3"></span><h1>Dynamische Felder<a class="headerlink" href="#dynamische-felder" title="Link to this heading">¶</a></h1>
+<section id="mehr-feldtypen-in-sets">
+<h2>Mehr Feldtypen in Sets<a class="headerlink" href="#mehr-feldtypen-in-sets" title="Link to this heading">¶</a></h2>
+<p>Drei Feldtypen, die bisher mit einer Fehlermeldung abgelehnt wurden, lassen sich
+jetzt innerhalb eines <strong>Dynamic Field Set</strong> verwenden:</p>
+<ul class="simple">
+<li><p><strong>Anhang</strong> (<em>Dynamic Field Attachment</em>)</p></li>
+<li><p><strong>Datenbank</strong> (<em>Dynamic Field Database</em>) — Einfach- oder Mehrfachauswahl, deren
+Werte aus einer Datenbankanbindung kommen</p></li>
+<li><p><strong>Webservice</strong> (<em>Dynamic Field Webservice</em>) — Einfach- oder Mehrfachauswahl,
+deren Werte über einen Webservice geholt und aufbereitet werden</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Das <em>Dynamic Field Webservice</em> dient der <strong>Bereitstellung von
+Auswahlwerten</strong> — es ist nicht dazu da, ein dynamisches Feld per Webservice zu
+aktualisieren. Dafür ist der Webservice selbst zuständig. Diese Verwechslung
+ist in der Praxis häufig.</p>
+</div>
+</section>
+<section id="verkettbare-linsenfelder">
+<h2>Verkettbare Linsenfelder<a class="headerlink" href="#verkettbare-linsenfelder" title="Link to this heading">¶</a></h2>
+<p>Felder vom Typ <strong>Linse</strong> beziehen sich immer auf ein Referenzfeld und lesen von
+dort ein Attribut aus. Neu ist, dass das Ziel</p>
+<ul class="simple">
+<li><p>ein <strong>Set</strong> sein darf, und</p></li>
+<li><p>selbst wieder ein <strong>Referenzfeld</strong> sein darf.</p></li>
+</ul>
+<p>Damit lassen sich Ketten bauen. Beispiel aus der CMDB: Ein Ticket referenziert
+einen <em>Computer</em>; im Computer steht in einem weiteren Referenzfeld das
+<em>Betriebssystem</em>, das selbst ein Config Item ist. Über eine Linse auf dieses
+Referenzfeld kommt man nun an die Attribute des Betriebssystems.</p>
+</section>
+<section id="hide-show-an-neuen-stellen">
+<h2>Hide/Show an neuen Stellen<a class="headerlink" href="#hide-show-an-neuen-stellen" title="Link to this heading">¶</a></h2>
+<p>Die per ACL gesteuerte <strong>Hide/Show-Funktionalität</strong>, mit der dynamische Felder
+ein- und ausgeblendet werden, funktioniert jetzt zusätzlich</p>
+<ul class="simple">
+<li><p><strong>innerhalb von Sets</strong> — in einem Netzwerkkarten-Set kann das Ausfüllen der
+IPv4-Adresse ein weiteres Feld einblenden, das sonst verborgen bleibt;</p></li>
+<li><p>im <strong>Antworten-Dialog</strong> (<code class="docutils literal notranslate"><span class="pre">AgentTicketCompose</span></code>) — dafür war bisher ein
+Zusatzpaket nötig.</p></li>
+</ul>
+</section>
+</section>
+<section id="sicherheit">
+<span id="id4"></span><h1>Sicherheit<a class="headerlink" href="#sicherheit" title="Link to this heading">¶</a></h1>
+<section id="otobo-und-docker-releases-entkoppelt">
+<h2>OTOBO- und Docker-Releases entkoppelt<a class="headerlink" href="#otobo-und-docker-releases-entkoppelt" title="Link to this heading">¶</a></h2>
+<p>Die Releases von OTOBO und der Docker-Umgebung sind künftig <strong>voneinander
+unabhängig</strong>. Ein Docker-Release lässt sich installieren, ohne OTOBO zu
+aktualisieren — und umgekehrt. Man muss nicht länger auf das jeweils andere
+Element warten.</p>
+</section>
+<section id="mariadb-und-verschlusselte-datenbankverbindung">
+<h2>MariaDB und verschlüsselte Datenbankverbindung<a class="headerlink" href="#mariadb-und-verschlusselte-datenbankverbindung" title="Link to this heading">¶</a></h2>
+<p>OTOBO wechselt von <strong>MySQL zu MariaDB</strong>; der Datenbank-Container ist damit in
+jedem Fall eine MariaDB. Zusätzlich lässt sich die <strong>Verbindung zur Datenbank
+verschlüsseln</strong> — konfiguriert wird das in der <code class="docutils literal notranslate"><span class="pre">Kernel/Config.pm</span></code>.</p>
+</section>
+<section id="openid-connect">
+<h2>OpenID Connect<a class="headerlink" href="#openid-connect" title="Link to this heading">¶</a></h2>
+<p><strong>OpenID Connect</strong> steht als Single-Sign-on-Verfahren für <strong>Agenten und Kunden</strong>
+zur Verfügung — etwa gegen Keycloak oder vergleichbare Identity Provider, bei
+denen die relevanten Informationen im Token mitgegeben werden.</p>
+</section>
+<section id="zentrale-oauth-2-token-verwaltung">
+<h2>Zentrale OAuth-2-Token-Verwaltung<a class="headerlink" href="#zentrale-oauth-2-token-verwaltung" title="Link to this heading">¶</a></h2>
+<p>Die Verwaltung von OAuth-2-Tokens ist neu umgesetzt und liegt jetzt <strong>zentral im
+Admin-Bereich</strong> statt in der Systemkonfiguration. Sie deckt ab:</p>
+<ul class="simple">
+<li><p><strong>Mail-Empfang</strong> über POP3 und IMAP — bisher über das Zusatzpaket
+<em>MailAccount OAuth2</em></p></li>
+<li><p><strong>Mail-Versand über SMTP</strong> — neu, und mit Blick auf die von Microsoft
+angekündigte Umstellung praktisch relevant</p></li>
+<li><p><strong>Webservices</strong> — bisher über das Zusatzpaket <em>OAuth2</em></p></li>
+</ul>
+<p>Beide Zusatzpakete gehen damit im Standard auf.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Das ist eine der beiden Stellen, an denen ein Upgrade <strong>Handarbeit</strong>
+erfordert. Details unter <a class="reference internal" href="#upgrade"><span class="std std-ref">Upgrade und Betrieb</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="datenaustausch-und-integration">
+<span id="integration"></span><h1>Datenaustausch und Integration<a class="headerlink" href="#datenaustausch-und-integration" title="Link to this heading">¶</a></h1>
+<section id="webservices">
+<h2>Webservices<a class="headerlink" href="#webservices" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt>Multipart/form-data für Anhänge</dt><dd><p>Anhänge können jetzt nicht nur Base64-kodiert, sondern auch als
+<code class="docutils literal notranslate"><span class="pre">multipart/form-data</span></code> verschickt werden. Gegenstellen wie <strong>Jira</strong> und
+<strong>OpenProject</strong> nehmen Anhänge nicht Base64-kodiert entgegen — mit dem neuen
+Verfahren funktioniert die Übertragung ohne Umwege.</p>
+</dd>
+<dt>Arrays im XSLT-Mapping erzwingen</dt><dd><p>Erwartet die Gegenstelle ein Array, OTOBO liefert aber einen einfachen Wert,
+lässt sich die Array-Form jetzt <strong>erzwingen</strong>. Der bisherige Trick — denselben
+Wert doppelt ins XSLT-Mapping schreiben, damit OTOBO ein Array daraus baut —
+entfällt.</p>
+</dd>
+<dt>OAuth 2 als Authentifizierung</dt><dd><p>Siehe <a class="reference internal" href="#sicherheit"><span class="std std-ref">Sicherheit</span></a>.</p>
+</dd>
+</dl>
+</section>
+<section id="import-und-export-von-objekten">
+<h2>Import und Export von Objekten<a class="headerlink" href="#import-und-export-von-objekten" title="Link to this heading">¶</a></h2>
+<p>Der Import/Export deckt deutlich mehr Objekte ab als bisher, darunter <strong>Tickets</strong>
+(vorher ein Zusatzpaket) und <strong>Kunden</strong>.</p>
+</section>
+<section id="konfiguration-exportieren">
+<h2>Konfiguration exportieren<a class="headerlink" href="#konfiguration-exportieren" title="Link to this heading">¶</a></h2>
+<p>Konfigurationsobjekte lassen sich als <strong>YAML-Datei</strong> exportieren und auf einem
+anderen System importieren — etwa die <strong>Queue-Struktur</strong> oder der
+<strong>Servicekatalog</strong>, so wie man es von ACLs bereits kennt. Exportiert wird dabei
+nicht nur das Objekt selbst, sondern auch, was daran hängt: Eskalationszeiten,
+zugeordnete Gruppen und Ähnliches.</p>
+</section>
+<section id="konfigurationspakete">
+<h2>Konfigurationspakete<a class="headerlink" href="#konfigurationspakete" title="Link to this heading">¶</a></h2>
+<p>Mehrere Konfigurationsobjekte lassen sich zu einem <strong>Konfigurationspaket</strong>
+bündeln — Prozesse, dynamische Felder, Benachrichtigungen, ACLs, Queues und
+weitere — und gemeinsam exportieren.</p>
+<p>Damit lässt sich ein ganzer <strong>Use Case</strong> paketieren. Zwei Beispiele aus der
+Praxis:</p>
+<ul class="simple">
+<li><p>Ein Anbieter stellt Systeme für verschiedene Partnereinrichtungen bereit und
+spielt statt einzelner YAML-Dateien für Queues, Felder, Oberflächen und
+Benachrichtigungen genau <strong>ein</strong> Konfigurationspaket ein.</p></li>
+<li><p>Ein Konzern erarbeitet einmal eine Grundkonfiguration und stellt sie den
+Schwester- und Tochtergesellschaften bereit, ohne das komplette System zu
+kopieren.</p></li>
+</ul>
+</section>
+</section>
+<section id="upgrade-und-betrieb">
+<span id="upgrade"></span><h1>Upgrade und Betrieb<a class="headerlink" href="#upgrade-und-betrieb" title="Link to this heading">¶</a></h1>
+<p>Zwei Punkte betreffen jedes bestehende System und müssen <strong>vor</strong> dem Upgrade
+bedacht werden.</p>
+<section id="die-ordnerstruktur-wird-neu-angelegt">
+<h2>Die Ordnerstruktur wird neu angelegt<a class="headerlink" href="#die-ordnerstruktur-wird-neu-angelegt" title="Link to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Beim Upgrade auf 11.1 wird die Ordnerstruktur von OTOBO <strong>komplett neu
+angelegt</strong>. Alle alten Dateien werden dabei verworfen — mit Ausnahme der
+<code class="docutils literal notranslate"><span class="pre">Kernel/Config.pm</span></code>.</p>
+</div>
+<p>Alles, was an einem System von Hand angepasst oder ergänzt wurde, muss deshalb
+<strong>vorher in ein kundenspezifisches Paket</strong> wandern. Betroffen ist unter anderem:</p>
+<ul class="simple">
+<li><p>Bilder und Logos für den Kundenbereich, Favicons</p></li>
+<li><p>angepasste Template-Dateien (etwa ein <code class="docutils literal notranslate"><span class="pre">AgentTicketPhone.tt</span></code>, in dem früher
+ein Feld ausgeblendet wurde — heute löst man das eher über die
+Auto-Select-Mechanik)</p></li>
+<li><p>alle sonstigen Dateien, die es im Standard nicht gibt</p></li>
+</ul>
+<p>Am Ende der Upgrade-Routine läuft ein <strong>Paket-Reinstall</strong>, der die Dateien aus
+dem eigenen Paket wieder an ihren Platz legt. Ohne Paket sind die Anpassungen
+nach dem Upgrade schlicht weg.</p>
+<section id="ein-eigenes-paket-schnuren">
+<h3>Ein eigenes Paket schnüren<a class="headerlink" href="#ein-eigenes-paket-schnuren" title="Link to this heading">¶</a></h3>
+<p>Die Anleitung steht im OTOBO-Entwicklerhandbuch unter
+<a class="reference external" href="https://doc.otobo.org/">How to publish your OTOBO extensions</a>. Kurzfassung:</p>
+<ol class="arabic">
+<li><p>Eine <code class="docutils literal notranslate"><span class="pre">.sopm</span></code>-Datei anlegen. Die oberen Abschnitte (Framework, Name,
+Version …) genügen; <code class="docutils literal notranslate"><span class="pre">DatabaseInstall</span></code> und Ähnliches wird in aller Regel
+nicht gebraucht.</p></li>
+<li><p>Alle angepassten Dateien mit dem richtigen Dateityp in die <code class="docutils literal notranslate"><span class="pre">&lt;Filelist&gt;</span></code>
+eintragen.</p></li>
+<li><p>Paket bauen und installieren:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bin/otobo.Console.pl<span class="w"> </span>Dev::Package::Build<span class="w">   </span>&lt;Paket&gt;.sopm<span class="w"> </span>&lt;Zielverzeichnis&gt;
+bin/otobo.Console.pl<span class="w"> </span>Admin::Package::Install<span class="w"> </span>&lt;Paket&gt;.opm
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Der Aufwand fällt einmal an — danach überstehen die Anpassungen jedes weitere
+Upgrade.</p>
+</section>
+</section>
+<section id="oauth-2-anbindungen-neu-einrichten">
+<h2>OAuth-2-Anbindungen neu einrichten<a class="headerlink" href="#oauth-2-anbindungen-neu-einrichten" title="Link to this heading">¶</a></h2>
+<p>Weil die Funktionalität aus <strong>zwei</strong> getrennten Paketen (<em>OAuth2</em> und
+<em>MailAccount OAuth2</em>) in den Standard überführt wurde, lassen sich die
+bestehenden Systemkonfigurations-Einstellungen nicht eins zu eins migrieren.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Nach dem Upgrade müssen <strong>alle OAuth-2-Anbindungen im neuen Admin-Bereich von
+Hand neu angelegt</strong> werden — inklusive der Zwei-Faktor-Authentifizierung
+gegenüber dem Identity Provider. Das ist mit den Kunden zu terminieren, nicht
+nebenbei zu erledigen.</p>
+</div>
+<p>Zusätzlich war zum Zeitpunkt der Beta noch ein <strong>Workaround</strong> nötig, dessen
+Reihenfolge eingehalten werden muss:</p>
+<ol class="arabic simple">
+<li><p>Das Paket <em>OAuth2</em> installieren, falls noch nicht vorhanden.</p></li>
+<li><p>Die Einstellungen übertragen.</p></li>
+<li><p>Das Paket <em>MailAccount OAuth2</em> deinstallieren.</p></li>
+<li><p>Erst danach das Upgrade auf 11.1 durchführen.</p></li>
+</ol>
+<p>Rother OSS dokumentiert diesen Schritt noch; ob er im finalen Release entfällt,
+war zum Redaktionsschluss offen. Die aktuelle Fassung der Upgrade-Anleitung ist
+deshalb in jedem Fall vor dem Upgrade zu prüfen.</p>
+</section>
+</section>
+<section id="offene-punkte-aus-der-beta">
+<h1>Offene Punkte aus der Beta<a class="headerlink" href="#offene-punkte-aus-der-beta" title="Link to this heading">¶</a></h1>
+<p>Die folgenden Punkte waren zum Zeitpunkt der Vorstellung ungeklärt und sollten
+vor einem produktiven Upgrade nachgeprüft werden.</p>
+<dl class="simple">
+<dt>Import dynamischer Felder aus YAML</dt><dd><p>Aus dem Partnerkreis wurde berichtet, dass der YAML-<strong>Import</strong> dynamischer
+Felder in 11.1 stillschweigend fehlschlägt: keine Fehlermeldung, aber die
+Felder sind danach weder in der Oberfläche noch in der Datenbank. In 11.0
+funktionierte derselbe Export/Import. Rother OSS war das nicht bekannt; als
+mögliche Ursache wurde genannt, dass ein Feld aus einem Paket stammt, das auf
+dem Zielsystem nicht installiert ist. Ein Blick ins Log wurde empfohlen.</p>
+</dd>
+<dt>Linse auf Linse</dt><dd><p>Ob sich ein Linsenfeld auf ein weiteres Linsenfeld richten lässt (und man so
+einen zusätzlichen Hop machen kann — Ticket → Computer → Vertrag → Attribut),
+konnte nicht verbindlich beantwortet werden. An den Linsenfeldern wird im
+Rahmen eines Kundenprojekts weiter gearbeitet; einige Punkte stehen noch auf
+der Liste.</p>
+</dd>
+<dt>Übersetzungen</dt><dd><p>Einzelne Beschriftungen sind in der Beta noch englisch oder unübersetzt —
+etwa der Eintrag <em>DELETE FILTER</em> im Spaltenfilter und die Legende im
+Übergangsdialog.</p>
+</dd>
+</dl>
+</section>
+<section id="quelle">
+<h1>Quelle<a class="headerlink" href="#quelle" title="Link to this heading">¶</a></h1>
+<p>Diese Zusammenfassung beruht auf der Partner-Vorstellung von OTOBO 11.1 durch
+Rother OSS am <strong>25. August 2026</strong> sowie den zugehörigen Release Notes.
+Verbindlich sind die offizielle Dokumentation unter <a class="reference external" href="https://doc.otobo.org/">doc.otobo.org</a> und die Release Notes von Rother OSS.</p>
+<p>Fragen zum Release beantwortet Rother OSS unter <code class="docutils literal notranslate"><span class="pre">partner&#64;otobo.io</span></code>.</p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
