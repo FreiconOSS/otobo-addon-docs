@@ -1,0 +1,995 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO Label Print Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d62e1945" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO Label Print  Dokumentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO Label Print  Dokumentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-label-print">
+<h1>OTOBO Label Print<a class="headerlink" href="#otobo-label-print" title="Link to this heading">¶</a></h1>
+</section>
+<section id="beschreibung">
+<h1>Beschreibung<a class="headerlink" href="#beschreibung" title="Link to this heading">¶</a></h1>
+<p><strong>Label Print</strong> druckt Etiketten für Config Items aus OTOBO heraus — mit QR-Code,
+Logo und genau den Angaben, die auf dem Gerät stehen sollen. Wer das Etikett später
+scannt, landet unmittelbar beim passenden Config Item in OTOBO.</p>
+<p>Ein Administrator gestaltet je Config-Item-Klasse ein Etikett auf einer
+Millimeter-Leinwand: Texte, Platzhalter aus der CMDB, QR-Code, Firmenlogo, Linien.
+Die Agenten drucken danach ohne weitere Einstellungen — aus dem Config Item heraus,
+aus einem Seitenleisten-Widget oder als Massendruck für hunderte Geräte auf einmal.
+Ausgegeben wird ein PDF in exakter Etikettengröße, das der normale Druckdialog des
+Browsers an den Etikettendrucker gibt.</p>
+<p>Das Addon arbeitet vollständig innerhalb von OTOBO. Es braucht keinen zusätzlichen
+Dienst, keinen Container und keine Browser-Erweiterung: das PDF entsteht mit den
+Bordmitteln des Frameworks, der QR-Encoder ist Teil des Pakets. Damit gibt es auch
+keine zweite Stelle, die betrieben, aktualisiert und überwacht werden muss.</p>
+<p><strong>Auf einen Blick</strong></p>
+<ul class="simple">
+<li><p>Etiketten-Layouts je Config-Item-Klasse, grafisch gestaltet — kein Vorlagen-Code</p></li>
+<li><p>Platzhalter aus der gesamten CMDB, auch über Verweise hinweg
+(z. B. Raum → Gebäude des Raums)</p></li>
+<li><p>QR-Code mit Kurz-URL zurück ins System; ein Scan führt direkt zum Config Item</p></li>
+<li><p>Druck aus dem Config Item, aus der Seitenleiste oder als Massendruck</p></li>
+<li><p>PDF in exakter Etikettengröße für Band- und Etikettendrucker</p></li>
+<li><p>Kein externer Dienst, kein Core-Override, keine Änderung an bestehenden Masken</p></li>
+</ul>
+</section>
+<section id="einsatzszenarien">
+<h1>Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Link to this heading">¶</a></h1>
+<p><strong>Inventur und Wareneingang.</strong> Neue Geräte werden in der CMDB angelegt und bekommen
+sofort ihr Etikett. Die Assetnummer steht lesbar auf dem Gerät, der QR-Code führt
+zum Datensatz — ohne Zwischenliste und ohne zweites Werkzeug.</p>
+<p><strong>Rollout im Feld.</strong> Vor dem Ausrollen einer Charge druckt der Servicedesk alle
+Etiketten in einem Durchgang. Der Massendruck erzeugt ein einziges PDF mit einem
+Etikett je Seite; der Banddrucker schneidet nach jeder Seite.</p>
+<p><strong>Support am Gerät.</strong> Der Techniker scannt das Etikett mit dem Telefon und hat den
+Config-Item-Datensatz vor sich: Standort, Verwendungsstatus, verknüpfte Tickets,
+Vertragslaufzeit. Ist er angemeldet, öffnet sich die Agenten-Oberfläche; ohne
+Anmeldung führt der Weg über den Login oder — wenn gewünscht — in das Kundenportal.</p>
+<p><strong>Standortkennzeichnung.</strong> Räume, Racks, Docking-Stationen und Bildschirme lassen
+sich mit demselben Werkzeug beschriften. Jede Klasse bekommt ihr eigenes Layout,
+etwa ein schmales Band für Kabel und Netzteile und ein größeres Format für Racks.</p>
+<p><strong>Einheitliches Erscheinungsbild.</strong> Das Etikett ist an die Klasse gebunden, nicht an
+den einzelnen Mitarbeiter. Alle Geräte einer Klasse werden gleich beschriftet, auch
+wenn an verschiedenen Standorten gedruckt wird.</p>
+</section>
+<section id="systemvoraussetzungen">
+<h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
+<section id="framework">
+<h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
+<p>OTOBO 11.0.x</p>
+</section>
+<section id="pakete">
+<h2>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ITSMConfigurationManagement</span></code> ab Version 11.0.0</p>
+</section>
+<section id="software-von-drittanbietern">
+<h2>Software von Drittanbietern<a class="headerlink" href="#software-von-drittanbietern" title="Link to this heading">¶</a></h2>
+<p>Keine. Das PDF entsteht über <code class="docutils literal notranslate"><span class="pre">PDF::API2</span></code> aus der mitgelieferten CPAN-Bibliothek
+von OTOBO, der QR-Encoder ist Bestandteil des Pakets.</p>
+</section>
+<section id="schriften">
+<h2>Schriften<a class="headerlink" href="#schriften" title="Link to this heading">¶</a></h2>
+<p>Das Paket bringt selbst keine Schriftdateien mit. Verwendet werden — in dieser
+Reihenfolge — Liberation Sans bzw. Liberation Mono aus
+<code class="docutils literal notranslate"><span class="pre">var/fonts/FreiconLabelPrint/</span></code>, sonst die DejaVu-Schriften, die OTOBO ohnehin
+mitbringt. Ohne weiteres Zutun ist DejaVu Sans in Betrieb.</p>
+</section>
+<section id="drucker">
+<h2>Drucker<a class="headerlink" href="#drucker" title="Link to this heading">¶</a></h2>
+<p>Jeder Drucker, den das Betriebssystem kennt. Getestet mit Brother-P-touch-Bandgeräten;
+Formatvorlagen für die gängigen TZe-Bandbreiten und für ein Zebra-Format sind
+enthalten. Gedruckt wird aus dem PDF über den normalen Druckdialog.</p>
+</section>
+<section id="uberblick">
+<span id="ueberblick"></span><h2>Überblick<a class="headerlink" href="#uberblick" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installation"><span class="std std-ref">Installation</span></a> — Paket einspielen, Rechte, Webserver-Regel für den QR-Code</p></li>
+<li><p><a class="reference internal" href="#konfiguration"><span class="std std-ref">Konfiguration</span></a> — die Einstellungen des Addons</p></li>
+<li><p><a class="reference internal" href="#admin-guide"><span class="std std-ref">Admin-Handbuch</span></a> — Etiketten-Layouts anlegen und gestalten</p></li>
+<li><p><a class="reference internal" href="#user-guide"><span class="std std-ref">Anwender-Handbuch</span></a> — Etiketten drucken, einzeln und in Serie</p></li>
+<li><p><a class="reference internal" href="#referenz"><span class="std std-ref">Referenz</span></a> — Platzhalter, Rechte, Datenmodell</p></li>
+</ul>
+</section>
+</section>
+<section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>Das Addon wird als OPM-Paket eingespielt.</p>
+<p><strong>Über die Oberfläche</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Admin → Paketverwaltung</strong> öffnen.</p></li>
+<li><p>Unter <em>Paket installieren</em> die Datei <code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint-&lt;Version&gt;.opm</span></code> wählen
+und installieren.</p></li>
+</ol>
+<p><strong>Über die Konsole</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bin/otobo.Console.pl<span class="w"> </span>Admin::Package::Install<span class="w"> </span>/pfad/zu/FreiconLabelPrint-&lt;Version&gt;.opm
+</pre></div>
+</div>
+<p>Die Installation legt die Benutzergruppe <code class="docutils literal notranslate"><span class="pre">label_adm</span></code> an. Wer Mitglied dieser
+Gruppe ist, darf Etiketten-Layouts anlegen und ändern, ohne sonstige
+Administrationsrechte zu besitzen. Mitglieder der Gruppe <code class="docutils literal notranslate"><span class="pre">admin</span></code> dürfen es
+ohnehin. Beim Deinstallieren wird die Gruppe nicht gelöscht, sondern nur ungültig
+gesetzt — bestehende Zuordnungen bleiben damit erhalten.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Das Paket <code class="docutils literal notranslate"><span class="pre">ITSMConfigurationManagement</span></code> muss vorher installiert sein. Ohne die
+CMDB gibt es keine Config Items, die beschriftet werden könnten.</p>
+</div>
+<section id="webserver-regel-fur-den-qr-code">
+<span id="webserver-regel"></span><h2>Webserver-Regel für den QR-Code<a class="headerlink" href="#webserver-regel-fur-den-qr-code" title="Link to this heading">¶</a></h2>
+<p>Der QR-Code trägt in der Voreinstellung eine <strong>Kurz-URL</strong> der Form</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://&lt;host&gt;/otobo/ci/&lt;Nummer&gt;
+</pre></div>
+</div>
+<p>Je kürzer der Inhalt, desto weniger Module braucht der Code — und desto größer bleibt
+jedes einzelne Modul. Das ist der Unterschied zwischen einem Etikett, das im Halbdunkel
+einer Serverkabine noch gelesen wird, und einem, das dreimal angefunkt werden muss.</p>
+<p>Damit diese Adresse funktioniert, leitet der Webserver sie auf OTOBO um. Die Regel
+liegt dem Paket unter <code class="docutils literal notranslate"><span class="pre">doc/webserver/</span></code> bei; hier die gängigen Varianten:</p>
+<p><em>Apache, ohne Zusatzmodul:</em></p>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RedirectMatch</span><span class="w"> </span><span class="m">302</span><span class="w"> </span><span class="s2">&quot;(?i)^/otobo/ci/([^/?#]+)$&quot;</span><span class="w"> </span><span class="s2">&quot;/otobo/public.pl?Action=PublicLabelScan;Number=$1&quot;</span>
+</pre></div>
+</div>
+<p><em>Apache mit mod_rewrite:</em></p>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RewriteRule</span><span class="w"> </span><span class="s2">&quot;^/otobo/ci/([^/?#]+)$&quot;</span><span class="w"> </span><span class="s2">&quot;/otobo/public.pl?Action=PublicLabelScan;Number=$1&quot;</span><span class="w"> </span>[NC,PT,L]
+</pre></div>
+</div>
+<p><em>nginx:</em></p>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="p">~</span><span class="sr">*</span><span class="w"> </span><span class="s">^/otobo/ci/([^/]+)</span>$<span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">return</span><span class="w"> </span><span class="mi">302</span><span class="w"> </span><span class="s">/otobo/public.pl?Action=PublicLabelScan</span><span class="p">;</span><span class="kn">Number=$1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Wenn die Regel nicht eingerichtet werden kann, stellen Sie den QR-Inhalt im
+Layout auf <strong>Lange URL zum Config Item (geht ohne Regel)</strong> um. Der Code
+funktioniert dann ohne jede Serveranpassung, wird aber um rund 34 Zeichen
+länger — er braucht eine höhere Version und damit kleinere Module. Auf schmalen
+Bändern ist das der Unterschied, der beim Scannen weh tut.</p>
+</div>
+</section>
+</section>
+<section id="konfiguration">
+<span id="id2"></span><h1>Konfiguration<a class="headerlink" href="#konfiguration" title="Link to this heading">¶</a></h1>
+<p>Alle Einstellungen liegen in der SysConfig unter <strong>Core → FreiconLabelPrint</strong>. Für den
+Betrieb muss keine davon angefasst werden; die Voreinstellungen sind für Bandetiketten
+gewählt.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###Formats</span></code></dt><dd><p>Die Formatvorlagen, die im Layout-Editor zur Auswahl stehen. Ein Wert hat die Form
+<code class="docutils literal notranslate"><span class="pre">Breite;Höhe;Rand</span> <span class="pre">waagerecht;Rand</span> <span class="pre">senkrecht</span></code> in Millimetern. Voreingestellt sind
+Brother TZe 12 mm, 18 mm und 24 mm sowie ein Zebra-Format 50 × 25 mm. Eigene
+Etikettengrößen tragen Sie hier ein, damit sie nicht bei jedem Layout neu getippt
+werden müssen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###PrinterDPI</span></code></dt><dd><p>Auflösung des Etikettendruckers, Vorgabe <code class="docutils literal notranslate"><span class="pre">360</span></code>. Der Wert ändert nichts am Druck.
+Er wird nur gebraucht, um im Editor auszurechnen, wie viele Druckpunkte auf ein
+QR-Modul entfallen — die Kennzahl, an der man erkennt, ob ein Code zu klein gerät.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ImageMaxKB</span></code></dt><dd><p>Größte Bilddatei, die der Editor annimmt, Vorgabe <code class="docutils literal notranslate"><span class="pre">200</span></code>. Bilder werden im Layout
+selbst gespeichert; ein großes Logo bläht jedes Layout auf.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###MaxReferenceDepth</span></code></dt><dd><p>Wie viele Verweisfelder ein Platzhalter verfolgen darf, Vorgabe <code class="docutils literal notranslate"><span class="pre">2</span></code>. Bei <code class="docutils literal notranslate"><span class="pre">2</span></code>
+erreichen Sie vom Gerät aus den Raum und von dort das Gebäude.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###PickerExcludeFields</span></code></dt><dd><p>Reguläre Ausdrücke für Dynamic-Field-Namen, die im Platzhalter-Fenster nicht
+angeboten werden. Voreingestellt <code class="docutils literal notranslate"><span class="pre">^monitos</span></code>. Von Hand getippt funktionieren
+solche Felder weiterhin — die Einstellung räumt nur die Auswahl auf.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ZoomPreviewPxPerMM</span></code></dt><dd><p>Maßstab der Etikettenvorschau im Config Item, Vorgabe <code class="docutils literal notranslate"><span class="pre">5</span></code> Bildschirmpunkte je
+Millimeter.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ScanNoSessionTarget</span></code></dt><dd><p>Wohin ein Scan führt, wenn niemand angemeldet ist: <code class="docutils literal notranslate"><span class="pre">Agent</span></code> (Vorgabe) oder
+<code class="docutils literal notranslate"><span class="pre">Customer</span></code>. Nach der Anmeldung geht es automatisch beim Config Item weiter.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ScanPublicZoom</span></code></dt><dd><p>Erlaubt, dass ein Scan ohne Anmeldung direkt in die öffentliche Config-Item-Ansicht
+führt, Vorgabe aus. Setzt das öffentliche CMDB-Paket und die Freigabe der Klasse
+voraus.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###BulkLimit</span></code></dt><dd><p>Höchstzahl der Treffer je Suche im Massendruck, Vorgabe <code class="docutils literal notranslate"><span class="pre">500</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ObjectTypes</span></code></dt><dd><p>Objekttypen, für die es Layouts gibt. Derzeit ausschließlich Config Items.</p>
+</dd>
+</dl>
+<p>Zwei weitere Einstellungen sind keine Stellschrauben, aber gelegentlich nützlich:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###100-FreiconLabelPrint-ZoomWidget</span></code></dt><dd><p>Das Etiketten-Widget in der Seitenleiste des Config Items. Ungültig gesetzt,
+verschwindet das Widget — der Menüeintrag bleibt.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::MenuModule###450-LabelPrint</span></code></dt><dd><p>Der Eintrag <em>Etikett drucken</em> im Menü des Config Items.</p>
+</dd>
+</dl>
+</section>
+<section id="admin-handbuch">
+<span id="admin-guide"></span><h1>Admin-Handbuch<a class="headerlink" href="#admin-handbuch" title="Link to this heading">¶</a></h1>
+<section id="die-grundregel">
+<h2>Die Grundregel<a class="headerlink" href="#die-grundregel" title="Link to this heading">¶</a></h2>
+<p><strong>Jede Config-Item-Klasse hat höchstens ein gültiges Layout.</strong> Ein Layout kann dabei
+mehrere Klassen bündeln — Notebooks und Tablets etwa dasselbe Etikett tragen. Ein
+Layout <strong>ohne</strong> Klassen ist der Standard für alle übrigen Klassen; auch davon kann es
+nur eines geben.</p>
+<p>Diese Regel ist der Grund, warum es keine Auswahl beim Drucken gibt: Ein Agent, der
+auf <em>Etikett drucken</em> klickt, bekommt genau das Etikett, das für diese Klasse
+hinterlegt ist. Er muss nichts wissen und kann nichts falsch machen.</p>
+</section>
+<section id="etiketten-layouts-verwalten">
+<h2>Etiketten-Layouts verwalten<a class="headerlink" href="#etiketten-layouts-verwalten" title="Link to this heading">¶</a></h2>
+<p><strong>Admin → Verschiedenes → Etiketten-Layouts</strong> listet alle Layouts, gültige zuerst.
+Die Spalte <em>Klassen</em> zeigt, woran ein Layout gebunden ist, oder kursiv
+<em>Standard (alle übrigen Klassen)</em>.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/uebersicht.png"><img alt="../_images/uebersicht.png" src="../_images/uebersicht.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Die Layout-Übersicht. Die Spalte <em>Klassen</em> zeigt die Bindung; ein Layout ohne
+Klassen ist der Standard für alle übrigen. Rechts stehen Aktivieren, Kopieren
+und Löschen.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Rechts steht je Zeile:</p>
+<dl class="simple">
+<dt>Aktivieren</dt><dd><p>Nur bei ungültigen Layouts. Setzt dieses Layout gültig und alle kollidierenden
+Layouts ungültig — in einem Schritt.</p>
+</dd>
+<dt>Kopieren</dt><dd><p>Legt eine Kopie an. Die Kopie ist <strong>ungültig</strong> und trägt den Zusatz <em>(Kopie)</em>.</p>
+</dd>
+<dt>Löschen</dt><dd><p>Entfernt das Layout endgültig.</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p><strong>So bauen Sie ein Etikett um, das im Einsatz ist:</strong> kopieren, die Kopie in Ruhe
+bearbeiten, dann <em>Aktivieren</em>. Bis zu diesem Klick druckt jeder weiter das alte
+Etikett; danach alle das neue. Es gibt keinen Zwischenzustand, in dem eine Klasse
+ohne Layout dasteht.</p>
+</div>
+</section>
+<section id="ein-layout-anlegen">
+<h2>Ein Layout anlegen<a class="headerlink" href="#ein-layout-anlegen" title="Link to this heading">¶</a></h2>
+<p><em>Etiketten-Layout hinzufügen</em> öffnet die Maske mit den Stammdaten:</p>
+<dl class="simple">
+<dt>Name</dt><dd><p>Frei wählbar. Er taucht später in der Etikettenvorschau des Config Items auf.</p>
+</dd>
+<dt>Kommentar</dt><dd><p>Für die Notiz, für welches Band oder welchen Drucker das Layout gedacht ist.</p>
+</dd>
+<dt>Objekttyp</dt><dd><p>Derzeit <em>Config Item</em>.</p>
+</dd>
+<dt>Klassen</dt><dd><p>Mehrfachauswahl. Klassen, die schon an ein anderes <strong>gültiges</strong> Layout gebunden
+sind, stehen ausgegraut in der Liste und tragen den Namen dieses Layouts — Sie
+sehen also sofort, warum eine Klasse nicht wählbar ist. Leer lassen macht das
+Layout zum Standard für alle übrigen Klassen.</p>
+</dd>
+<dt>Formatvorlage</dt><dd><p>Füllt Größe und Ränder darunter aus. Die Werte lassen sich danach frei anpassen;
+die Vorlage ist nur eine Abkürzung.</p>
+</dd>
+<dt>Etikettengröße (mm)</dt><dd><p>Breite × Höhe des Bandes oder der Etikette.</p>
+</dd>
+<dt>Nicht bedruckbarer Rand (mm)</dt><dd><p>Der Streifen, den ein Banddrucker prinzipbedingt nicht bedruckt — links/rechts und
+oben/unten je getrennt. Der Editor zeigt die verbleibende Druckfläche als
+gestrichelten Rahmen, und Elemente bleiben innerhalb davon.</p>
+</dd>
+<dt>Gültigkeit</dt><dd><p>Nur ein gültiges Layout je Klasse. Ein neu angelegtes Layout, dessen Klasse schon
+belegt ist, lässt sich nicht gültig speichern — die Meldung nennt das Layout, das
+im Weg steht.</p>
+</dd>
+</dl>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/stammdaten.png"><img alt="../_images/stammdaten.png" src="../_images/stammdaten.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Die Stammdaten eines Layouts. Klassen, die schon an ein anderes gültiges Layout
+gebunden sind, stehen in der Auswahl ausgegraut und nennen dieses Layout.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="der-layout-editor">
+<h2>Der Layout-Editor<a class="headerlink" href="#der-layout-editor" title="Link to this heading">¶</a></h2>
+<p>Unter den Stammdaten liegt der Kasten <strong>Etikettengestaltung</strong>. Was Sie dort sehen,
+ist keine Nachbildung: Die Leinwand zeigt dieselbe Zeichnung, aus der später das PDF
+entsteht — gleiche Maße, gleiche Schriftberechnung, gleicher QR-Code. Was im Editor
+passt, passt auch auf dem Band.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/editor.png"><img alt="../_images/editor.png" src="../_images/editor.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Der Layout-Editor. Die Leinwand zeigt dieselbe Zeichnung, aus der das PDF
+entsteht — was hier passt, passt auch auf dem Band.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Die Werkzeugleiste</strong> bietet <em>Auswählen</em>, <em>Text</em>, <em>Platzhalter</em>, <em>QR-Code</em>, <em>Bild</em>
+und <em>Linie</em>. Werkzeug wählen, dann auf das Etikett klicken — das Element entsteht an
+der Klickstelle.</p>
+<p><strong>Rechts daneben</strong> steht die Vorschau-Steuerung: Im Feld <em>Vorschau mit Config Item</em>
+tippen Sie einen Teil einer Nummer oder eines Namens und wählen aus den Vorschlägen.
+Ab da zeigt die Leinwand echte Werte statt Platzhalternamen. <em>PDF-Vorschau</em> öffnet
+das fertige Etikett als PDF in einem neuen Tab — das ist der ehrlichste Blick, den
+Sie vor dem ersten Druck bekommen. Über <em>Zoom</em> stellen Sie den Maßstab der Leinwand
+von 6 bis 24 Bildpunkten je Millimeter.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Vorschau arbeitet immer mit dem <strong>ungespeicherten</strong> Stand aus dem Formular.
+Sie können also ausgiebig probieren und die Maske am Ende ohne Speichern verlassen.</p>
+</div>
+<p><strong>Elemente bewegen.</strong> Ziehen rastet auf 0,25 mm. Die vier Eckgriffe ändern die Größe;
+ein QR-Code bleibt dabei immer quadratisch. Die Pfeiltasten verschieben um 0,1 mm,
+mit Shift um 1 mm. Kein Element kann das Etikett verlassen.</p>
+<p><strong>Nützliche Tasten</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Taste</p></th>
+<th class="head"><p>Wirkung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Pfeiltasten</p></td>
+<td><p>Element um 0,1 mm verschieben (mit Shift: 1 mm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enter oder F2</p></td>
+<td><p>Text direkt auf dem Etikett bearbeiten</p></td>
+</tr>
+<tr class="row-even"><td><p>Strg/Cmd + Leertaste</p></td>
+<td><p>Platzhalter-Fenster für das gewählte Element</p></td>
+</tr>
+<tr class="row-odd"><td><p>Strg/Cmd + Z</p></td>
+<td><p>Rückgängig (50 Schritte)</p></td>
+</tr>
+<tr class="row-even"><td><p>Strg/Cmd + Shift + Z</p></td>
+<td><p>Wiederherstellen</p></td>
+</tr>
+<tr class="row-odd"><td><p>Strg/Cmd + D</p></td>
+<td><p>Element duplizieren</p></td>
+</tr>
+<tr class="row-even"><td><p>Entf</p></td>
+<td><p>Element entfernen</p></td>
+</tr>
+<tr class="row-odd"><td><p>Esc</p></td>
+<td><p>Auswahl aufheben</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="text-und-platzhalter">
+<h2>Text und Platzhalter<a class="headerlink" href="#text-und-platzhalter" title="Link to this heading">¶</a></h2>
+<p>Ein Textelement enthält festen Text, Platzhalter oder beides gemischt. Platzhalter
+erscheinen im Eingabefeld als farbige Chips — blau für Angaben des Config Items,
+grün für Felder der Klasse, grau für Systemwerte. Ein unbekannter Schlüssel wird rot
+gestrichelt dargestellt, noch bevor Sie speichern.</p>
+<p>Es gibt drei Wege, einen Platzhalter zu setzen: den Knopf <em>Platzhalter einfügen …</em>,
+die Zeichen <code class="docutils literal notranslate"><span class="pre">{{</span></code> mitten im Text, oder Strg/Cmd + Leertaste. Alle drei öffnen
+dasselbe Fenster.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/platzhalter.png"><img alt="../_images/platzhalter.png" src="../_images/platzhalter.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Das Platzhalter-Fenster, hier im Verweisfeld <em>Betriebssystem</em>. Die Reiter trennen
+die Angaben des Config Items, die Felder der Klasse und die Systemwerte; unten
+stehen Schlüssel und der Wert beim Vorschau-Config-Item.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Das Fenster gliedert die Platzhalter in Gruppen: die Angaben des Config Items selbst,
+die Felder je gebundener Klasse und die Systemwerte. Kacheln mit einem <code class="docutils literal notranslate"><span class="pre">›</span></code> führen
+in ein Verweisfeld hinein — vom Gerät zum Raum, vom Raum zum Gebäude. Unten steht
+immer, was der gewählte Platzhalter beim Vorschau-Config-Item tatsächlich liefert;
+so sehen Sie vor dem Druck, ob das Feld überhaupt gefüllt ist.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Das Suchfeld durchsucht alle Gruppen auf einmal, nach Bezeichnung <strong>und</strong> nach
+Schlüssel. „Raum“ findet das Verweisfeld, „Number“ die Assetnummer. Enter übernimmt
+den ersten Treffer — für den geübten Griff reichen drei Anschläge.</p>
+</div>
+<p><strong>Wenn ein Wert fehlt.</strong> Hat das Config Item für einen Platzhalter keinen Wert,
+druckt das Etikett nicht etwa <code class="docutils literal notranslate"><span class="pre">{{CI.DF.Room}}</span></code>, sondern lässt die Stelle weg. Der
+Editor nennt die betroffenen Platzhalter im Befund des Elements, damit Sie den Fall
+bemerken, bevor 200 Etiketten gedruckt sind.</p>
+</section>
+<section id="schrift-und-verhalten-bei-zu-langem-text">
+<h2>Schrift und Verhalten bei zu langem Text<a class="headerlink" href="#schrift-und-verhalten-bei-zu-langem-text" title="Link to this heading">¶</a></h2>
+<p>Je Textelement stellen Sie Schriftart (serifenlos oder feste Breite), Größe in Punkt,
+Gewicht, waagerechte und senkrechte Ausrichtung sowie eine Drehung in 90°-Schritten
+ein.</p>
+<p>Wichtiger als all das ist die Einstellung <strong>Wenn der Text nicht passt</strong>. Gerätenamen
+sind selten so lang, wie das Etikett breit ist:</p>
+<dl class="simple">
+<dt>schrumpfen</dt><dd><p>Bricht den Text um und verkleinert die Schrift in kleinen Schritten bis auf 5 pt,
+wobei nach jedem Schritt neu umbrochen wird. Erst wenn auch das nicht reicht, wird
+gekürzt. Das ist die Einstellung, die in den meisten Fällen das beste Ergebnis
+liefert.</p>
+</dd>
+<dt>kürzen …</dt><dd><p>Behält die gewählte Schriftgröße und schneidet ab, was nicht passt — mit „…“ am
+Ende. Sinnvoll für Angaben, die auf einer Zeile bleiben müssen.</p>
+</dd>
+<dt>umbrechen</dt><dd><p>Bricht auf der gewählten Größe um, ohne zu verkleinern. Passt der Text dann noch
+immer nicht, wird die letzte Zeile gekürzt.</p>
+</dd>
+<dt>ausblenden</dt><dd><p>Lässt das Element ganz weg, wenn es nicht passt.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Ein Wort, das für sich genommen breiter ist als der Kasten — ein Hostname wie
+<code class="docutils literal notranslate"><span class="pre">NB-2026-0042-ERSATZ</span></code> etwa — wird umbrochen, und zwar bevorzugt an einem seiner
+eigenen Trennzeichen (<code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">_</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">:</span></code>). Das liest sich deutlich
+besser als ein Schnitt mitten in der Zeichenfolge.</p>
+</div>
+<p>Unter dem Eingabefeld steht immer, was tatsächlich passiert: <em>Passt mit 7 pt,
+2 Zeile(n).</em> oder <em>Auf 5,5 pt geschrumpft, damit er passt.</em> Weicht die gedruckte
+Größe von der eingestellten ab, erfahren Sie es hier — das Feld <em>Größe (pt)</em> zeigt
+weiterhin Ihren Wunsch, nicht das Ergebnis.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../_images/textumbruch.png"><img alt="../_images/textumbruch.png" src="../_images/textumbruch.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Die Einstellung <em>Wenn der Text nicht passt</em>. Der Befund darüber nennt die
+Schriftgröße, die tatsächlich gedruckt wird.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="der-qr-code">
+<h2>Der QR-Code<a class="headerlink" href="#der-qr-code" title="Link to this heading">¶</a></h2>
+<p>Für den Inhalt gibt es fünf Voreinstellungen und die Möglichkeit, frei zu formulieren:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Auswahl</p></th>
+<th class="head"><p>Wofür</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Kurz-URL zum Config Item</p></td>
+<td><p>Die Voreinstellung. Kürzester Inhalt, größte Module — braucht die
+<a class="reference internal" href="#webserver-regel"><span class="std std-ref">Webserver-Regel</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lange URL zum Config Item</p></td>
+<td><p>Funktioniert ohne Serveranpassung, rund 34 Zeichen länger.</p></td>
+</tr>
+<tr class="row-even"><td><p>Agenten-Oberfläche, volle URL</p></td>
+<td><p>Führt immer in die Agenten-Oberfläche.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kundenportal, volle URL</p></td>
+<td><p>Nur sinnvoll, wenn das Kundenportal Config Items zeigt.</p></td>
+</tr>
+<tr class="row-even"><td><p>Nur die Config-Item-Nummer</p></td>
+<td><p>Kein Link. Ein Scanner zeigt die Nummer als Text an. Der kleinstmögliche Code.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Dazu kommen <strong>Fehlerkorrektur</strong> (L, M, Q, H — Vorgabe M), <strong>Ruhezone</strong> in Modulen
+(Vorgabe 4) und das Häkchen <strong>In Großbuchstaben kodieren</strong>, das den kompakteren
+alphanumerischen Modus erlaubt.</p>
+<p>Neben jedem dieser Felder steht ein <strong>(i)</strong>. Ein Klick klappt die Erklärung darunter
+auf — was eine Version ist, was die Fehlerkorrektur kostet, warum die Ruhezone
+gebraucht wird. Sie müssen dafür nichts nachschlagen.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../_images/qrcode.png"><img alt="../_images/qrcode.png" src="../_images/qrcode.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Die QR-Einstellungen. Jedes (i) klappt die Erklärung auf; die Kennzahlen sagen,
+ob die Modulgröße zum Scannen reicht.</span><a class="headerlink" href="#id9" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Unter den Einstellungen stehen zwei Befunde. <strong>Das steht im Code</strong> zeigt den
+aufgelösten Inhalt — die tatsächliche Adresse mit eingesetzter Nummer.
+<strong>Kennzahlen zum Code</strong> nennt Zeichenzahl, Modus, Version, Modulgröße in Millimetern
+und die daraus folgende Zahl von Druckpunkten je Modul. Die letzte Zeile ist die
+wichtige:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">✓</span> <span class="pre">über</span> <span class="pre">dem</span> <span class="pre">GS1-Minimum</span> <span class="pre">von</span> <span class="pre">0,396</span> <span class="pre">mm</span></code> — der Code ist groß genug.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">✗</span> <span class="pre">zu</span> <span class="pre">klein</span> <span class="pre">—</span> <span class="pre">Feld</span> <span class="pre">vergrößern</span> <span class="pre">oder</span> <span class="pre">Inhalt</span> <span class="pre">kürzen</span></code> — er wird beim Scannen zicken.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Wird der Code zu klein: erst den Inhalt kürzen (Kurz-URL statt langer URL), dann
+die Fehlerkorrektur von Q auf M senken, erst zuletzt das Feld vergrößern. Jede
+Stufe Fehlerkorrektur kostet Module, und Module kosten Millimeter.</p>
+</div>
+</section>
+<section id="bild-und-linie">
+<h2>Bild und Linie<a class="headerlink" href="#bild-und-linie" title="Link to this heading">¶</a></h2>
+<p>Ein <strong>Bild</strong> — in aller Regel das Firmenlogo — wird als PNG oder JPEG hochgeladen und
+im Layout gespeichert. Die Obergrenze steht in der SysConfig, voreingestellt 200 KB.
+Unter <em>Darstellung</em> wählen Sie zwischen <em>proportional</em> und <em>strecken</em>; das Häkchen
+<strong>Schwarzweiß zeigen</strong> stellt in der Vorschau dar, was ein einfarbiger Drucker
+tatsächlich aufs Band bringt.</p>
+<p>Eine <strong>Linie</strong> ist ein gefüllter Balken: die Breite ist die Länge, die Höhe die
+Stärke. Für einen senkrechten Trenner tauschen Sie beides.</p>
+</section>
+</section>
+<section id="anwender-handbuch">
+<span id="user-guide"></span><h1>Anwender-Handbuch<a class="headerlink" href="#anwender-handbuch" title="Link to this heading">¶</a></h1>
+<p>Für Agenten gibt es nichts einzurichten. Sobald ein Layout für die Klasse hinterlegt
+ist, steht der Druck bereit.</p>
+<section id="ein-einzelnes-etikett-drucken">
+<h2>Ein einzelnes Etikett drucken<a class="headerlink" href="#ein-einzelnes-etikett-drucken" title="Link to this heading">¶</a></h2>
+<p>Im Config Item führen zwei Wege zum selben Ziel:</p>
+<ul class="simple">
+<li><p>der Menüeintrag <strong>Etikett drucken</strong>,</p></li>
+<li><p>das Widget <strong>Etikett</strong> in der Seitenleiste.</p></li>
+</ul>
+<p>Das Widget zeigt zusätzlich, wie das Etikett aussehen wird, dazu Layoutname und
+Format. Der Klick auf <em>Etikett drucken</em> öffnet das PDF in einem neuen Tab; von dort
+geht es über den gewohnten Druckdialog an den Etikettendrucker.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/etikett-widget.png"><img alt="../_images/etikett-widget.png" src="../_images/etikett-widget.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Das Widget <em>Etikett</em> in der Seitenleiste des Config Items: Vorschau, Layoutname,
+Format und der Druckknopf.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Gibt es für die Klasse kein gültiges Layout, sagt das Widget genau das. Wer selbst
+Etiketten-Administrator ist, bekommt zusätzlich den Link, um eines anzulegen.</p>
+</div>
+</section>
+<section id="viele-etiketten-auf-einmal">
+<h2>Viele Etiketten auf einmal<a class="headerlink" href="#viele-etiketten-auf-einmal" title="Link to this heading">¶</a></h2>
+<p><strong>CMDB → Etiketten drucken</strong> öffnet die Massendruck-Maske. Links suchen Sie nach
+Klasse, Nummer, Name und Verwendungsstatus und legen die Sortierung fest — sie
+bestimmt die Reihenfolge der Seiten im PDF und damit die Reihenfolge, in der die
+Etiketten aus dem Drucker kommen.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/massendruck.png"><img alt="../_images/massendruck.png" src="../_images/massendruck.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 8 </span><span class="caption-text">Die Massendruck-Maske. Der Druckknopf steht über der Liste und wandert beim
+Scrollen mit; die Spalte <em>Layout</em> zeigt, womit jede Zeile gedruckt wird.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>In der Trefferliste ist zunächst alles angehakt; entfernen Sie die Haken, die Sie
+nicht brauchen. Der Knopf <strong>Etiketten drucken</strong> steht über der Liste und wandert beim
+Scrollen mit — bei mehreren hundert Treffern müssen Sie nicht ans Ende blättern.
+Daneben steht laufend, wie viele Etiketten das PDF enthalten wird.</p>
+<p>Zeilen ohne gültiges Layout stehen grau und lassen sich nicht anhaken. In der Spalte
+<em>Layout</em> steht dann kursiv <em>keins</em>. Diese Config Items werden übersprungen, nicht als
+leere Seite gedruckt.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Auch aus der normalen Config-Item-Übersicht heraus geht es: Einträge anhaken und
+in der Aktionszeile <strong>Etiketten drucken</strong> wählen.</p>
+</div>
+</section>
+<section id="das-pdf">
+<h2>Das PDF<a class="headerlink" href="#das-pdf" title="Link to this heading">¶</a></h2>
+<p>Das Ergebnis ist ein PDF mit <strong>einem Etikett je Seite</strong>, jede Seite exakt so groß wie
+das Etikett. Der Banddrucker schneidet nach jeder Seite. Stellen Sie im Druckdialog
+die Skalierung auf 100 % beziehungsweise <em>Tatsächliche Größe</em> — jede automatische
+Anpassung verzieht die Maße.</p>
+</section>
+<section id="etikett-scannen">
+<h2>Etikett scannen<a class="headerlink" href="#etikett-scannen" title="Link to this heading">¶</a></h2>
+<p>Ein Scan des QR-Codes führt zum Config Item, und zwar dorthin, wo der Scannende
+hingehört:</p>
+<ul class="simple">
+<li><p><strong>Angemeldeter Agent</strong> → Config Item in der Agenten-Oberfläche.</p></li>
+<li><p><strong>Angemeldeter Kunde</strong> → Config Item im Kundenportal, sofern dort verfügbar.</p></li>
+<li><p><strong>Niemand angemeldet</strong> → Anmeldemaske; nach der Anmeldung geht es automatisch beim
+Config Item weiter. Alternativ die öffentliche Ansicht, wenn sie freigegeben ist.</p></li>
+</ul>
+<p>Ist die Nummer auf diesem System unbekannt, erscheint ein schlichter Hinweis: Das
+Etikett wurde vielleicht für ein anderes System gedruckt, oder das Objekt wurde
+entfernt.</p>
+</section>
+</section>
+<section id="referenz">
+<span id="id3"></span><h1>Referenz<a class="headerlink" href="#referenz" title="Link to this heading">¶</a></h1>
+<section id="platzhalter">
+<h2>Platzhalter<a class="headerlink" href="#platzhalter" title="Link to this heading">¶</a></h2>
+<p><strong>Angaben des Config Items</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Platzhalter</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.Number}}</span></code></p></td>
+<td><p>Nummer</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.Name}}</span></code></p></td>
+<td><p>Name</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.Class}}</span></code></p></td>
+<td><p>Klasse</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.DeplState}}</span></code></p></td>
+<td><p>Verwendungsstatus</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.InciState}}</span></code></p></td>
+<td><p>Vorfallstatus</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{{CI.ID}}</span></code></p></td>
+<td><p>Interne ID</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Felder der Klasse</strong> — jedes Dynamic Field der Klassendefinition als
+<code class="docutils literal notranslate"><span class="pre">{{CI.DF.&lt;Feldname&gt;}}</span></code>.</p>
+<p><strong>Über Verweise hinweg</strong> — führt ein Feld auf ein anderes Config Item, hängen Sie den
+Zielausdruck an:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{{CI.DF.Room.Name}}                 Name des verknüpften Raums
+{{CI.DF.Room.Number}}               dessen Nummer
+{{CI.DF.Room.DF.Building.Name}}     Gebäude des Raums
+</pre></div>
+</div>
+<p>Zeigt ein Feld auf einen Agenten oder Kundenbenutzer, stehen <code class="docutils literal notranslate"><span class="pre">.Fullname</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.Firstname</span></code>, <code class="docutils literal notranslate"><span class="pre">.Lastname</span></code>, <code class="docutils literal notranslate"><span class="pre">.Login</span></code> und <code class="docutils literal notranslate"><span class="pre">.Email</span></code> zur Verfügung, bei
+Kundenbenutzern zusätzlich <code class="docutils literal notranslate"><span class="pre">.Phone</span></code>, <code class="docutils literal notranslate"><span class="pre">.Mobile</span></code> und <code class="docutils literal notranslate"><span class="pre">.CustomerID</span></code>. Zeigt es auf
+eine Kundenfirma, gibt es <code class="docutils literal notranslate"><span class="pre">.Name</span></code>, <code class="docutils literal notranslate"><span class="pre">.Street</span></code>, <code class="docutils literal notranslate"><span class="pre">.ZIP</span></code>, <code class="docutils literal notranslate"><span class="pre">.City</span></code>, <code class="docutils literal notranslate"><span class="pre">.Country</span></code>
+und <code class="docutils literal notranslate"><span class="pre">.URL</span></code>.</p>
+<p>Wie weit Verweise verfolgt werden, steuert <code class="docutils literal notranslate"><span class="pre">MaxReferenceDepth</span></code>.</p>
+<p><strong>Systemwerte</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Platzhalter</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{System.ShortURL}}</span></code></p></td>
+<td><p>Kurz-URL zum Objekt (braucht die Webserver-Regel)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{{System.ScanURL}}</span></code></p></td>
+<td><p>Lange URL zum Objekt, ohne Regel nutzbar</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{System.BaseURL}}</span></code></p></td>
+<td><p>Basis-URL dieses Systems</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{{System.FQDN}}</span></code></p></td>
+<td><p>Hostname</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{{System.Date}}</span></code></p></td>
+<td><p>Druckdatum, <code class="docutils literal notranslate"><span class="pre">TT.MM.JJJJ</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="rechte-und-gruppen">
+<h2>Rechte und Gruppen<a class="headerlink" href="#rechte-und-gruppen" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Wer</p></th>
+<th class="head"><p>Darf</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">admin</span></code> oder <code class="docutils literal notranslate"><span class="pre">label_adm</span></code></p></td>
+<td><p>Etiketten-Layouts anlegen, ändern, kopieren, aktivieren, löschen</p></td>
+</tr>
+<tr class="row-odd"><td><p>Leserecht am Config Item</p></td>
+<td><p>dessen Etikett drucken</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code> (ro)</p></td>
+<td><p>die Massendruck-Maske öffnen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Beim Massendruck wird das Leserecht für <strong>jedes</strong> Config Item einzeln geprüft, auch
+noch beim Druck selbst. Ein Agent kann also nur Etiketten von Geräten drucken, die er
+ohnehin sehen darf.</p>
+</section>
+<section id="wie-das-etikett-entsteht">
+<h2>Wie das Etikett entsteht<a class="headerlink" href="#wie-das-etikett-entsteht" title="Link to this heading">¶</a></h2>
+<p>Das Layout liegt als JSON in der Datenbank — eine Liste von Elementen mit Position
+und Größe in Millimetern. Beim Druck rechnet der Renderer daraus eine PDF-Seite in
+exakter Etikettengröße: Text mit den echten Metriken der eingebetteten Schrift, der
+QR-Code als zusammengefasste Rechtecke, Bilder als PNG oder JPEG, Linien als gefüllte
+Balken. Dieselbe Berechnung liefert das SVG, das der Editor auf der Leinwand zeigt —
+deshalb stimmen Vorschau und Druck überein.</p>
+<p>Zwei Datenbanktabellen gehören zum Paket: <code class="docutils literal notranslate"><span class="pre">label_layout</span></code> mit einer Zeile je Layout
+und <code class="docutils literal notranslate"><span class="pre">label_layout_class</span></code> für die Bindung an die Klassen.</p>
+</section>
+<section id="grenzen-dieser-fassung">
+<h2>Grenzen dieser Fassung<a class="headerlink" href="#grenzen-dieser-fassung" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Layouts gibt es für <strong>Config Items</strong>. Weitere Objekttypen sind vorbereitet, aber
+nicht umgesetzt.</p></li>
+<li><p>Die Massendruck-Liste zeigt kein Vorschaubild je Zeile.</p></li>
+<li><p>Sortiert wird nach Nummer oder Name, nicht nach einem Dynamic Field.</p></li>
+</ul>
+</section>
+</section>
+<section id="uber">
+<h1>Über<a class="headerlink" href="#uber" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Hersteller:</strong> Freicon GmbH &amp; Co.KG</div>
+<div class="line"><strong>Web:</strong> <a class="reference external" href="https://freicon.de">https://freicon.de</a></div>
+<div class="line"><strong>Kontakt:</strong> Bei Fragen zu Einrichtung, Schulung und Betrieb unterstützt Sie das Freicon-Consulting-Team.</div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
