@@ -285,7 +285,7 @@ wenn an verschiedenen Standorten gedruckt wird.</p>
 <h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
 <section id="framework">
 <h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
-<p>OTOBO 11.0.x</p>
+<p>OTOBO 11.0.x oder 11.1.x</p>
 </section>
 <section id="pakete">
 <h2>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h2>
@@ -355,11 +355,11 @@ einer Serverkabine noch gelesen wird, und einem, das dreimal angefunkt werden mu
 <p>Damit diese Adresse funktioniert, leitet der Webserver sie auf OTOBO um. Die Regel
 liegt dem Paket unter <code class="docutils literal notranslate"><span class="pre">doc/webserver/</span></code> bei; hier die gängigen Varianten:</p>
 <p><em>Apache, ohne Zusatzmodul:</em></p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RedirectMatch</span><span class="w"> </span><span class="m">302</span><span class="w"> </span><span class="s2">&quot;(?i)^/otobo/ci/([^/?#]+)$&quot;</span><span class="w"> </span><span class="s2">&quot;/otobo/public.pl?Action=PublicLabelScan;Number=$1&quot;</span>
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RedirectMatch</span><span class="w"> </span><span class="m">302</span><span class="w"> </span><span class="s2">"(?i)^/otobo/ci/([^/?#]+)$"</span><span class="w"> </span><span class="s2">"/otobo/public.pl?Action=PublicLabelScan;Number=$1"</span>
 </pre></div>
 </div>
 <p><em>Apache mit mod_rewrite:</em></p>
-<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RewriteRule</span><span class="w"> </span><span class="s2">&quot;^/otobo/ci/([^/?#]+)$&quot;</span><span class="w"> </span><span class="s2">&quot;/otobo/public.pl?Action=PublicLabelScan;Number=$1&quot;</span><span class="w"> </span>[NC,PT,L]
+<div class="highlight-apache notranslate"><div class="highlight"><pre><span></span><span class="nb">RewriteRule</span><span class="w"> </span><span class="s2">"^/otobo/ci/([^/?#]+)$"</span><span class="w"> </span><span class="s2">"/otobo/public.pl?Action=PublicLabelScan;Number=$1"</span><span class="w"> </span>[NC,PT,L]
 </pre></div>
 </div>
 <p><em>nginx:</em></p>
@@ -383,7 +383,7 @@ Bändern ist das der Unterschied, der beim Scannen weh tut.</p>
 <p>Alle Einstellungen liegen in der SysConfig unter <strong>Core → FreiconLabelPrint</strong>. Für den
 Betrieb muss keine davon angefasst werden; die Voreinstellungen sind für Bandetiketten
 gewählt.</p>
-<dl class="simple">
+<dl>
 <dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###Formats</span></code></dt><dd><p>Die Formatvorlagen, die im Layout-Editor zur Auswahl stehen. Ein Wert hat die Form
 <code class="docutils literal notranslate"><span class="pre">Breite;Höhe;Rand</span> <span class="pre">waagerecht;Rand</span> <span class="pre">senkrecht</span></code> in Millimetern. Voreingestellt sind
 Brother TZe 12 mm, 18 mm und 24 mm sowie ein Zebra-Format 50 × 25 mm. Eigene
@@ -416,6 +416,22 @@ voraus.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###BulkLimit</span></code></dt><dd><p>Höchstzahl der Treffer je Suche im Massendruck, Vorgabe <code class="docutils literal notranslate"><span class="pre">500</span></code>.</p>
 </dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###BulkLocationField</span></code></dt><dd><p>Name des Verweisfelds, das den Standort eines Config Items trägt, Vorgabe
+<code class="docutils literal notranslate"><span class="pre">Location-ReferenceToLocation</span></code> — das Feld aus dem Standard-Klassensatz. Der
+Massendruck bietet es als Filter und als Sortierung an. Leer: kein Standort-Filter.</p>
+<p>Damit der Filter erscheint, muss das Feld vorhanden, gültig, ein Feld für Config
+Items und ein Verweisfeld auf Config Items sein; sonst bleibt die Maske genau so,
+wie sie ohne die Einstellung war. Heißt das Standortfeld beim Kunden anders,
+tragen Sie hier seinen Namen ein.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Untergeordnete Standorte zählen nur mit, wenn das Verweisfeld auf bestimmte
+Klassen eingeschränkt ist — an dieser Einschränkung erkennt das Paket, welche
+Klassen Standorte sind, und läuft die Kette Gebäude → Raum → Rack entlang.
+Nimmt das Feld jede Klasse an, wirkt der Filter nur auf den gewählten Standort
+selbst.</p>
+</div>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">FreiconLabelPrint###Settings###ObjectTypes</span></code></dt><dd><p>Objekttypen, für die es Layouts gibt. Derzeit ausschließlich Config Items.</p>
 </dd>
 </dl>
@@ -446,7 +462,7 @@ hinterlegt ist. Er muss nichts wissen und kann nichts falsch machen.</p>
 Die Spalte <em>Klassen</em> zeigt, woran ein Layout gebunden ist, oder kursiv
 <em>Standard (alle übrigen Klassen)</em>.</p>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="../_images/uebersicht.png"><img alt="../_images/uebersicht.png" src="../_images/uebersicht.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/uebersicht.png"><img alt="../_images/uebersicht.png" src="../_images/uebersicht.png" style="width: 1010px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 1 </span><span class="caption-text">Die Layout-Übersicht. Die Spalte <em>Klassen</em> zeigt die Bindung; ein Layout ohne
@@ -502,7 +518,7 @@ im Weg steht.</p>
 </dd>
 </dl>
 <figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../_images/stammdaten.png"><img alt="../_images/stammdaten.png" src="../_images/stammdaten.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/stammdaten.png"><img alt="../_images/stammdaten.png" src="../_images/stammdaten.png" style="width: 1010px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 2 </span><span class="caption-text">Die Stammdaten eines Layouts. Klassen, die schon an ein anderes gültiges Layout
@@ -517,7 +533,7 @@ ist keine Nachbildung: Die Leinwand zeigt dieselbe Zeichnung, aus der später da
 entsteht — gleiche Maße, gleiche Schriftberechnung, gleicher QR-Code. Was im Editor
 passt, passt auch auf dem Band.</p>
 <figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../_images/editor.png"><img alt="../_images/editor.png" src="../_images/editor.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/editor.png"><img alt="../_images/editor.png" src="../_images/editor.png" style="width: 1010px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 3 </span><span class="caption-text">Der Layout-Editor. Die Leinwand zeigt dieselbe Zeichnung, aus der das PDF
@@ -592,7 +608,7 @@ gestrichelt dargestellt, noch bevor Sie speichern.</p>
 die Zeichen <code class="docutils literal notranslate"><span class="pre">{{</span></code> mitten im Text, oder Strg/Cmd + Leertaste. Alle drei öffnen
 dasselbe Fenster.</p>
 <figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../_images/platzhalter.png"><img alt="../_images/platzhalter.png" src="../_images/platzhalter.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/platzhalter.png"><img alt="../_images/platzhalter.png" src="../_images/platzhalter.png" style="width: 717px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 4 </span><span class="caption-text">Das Platzhalter-Fenster, hier im Verweisfeld <em>Betriebssystem</em>. Die Reiter trennen
@@ -650,7 +666,7 @@ besser als ein Schnitt mitten in der Zeichenfolge.</p>
 Größe von der eingestellten ab, erfahren Sie es hier — das Feld <em>Größe (pt)</em> zeigt
 weiterhin Ihren Wunsch, nicht das Ergebnis.</p>
 <figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../_images/textumbruch.png"><img alt="../_images/textumbruch.png" src="../_images/textumbruch.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/textumbruch.png"><img alt="../_images/textumbruch.png" src="../_images/textumbruch.png" style="width: 244px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 5 </span><span class="caption-text">Die Einstellung <em>Wenn der Text nicht passt</em>. Der Befund darüber nennt die
@@ -699,7 +715,7 @@ alphanumerischen Modus erlaubt.</p>
 auf — was eine Version ist, was die Fehlerkorrektur kostet, warum die Ruhezone
 gebraucht wird. Sie müssen dafür nichts nachschlagen.</p>
 <figure class="align-center" id="id9">
-<a class="reference internal image-reference" href="../_images/qrcode.png"><img alt="../_images/qrcode.png" src="../_images/qrcode.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/qrcode.png"><img alt="../_images/qrcode.png" src="../_images/qrcode.png" style="width: 244px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 6 </span><span class="caption-text">Die QR-Einstellungen. Jedes (i) klappt die Erklärung auf; die Kennzahlen sagen,
@@ -748,7 +764,7 @@ ist, steht der Druck bereit.</p>
 Format. Der Klick auf <em>Etikett drucken</em> öffnet das PDF in einem neuen Tab; von dort
 geht es über den gewohnten Druckdialog an den Etikettendrucker.</p>
 <figure class="align-center" id="id10">
-<a class="reference internal image-reference" href="../_images/etikett-widget.png"><img alt="../_images/etikett-widget.png" src="../_images/etikett-widget.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/etikett-widget.png"><img alt="../_images/etikett-widget.png" src="../_images/etikett-widget.png" style="width: 280px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 7 </span><span class="caption-text">Das Widget <em>Etikett</em> in der Seitenleiste des Config Items: Vorschau, Layoutname,
@@ -764,11 +780,11 @@ Etiketten-Administrator ist, bekommt zusätzlich den Link, um eines anzulegen.</
 <section id="viele-etiketten-auf-einmal">
 <h2>Viele Etiketten auf einmal<a class="headerlink" href="#viele-etiketten-auf-einmal" title="Link to this heading">¶</a></h2>
 <p><strong>CMDB → Etiketten drucken</strong> öffnet die Massendruck-Maske. Links suchen Sie nach
-Klasse, Nummer, Name und Verwendungsstatus und legen die Sortierung fest — sie
-bestimmt die Reihenfolge der Seiten im PDF und damit die Reihenfolge, in der die
+Klasse, Nummer, Name, Verwendungsstatus und Standort und legen die Sortierung fest —
+sie bestimmt die Reihenfolge der Seiten im PDF und damit die Reihenfolge, in der die
 Etiketten aus dem Drucker kommen.</p>
 <figure class="align-center" id="id11">
-<a class="reference internal image-reference" href="../_images/massendruck.png"><img alt="../_images/massendruck.png" src="../_images/massendruck.png" style="width: 100%;" />
+<a class="reference internal image-reference" href="../_images/massendruck.png"><img alt="../_images/massendruck.png" src="../_images/massendruck.png" style="width: 1010px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Abb. 8 </span><span class="caption-text">Die Massendruck-Maske. Der Druckknopf steht über der Liste und wandert beim
@@ -787,6 +803,33 @@ leere Seite gedruckt.</p>
 <p>Auch aus der normalen Config-Item-Übersicht heraus geht es: Einträge anhaken und
 in der Aktionszeile <strong>Etiketten drucken</strong> wählen.</p>
 </div>
+<section id="nach-standort-eingrenzen">
+<h3>Nach Standort eingrenzen<a class="headerlink" href="#nach-standort-eingrenzen" title="Link to this heading">¶</a></h3>
+<p>Das Feld <strong>Standort</strong> nimmt ein Gebäude, einen Raum oder ein Rack; die ersten
+Buchstaben genügen, den Rest schlägt die Maske vor. <strong>Untergeordnete Standorte zählen
+mit</strong> — ein Gebäude findet die Geräte in allen seinen Räumen, ein Raum die Geräte in
+allen seinen Racks. So drucken Sie die Etiketten eines ganzen Hauses, ohne jeden Raum
+einzeln zu suchen.</p>
+<p>Ist ein Standortfeld eingerichtet, hat die Trefferliste zusätzlich die Spalte
+<strong>Standort</strong>; der Eintrag führt mit einem Klick zum Standort-Config-Item. Dieselbe
+Spalte steht auch in der Sortierung zur Wahl — dann kommen die Etiketten Raum für Raum
+aus dem Drucker, in der Reihenfolge, in der man sie beim Rundgang anbringt.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../_images/massendruck-standort.png"><img alt="../_images/massendruck-standort.png" src="../_images/massendruck-standort.png" style="width: 1010px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 9 </span><span class="caption-text">Gesucht wurde nach dem Gebäude <em>MUSTER-Haus</em>; gefunden werden die Geräte aus seinen
+Räumen 1.01 und 1.02. Sortiert ist die Liste nach <em>Standort</em>, die Spalte <em>Standort</em>
+verlinkt auf den jeweiligen Raum.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Das Feld <strong>Standort</strong> erscheint nur, wenn ein Standortfeld eingerichtet ist
+(<code class="docutils literal notranslate"><span class="pre">BulkLocationField</span></code>, siehe <a class="reference internal" href="#konfiguration"><span class="std std-ref">Konfiguration</span></a>). Fehlt es, bleibt die Maske
+ohne Filter und ohne Spalte.</p>
+</div>
+</section>
 </section>
 <section id="das-pdf">
 <h2>Das PDF<a class="headerlink" href="#das-pdf" title="Link to this heading">¶</a></h2>
@@ -942,7 +985,8 @@ und <code class="docutils literal notranslate"><span class="pre">label_layout_cl
 <li><p>Layouts gibt es für <strong>Config Items</strong>. Weitere Objekttypen sind vorbereitet, aber
 nicht umgesetzt.</p></li>
 <li><p>Die Massendruck-Liste zeigt kein Vorschaubild je Zeile.</p></li>
-<li><p>Sortiert wird nach Nummer oder Name, nicht nach einem Dynamic Field.</p></li>
+<li><p>Sortiert wird nach Nummer, Name oder Standort — nach einem beliebigen Dynamic
+Field nicht.</p></li>
 </ul>
 </section>
 </section>
