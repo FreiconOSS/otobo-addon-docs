@@ -586,18 +586,92 @@ ODER
 <td><p>Teiltext, Platzhalter <code class="docutils literal notranslate"><span class="pre">*</span></code> erlaubt</p></td>
 <td><p>Textfelder, Namen, Referenzfelder</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">enthält</span> <span class="pre">nicht</span></code></p></td>
+<td><p>alles, was den Teiltext <strong>nicht</strong> enthält</p></td>
+<td><p>Textfelder, Namen, Referenzfelder</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
 <td><p>kleiner / größer</p></td>
 <td><p>Zahlen und berechnete Felder</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">≤</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">≤</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code></p></td>
 <td><p>kleiner-gleich / größer-gleich</p></td>
 <td><p>Zahlen und berechnete Felder</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">leer</span></code></p></td>
+<td><p>das Feld hat keinen Wert</p></td>
+<td><p>alle Dynamic Fields</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">nicht</span> <span class="pre">leer</span></code></p></td>
+<td><p>das Feld hat irgendeinen Wert</p></td>
+<td><p>alle Dynamic Fields</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Regex</span></code></p></td>
+<td><p>Wert passt auf einen regulären Ausdruck</p></td>
+<td><p>Textfelder, CI Name, CI Nummer</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Angeboten werden alle sieben Operatoren zu jedem Feld. Ein Größenvergleich auf einem Textfeld liefert kein sinnvolles Ergebnis — die Auswahl passender Operatoren bleibt beim Anwender.</p>
+<p>Die Auswahl richtet sich nach dem Feld: zu einem Textfeld werden keine Größenvergleiche angeboten, zu einer Zahl kein <code class="docutils literal notranslate"><span class="pre">enthält</span></code>. Welche Operatoren sinnvoll bleiben, entscheidet weiterhin die Frage — ein <code class="docutils literal notranslate"><span class="pre">=</span></code> auf einem Freitextfeld findet nur bei exakter Schreibweise etwas.</p>
+</section>
+<section id="nach-leeren-feldern-suchen">
+<span id="leere-werte"></span><h2>Nach leeren Feldern suchen<a class="headerlink" href="#nach-leeren-feldern-suchen" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">leer</span></code> findet die CIs, bei denen ein Feld nie gefüllt wurde — etwa alle Server ohne monitos-UUID. <code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">nicht</span> <span class="pre">leer</span></code> ist die Gegenprobe. Beide brauchen keinen Wert; das Eingabefeld wird grau und zeigt <code class="docutils literal notranslate"><span class="pre">—</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Angeboten werden die beiden nur bei Dynamic Fields. Name, Nummer, Verwendungs- und Vorfallstatus sind an einem CI immer gefüllt — dort wären sie Attrappen. Bei Feldern vom Typ <em>Database</em>, <em>ContactWD</em> und <em>Set</em> fehlen sie ebenfalls: deren Treiber können die Frage nicht beantworten.</p>
+</div>
+</section>
+<section id="verneinung-und-enthalt-nicht">
+<h2>Verneinung: <code class="docutils literal notranslate"><span class="pre">!=</span></code> und <code class="docutils literal notranslate"><span class="pre">enthält</span> <span class="pre">nicht</span></code><a class="headerlink" href="#verneinung-und-enthalt-nicht" title="Link to this heading">¶</a></h2>
+<p>Beide beantworten die Frage, indem das Addon nach dem Gegenteil sucht und die Treffer vom Bestand der Klasse abzieht.</p>
+<p>Daraus folgt eine Lesart, die man kennen sollte: <strong>ein CI ohne Wert steht im Ergebnis.</strong> Ein Server ohne Betriebssystem-Eintrag ist nicht gleich „Ubuntu“ und enthält auch nicht „Ubuntu“ — er erfüllt die Bedingung also. Wer nur die gepflegten CIs sehen will, hängt mit UND ein <code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">nicht</span> <span class="pre">leer</span></code> daneben.</p>
+</section>
+<section id="regulare-ausdrucke">
+<span id="regex"></span><h2>Reguläre Ausdrücke<a class="headerlink" href="#regulare-ausdrucke" title="Link to this heading">¶</a></h2>
+<p>Der Operator <code class="docutils literal notranslate"><span class="pre">Regex</span></code> prüft den Feldwert gegen ein Muster. Angeboten wird er bei Textfeldern sowie bei <strong>CI Name</strong> und <strong>CI Nummer</strong>; bei Referenzfeldern nicht, weil dort intern eine ID steht und kein Text.</p>
+<p>Typische Fragen, die sich sonst nicht stellen lassen:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52.0%" />
+<col style="width: 48.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Muster</p></th>
+<th class="head"><p>Findet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</span></code></p></td>
+<td><p>Werte, die wirklich eine UUID sind</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">^(?![0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)</span></code></p></td>
+<td><p>Werte, die <strong>keine</strong> UUID sind</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">^srv-\d{3}$</span></code></p></td>
+<td><p>Namen, die dem Schema <code class="docutils literal notranslate"><span class="pre">srv-</span></code> plus drei Ziffern folgen</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">^(?!srv-\d{3}$)</span></code></p></td>
+<td><p>Namen, die gegen dieses Schema verstoßen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Es steht der volle Sprachumfang von Perl zur Verfügung: Gruppen, Rückverweise, benannte Gruppen, Vorausschau (<code class="docutils literal notranslate"><span class="pre">(?=…)</span></code>, <code class="docutils literal notranslate"><span class="pre">(?!…)</span></code>), Rückschau fester Länge, POSIX-Klassen, Unicode-Eigenschaften, Rekursion.</p>
+<p>Vier Dinge weichen ab:</p>
+<ul class="simple">
+<li><p><strong>Groß- und Kleinschreibung wird ignoriert.</strong> Wer genau unterscheiden will, stellt <code class="docutils literal notranslate"><span class="pre">(?-i)</span></code> voran.</p></li>
+<li><p><strong>Eingebetteter Code</strong> — <code class="docutils literal notranslate"><span class="pre">(?{</span> <span class="pre">…</span> <span class="pre">})</span></code> und <code class="docutils literal notranslate"><span class="pre">(??{</span> <span class="pre">…</span> <span class="pre">})</span></code> — wird abgelehnt. Ein Muster ist eine Suchanweisung, kein Programm.</p></li>
+<li><p><strong>Rückschau variabler Länge</strong> beherrscht Perl selbst nicht, etwa <code class="docutils literal notranslate"><span class="pre">(?&lt;=ab+)c</span></code>.</p></li>
+<li><p><strong>Das Muster sieht immer genau einen Feldwert.</strong> <code class="docutils literal notranslate"><span class="pre">^</span></code> und <code class="docutils literal notranslate"><span class="pre">$</span></code> klammern diesen Wert. Bei mehrwertigen Feldern genügt es, wenn ein Wert passt.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p>Ein Regex braucht einen Wert, den er prüfen kann. CIs, bei denen das Feld <strong>leer</strong> ist, findet er nie — auch nicht mit einem verneinenden Muster. Wer „krumme UUID <strong>oder</strong> gar keine“ sucht, stellt daneben eine zweite Bedingung <code class="docutils literal notranslate"><span class="pre">ist</span> <span class="pre">leer</span></code> und verknüpft mit ODER.</p>
+</div>
+<p>Lässt sich ein Muster nicht übersetzen, erscheint die Meldung des Übersetzers im Ergebnisbereich — es gibt kein stilles leeres Ergebnis. Tippfehler markiert schon der Browser rot, bevor der Report überhaupt losläuft.</p>
 </section>
 <section id="berechnete-felder-im-detail">
 <h2>Berechnete Felder im Detail<a class="headerlink" href="#berechnete-felder-im-detail" title="Link to this heading">¶</a></h2>
