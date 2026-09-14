@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a90b8"/>
+    </marker>
+  </defs>
+
+  <!-- column titles -->
+  <text x="20" y="28" font-size="15" font-weight="700" fill="#4a90b8">EINRICHTUNG · Admin</text>
+  <text x="560" y="28" font-size="15" font-weight="700" fill="#4a90b8">DATEN · Agenten und Kunden</text>
+
+  <!-- General Catalog: Klasse -->
+  <rect x="20" y="45" width="440" height="110" rx="10" fill="#e8f3f9" stroke="#2d9fc7" stroke-width="1.5"/>
+  <text x="36" y="70" font-weight="700" fill="#12394b">Klasse</text>
+  <text x="36" y="70" dx="58" fill="#3d5a68" font-size="12">im General Catalog</text>
+  <text x="36" y="96" fill="#12394b" font-size="13">Berechtigungsgruppe · Kategorien</text>
+  <text x="36" y="118" fill="#12394b" font-size="13">Nummernmodul · Versionsmodul</text>
+  <text x="36" y="140" fill="#12394b" font-size="13">Versionsauslöser</text>
+
+  <!-- Definition -->
+  <rect x="20" y="190" width="290" height="130" rx="10" fill="#e8f3f9" stroke="#2d9fc7" stroke-width="1.5"/>
+  <text x="36" y="215" font-weight="700" fill="#12394b">Klassendefinition (YAML)</text>
+  <text x="36" y="215" dx="0" dy="18" fill="#3d5a68" font-size="12">versioniert</text>
+  <rect x="36" y="245" width="118" height="58" rx="6" fill="#ffffff" stroke="#9cc9dc"/>
+  <text x="95" y="270" text-anchor="middle" fill="#12394b" font-size="13" font-weight="600">Pages</text>
+  <text x="95" y="289" text-anchor="middle" fill="#3d5a68" font-size="11">Reiter, Layout</text>
+  <rect x="176" y="245" width="118" height="58" rx="6" fill="#ffffff" stroke="#9cc9dc"/>
+  <text x="235" y="270" text-anchor="middle" fill="#12394b" font-size="13" font-weight="600">Sections</text>
+  <text x="235" y="289" text-anchor="middle" fill="#3d5a68" font-size="11">Abschnitte</text>
+  <line x1="154" y1="274" x2="174" y2="274" stroke="#4a90b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Rolle -->
+  <rect x="340" y="240" width="120" height="80" rx="10" fill="#f1ecfa" stroke="#7b5cc4" stroke-width="1.5"/>
+  <text x="400" y="262" text-anchor="middle" font-weight="700" fill="#2f1f55">Rolle</text>
+  <text x="400" y="284" text-anchor="middle" fill="#4b3a74" font-size="12">gemeinsame Sections</text>
+  <text x="400" y="302" text-anchor="middle" fill="#4b3a74" font-size="12">für mehrere Klassen</text>
+  <line x1="340" y1="274" x2="298" y2="274" stroke="#7b5cc4" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Felder -->
+  <rect x="20" y="355" width="440" height="95" rx="10" fill="#eef6ec" stroke="#5a9e4b" stroke-width="1.5"/>
+  <text x="36" y="380" font-weight="700" fill="#1f3d18">Dynamische Felder</text>
+  <text x="36" y="380" dx="140" fill="#3f5a38" font-size="12">Objekttyp ITSM ConfigElement</text>
+  <text x="36" y="406" fill="#1f3d18" font-size="13">Text · Auswahl · Datum · Referenz · Set · Lens · Skript</text>
+  <text x="36" y="430" fill="#3f5a38" font-size="12">angelegt unter Admin → Dynamische Felder</text>
+
+  <!-- class -> definition, sections -> fields -->
+  <line x1="165" y1="155" x2="165" y2="188" stroke="#4a90b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="173" y="177" fill="#4a90b8" font-size="12">hat</text>
+  <line x1="235" y1="320" x2="235" y2="353" stroke="#4a90b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="243" y="342" fill="#4a90b8" font-size="12">verwendet</text>
+
+  <!-- Config Item -->
+  <rect x="560" y="45" width="380" height="110" rx="10" fill="#fdf3e6" stroke="#d98b2b" stroke-width="1.5"/>
+  <text x="576" y="70" font-weight="700" fill="#4a2c07">Config Item</text>
+  <text x="576" y="96" fill="#4a2c07" font-size="13">Nummer · Klasse</text>
+  <text x="576" y="118" fill="#4a2c07" font-size="13">aktueller Verwendungs- und Vorfallstatus</text>
+  <text x="576" y="140" fill="#4a2c07" font-size="13">Anhänge · Historie</text>
+
+  <!-- Versions -->
+  <rect x="600" y="210" width="340" height="110" rx="10" fill="#fdf3e6" stroke="#d98b2b" stroke-width="1.5"/>
+  <rect x="590" y="200" width="340" height="110" rx="10" fill="#fdf3e6" stroke="#d98b2b" stroke-width="1.5"/>
+  <rect x="580" y="190" width="340" height="110" rx="10" fill="#fdf3e6" stroke="#d98b2b" stroke-width="1.5"/>
+  <text x="596" y="215" font-weight="700" fill="#4a2c07">Versionen 1 … n</text>
+  <text x="596" y="241" fill="#4a2c07" font-size="13">Name · Versionsbezeichnung</text>
+  <text x="596" y="263" fill="#4a2c07" font-size="13">Verwendungs- und Vorfallstatus</text>
+  <text x="596" y="285" fill="#4a2c07" font-size="13">Beschreibung · Feldwerte</text>
+  <line x1="750" y1="155" x2="750" y2="188" stroke="#d98b2b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="758" y="177" fill="#d98b2b" font-size="12">besteht aus</text>
+
+  <!-- Links -->
+  <rect x="560" y="355" width="380" height="95" rx="10" fill="#f3f4f6" stroke="#8a96a3" stroke-width="1.5"/>
+  <text x="576" y="380" font-weight="700" fill="#222b33">Verknüpfungen</text>
+  <text x="576" y="406" fill="#222b33" font-size="13">andere Config Items · Tickets · Services · FAQ</text>
+  <text x="576" y="430" fill="#4d5863" font-size="12">Baumansicht · Vererbung des Vorfallstatus</text>
+  <line x1="750" y1="322" x2="750" y2="353" stroke="#8a96a3" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- cross links data -> setup -->
+  <line x1="560" y1="100" x2="464" y2="100" stroke="#4a90b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="512" y="92" text-anchor="middle" fill="#4a90b8" font-size="12">gehört zu</text>
+  <line x1="580" y1="212" x2="314" y2="212" stroke="#4a90b8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="447" y="204" text-anchor="middle" fill="#4a90b8" font-size="12">nutzt Definition</text>
+  <line x1="580" y1="285" x2="520" y2="285" stroke="#5a9e4b" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="520" y1="285" x2="520" y2="400" stroke="#5a9e4b" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="520" y1="400" x2="464" y2="400" stroke="#5a9e4b" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="528" y="352" fill="#5a9e4b" font-size="12">Werte</text>
+</svg>

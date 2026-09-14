@@ -1,0 +1,669 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Verwendungs- und Vorfallstatus" href="status.html"><link rel="prev" title="Dynamische Felder für Config Items" href="felder.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Berechtigungen - OTOBO CMDB — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6c7df5d8" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO CMDB — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO CMDB — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konzepte.html">Wie die CMDB aufgebaut ist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/pakete.html">Pakete und Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Einrichten</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="klassen.html">Klassen einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rollen.html">Rollen einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder.html">Dynamische Felder für Config Items</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Berechtigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="status.html">Verwendungs- und Vorfallstatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verknuepfungen.html">Verknüpfungen und Vorfallstatus-Vererbung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acl.html">ACLs für Config Items</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Arbeiten mit der CMDB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/agenten.html">Arbeiten mit Config Items (Agenten)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/kunden.html">Config Items im Kundenportal</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Schnittstellen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/import-export.html">Import und Export von Config Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/webservice.html">Webservice (Generic Interface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/konsole.html">Konsolenbefehle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/klassendefinition.html">Klassendefinition (YAML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/feldtypen.html">Feldtypen und ihre Optionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/sysconfig.html">SysConfig-Referenz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version-11-1.html">Was sich in OTOBO 11.1 ändert</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="berechtigungen">
+<span id="rechte"></span><h1>Berechtigungen<a class="headerlink" href="#berechtigungen" title="Link to this heading">¶</a></h1>
+<p>Wer in der CMDB was sehen und ändern darf, regeln in OTOBO zwei voneinander
+unabhängige Ebenen. Ein Agent kommt nur dann an ein Config Item heran, wenn
+<strong>beide</strong> es erlauben:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 39.0%" />
+<col style="width: 39.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Ebene 1: Zugang zu den Masken</p></th>
+<th class="head"><p>Ebene 2: Zugang zur Klasse</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Frage</strong></p></td>
+<td><p>Darf der Agent die CMDB-Masken überhaupt öffnen?</p></td>
+<td><p>Darf der Agent Config Items <em>dieser Klasse</em> sehen oder ändern?</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gruppe</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code> (legt das Paket an)</p></td>
+<td><p>Berechtigungsgruppe der Klasse (frei wählbar)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Gepflegt in</strong></p></td>
+<td><p>Modulregistrierung in der Systemkonfiguration</p></td>
+<td><p><em>Admin → General Catalog → ITSM::ConfigItem::Class</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Für beide Ebenen gilt das übliche Gruppenmodell von OTOBO: Rechte können direkt
+oder über <strong>Rollen</strong> vergeben werden, und wer das Recht <strong>rw</strong> hat, hat automatisch
+auch <strong>ro</strong>.</p>
+<section id="ebene-1-die-gruppe-itsm-configitem">
+<h2>Ebene 1: die Gruppe <code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code><a class="headerlink" href="#ebene-1-die-gruppe-itsm-configitem" title="Link to this heading">¶</a></h2>
+<p>Die Installation legt die Gruppe <code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code> an und nimmt den
+Benutzer <em>root&#64;localhost</em> mit allen Rechten auf. Jede CMDB-Maske verlangt in dieser
+Gruppe ein bestimmtes Recht:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Maske</p></th>
+<th class="head"><p>Recht</p></th>
+<th class="head"><p>Modul</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Übersicht</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItem</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Detailansicht</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemZoom</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Suche</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemSearch</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Historie</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemHistory</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Drucken</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemPrint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Anhänge herunterladen</p></td>
+<td><p>ro</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemAttachment</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Neues Config Item (Klassenauswahl)</p></td>
+<td><p>rw</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemAdd</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bearbeiten und Duplizieren</p></td>
+<td><p>rw</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemEdit</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Löschen</p></td>
+<td><p>rw</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemDelete</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Baumansicht</p></td>
+<td><p>rw</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemTreeView</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Administration der Klassen</p></td>
+<td><p>rw in <code class="docutils literal notranslate"><span class="pre">admin</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AdminITSMConfigItem</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Die Gruppen stehen in den Einstellungen <code class="docutils literal notranslate"><span class="pre">Frontend::Module###&lt;Modul&gt;</span></code> (Schlüssel
+<code class="docutils literal notranslate"><span class="pre">Group</span></code> für rw, <code class="docutils literal notranslate"><span class="pre">GroupRo</span></code> für ro) und lassen sich dort anpassen.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Baumansicht verlangt auf dieser Ebene <strong>rw</strong>, obwohl sie nur anzeigt.
+Agenten mit reinem Leserecht sehen den Menüpunkt deshalb nicht.</p>
+</div>
+<p>Die Menüpunkte in der Detailansicht (<em>Bearbeiten</em>, <em>Löschen</em>, <em>Verknüpfen</em> …)
+werden nur anhand dieser Ebene ein- oder ausgeblendet. Ob der Agent die Klasse
+tatsächlich ändern darf, prüft OTOBO erst beim Aufruf — ein Agent kann also einen
+Menüpunkt sehen und nach dem Klick eine Fehlermeldung erhalten.</p>
+</section>
+<section id="ebene-2-die-berechtigungsgruppe-der-klasse">
+<h2>Ebene 2: die Berechtigungsgruppe der Klasse<a class="headerlink" href="#ebene-2-die-berechtigungsgruppe-der-klasse" title="Link to this heading">¶</a></h2>
+<p>Jede Klasse hat im General Catalog genau eine <strong>Berechtigungsgruppe</strong>
+(<em>Permission Group</em>). Mitglieder mit <strong>ro</strong> sehen die Config Items der Klasse,
+Mitglieder mit <strong>rw</strong> dürfen sie außerdem anlegen, bearbeiten und löschen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Eine Klasse <strong>ohne</strong> Berechtigungsgruppe ist für <strong>alle</strong> Agenten gesperrt —
+auch für Administratoren. Sie fehlt in Übersicht, Suche und Klassenauswahl,
+und auch über den Webservice ist sie nicht erreichbar. Das Feld ist im
+Formular nicht als Pflichtfeld markiert.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Beim <strong>Import</strong> einer Klassendatei wird <code class="docutils literal notranslate"><span class="pre">PermissionGroup</span></code> über den
+Gruppennamen aufgelöst. Existiert die Gruppe auf dem Zielsystem nicht, bleibt
+die Berechtigungsgruppe <strong>ohne Hinweis leer</strong> — die Klasse ist danach
+gesperrt. Gruppen daher vor dem Import anlegen.</p>
+</div>
+<p>Getrennte Gruppen je Klasse lohnen sich, wenn Teams unterschiedliche Bestände
+pflegen — etwa <code class="docutils literal notranslate"><span class="pre">cmdb-hardware</span></code> für Clients und Server, <code class="docutils literal notranslate"><span class="pre">cmdb-vertraege</span></code> für
+Verträge und Lizenzen. Wer beides braucht, wird in beide Gruppen aufgenommen.</p>
+<p>Welches Recht eine Maske in der Klassengruppe verlangt, steht jeweils in
+<code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::&lt;Modul&gt;###Permission</span></code>:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ro</span></code> — Voreinstellung für</dt><dd><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItem</span></code> (Übersicht), <code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemZoom</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemSearch</span></code>, <code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemHistory</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemPrint</span></code>, <code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemTreeView</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemAttachment</span></code></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rw</span></code> — Voreinstellung für</dt><dd><p><code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemAdd</span></code>, <code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemEdit</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemDelete</span></code>, <code class="docutils literal notranslate"><span class="pre">AgentITSMConfigItemBulk</span></code></p>
+</dd>
+</dl>
+<p>Die Webservice-Operationen haben eigene Einstellungen
+<code class="docutils literal notranslate"><span class="pre">GenericInterface::Operation::ConfigItem&lt;Operation&gt;###Permission</span></code>: <em>Get</em> und
+<em>Search</em> verlangen ro, <em>Upsert</em> und <em>Delete</em> rw.</p>
+</section>
+<section id="reiter-nur-fur-bestimmte-gruppen">
+<h2>Reiter nur für bestimmte Gruppen<a class="headerlink" href="#reiter-nur-fur-bestimmte-gruppen" title="Link to this heading">¶</a></h2>
+<p>Innerhalb einer Klasse lassen sich einzelne <strong>Reiter</strong> der Detailansicht auf
+Gruppen beschränken — etwa ein Reiter <em>Kosten</em> nur für das Controlling. Das
+geschieht in der Klassendefinition mit <code class="docutils literal notranslate"><span class="pre">Groups</span></code> und ist unter
+<a class="reference internal" href="../referenz/klassendefinition.html#klassendefinition-groups"><span class="std std-ref">Groups — Reiter nur für bestimmte Gruppen</span></a> beschrieben.</p>
+<p>Diese Beschränkung blendet nur aus; sie ersetzt nicht die Berechtigungsgruppe
+der Klasse. Sammelaktion, Import/Export und Webservice werten sie nicht aus.</p>
+</section>
+<section id="sammelaktion">
+<h2>Sammelaktion<a class="headerlink" href="#sammelaktion" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::BulkFeature</span></code></dt><dd><p>Schaltet die Sammelaktion in Übersicht und Suchergebnis ein (Voreinstellung:
+an).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::BulkFeatureGroup</span></code></dt><dd><p>Optional: Nur Mitglieder mit <strong>rw</strong> in einer der hier genannten Gruppen sehen
+die Auswahlkästchen. Ab Werk ausgeschaltet.</p>
+</dd>
+</dl>
+<p>Unabhängig davon wird jedes ausgewählte Config Item einzeln geprüft: Geändert wird
+nur, wofür der Agent <strong>rw</strong> in der Klassengruppe hat.</p>
+</section>
+<section id="loschen">
+<h2>Löschen<a class="headerlink" href="#loschen" title="Link to this heading">¶</a></h2>
+<p>Ein Config Item löschen darf, wer <strong>rw</strong> in <code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code> <strong>und rw</strong> in der
+Berechtigungsgruppe der Klasse hat. Das Löschen ist endgültig: Mit dem Config Item
+verschwinden alle Versionen, Anhänge, Verknüpfungen <strong>und die Historie</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Wo die CMDB revisionssicher sein muss, sollte niemand löschen dürfen. Dafür
+die Gruppe in <code class="docutils literal notranslate"><span class="pre">Frontend::Module###AgentITSMConfigItemDelete</span></code> auf eine Gruppe
+ohne Mitglieder setzen und ausgemusterte Config Items stattdessen in einen
+Verwendungsstatus wie <em>Außer Dienst</em> (Retired) setzen (siehe <a class="reference internal" href="status.html"><span class="doc">Verwendungs- und Vorfallstatus</span></a>).</p>
+</div>
+</section>
+<section id="zugriff-fur-kunden">
+<span id="rechte-kunden"></span><h2>Zugriff für Kunden<a class="headerlink" href="#zugriff-fur-kunden" title="Link to this heading">¶</a></h2>
+<p>Kunden sehen Config Items nicht über Gruppenrechte, sondern über
+<strong>Berechtigungsbedingungen</strong>. Ab Werk ist der Kundenzugang vollständig
+ausgeschaltet.</p>
+<section id="einschalten">
+<h3>Einschalten<a class="headerlink" href="#einschalten" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Die drei Kundenmasken aktivieren:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomerFrontend::Module###CustomerITSMConfigItem</span></code> (Übersicht)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomerFrontend::Module###CustomerITSMConfigItemSearch</span></code> (Suche)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CustomerFrontend::Module###CustomerITSMConfigItemZoom</span></code> (Detailansicht)</p></li>
+</ul>
+</li>
+<li><p>Mindestens eine Bedingung <code class="docutils literal notranslate"><span class="pre">Customer::ConfigItem::PermissionConditions###01</span></code>
+bis <code class="docutils literal notranslate"><span class="pre">###05</span></code> aktivieren und anpassen. <strong>Ohne aktive Bedingung sieht ein
+Kunde nichts.</strong></p></li>
+<li><p>In der Klassendefinition die Reiter, die Kunden sehen sollen, mit
+<code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[Agent,</span> <span class="pre">Customer]</span></code> freigeben. Reiter ohne <code class="docutils literal notranslate"><span class="pre">Customer</span></code> bleiben
+in der Kundenoberfläche verborgen — auch wenn die Bedingung das Config Item
+freigibt (siehe <a class="reference internal" href="../referenz/klassendefinition.html#klassendefinition-interfaces"><span class="std std-ref">Interfaces — Agent, Kunde, öffentlich</span></a>).</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="Systemkonfiguration mit einer Berechtigungsbedingung für Kunden" src="../../_images/sysconfig-customer-permissionconditions.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Berechtigungsbedingung <code class="docutils literal notranslate"><span class="pre">Customer::ConfigItem::PermissionConditions###01</span></code></span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="berechtigungsbedingungen">
+<h3>Berechtigungsbedingungen<a class="headerlink" href="#berechtigungsbedingungen" title="Link to this heading">¶</a></h3>
+<p>Jede Bedingung ist eine Zuordnung mit folgenden Schlüsseln:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Name</span></code> <em>(Pflicht)</em></dt><dd><p>Bezeichnung der Bedingung. Sie erscheint in der Kundenübersicht als Filter
+(Reiter) und in der Kundensuche als Auswahl.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Groups</span></code></dt><dd><p>Kundengruppen. Ist die Liste gefüllt, gilt die Bedingung nur für Kunden mit
+Leserecht in mindestens einer dieser Gruppen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Classes</span></code></dt><dd><p>Klassennamen, auf die die Bedingung beschränkt ist.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DeploymentStates</span></code></dt><dd><p>Namen der Verwendungsstatus, z. B. <code class="docutils literal notranslate"><span class="pre">Production</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DynamicFieldValues</span></code></dt><dd><p>Zuordnung <em>Feldname → Wert</em> (Feldname ohne <code class="docutils literal notranslate"><span class="pre">DynamicField_</span></code>). Das Feld des
+Config Items muss den Wert haben; bei Mehrfachwerten genügt es, wenn der Wert
+enthalten ist. Ein <strong>leerer</strong> Wert bedeutet: Das Feld muss leer sein.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CustomerUserDynamicField</span></code></dt><dd><p>Name eines Feldes des Config Items, das Kundenbenutzer enthält. Die Bedingung
+greift nur, wenn der angemeldete Kundenbenutzer darin eingetragen ist —
+typisch für „meine Geräte“.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CustomerCompanyDynamicField</span></code></dt><dd><p>Name eines Feldes des Config Items, das Kundenfirmen enthält. Die Bedingung
+greift nur für Config Items der eigenen Firma — typisch für „Geräte meines
+Unternehmens“.</p>
+</dd>
+</dl>
+<p>Die Auswertung:</p>
+<ul class="simple">
+<li><p><strong>Innerhalb</strong> einer Bedingung müssen <strong>alle</strong> gesetzten Schlüssel zutreffen
+(UND).</p></li>
+<li><p><strong>Zwischen</strong> den Bedingungen genügt <strong>eine</strong> (ODER).</p></li>
+<li><p>Leere Listen und leere Felder schränken nicht ein. Eine Bedingung, die nur einen
+<code class="docutils literal notranslate"><span class="pre">Name</span></code> hat, gibt deshalb <strong>alle</strong> Config Items frei.</p></li>
+</ul>
+<p>Beispiel — Kunden sehen die produktiven Clients, die ihnen persönlich zugeordnet
+sind:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Meine Geräte</span>
+<span class="nt">Groups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Classes</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Client</span>
+<span class="nt">DeploymentStates</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Production</span>
+<span class="nt">CustomerUserDynamicField</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Contact-User</span>
+<span class="nt">CustomerCompanyDynamicField</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">DynamicFieldValues</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Voreinstellung von <code class="docutils literal notranslate"><span class="pre">###01</span></code> hat nur den Namen <code class="docutils literal notranslate"><span class="pre">All</span></code>. Wer sie
+unverändert aktiviert, gibt <strong>allen Kunden alle Config Items</strong> frei.</p>
+</div>
+</section>
+<section id="spalten-der-kundenubersicht">
+<h3>Spalten der Kundenübersicht<a class="headerlink" href="#spalten-der-kundenubersicht" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Customer::ConfigItem::PermissionConditionColumns###Default</span></code></dt><dd><p>Spalten, wenn für eine Bedingung nichts Eigenes eingestellt ist:
+<code class="docutils literal notranslate"><span class="pre">Number</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Class</span></code>, <code class="docutils literal notranslate"><span class="pre">InciState</span></code>, <code class="docutils literal notranslate"><span class="pre">DeplState</span></code>, <code class="docutils literal notranslate"><span class="pre">Created</span></code>.
+Dynamische Felder als <code class="docutils literal notranslate"><span class="pre">DynamicField_&lt;Name&gt;</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Customer::ConfigItem::PermissionConditionColumns###01</span></code> … <code class="docutils literal notranslate"><span class="pre">###05</span></code></dt><dd><p>Spalten für die Bedingung mit derselben Nummer. Die Nummern müssen also
+zusammenpassen: <code class="docutils literal notranslate"><span class="pre">PermissionConditionColumns###02</span></code> gehört zu
+<code class="docutils literal notranslate"><span class="pre">PermissionConditions###02</span></code>.</p>
+</dd>
+</dl>
+<p>Die Spalte <code class="docutils literal notranslate"><span class="pre">Number</span></code> wird immer angezeigt.</p>
+</section>
+<section id="detailansicht-fur-kunden">
+<h3>Detailansicht für Kunden<a class="headerlink" href="#detailansicht-fur-kunden" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::CustomerITSMConfigItemZoom###VersionsEnabled</span></code></dt><dd><p>Kunden dürfen ältere Versionen ansehen (Voreinstellung: ja).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::CustomerITSMConfigItemZoom###VersionsSelectable</span></code></dt><dd><p>Kunden bekommen eine Versionsauswahl (Voreinstellung: ja).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::CustomerITSMConfigItemZoom###GeneralInfo</span></code></dt><dd><p>Welche allgemeinen Angaben im Kopf stehen (Klasse, Nummer, Status, Datum).</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Sollen Kunden nur den aktuellen Stand sehen, <code class="docutils literal notranslate"><span class="pre">VersionsEnabled</span></code> ausschalten.
+Frühere Versionen enthalten sonst womöglich Angaben, die inzwischen korrigiert
+wurden.</p>
+</div>
+<p>Was Kunden in der Kundenoberfläche sehen, beschreibt <a class="reference internal" href="../bedienung/kunden.html"><span class="doc">Config Items im Kundenportal</span></a>.</p>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>In 11.1 enthält die CMDB zusätzlich eine <strong>öffentliche Ansicht</strong> ohne
+Anmeldung (bisher Zusatzpaket <em>ITSMPublicCMDB</em>). Sie ist ab Werk
+ausgeschaltet und wird über <code class="docutils literal notranslate"><span class="pre">PublicFrontend::Module###PublicITSMConfigItem</span></code>
+(sowie <code class="docutils literal notranslate"><span class="pre">…Search</span></code>, <code class="docutils literal notranslate"><span class="pre">…Zoom</span></code>, <code class="docutils literal notranslate"><span class="pre">…Attachment</span></code>) aktiviert. Sichtbar sind nur
+Config Items, die eine der Bedingungen
+<code class="docutils literal notranslate"><span class="pre">Public::ConfigItem::PermissionConditions###01</span></code> bis <code class="docutils literal notranslate"><span class="pre">###05</span></code> erfüllen
+(Schlüssel <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Classes</span></code>, <code class="docutils literal notranslate"><span class="pre">DeploymentStates</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DynamicFieldValues</span></code>), und nur Reiter mit <code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[Public]</span></code>.</p>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="status.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Verwendungs- und Vorfallstatus</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="felder.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Dynamische Felder für Config Items</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Berechtigungen</a><ul>
+<li><a class="reference internal" href="#ebene-1-die-gruppe-itsm-configitem">Ebene 1: die Gruppe <code class="docutils literal notranslate"><span class="pre">itsm-configitem</span></code></a></li>
+<li><a class="reference internal" href="#ebene-2-die-berechtigungsgruppe-der-klasse">Ebene 2: die Berechtigungsgruppe der Klasse</a></li>
+<li><a class="reference internal" href="#reiter-nur-fur-bestimmte-gruppen">Reiter nur für bestimmte Gruppen</a></li>
+<li><a class="reference internal" href="#sammelaktion">Sammelaktion</a></li>
+<li><a class="reference internal" href="#loschen">Löschen</a></li>
+<li><a class="reference internal" href="#zugriff-fur-kunden">Zugriff für Kunden</a><ul>
+<li><a class="reference internal" href="#einschalten">Einschalten</a></li>
+<li><a class="reference internal" href="#berechtigungsbedingungen">Berechtigungsbedingungen</a></li>
+<li><a class="reference internal" href="#spalten-der-kundenubersicht">Spalten der Kundenübersicht</a></li>
+<li><a class="reference internal" href="#detailansicht-fur-kunden">Detailansicht für Kunden</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>

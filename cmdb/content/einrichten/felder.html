@@ -1,0 +1,883 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Berechtigungen" href="rechte.html"><link rel="prev" title="Rollen einrichten" href="rollen.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Dynamische Felder für Config Items - OTOBO CMDB — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6c7df5d8" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO CMDB — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO CMDB — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konzepte.html">Wie die CMDB aufgebaut ist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/pakete.html">Pakete und Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Einrichten</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="klassen.html">Klassen einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rollen.html">Rollen einrichten</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dynamische Felder für Config Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rechte.html">Berechtigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="status.html">Verwendungs- und Vorfallstatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="verknuepfungen.html">Verknüpfungen und Vorfallstatus-Vererbung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acl.html">ACLs für Config Items</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Arbeiten mit der CMDB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/agenten.html">Arbeiten mit Config Items (Agenten)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/kunden.html">Config Items im Kundenportal</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Schnittstellen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/import-export.html">Import und Export von Config Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/webservice.html">Webservice (Generic Interface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/konsole.html">Konsolenbefehle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/klassendefinition.html">Klassendefinition (YAML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/feldtypen.html">Feldtypen und ihre Optionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../referenz/sysconfig.html">SysConfig-Referenz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version-11-1.html">Was sich in OTOBO 11.1 ändert</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="dynamische-felder-fur-config-items">
+<span id="felder"></span><h1>Dynamische Felder für Config Items<a class="headerlink" href="#dynamische-felder-fur-config-items" title="Link to this heading">¶</a></h1>
+<p>Alles, was an einem Config Item über Name, Status und Beschreibung hinausgeht —
+Seriennummer, Hersteller, Standort, Lizenzanzahl —, wird in <strong>dynamischen
+Feldern</strong> gespeichert. Die Klassendefinition legt nur fest, <em>welche</em> Felder eine
+Klasse verwendet und wo sie stehen; die Felder selbst werden vorher unter
+<em>Admin → Dynamische Felder</em> angelegt.</p>
+<p>Die vollständigen Optionen jedes Feldtyps stehen in <a class="reference internal" href="../referenz/feldtypen.html"><span class="doc">Feldtypen und ihre Optionen</span></a>.</p>
+<section id="grundsatzliches">
+<h2>Grundsätzliches<a class="headerlink" href="#grundsatzliches" title="Link to this heading">¶</a></h2>
+<p><strong>Objekttyp.</strong> Felder für die CMDB haben den Objekttyp <em>ITSM ConfigElement</em> (in der englischen Oberfläche <em>ITSM ConfigItem</em>). Nur
+solche Felder lassen sich in einer Klassendefinition verwenden; ein Feld mit
+anderem Objekttyp wird beim Speichern der Definition als „nicht vorhanden“
+abgelehnt.</p>
+<p><strong>Werte hängen an der Version.</strong> Jede Version eines Config Items hat ihre eigenen
+Feldwerte. Beim Erzeugen einer neuen Version werden die unveränderten Werte der
+Vorgängerversion übernommen. So bleibt nachvollziehbar, welchen Wert ein Feld in
+einer früheren Version hatte.</p>
+<p><strong>Nicht alles ist ein Feld.</strong> Name, Versionsbezeichnung, Verwendungsstatus,
+Vorfallstatus und Beschreibung sind feste Attribute jeder Version, keine
+dynamischen Felder. Dateianhänge werden ebenfalls getrennt gespeichert: normale
+Anhänge je Config Item, eingebettete Bilder der Beschreibung je Version.</p>
+<p><strong>Feldnamen und Namensräume.</strong> Die mitgelieferten Klassen verwenden Feldnamen mit
+Namensraum, also einem Präfix vor dem ersten Bindestrich —
+<code class="docutils literal notranslate"><span class="pre">ITSMModel-SerialNumber</span></code>, <code class="docutils literal notranslate"><span class="pre">Location-ReferenceToBuilding</span></code>. Das hält die Liste
+der Felder übersichtlich, wenn viele Klassen eigene Felder mitbringen. Die
+zulässigen Namensräume stehen in <code class="docutils literal notranslate"><span class="pre">DynamicField::Namespaces</span></code>; beim
+Klassenimport werden neue Namensräume automatisch eingetragen (siehe
+<a class="reference internal" href="klassen.html#klassen-import-export"><span class="std std-ref">Klassen exportieren und importieren</span></a>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Feldnamen nur aus Buchstaben, Ziffern und Bindestrich bilden. Der Klassenimport
+akzeptiert keine anderen Zeichen, und nur solche Namen lassen sich als
+Spalten in der Übersicht verwenden.</p>
+</div>
+</section>
+<section id="welche-feldtypen-stehen-zur-verfugung">
+<h2>Welche Feldtypen stehen zur Verfügung?<a class="headerlink" href="#welche-feldtypen-stehen-zur-verfugung" title="Link to this heading">¶</a></h2>
+<p>Beim Objekttyp <em>ITSM ConfigElement</em> bietet <em>Admin → Dynamische Felder</em> an:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Gruppe</p></th>
+<th class="head"><p>Feldtypen</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Einfache Felder</p></td>
+<td><p>Text, Textarea, Richtext, Checkbox, Dropdown, Multiselect, Datum,
+Datum/Zeit, Titel</p></td>
+</tr>
+<tr class="row-odd"><td><p>Externe Werte</p></td>
+<td><p>Datenbank, Webservice</p></td>
+</tr>
+<tr class="row-even"><td><p>Zusammengesetzte Felder</p></td>
+<td><p>Set (Feldgruppe), Script (Template Toolkit), Lens</p></td>
+</tr>
+<tr class="row-odd"><td><p>Referenzen</p></td>
+<td><p>Config Item, Config Item Version, Agent, Kundenbenutzer, Kundenfirma,
+Ticket, Service</p></td>
+</tr>
+<tr class="row-even"><td><p>Aus dem General Catalog</p></td>
+<td><p>GeneralCatalog (Auswahlwerte aus einer Katalogklasse)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Kontakt mit Daten</em> (ContactWD) ist nur für Tickets verfügbar und wird für
+Config Items nicht angeboten.</p>
+<figure class="align-default" id="id1">
+<img alt="Auswahl der Feldtypen für den Objekttyp ITSM ConfigElement" src="../../_images/admin-dynamicfield-add-configitem.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Feldtypen beim Anlegen eines Feldes für Config Items</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ein-feld-anlegen-und-verwenden">
+<h2>Ein Feld anlegen und verwenden<a class="headerlink" href="#ein-feld-anlegen-und-verwenden" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p><em>Admin → Dynamische Felder</em> → im Kasten <em>ITSM ConfigElement</em> den Feldtyp
+wählen.</p></li>
+<li><p><strong>Name</strong> (technisch, wird in der Klassendefinition verwendet) und
+<strong>Beschriftung</strong> vergeben, Optionen des Typs setzen, speichern.</p></li>
+<li><p>Das Feld in der Klassendefinition in einen Abschnitt aufnehmen:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Hardware</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMModel-SerialNumber</span>
+<span class="w">        </span><span class="nt">Label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Seriennummer</span>
+<span class="w">        </span><span class="nt">Mandatory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>Soll das Feld durchsuchbar sein oder in der Übersicht als Spalte erscheinen,
+die entsprechenden Einstellungen ergänzen (siehe
+<a class="reference internal" href="#felder-suche-uebersicht"><span class="std std-ref">Felder in Suche und Übersicht</span></a>).</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">Label</span></code>, <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code> und <code class="docutils literal notranslate"><span class="pre">Readonly</span></code> werden in der Klassendefinition gesetzt,
+nicht am Feld. Dasselbe Feld kann dadurch in zwei Klassen unterschiedlich heißen
+oder in einer Pflicht sein und in der anderen nicht. Details:
+<a class="reference internal" href="../referenz/klassendefinition.html"><span class="doc">Klassendefinition (YAML)</span></a>.</p>
+</section>
+<section id="felder-nachtraglich-andern">
+<h2>Felder nachträglich ändern<a class="headerlink" href="#felder-nachtraglich-andern" title="Link to this heading">¶</a></h2>
+<p>Jede Klassendefinition speichert eine <strong>Kopie der Feldeinstellungen</strong>. Wird ein
+Feld geändert — neue Auswahlwerte, andere Beschriftung, andere Filter —, wirkt
+das auf die Config Items erst, nachdem die Definitionen nachgezogen wurden:
+<em>Admin → Dynamische Felder</em> zeigt dann einen Hinweis und die Schaltfläche <strong>Sync
+CI Definitions</strong>. Was dabei mit bestehenden Config Items passiert, beschreibt
+<a class="reference internal" href="klassen.html#klassen-versionierung"><span class="std std-ref">Versionen der Definition</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Aktualisierung erreicht nur Config Items in einem Verwendungsstatus mit
+der Funktionalität <em>preproductive</em> oder <em>productive</em>. Config Items in einem
+<em>postproductive</em> Status behalten die alten Feldeinstellungen — auch die alten
+Verknüpfungseinstellungen von Referenzfeldern.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ein <strong>umbenanntes</strong> Feld muss in allen Klassendefinitionen von Hand
+nachgetragen werden. Das <strong>Löschen</strong> eines Feldes wird von der Synchronisation
+nicht erfasst; das Feld vorher aus allen Definitionen entfernen.</p>
+</div>
+</section>
+<section id="referenzfelder-auf-config-items">
+<span id="felder-referenz"></span><h2>Referenzfelder auf Config Items<a class="headerlink" href="#referenzfelder-auf-config-items" title="Link to this heading">¶</a></h2>
+<p>Die Feldtypen <strong>Config Item</strong> und <strong>Config Item Version</strong> verweisen auf andere
+Config Items. Sie sind das Werkzeug für alles, was Config Items miteinander
+verbindet: Standorthierarchien (Raum → Gebäude → Standort), Abhängigkeiten
+(Server → Betriebssystem, Client → Lizenz) oder Zugehörigkeiten (Cluster →
+Server).</p>
+<figure class="align-default" id="id2">
+<img alt="Einstellungen eines Referenzfeldes vom Typ Config Item" src="../../_images/admin-dynamicfield-reference-configitem.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Referenzfeld auf Config Items mit Klassenfilter und Verknüpfungseinstellungen</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="eingabe">
+<h3>Eingabe<a class="headerlink" href="#eingabe" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">EditFieldMode</span></code> · <em>Eingabemodus des Editierfelds</em></dt><dd><p>Wie der Wert gewählt wird: <strong>AutoComplete</strong> (Suchfeld), <strong>Dropdown</strong> (Liste)
+oder <strong>Multiselect</strong> (Liste mit Mehrfachauswahl). Bei AutoComplete ist ein
+leerer Wert immer möglich.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">MultiValue</span></code> · <em>Mehrfachwerte</em></dt><dd><p>Mehrere unabhängige Werte, jeder in einer eigenen Eingabezeile. Mit
+Multiselect nicht kombinierbar.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SearchAttribute</span></code> · <em>Beim Autocomplete durchsuchtes Attribut</em></dt><dd><p>Wonach AutoComplete sucht: <strong>Name</strong> (Standard) oder <strong>Number</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DisplayType</span></code> · <em>Für die Werte angezeigtes Attribut</em></dt><dd><p>Wie ein gewählter Wert angezeigt wird — mit Name oder Nummer, wahlweise mit
+vorangestelltem Klassennamen. Ohne Angabe: Name, in der Langform
+<code class="docutils literal notranslate"><span class="pre">Klasse:</span> <span class="pre">Name</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="auswahl-einschranken">
+<h3>Auswahl einschränken<a class="headerlink" href="#auswahl-einschranken" title="Link to this heading">¶</a></h3>
+<p>Welche Config Items überhaupt zur Auswahl stehen, bestimmen drei Filter. Sie
+wirken zusammen (UND):</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">ClassIDs</span></code> · <em>Klasseneinschränkungen für das Konfigurationsobjekt</em></dt><dd><p>Klassen, aus denen gewählt werden kann. Leer: alle Klassen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Enthält die Liste einen <strong>leeren Eintrag</strong> — typisch nach einem
+Klassenimport, bei dem eine referenzierte Klasse fehlte —, findet die
+Auswahl gar nichts mehr. Im Modus <em>Einfachauswahl</em> wird der gespeicherte
+Wert dann beim nächsten Speichern des Config Items still geleert. Siehe
+<a class="reference internal" href="klassen.html#klassen-import-export"><span class="std std-ref">Klassen exportieren und importieren</span></a>.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DeplStateIDs</span></code> · <em>Verwendungsstatus-Einschränkungen für das Config Item</em></dt><dd><p>Verwendungsstatus, die zur Auswahl stehen — etwa nur <em>Produktiv</em> und
+<em>In Wartung</em>, damit keine ausgemusterten Geräte zugeordnet werden. Leer: alle.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ReferenceFilterList</span></code> · <em>Referenzfilter</em></dt><dd><p>Beliebig viele Filterzeilen der Form <em>Attribut des referenzierten Config
+Items</em> <strong>gleich</strong> <em>Attribut des aktuellen Objekts</em> oder <em>fester Text</em>.
+Damit lassen sich abhängige Auswahlen bauen: Ein Feld <em>Raum</em> zeigt nur die
+Räume des Gebäudes, das im Feld <em>Gebäude</em> gewählt ist.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ReferenceFilterList</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ReferenceObjectAttribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicField_Location-ReferenceToBuilding</span>
+<span class="w">    </span><span class="nt">EqualsObjectAttribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicField_Location-ReferenceToBuilding</span>
+</pre></div>
+</div>
+<p>Ändert sich das Vergleichsfeld in der Maske, wird die Auswahl neu berechnet;
+nicht mehr passende Werte werden geleert (AutoComplete) bzw. aus der Liste
+entfernt (Dropdown).</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Ist der Vergleichswert leer — im Beispiel: noch kein Gebäude gewählt —,
+bleibt die Auswahlliste <strong>leer</strong>. Das ist gewollt, überrascht aber beim
+ersten Test.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Im Modus Dropdown und Multiselect akzeptiert OTOBO beim Speichern nur Werte,
+die auch angeboten wurden, oder den bereits gespeicherten Wert.</p>
+</div>
+</section>
+<section id="verknupfung-erzeugen">
+<span id="felder-verknuepfung"></span><h3>Verknüpfung erzeugen<a class="headerlink" href="#verknupfung-erzeugen" title="Link to this heading">¶</a></h3>
+<p>Ein Referenzfeld speichert zunächst nur einen Verweis. Erst die
+<strong>Verknüpfungseinstellungen</strong> machen daraus eine Beziehung, die OTOBO an anderer
+Stelle auswertet.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">LinkType</span></code> · <em>Verknüpfungsart</em></dt><dd><p>Linktyp der Beziehung, z. B. <code class="docutils literal notranslate"><span class="pre">DependsOn</span></code> oder <code class="docutils literal notranslate"><span class="pre">LocationOf</span></code> (siehe
+<a class="reference internal" href="verknuepfungen.html"><span class="doc">Verknüpfungen und Vorfallstatus-Vererbung</span></a>). Das Feld wird nur angeboten, wenn zwischen den beiden
+Objekttypen überhaupt Linktypen erlaubt sind. <strong>Leer: keine Beziehung.</strong></p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LinkDirection</span></code> · <em>Link-Richtung</em></dt><dd><p>Richtung der Beziehung:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ReferencingIsSource</span></code> — <em>vorwärts</em>: das Config Item mit dem Feld ist
+Quelle, das gewählte Config Item Ziel (Standard),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReferencingIsTarget</span></code> — <em>rückwärts</em>: das gewählte Config Item ist
+Quelle.</p></li>
+</ul>
+<p>Die mitgelieferten Standortfelder sind rückwärts eingestellt: Ein Raum
+verweist auf sein Gebäude, die Beziehung lautet aber <em>Gebäude</em> <strong>ist
+Standort von</strong> <em>Raum</em>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LinkReferencingType</span></code> · <em>Link-Referenzierungsart</em></dt><dd><p>Nur bei Feldern an Config Items:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dynamic</span></code> — die Beziehung gilt für das <strong>Config Item</strong> (Standard),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Static</span></code> — die Beziehung gilt nur für die <strong>Version</strong>, in der der Wert
+gespeichert ist.</p></li>
+</ul>
+<p>Die Berechnung des aktuellen Vorfallstatus berücksichtigt nur dynamische
+Beziehungen.</p>
+</dd>
+</dl>
+<p>Mit gesetztem Linktyp führt OTOBO die Beziehung in einer CMDB-eigenen
+Verknüpfungstabelle. Diese Tabelle wird ausgewertet von:</p>
+<ul class="simple">
+<li><p>Abschnitten vom Typ <code class="docutils literal notranslate"><span class="pre">ConfigItemLinks</span></code> in der Detailansicht (etwa <em>Verwendet
+von</em>, siehe <a class="reference internal" href="../referenz/klassendefinition.html"><span class="doc">Klassendefinition (YAML)</span></a>),</p></li>
+<li><p>der <strong>Baumansicht</strong> eines Config Items,</p></li>
+<li><p>der <strong>Druckansicht</strong>,</p></li>
+<li><p>der <strong>Vererbung des Vorfallstatus</strong> (siehe <a class="reference internal" href="verknuepfungen.html"><span class="doc">Verknüpfungen und Vorfallstatus-Vererbung</span></a>).</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><strong>Ohne</strong> <code class="docutils literal notranslate"><span class="pre">LinkType</span></code> entsteht keine Beziehung: Das Config Item erscheint
+weder in Backlink-Abschnitten noch in der Baumansicht, und ein Vorfall wird
+nicht weitergegeben. Wer Standorte oder Abhängigkeiten abbilden will, muss
+den Linktyp setzen.</p>
+</div>
+<p>Die Beziehung wird aus dem Feldwert erzeugt — Referenzen zwischen Config Items
+legen <strong>keine</strong> klassische Verknüpfung an, wie sie über <em>Verknüpfen</em> im Menü
+entsteht. Umgekehrt werden klassische Verknüpfungen zwischen Config Items in die
+CMDB-Verknüpfungstabelle übernommen und stehen damit ebenfalls in Baumansicht und
+Backlink-Abschnitten.</p>
+<p>Wurden Verknüpfungseinstellungen an vielen Feldern geändert, baut der
+Konsolenbefehl die Tabelle vollständig neu auf:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bin/otobo.Console.pl<span class="w"> </span>Maint::ITSM::ConfigItem::RebuildLinkTable
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Der Neuaufbau berücksichtigt bei dynamischen Beziehungen nur die Werte der
+<strong>jeweils neuesten</strong> Version eines Config Items.</p>
+</div>
+<p>Referenzfelder auf Config Items gibt es auch an <strong>Tickets</strong>. Dort erzeugt ein
+gesetzter Linktyp eine klassische Verknüpfung zwischen Ticket und Config Item.</p>
+</section>
+<section id="config-item-oder-config-item-version">
+<h3>Config Item oder Config Item Version?<a class="headerlink" href="#config-item-oder-config-item-version" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Config Item</p></th>
+<th class="head"><p>Config Item Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gespeichert wird</p></td>
+<td><p>das Config Item</p></td>
+<td><p>die Version, die bei der Auswahl aktuell war</p></td>
+</tr>
+<tr class="row-odd"><td><p>Anzeige</p></td>
+<td><p>immer der aktuelle Name</p></td>
+<td><p>Name, wie er in dieser Version lautete</p></td>
+</tr>
+<tr class="row-even"><td><p>Lens-Felder zeigen</p></td>
+<td><p>Werte der neuesten Version</p></td>
+<td><p>Werte genau der gespeicherten Version</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vorfallstatus-Vererbung</p></td>
+<td><p>ja (mit <code class="docutils literal notranslate"><span class="pre">LinkReferencingType:</span> <span class="pre">Dynamic</span></code>)</p></td>
+<td><p>nein</p></td>
+</tr>
+<tr class="row-even"><td><p>In einem Set verwendbar</p></td>
+<td><p>ja</p></td>
+<td><p>nein</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Config Item</strong> ist der Normalfall. <strong>Config Item Version</strong> eignet sich, wenn ein
+Stand festgehalten werden soll — etwa „dieser Vertrag in der Fassung, die bei der
+Beschaffung galt“. Spätere Versionen des Ziels werden nicht nachverfolgt.</p>
+</section>
+</section>
+<section id="weitere-referenzfelder">
+<h2>Weitere Referenzfelder<a class="headerlink" href="#weitere-referenzfelder" title="Link to this heading">¶</a></h2>
+<p>Auch Agenten, Kundenbenutzer, Kundenfirmen, Tickets und Services lassen sich
+referenzieren. Typische Verwendung an Config Items:</p>
+<ul class="simple">
+<li><p><strong>Agent</strong> — zuständiger Administrator; die Auswahl lässt sich mit <code class="docutils literal notranslate"><span class="pre">Group</span></code>
+auf Mitglieder bestimmter Gruppen einschränken.</p></li>
+<li><p><strong>Kundenbenutzer</strong> — Benutzer eines Geräts. Eingabe nur per AutoComplete.</p></li>
+<li><p><strong>Kundenfirma</strong> — Eigentümer oder Lieferant.</p></li>
+<li><p><strong>Service</strong> — Service, für den das Config Item relevant ist.</p></li>
+<li><p><strong>Ticket</strong> — etwa das Beschaffungsticket; auswählbar nach Queue und Tickettyp.</p></li>
+</ul>
+<p>Mit gesetztem Linktyp (<code class="docutils literal notranslate"><span class="pre">LinkObjectForReferenceType</span></code>) erzeugen diese Felder eine
+klassische Verknüpfung zum referenzierten Objekt, sofern der Linktyp zwischen den
+Objekttypen erlaubt ist.</p>
+<section id="config-items-im-kunden-und-kundenbenutzer-center">
+<span id="felder-kundencenter"></span><h3>Config Items im Kunden- und Kundenbenutzer-Center<a class="headerlink" href="#config-items-im-kunden-und-kundenbenutzer-center" title="Link to this heading">¶</a></h3>
+<p>Die Widgets <em>Assigned CIs</em> im Kundeninformationscenter und im
+Kundenbenutzer-Informationscenter zeigen die Config Items eines Kunden. Welche
+das sind, entscheidet ein Referenzfeld, dessen Name im Widget eingetragen wird:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">AgentCustomerInformationCenter::Backend###0060-CIC-ITSMConfigItemCustomerCompany</span></code></dt><dd><p>Schlüssel <code class="docutils literal notranslate"><span class="pre">ConfigItemKey</span></code>: Name eines Kundenfirma-Referenzfeldes. Ab Werk
+<strong>leer</strong> — das Widget zeigt dann keine Config Items.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">AgentCustomerUserInformationCenter::Backend###0060-CUIC-ITSMConfigItemCustomerUser</span></code></dt><dd><p>Schlüssel <code class="docutils literal notranslate"><span class="pre">ConfigItemKey</span></code>: Name eines Kundenbenutzer-Referenzfeldes. Ab
+Werk <code class="docutils literal notranslate"><span class="pre">Contact-User</span></code> (Feld aus den mitgelieferten Klassen).</p>
+</dd>
+</dl>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">ShownClasses</span></code> lässt sich die Anzeige zusätzlich auf bestimmte Klassen
+beschränken.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ein Referenzfeld auf Kundenfirma oder Kundenbenutzer allein genügt nicht:
+Ohne passenden <code class="docutils literal notranslate"><span class="pre">ConfigItemKey</span></code> bleibt das Widget leer.</p>
+</div>
+</section>
+</section>
+<section id="set-feldgruppen">
+<h2>Set — Feldgruppen<a class="headerlink" href="#set-feldgruppen" title="Link to this heading">¶</a></h2>
+<p>Ein <strong>Set</strong> fasst mehrere Felder zu einer Gruppe zusammen. Mit <code class="docutils literal notranslate"><span class="pre">MultiValue</span></code>
+wird die Gruppe wiederholbar — so hat ein Computer beliebig viele
+<em>Netzwerkschnittstellen</em> mit jeweils IP-Adresse, MAC-Adresse und Hostname, oder
+beliebig viele <em>Festplatten</em> mit Typ, Kapazität und Seriennummer.</p>
+<p>Die enthaltenen Felder werden im Schlüssel <code class="docutils literal notranslate"><span class="pre">Include</span></code> als YAML angegeben, als
+Liste von Feldern oder als Raster:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMStorage-Type</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMStorage-Capacity</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Grid</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">Rows</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMStorage-Manufacturer</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMStorage-SerialNumber</span>
+</pre></div>
+</div>
+<p>Regeln für die enthaltenen Felder:</p>
+<ul class="simple">
+<li><p>Sie müssen bereits existieren und denselben Objekttyp haben wie das Set.</p></li>
+<li><p>Nicht aufgenommen werden können: Set, Titel, Datenbank, Webservice und Config
+Item Version.</p></li>
+</ul>
+<p>In der Klassendefinition wird nur das Set selbst eingetragen (<code class="docutils literal notranslate"><span class="pre">DF:</span></code> mit dem
+Namen des Sets); die enthaltenen Felder erscheinen automatisch. In der
+Detailansicht nimmt ein Set die volle Breite des Abschnitts ein. In der Suche
+stehen die enthaltenen Felder als <code class="docutils literal notranslate"><span class="pre">Set::Feld</span></code> zur Verfügung, wenn das Set auf
+einem Agenten-Reiter steht.</p>
+</section>
+<section id="lens-werte-eines-referenzierten-objekts">
+<h2>Lens — Werte eines referenzierten Objekts<a class="headerlink" href="#lens-werte-eines-referenzierten-objekts" title="Link to this heading">¶</a></h2>
+<p>Ein <strong>Lens</strong>-Feld zeigt ein Feld des Objekts an, auf das ein Referenzfeld
+verweist. Beispiel: Ein Client verweist über <code class="docutils literal notranslate"><span class="pre">ITSM-ReferenceToLicense</span></code> auf
+eine Lizenz; das Lens-Feld <code class="docutils literal notranslate"><span class="pre">ITSM-LensToLicenseType</span></code> zeigt am Client den
+Lizenztyp, der an der Lizenz gepflegt wird.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ReferenceDF</span></code></dt><dd><p>Das Referenzfeld des aktuellen Objekts.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">AttributeDF</span></code></dt><dd><p>Das Feld am referenzierten Objekt, dessen Wert angezeigt wird.</p>
+</dd>
+</dl>
+<p>Als Attributfeld sind in OTOBO 11.0 zulässig: Checkbox, Datum, Datum/Zeit,
+Dropdown, GeneralCatalog, Multiselect, Set, Text, Textarea und Titel.</p>
+<p>Ein Lens-Feld speichert selbst nichts. Referenziert es ein Config Item, zeigt es
+den Wert der <strong>neuesten Version</strong>; bei einem Feld vom Typ Config Item Version den
+Wert <strong>dieser Version</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ein Lens-Feld ist <strong>nicht nur Anzeige</strong>: Wird es in der Bearbeiten-Maske
+geändert, schreibt OTOBO den Wert in das <strong>referenzierte</strong> Objekt — gegebenenfalls
+entsteht dort eine neue Version. Soll nur angezeigt werden, das Feld in der
+Klassendefinition mit <code class="docutils literal notranslate"><span class="pre">Readonly:</span> <span class="pre">1</span></code> eintragen, wie es die mitgelieferten
+Klassen tun.</p>
+</div>
+<p>Innerhalb eines Sets wertet ein Lens-Feld bei einem mehrwertigen Referenzfeld
+nur den ersten Wert aus.</p>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>In 11.1 dürfen auch Referenzfelder Attributfeld einer Lens sein (Agent,
+Kundenbenutzer, Kundenfirma, Ticket, FAQ, Config Item, Config Item Version)
+sowie Script-Felder. Die Einstellung <code class="docutils literal notranslate"><span class="pre">MultiValue</span></code> einer Lens folgt
+automatisch ihrem Attributfeld.</p>
+</div>
+</section>
+<section id="script-berechnete-felder">
+<h2>Script — berechnete Felder<a class="headerlink" href="#script-berechnete-felder" title="Link to this heading">¶</a></h2>
+<p>Ein <strong>Script</strong>-Feld berechnet seinen Wert mit einer Template-Toolkit-Vorlage aus
+anderen Feldern — etwa den Gesamtspeicher aus Anzahl und Größe der
+Speichermodule:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[% Count = "DynamicField_ITSMMemory-Count" %]
+[% Capacity = "DynamicField_ITSMMemory-Capacity" %]
+[% Total = Data.$Count * Data.$Capacity %][% Total %] GB
+</pre></div>
+</div>
+<p>In der Vorlage stehen unter <code class="docutils literal notranslate"><span class="pre">Data</span></code> die Attribute des Config Items (<code class="docutils literal notranslate"><span class="pre">Name</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Number</span></code>, <code class="docutils literal notranslate"><span class="pre">Class</span></code>, <code class="docutils literal notranslate"><span class="pre">DeplState</span></code>, <code class="docutils literal notranslate"><span class="pre">InciState</span></code>, <code class="docutils literal notranslate"><span class="pre">VersionString</span></code> …) und
+alle Felder als <code class="docutils literal notranslate"><span class="pre">DynamicField_&lt;Name&gt;</span></code> zur Verfügung. Zeilenumbrüche werden aus
+dem Ergebnis entfernt.</p>
+<p>Wann der Wert entsteht:</p>
+<ul class="simple">
+<li><p><strong>In der Bearbeiten-Maske</strong> wird er live berechnet, sobald alle Felder aus
+<code class="docutils literal notranslate"><span class="pre">RequiredArgs</span></code> gefüllt sind und sich eines der Felder aus <code class="docutils literal notranslate"><span class="pre">AJAXTriggers</span></code>
+ändert. Das ist nur eine Vorschau.</p></li>
+<li><p><strong>Gespeichert</strong> wird der Wert ausschließlich, wenn eines der Ereignisse aus
+<code class="docutils literal notranslate"><span class="pre">UpdateEvents</span></code> eintritt. Dann berechnet OTOBO den Wert aus den gespeicherten
+Daten und schreibt ihn in die aktuelle Version.</p></li>
+</ul>
+<p>Zur Auswahl für <code class="docutils literal notranslate"><span class="pre">UpdateEvents</span></code> stehen: <code class="docutils literal notranslate"><span class="pre">ConfigItemCreate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ConfigItemUpdate</span></code>, <code class="docutils literal notranslate"><span class="pre">VersionCreate</span></code>, <code class="docutils literal notranslate"><span class="pre">VersionUpdate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">DeploymentStateUpdate</span></code>, <code class="docutils literal notranslate"><span class="pre">IncidentStateUpdate</span></code>, <code class="docutils literal notranslate"><span class="pre">NameUpdate</span></code>,
+<code class="docutils literal notranslate"><span class="pre">AttachmentAddPost</span></code>, <code class="docutils literal notranslate"><span class="pre">AttachmentDeletePost</span></code>, <code class="docutils literal notranslate"><span class="pre">VersionDelete</span></code> und
+<code class="docutils literal notranslate"><span class="pre">ConfigItemDelete</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ohne passende <code class="docutils literal notranslate"><span class="pre">UpdateEvents</span></code> wird ein Script-Feld nie gespeichert — auch
+wenn die Maske einen Wert anzeigt. Die Ereignisse so wählen, dass sie bei den
+Änderungen auftreten, nach denen der Wert neu berechnet werden soll.</p>
+</div>
+<p>Script-Felder in einem Set werden je Zeile des Sets berechnet. In der
+Klassendefinition sollten sie mit <code class="docutils literal notranslate"><span class="pre">Readonly:</span> <span class="pre">1</span></code> eingetragen werden.</p>
+</section>
+<section id="felder-in-suche-und-ubersicht">
+<span id="felder-suche-uebersicht"></span><h2>Felder in Suche und Übersicht<a class="headerlink" href="#felder-in-suche-und-ubersicht" title="Link to this heading">¶</a></h2>
+<section id="suche">
+<h3>Suche<a class="headerlink" href="#suche" title="Link to this heading">¶</a></h3>
+<p>Ein Feld ist in der Agentensuche nur verfügbar, wenn</p>
+<ol class="arabic simple">
+<li><p>es in <code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::AgentITSMConfigItemSearch###DynamicField</span></code>
+eingetragen ist — <code class="docutils literal notranslate"><span class="pre">1</span></code> aktiviert, <code class="docutils literal notranslate"><span class="pre">2</span></code> aktiviert und standardmäßig
+eingeblendet —, <strong>und</strong></p></li>
+<li><p>es in einem Feldabschnitt auf einem Reiter steht, den der Agent sehen darf.</p></li>
+</ol>
+<p>Die Einstellung ist ab Werk leer: <strong>Ohne Eintrag bietet die Suche keine
+dynamischen Felder an.</strong> Für die Kundenoberfläche gilt entsprechend
+<code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::CustomerITSMConfigItemSearch###DynamicField</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem::Frontend::AgentITSMConfigItemSearch###DynamicField</span><span class="p p-Indicator">:</span>
+<span class="w">  </span><span class="nt">ITSMModel-SerialNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">ITSMModel-Manufacturer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Feldsuche berücksichtigt nur die <strong>neueste Version</strong> eines Config Items.
+Wer nach einem früheren Wert sucht, findet das Config Item nicht.</p>
+</div>
+</section>
+<section id="ubersicht">
+<h3>Übersicht<a class="headerlink" href="#ubersicht" title="Link to this heading">¶</a></h3>
+<p>Als Spalte der CMDB-Übersicht wird ein Feld mit <code class="docutils literal notranslate"><span class="pre">DynamicField_&lt;Name&gt;</span></code> in
+<code class="docutils literal notranslate"><span class="pre">ITSMConfigItem::Frontend::AgentITSMConfigItem###DefaultColumns</span></code> eingetragen
+(<code class="docutils literal notranslate"><span class="pre">1</span></code> wählbar, <code class="docutils literal notranslate"><span class="pre">2</span></code> standardmäßig sichtbar) oder klassenbezogen in
+<code class="docutils literal notranslate"><span class="pre">…###ClassColumnsAvailable</span></code> und <code class="docutils literal notranslate"><span class="pre">…###ClassColumnsDefault</span></code>. Ob die Spalte
+sortier- und filterbar ist, hängt vom Feldtyp ab (siehe
+<a class="reference internal" href="../referenz/feldtypen.html"><span class="doc">Feldtypen und ihre Optionen</span></a>).</p>
+</section>
+</section>
+<section id="werte-aus-import-und-webservice-importsearchattribute">
+<span id="felder-extern"></span><h2>Werte aus Import und Webservice: <code class="docutils literal notranslate"><span class="pre">ImportSearchAttribute</span></code><a class="headerlink" href="#werte-aus-import-und-webservice-importsearchattribute" title="Link to this heading">¶</a></h2>
+<p>Kommt ein Wert aus <strong>Import/Export</strong> oder über den <strong>Webservice</strong>, stellt sich die
+Frage, wie ein Referenzfeld zu verstehen ist: Steht in der Spalte <code class="docutils literal notranslate"><span class="pre">Server-042</span></code>
+eine Nummer, ein Name oder eine interne ID?</p>
+<p><code class="docutils literal notranslate"><span class="pre">ImportSearchAttribute</span></code> (in der Oberfläche <em>External-source key</em>) beantwortet
+das. Mögliche Werte beim Typ Config Item: <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Number</span></code> oder ein beliebiges
+Feld als <code class="docutils literal notranslate"><span class="pre">DynamicField_&lt;Name&gt;</span></code> — etwa eine Inventarnummer.</p>
+<ul class="simple">
+<li><p><strong>Leer</strong> (so in allen mitgelieferten Klassen): Der Wert wird als interne ID
+übernommen.</p></li>
+<li><p><strong>Gesetzt:</strong> OTOBO sucht das Objekt mit genau diesem Wert. Bei genau einem
+Treffer wird dessen ID gespeichert.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Findet die Suche <strong>kein</strong> oder <strong>mehr als ein</strong> Objekt, bleibt das Feld
+<strong>leer</strong>. Eine Fehlermeldung gibt es dafür nicht, nur einen Hinweis im
+Systemprotokoll (Stufe <em>notice</em>).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Bei Werten aus externen Quellen gelten der <strong>Klassenfilter</strong> (<code class="docutils literal notranslate"><span class="pre">ClassIDs</span></code>)
+und die <code class="docutils literal notranslate"><span class="pre">ReferenceFilterList</span></code> nicht — nur der Filter auf Verwendungsstatus.
+Gibt es denselben Namen in mehreren Klassen, ist das Ergebnis mehrdeutig und
+das Feld bleibt leer. Für Importe daher ein eindeutiges Merkmal wählen, etwa
+die Nummer oder eine Inventarnummer.</p>
+</div>
+<p>Andere Referenztypen kennen eigene Werte: Agent und Kundenbenutzer <code class="docutils literal notranslate"><span class="pre">UserLogin</span></code>
+oder <code class="docutils literal notranslate"><span class="pre">PostMasterSearch</span></code> (E-Mail-Adresse), Ticket <code class="docutils literal notranslate"><span class="pre">TicketNumber</span></code>, Service
+<code class="docutils literal notranslate"><span class="pre">Name</span></code>. Mehr zu Import und Webservice: <a class="reference internal" href="../schnittstellen/import-export.html"><span class="doc">Import und Export von Config Items</span></a>,
+<a class="reference internal" href="../schnittstellen/webservice.html"><span class="doc">Webservice (Generic Interface)</span></a>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="rechte.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Berechtigungen</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="rollen.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Rollen einrichten</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Dynamische Felder für Config Items</a><ul>
+<li><a class="reference internal" href="#grundsatzliches">Grundsätzliches</a></li>
+<li><a class="reference internal" href="#welche-feldtypen-stehen-zur-verfugung">Welche Feldtypen stehen zur Verfügung?</a></li>
+<li><a class="reference internal" href="#ein-feld-anlegen-und-verwenden">Ein Feld anlegen und verwenden</a></li>
+<li><a class="reference internal" href="#felder-nachtraglich-andern">Felder nachträglich ändern</a></li>
+<li><a class="reference internal" href="#referenzfelder-auf-config-items">Referenzfelder auf Config Items</a><ul>
+<li><a class="reference internal" href="#eingabe">Eingabe</a></li>
+<li><a class="reference internal" href="#auswahl-einschranken">Auswahl einschränken</a></li>
+<li><a class="reference internal" href="#verknupfung-erzeugen">Verknüpfung erzeugen</a></li>
+<li><a class="reference internal" href="#config-item-oder-config-item-version">Config Item oder Config Item Version?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#weitere-referenzfelder">Weitere Referenzfelder</a><ul>
+<li><a class="reference internal" href="#config-items-im-kunden-und-kundenbenutzer-center">Config Items im Kunden- und Kundenbenutzer-Center</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#set-feldgruppen">Set — Feldgruppen</a></li>
+<li><a class="reference internal" href="#lens-werte-eines-referenzierten-objekts">Lens — Werte eines referenzierten Objekts</a></li>
+<li><a class="reference internal" href="#script-berechnete-felder">Script — berechnete Felder</a></li>
+<li><a class="reference internal" href="#felder-in-suche-und-ubersicht">Felder in Suche und Übersicht</a><ul>
+<li><a class="reference internal" href="#suche">Suche</a></li>
+<li><a class="reference internal" href="#ubersicht">Übersicht</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#werte-aus-import-und-webservice-importsearchattribute">Werte aus Import und Webservice: <code class="docutils literal notranslate"><span class="pre">ImportSearchAttribute</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>

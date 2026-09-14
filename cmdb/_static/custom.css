@@ -1,0 +1,16 @@
+/* wider content column so 1100px screenshots are shown at full size */
+:root { --content-width: 68em; }
+
+/* keep the OTOBO logo readable in dark mode */
+body[data-theme="dark"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
+@media (prefers-color-scheme: dark) {
+  body[data-theme="auto"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
+}
+
+/* OTOBO 11.1 deviation boxes: same visual weight everywhere in the handbook */
+.admonition.version-11-1 { border-left-color: #7b5cc4; }
+.admonition.version-11-1 > .admonition-title { background: rgba(123, 92, 196, .12); }
+.admonition.version-11-1 > .admonition-title::before { background-color: #7b5cc4; }
+
+/* long SysConfig names in definition lists must wrap instead of overflowing */
+dl dt code { word-break: break-all; }

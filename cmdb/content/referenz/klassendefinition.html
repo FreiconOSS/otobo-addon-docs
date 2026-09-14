@@ -1,0 +1,1022 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Feldtypen und ihre Optionen" href="feldtypen.html"><link rel="prev" title="Konsolenbefehle" href="../schnittstellen/konsole.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Klassendefinition (YAML) - OTOBO CMDB — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6c7df5d8" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO CMDB — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO CMDB — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konzepte.html">Wie die CMDB aufgebaut ist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/pakete.html">Pakete und Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Einrichten</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/klassen.html">Klassen einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/rollen.html">Rollen einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/felder.html">Dynamische Felder für Config Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/rechte.html">Berechtigungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/status.html">Verwendungs- und Vorfallstatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/verknuepfungen.html">Verknüpfungen und Vorfallstatus-Vererbung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../einrichten/acl.html">ACLs für Config Items</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Arbeiten mit der CMDB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/agenten.html">Arbeiten mit Config Items (Agenten)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bedienung/kunden.html">Config Items im Kundenportal</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Schnittstellen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/import-export.html">Import und Export von Config Items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/webservice.html">Webservice (Generic Interface)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schnittstellen/konsole.html">Konsolenbefehle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Klassendefinition (YAML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feldtypen.html">Feldtypen und ihre Optionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sysconfig.html">SysConfig-Referenz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version-11-1.html">Was sich in OTOBO 11.1 ändert</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="klassendefinition-yaml">
+<span id="klassendefinition"></span><h1>Klassendefinition (YAML)<a class="headerlink" href="#klassendefinition-yaml" title="Link to this heading">¶</a></h1>
+<p>Jede CMDB-Klasse wird durch eine <strong>Definition</strong> im YAML-Format beschrieben. Die
+Definition legt fest, welche Felder ein Config Item dieser Klasse hat, wie sie in
+Abschnitte gegliedert sind und auf welchen Reitern (<em>Pages</em>) der Detailansicht sie
+erscheinen. Bearbeitet wird sie unter <em>Admin → Config Items → Klasse wählen →
+Klassen-Definition ändern</em>.</p>
+<p>Dieses Kapitel beschreibt <strong>alle Schlüssel</strong>, die OTOBO 11.0 auswertet. Wie man
+eine Klasse Schritt für Schritt aufbaut, zeigt <a class="reference internal" href="../einrichten/klassen.html"><span class="doc">Klassen einrichten</span></a>.</p>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Der Aufbau der Definition ist in 11.1 unverändert: kein Schlüssel kommt hinzu,
+keiner entfällt, die Prüfungen sind dieselben. Neu ist nur der Wert <code class="docutils literal notranslate"><span class="pre">Public</span></code>
+unter <code class="docutils literal notranslate"><span class="pre">Interfaces</span></code> (siehe <a class="reference internal" href="#klassendefinition-interfaces"><span class="std std-ref">Interfaces — Agent, Kunde, öffentlich</span></a>).</p>
+</div>
+<section id="aufbau-im-uberblick">
+<h2>Aufbau im Überblick<a class="headerlink" href="#aufbau-im-uberblick" title="Link to this heading">¶</a></h2>
+<p>Eine Definition hat drei Ebenen auf oberster Stufe:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>---
+Pages:            Reiter der Detailansicht  (Pflicht)
+  - Name            Reitername
+    Interfaces      in welcher Oberfläche sichtbar
+    Groups          nur für Mitglieder dieser Gruppen
+    Layout          Spaltenraster des Reiters
+    Content         welche Abschnitte wo stehen
+      - Section       Name eines Abschnitts
+        RowStart / RowSpan / ColumnStart / ColumnSpan
+Sections:         Abschnitte mit Feldern  (Pflicht, darf aus Rollen stammen)
+  &lt;Name&gt;:
+    Type            DynamicFields | Description | ConfigItemLinks | ReferencedSection
+    Content         Feldliste (bei DynamicFields)
+      - Header        Zwischenüberschrift
+      - DF            dynamisches Feld  (+ Label, Mandatory, Readonly)
+      - Grid          mehrspaltiger Block
+Roles:            wiederverwendbare Abschnitte einbinden  (optional)
+  &lt;Alias&gt;:
+    Name            Name der Rolle
+    Version         feste Rollenversion (optional)
+</pre></div>
+</div>
+<p>Die Trennung ist bewusst: <strong>Sections</strong> beschreiben <em>was</em> erfasst wird,
+<strong>Pages</strong> beschreiben <em>wo</em> es angezeigt wird. Ein Abschnitt kann auf mehreren
+Reitern erscheinen; ein Abschnitt, der auf keinem Reiter steht, ist in der
+Detailansicht unsichtbar, seine Felder gehören aber trotzdem zur Klasse.</p>
+</section>
+<section id="grundregeln">
+<h2>Grundregeln<a class="headerlink" href="#grundregeln" title="Link to this heading">¶</a></h2>
+<p><strong>Die Definition muss mit</strong> <code class="docutils literal notranslate"><span class="pre">---</span></code> <strong>beginnen</strong> — buchstäblich mit den ersten
+drei Zeichen. Eine Leerzeile oder ein Kommentar davor wird abgelehnt.</p>
+<p><strong>Unbekannte Schlüssel werden ignoriert, nicht gemeldet.</strong> Ein Tippfehler wie
+<code class="docutils literal notranslate"><span class="pre">ColumSpan</span></code> statt <code class="docutils literal notranslate"><span class="pre">ColumnSpan</span></code> besteht die Prüfung und bleibt einfach ohne
+Wirkung. Groß- und Kleinschreibung zählt überall.</p>
+<p><strong>Jede Textänderung erzeugt eine neue Version</strong> — auch eine geänderte Einrückung
+oder ein ergänzter Kommentar. Was eine neue Version für bestehende Config Items
+bedeutet, beschreibt <a class="reference internal" href="../einrichten/klassen.html#klassen-versionierung"><span class="std std-ref">Versionen der Definition</span></a>.</p>
+<p><strong>Dynamische Felder müssen vorher existieren.</strong> Die Definition verweist nur auf
+Felder; angelegt werden sie unter <em>Admin → Dynamische Felder</em> mit dem Objekttyp
+<em>ITSM ConfigElement</em> (siehe <a class="reference internal" href="../einrichten/felder.html"><span class="doc">Dynamische Felder für Config Items</span></a>). Ein Feld, das nicht existiert
+oder ungültig gesetzt ist, lässt das Speichern scheitern.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Ist der Text im Editor <strong>kein gültiges YAML</strong>, zeigt OTOBO beim Speichern eine
+leere Fehlerseite — und die Eingabe ist verloren. Größere Änderungen daher
+vorher in einem Texteditor sichern.</p>
+</div>
+<p>Die Fehlermeldungen der Prüfung erscheinen über dem Editor. Sie sind in OTOBO 11.0
+größtenteils nicht übersetzt und werden deshalb auch in einer deutschen Oberfläche
+englisch angezeigt; eine Übersicht steht am Ende dieses Kapitels unter
+<a class="reference internal" href="#klassendefinition-fehler"><span class="std std-ref">Fehlermeldungen beim Speichern</span></a>.</p>
+</section>
+<section id="pages-die-reiter">
+<h2>Pages — die Reiter<a class="headerlink" href="#pages-die-reiter" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pages</span></code> ist eine Liste. Jeder Eintrag erzeugt einen Reiter in der Detailansicht
+des Config Items. Die Reihenfolge der Liste ist die Reihenfolge der Reiter.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Name</span></code> <em>(Pflicht)</em></dt><dd><p>Beschriftung des Reiters. Sie wird über die Sprachdatei übersetzt, wenn eine
+Übersetzung existiert. Doppelte Namen werden nicht geprüft — vermeiden Sie
+sie, der Reiter ist über seinen Namen adressiert.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Content</span></code> <em>(Pflicht)</em></dt><dd><p>Liste der Abschnitte, die auf diesem Reiter stehen, mit ihrer Position im
+Raster. Darf nicht leer sein. Aufbau siehe <a class="reference internal" href="#klassendefinition-content"><span class="std std-ref">Content — Abschnitte auf dem Reiter platzieren</span></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Layout</span></code> <em>(optional)</em></dt><dd><p>Spaltenraster des Reiters. Ohne <code class="docutils literal notranslate"><span class="pre">Layout</span></code> hat der Reiter eine Spalte.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Columns</span></code></dt><dd><p>Anzahl der Spalten (ganze Zahl). Standard: 1.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ColumnWidth</span></code></dt><dd><p>Breiten der Spalten, durch Leerzeichen getrennt, z. B. <code class="docutils literal notranslate"><span class="pre">1fr</span> <span class="pre">2fr</span></code> oder
+<code class="docutils literal notranslate"><span class="pre">300px</span> <span class="pre">1fr</span></code>. Fehlende Angaben werden mit <code class="docutils literal notranslate"><span class="pre">1fr</span></code> aufgefüllt, überzählige
+verworfen.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><code class="docutils literal notranslate"><span class="pre">ColumnWidth</span></code> versteht nur einfache Werte wie <code class="docutils literal notranslate"><span class="pre">1fr</span></code>, <code class="docutils literal notranslate"><span class="pre">2.5fr</span></code>,
+<code class="docutils literal notranslate"><span class="pre">200px</span></code>, <code class="docutils literal notranslate"><span class="pre">12em</span></code> oder <code class="docutils literal notranslate"><span class="pre">auto</span></code>. <strong>Prozentangaben, calc() und minmax()
+funktionieren nicht</strong> — aus <code class="docutils literal notranslate"><span class="pre">50%</span></code> wird <code class="docutils literal notranslate"><span class="pre">50</span></code>, und <code class="docutils literal notranslate"><span class="pre">minmax(100px,1fr)</span></code>
+zerfällt in drei Spalten.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Interfaces</span></code> <em>(optional)</em></dt><dd><p>In welchen Oberflächen der Reiter erscheint. Details unter
+<a class="reference internal" href="#klassendefinition-interfaces"><span class="std std-ref">Interfaces — Agent, Kunde, öffentlich</span></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Groups</span></code> <em>(optional)</em></dt><dd><p>Liste von Gruppennamen. Der Reiter ist nur für Benutzer sichtbar, die in
+mindestens einer dieser Gruppen sind. Details unter
+<a class="reference internal" href="#klassendefinition-groups"><span class="std std-ref">Groups — Reiter nur für bestimmte Gruppen</span></a>.</p>
+</dd>
+</dl>
+<p>Beispiel mit zwei Reitern:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">Pages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<span class="w">    </span><span class="nt">Layout</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">ColumnWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1fr 1fr</span>
+<span class="w">    </span><span class="nt">Interfaces</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Information</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accounting</span>
+<span class="w">    </span><span class="nt">Groups</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">itsm-accounting</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accounting</span>
+</pre></div>
+</div>
+<section id="interfaces-agent-kunde-offentlich">
+<span id="klassendefinition-interfaces"></span><h3>Interfaces — Agent, Kunde, öffentlich<a class="headerlink" href="#interfaces-agent-kunde-offentlich" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Angabe</p></th>
+<th class="head"><p>Wirkung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>kein</em> <code class="docutils literal notranslate"><span class="pre">Interfaces</span></code></p></td>
+<td><p>Reiter ist für <strong>Agenten</strong> sichtbar, für Kunden <strong>nicht</strong>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[Agent]</span></code></p></td>
+<td><p>nur Agenten</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[Customer]</span></code></p></td>
+<td><p>nur Kundenoberfläche</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[Agent,</span> <span class="pre">Customer]</span></code></p></td>
+<td><p>beide</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Interfaces:</span> <span class="pre">[]</span></code></p></td>
+<td><p>Reiter ist <strong>nirgends</strong> sichtbar</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Die Werte sind groß-/kleinschreibungsgenau: <code class="docutils literal notranslate"><span class="pre">agent</span></code> wirkt nicht.</p>
+<p>Für die Kundenoberfläche genügt <code class="docutils literal notranslate"><span class="pre">Customer</span></code> allein nicht: Der Kunde muss das
+Config Item überhaupt sehen dürfen. Das regeln die Berechtigungsbedingungen, siehe
+<a class="reference internal" href="../einrichten/rechte.html#rechte-kunden"><span class="std std-ref">Zugriff für Kunden</span></a>.</p>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Zusätzlich wertet OTOBO den Wert <code class="docutils literal notranslate"><span class="pre">Public</span></code> aus: Der Reiter erscheint in der
+öffentlichen CMDB-Ansicht (ohne Anmeldung). In 11.0 gilt das nur mit dem
+Zusatzpaket ITSMPublicCMDB; in 11.1 ist diese Funktion Teil der CMDB,
+aber ab Werk ausgeschaltet.</p>
+</div>
+</section>
+<section id="groups-reiter-nur-fur-bestimmte-gruppen">
+<span id="klassendefinition-groups"></span><h3>Groups — Reiter nur für bestimmte Gruppen<a class="headerlink" href="#groups-reiter-nur-fur-bestimmte-gruppen" title="Link to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Groups</span></code> steht <strong>ausschließlich auf Reiter-Ebene</strong>. Auf Abschnitts- oder
+Feldebene gibt es keinen <code class="docutils literal notranslate"><span class="pre">Groups</span></code>-Schlüssel — dort eingetragen, wird er
+ignoriert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Pages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lizenzkosten</span>
+<span class="w">    </span><span class="nt">Groups</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">itsm-accounting</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Accounting</span>
+</pre></div>
+</div>
+<p>Regeln:</p>
+<ul class="simple">
+<li><p>Angegeben werden <strong>Gruppennamen</strong>, keine IDs.</p></li>
+<li><p>Es genügt <strong>eine</strong> der Gruppen (ODER-Verknüpfung).</p></li>
+<li><p>Agenten brauchen in der Gruppe mindestens das Recht <strong>ro</strong>; <strong>rw</strong> zählt
+ebenso. Gruppenmitgliedschaft über Rollen wird berücksichtigt.</p></li>
+<li><p>In der <strong>Kundenoberfläche</strong> wird gegen die Kundengruppen geprüft (einschließlich
+der Gruppen der Kundenfirma). Ist <code class="docutils literal notranslate"><span class="pre">CustomerGroupSupport</span></code> ausgeschaltet — die
+Voreinstellung —, gilt die Bedingung für Kunden immer als erfüllt.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Groups</span></code> wirkt auf Detailansicht, Bearbeiten-Maske, Suche und Druckansicht:
+Felder eines verborgenen Reiters werden dort weder angezeigt noch gespeichert,
+und in der Suche sind sie nicht als Suchkriterium verfügbar.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><code class="docutils literal notranslate"><span class="pre">Groups</span></code> ist ein <strong>Anzeigefilter, kein Datenschutz</strong>. Die Sammelaktion
+(<em>Bulk</em>) zeigt die Felder aller Reiter, und über Import/Export und die
+Webservice-Schnittstelle sind alle Felder lesbar und schreibbar. Wer ein
+Config Item gar nicht sehen soll, wird über die Berechtigungsgruppe der
+<strong>Klasse</strong> ausgeschlossen (siehe <a class="reference internal" href="../einrichten/rechte.html"><span class="doc">Berechtigungen</span></a>).</p>
+</div>
+</section>
+<section id="content-abschnitte-auf-dem-reiter-platzieren">
+<span id="klassendefinition-content"></span><h3>Content — Abschnitte auf dem Reiter platzieren<a class="headerlink" href="#content-abschnitte-auf-dem-reiter-platzieren" title="Link to this heading">¶</a></h3>
+<p>Jeder Eintrag in <code class="docutils literal notranslate"><span class="pre">Pages[].Content</span></code> setzt einen Abschnitt auf den Reiter.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Section</span></code> <em>(Pflicht)</em></dt><dd><p>Name des Abschnitts aus <code class="docutils literal notranslate"><span class="pre">Sections</span></code>. Stammt der Abschnitt aus einer Rolle,
+lautet der Name <code class="docutils literal notranslate"><span class="pre">&lt;Alias&gt;::&lt;Abschnitt&gt;</span></code> (siehe <a class="reference internal" href="#klassendefinition-roles"><span class="std std-ref">Roles — Abschnitte aus Rollen einbinden</span></a>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">RowStart</span></code>, <code class="docutils literal notranslate"><span class="pre">RowSpan</span></code>, <code class="docutils literal notranslate"><span class="pre">ColumnStart</span></code>, <code class="docutils literal notranslate"><span class="pre">ColumnSpan</span></code> <em>(optional)</em></dt><dd><p>Position im Raster des Reiters: Startzeile, Anzahl überspannter Zeilen,
+Startspalte, Anzahl überspannter Spalten. Ohne Angabe verteilt der Browser
+die Abschnitte der Reihe nach auf das Raster.</p>
+</dd>
+</dl>
+<p>Ein Beispiel für ein dreispaltiges Layout, in dem die Beschreibung rechts zwei
+Spalten und drei Zeilen einnimmt:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Layout</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">ColumnWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1fr 1fr 1fr</span>
+<span class="nt">Content</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Information</span>
+<span class="w">    </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location</span>
+<span class="w">    </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">    </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">RowSpan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">    </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">ColumnSpan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Das Raster gilt für die <strong>Detailansicht</strong>. Die Bearbeiten-Maske ignoriert
+<code class="docutils literal notranslate"><span class="pre">Layout</span></code> und Positionen: Dort stehen die Abschnitte untereinander, bei mehr
+als einem Reiter in aufklappbaren Blöcken je Reiter. Ein Feld, das auf
+mehreren Reitern vorkommt, erscheint in der Maske nur einmal.</p>
+</div>
+</section>
+</section>
+<section id="sections-die-abschnitte">
+<h2>Sections — die Abschnitte<a class="headerlink" href="#sections-die-abschnitte" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Sections</span></code> ist eine Zuordnung <em>Name → Abschnitt</em>. Der Name ist frei wählbar und
+wird in <code class="docutils literal notranslate"><span class="pre">Pages[].Content[].Section</span></code> referenziert. Über <code class="docutils literal notranslate"><span class="pre">Type</span></code> wird die Art des
+Abschnitts bestimmt:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 48.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">Type</span></code></p></th>
+<th class="head"><p>Inhalt</p></th>
+<th class="head"><p>Wo wirksam</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>(ohne)</em> oder <code class="docutils literal notranslate"><span class="pre">DynamicFields</span></code></p></td>
+<td><p>Liste dynamischer Felder, Überschriften und Raster</p></td>
+<td><p>Detail, Bearbeiten, Suche, Druck</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Description</span></code></p></td>
+<td><p>Beschreibungstext (Rich Text) des Config Items</p></td>
+<td><p>Detail, Bearbeiten, Druck, Import/Export</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ConfigItemLinks</span></code></p></td>
+<td><p>Verknüpfte Config Items, nach Klasse gruppiert</p></td>
+<td><p>Detail, Druck</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ReferencedSection</span></code></p></td>
+<td><p>Abschnitt eines <em>referenzierten</em> Config Items</p></td>
+<td><p>nur Detail</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Andere Werte für <code class="docutils literal notranslate"><span class="pre">Type</span></code> werden mit <em>Invalid type in section …</em> abgelehnt.</p>
+<section id="abschnitt-mit-dynamischen-feldern">
+<h3>Abschnitt mit dynamischen Feldern<a class="headerlink" href="#abschnitt-mit-dynamischen-feldern" title="Link to this heading">¶</a></h3>
+<p>Der Normalfall. <code class="docutils literal notranslate"><span class="pre">Content</span></code> ist eine Liste; jedes Element enthält genau einen der
+Schlüssel <code class="docutils literal notranslate"><span class="pre">Header</span></code>, <code class="docutils literal notranslate"><span class="pre">DF</span></code> oder <code class="docutils literal notranslate"><span class="pre">Grid</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">General Information</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allgemein</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-SerialNumber</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-Vendor</span>
+<span class="w">        </span><span class="nt">Mandatory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-WarrantyExpiration</span>
+<span class="w">        </span><span class="nt">Label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Garantie bis</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-LensToContractType</span>
+<span class="w">        </span><span class="nt">Readonly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Header</span></code></dt><dd><p>Zwischenüberschrift. In der Detailansicht erzeugt <strong>jeder</strong> <code class="docutils literal notranslate"><span class="pre">Header</span></code> eine
+Überschrift an seiner Stelle. In der Bearbeiten-Maske wird nur der <strong>erste</strong>
+<code class="docutils literal notranslate"><span class="pre">Header</span></code> eines Abschnitts verwendet — als Überschrift über dem ganzen
+Abschnitt.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DF</span></code></dt><dd><p>Name eines dynamischen Feldes mit Objekttyp <em>ITSM ConfigElement</em>. Ergänzende Schlüssel
+am selben Listeneintrag:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Label</span></code></dt><dd><p>Überschreibt die Feldbeschriftung — in Detailansicht <strong>und</strong>
+Bearbeiten-Maske. So kann dasselbe Feld in zwei Klassen unterschiedlich
+heißen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Mandatory:</span> <span class="pre">1</span></code></dt><dd><p>Pflichtfeld in der Bearbeiten-Maske.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Pflichtprüfung findet <strong>nur im Browser</strong> statt. Beim Anlegen über
+Import/Export oder Webservice, und bei der Sammelaktion, wird sie nicht
+erzwungen.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Readonly:</span> <span class="pre">1</span></code></dt><dd><p>Das Feld wird in der Bearbeiten-Maske angezeigt, aber nicht bearbeitbar;
+ein übermittelter Wert wird ignoriert. Typisch für Lens- und
+Skript-Felder, deren Wert sich aus anderen Feldern ergibt.</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Grid</span></code></dt><dd><p>Mehrspaltiger Block innerhalb eines Abschnitts.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Columns</span></code> <em>(praktisch Pflicht)</em></dt><dd><p>Anzahl Spalten, ganze Zahl größer 0.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ColumnWidth</span></code></dt><dd><p>Spaltenbreiten, gleiche Regeln wie bei <code class="docutils literal notranslate"><span class="pre">Layout</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Rows</span></code> <em>(Pflicht)</em></dt><dd><p>Liste von Zeilen; jede Zeile ist eine Liste von Zellen. Jede Zelle braucht
+<code class="docutils literal notranslate"><span class="pre">DF</span></code> und kann <code class="docutils literal notranslate"><span class="pre">Label</span></code>, <code class="docutils literal notranslate"><span class="pre">Mandatory</span></code>, <code class="docutils literal notranslate"><span class="pre">Readonly</span></code>, <code class="docutils literal notranslate"><span class="pre">ColumnStart</span></code> und
+<code class="docutils literal notranslate"><span class="pre">ColumnSpan</span></code> haben.</p>
+</dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Grid</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">    </span><span class="nt">ColumnWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2fr 1fr 1fr</span>
+<span class="w">    </span><span class="nt">Rows</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-CPU</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-CPUCores</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-CPUThreads</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM-RAM</span>
+<span class="w">          </span><span class="nt">ColumnSpan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Prüfung beim Speichern verlangt <code class="docutils literal notranslate"><span class="pre">Columns</span></code> nicht. Fehlt es oder ist
+es keine ganze Zahl größer 0, <strong>lässt die Bearbeiten-Maske das komplette
+Raster weg</strong> — die Felder sind dann nicht mehr bearbeitbar. <code class="docutils literal notranslate"><span class="pre">Columns</span></code>
+daher immer setzen.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ColumnStart</span></code> und <code class="docutils literal notranslate"><span class="pre">ColumnSpan</span></code> in Zellen wirken nur in der
+Bearbeiten-Maske; die Detailansicht setzt die Zellen der Reihe nach.</p>
+</dd>
+</dl>
+</section>
+<section id="abschnitt-description">
+<h3>Abschnitt <code class="docutils literal notranslate"><span class="pre">Description</span></code><a class="headerlink" href="#abschnitt-description" title="Link to this heading">¶</a></h3>
+<p>Zeigt den Beschreibungstext des Config Items (Rich Text mit Bildern). Weitere
+Schlüssel gibt es nicht; ein <code class="docutils literal notranslate"><span class="pre">Header</span></code> wird ignoriert, die Überschrift lautet
+immer <em>Beschreibung</em>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+</pre></div>
+</div>
+<p>Die Existenz dieses Abschnitts <strong>schaltet das Beschreibungsfeld ein</strong>: Nur wenn
+eine Klasse einen <code class="docutils literal notranslate"><span class="pre">Description</span></code>-Abschnitt auf einem Agenten-Reiter hat, bietet
+die Bearbeiten-Maske das Feld an, druckt die Druckansicht die Beschreibung und
+kennt Import/Export das Attribut.</p>
+</section>
+<section id="abschnitt-configitemlinks">
+<h3>Abschnitt <code class="docutils literal notranslate"><span class="pre">ConfigItemLinks</span></code><a class="headerlink" href="#abschnitt-configitemlinks" title="Link to this heading">¶</a></h3>
+<p>Listet die über <em>Verknüpfen</em> mit diesem Config Item verbundenen Config Items auf,
+gruppiert nach Klasse.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Backlinks</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigItemLinks</span>
+<span class="w">    </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Verwendet von</span>
+<span class="w">    </span><span class="nt">LinkedAs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Target</span>
+<span class="w">    </span><span class="nt">LinkTypes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DependsOn</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Header</span></code> <em>(optional)</em></dt><dd><p>Überschrift des Abschnitts.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LinkedAs</span></code> <em>(optional, Standard</em> <code class="docutils literal notranslate"><span class="pre">Source</span></code> <em>)</em></dt><dd><p>Richtung der Verknüpfung aus Sicht dieses Config Items:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Source</span></code> — Config Items, auf die <em>dieses</em> zeigt (dieses ist Quelle),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Target</span></code> — Config Items, die auf dieses zeigen (dieses ist Ziel),</p></li>
+<li><p>jeder andere Wert — beide Richtungen.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LinkTypes</span></code> <em>(optional)</em></dt><dd><p>Liste von Linktyp-<strong>Namen</strong> (z. B. <code class="docutils literal notranslate"><span class="pre">DependsOn</span></code>, <code class="docutils literal notranslate"><span class="pre">Includes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RelevantTo</span></code>; siehe <a class="reference internal" href="../einrichten/verknuepfungen.html"><span class="doc">Verknüpfungen und Vorfallstatus-Vererbung</span></a>). Ohne Angabe oder
+bei leerer Liste werden alle Linktypen gezeigt.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Der Abschnitt prüft keine Berechtigungen auf die verknüpften Config Items:
+Deren Name ist für jeden sichtbar, der das aktuelle Config Item sieht — auch in
+der Kundenoberfläche, wenn der Reiter dort freigegeben ist.</p>
+</div>
+</section>
+<section id="abschnitt-referencedsection">
+<h3>Abschnitt <code class="docutils literal notranslate"><span class="pre">ReferencedSection</span></code><a class="headerlink" href="#abschnitt-referencedsection" title="Link to this heading">¶</a></h3>
+<p>Zeigt einen Abschnitt <strong>eines anderen Config Items</strong> an, auf das ein Referenzfeld
+zeigt. Damit lässt sich zum Beispiel beim Arbeitsplatzrechner die Adresse des
+Standorts einblenden, ohne sie doppelt zu pflegen.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Address</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReferencedSection</span>
+<span class="w">    </span><span class="nt">ReferenceField</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location-ReferenceToLocation</span>
+<span class="w">    </span><span class="nt">SectionName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Address</span>
+<span class="w">    </span><span class="nt">FieldListPre</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location-ReferenceToLocation</span>
+<span class="w">        </span><span class="nt">Label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standort</span>
+<span class="w">    </span><span class="nt">FieldListPost</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location-Room</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ReferenceField</span></code></dt><dd><p>Referenzfeld dieses Config Items vom Typ <em>Config Item</em> oder <em>Config Item
+Version</em>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SectionName</span></code></dt><dd><p>Name des Abschnitts <strong>in der Definition des referenzierten Config Items</strong>
+(bei Rollen-Abschnitten dort mit <code class="docutils literal notranslate"><span class="pre">&lt;Alias&gt;::</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FieldListPre</span></code>, <code class="docutils literal notranslate"><span class="pre">FieldListPost</span></code> <em>(optional)</em></dt><dd><p>Felder <strong>dieses</strong> Config Items, die vor bzw. nach dem fremden Abschnitt
+angezeigt werden; Einträge wie <code class="docutils literal notranslate"><span class="pre">{DF,</span> <span class="pre">Label}</span></code>.</p>
+</dd>
+</dl>
+<p>Verweist das Referenzfeld auf mehrere Config Items, wird das erste verwendet.
+Ketten funktionieren: Ein Raum zeigt das Gebäude, das Gebäude den Standort.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Die Schlüssel von <code class="docutils literal notranslate"><span class="pre">ReferencedSection</span></code> werden beim Speichern <strong>nicht
+geprüft</strong>. Ein falscher <code class="docutils literal notranslate"><span class="pre">SectionName</span></code> fällt erst in der Detailansicht auf,
+wo der Abschnitt einfach leer bleibt. Auch hier gibt es keine
+Berechtigungsprüfung auf das referenzierte Config Item.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ReferencedSection</span></code> wirkt nur in der Detailansicht; Bearbeiten-Maske, Suche und
+Druck überspringen den Abschnitt.</p>
+</section>
+</section>
+<section id="roles-abschnitte-aus-rollen-einbinden">
+<span id="klassendefinition-roles"></span><h2>Roles — Abschnitte aus Rollen einbinden<a class="headerlink" href="#roles-abschnitte-aus-rollen-einbinden" title="Link to this heading">¶</a></h2>
+<p>Eine <strong>Rolle</strong> ist eine Definition, die nur aus <code class="docutils literal notranslate"><span class="pre">Sections</span></code> besteht. Klassen
+binden sie ein und können deren Abschnitte dann auf ihren Reitern verwenden.
+So wird zum Beispiel ein Abschnitt <em>Kontakt</em> einmal gepflegt und von zehn Klassen
+genutzt. Anlegen und Pflegen von Rollen beschreibt <a class="reference internal" href="../einrichten/rollen.html"><span class="doc">Rollen einrichten</span></a>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">Pages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Fields::General Information</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Contact::Contact</span>
+<span class="nt">Roles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">General Fields</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM GF Computer</span>
+<span class="w">  </span><span class="nt">Contact</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM Contact</span>
+<span class="w">    </span><span class="nt">Version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;Alias&gt;</span></code></dt><dd><p>Frei gewählter Schlüssel unter <code class="docutils literal notranslate"><span class="pre">Roles</span></code>. Alle Abschnitte der Rolle werden als
+<code class="docutils literal notranslate"><span class="pre">&lt;Alias&gt;::&lt;Abschnittsname&gt;</span></code> in die Klasse übernommen. Referenziert wird über
+den <strong>Alias</strong>, nicht über den Rollennamen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Name</span></code> <em>(optional)</em></dt><dd><p>Name der Rolle, wie er im General Catalog steht. Fehlt <code class="docutils literal notranslate"><span class="pre">Name</span></code>, gilt der Alias
+als Rollenname.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Version</span></code> <em>(optional)</em></dt><dd><p>Bindet eine bestimmte Rollenversion. Ohne <code class="docutils literal notranslate"><span class="pre">Version</span></code> wird <strong>immer die neueste</strong>
+Version verwendet.</p>
+</dd>
+</dl>
+<p>Regeln:</p>
+<ul class="simple">
+<li><p>Ein Rollenabschnitt überschreibt einen gleichnamigen Abschnitt der Klasse.</p></li>
+<li><p><strong>Alle</strong> Abschnitte der Rolle gehören zur Klasse — auch solche, die auf keinem
+Reiter stehen. Ihre Felder werden damit Teil der Klasse (Import/Export,
+Webservice).</p></li>
+<li><p>Rollen können keine weiteren Rollen einbinden; ein <code class="docutils literal notranslate"><span class="pre">Roles</span></code>-Schlüssel in einer
+Rollendefinition bleibt ohne Wirkung.</p></li>
+<li><p>Nur <strong>gültige</strong> Rollen werden gefunden.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Den Eintrag unter <code class="docutils literal notranslate"><span class="pre">Roles</span></code> immer als Zuordnung schreiben, also mit
+<code class="docutils literal notranslate"><span class="pre">Name:</span></code> darunter — nicht leer (<code class="docutils literal notranslate"><span class="pre">Contact:</span> <span class="pre">~</span></code>). Die leere Form wird zwar
+angezeigt, aber bei einer Änderung der Rolle <strong>nicht</strong> mitaktualisiert:
+Neue Felder der Rolle bleiben in der Klasse dann leer.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Wird eine Rolle ungültig gesetzt oder umbenannt, <strong>verschwinden ihre Abschnitte
+stillschweigend</strong> aus allen Klassen, die sie verwenden. Eine Fehlermeldung
+gibt es erst beim nächsten Speichern der Klassendefinition.</p>
+</div>
+</section>
+<section id="vollstandiges-beispiel">
+<h2>Vollständiges Beispiel<a class="headerlink" href="#vollstandiges-beispiel" title="Link to this heading">¶</a></h2>
+<p>Eine Klasse <em>Server</em> mit zwei Reitern, einer Rolle, einem Raster, verknüpften
+Config Items und einem eingeblendeten Standort:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="nt">Pages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Summary</span>
+<span class="w">    </span><span class="nt">Layout</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="nt">ColumnWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3fr 2fr</span>
+<span class="w">    </span><span class="nt">Interfaces</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Contact::Contact</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Address</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">        </span><span class="nt">RowStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="nt">ColumnStart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hardware</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hardware</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dependencies</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Depends on</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Section</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Used by</span>
+
+<span class="nt">Sections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Server</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server-Hostname</span>
+<span class="w">        </span><span class="nt">Mandatory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server-OperatingSystem</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location-ReferenceToLocation</span>
+<span class="w">        </span><span class="nt">Label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Standort</span>
+<span class="w">  </span><span class="nt">Hardware</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Content</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hardware</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Grid</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">Columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">          </span><span class="nt">Rows</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server-CPU</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server-RAM</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DF</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Server-Disk</span>
+<span class="w">                </span><span class="nt">ColumnSpan</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">Address</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReferencedSection</span>
+<span class="w">    </span><span class="nt">ReferenceField</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location-ReferenceToLocation</span>
+<span class="w">    </span><span class="nt">SectionName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Address</span>
+<span class="w">  </span><span class="nt">Depends on</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigItemLinks</span>
+<span class="w">    </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hängt ab von</span>
+<span class="w">    </span><span class="nt">LinkedAs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Source</span>
+<span class="w">    </span><span class="nt">LinkTypes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DependsOn</span>
+<span class="w">  </span><span class="nt">Used by</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigItemLinks</span>
+<span class="w">    </span><span class="nt">Header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wird verwendet von</span>
+<span class="w">    </span><span class="nt">LinkedAs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Target</span>
+
+<span class="nt">Roles</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Contact</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSM Contact</span>
+</pre></div>
+</div>
+</section>
+<section id="fehlermeldungen-beim-speichern">
+<span id="klassendefinition-fehler"></span><h2>Fehlermeldungen beim Speichern<a class="headerlink" href="#fehlermeldungen-beim-speichern" title="Link to this heading">¶</a></h2>
+<p>OTOBO prüft die Definition beim Speichern. <code class="docutils literal notranslate"><span class="pre">%s</span></code> steht für den Namen des
+betroffenen Reiters, Abschnitts oder Feldes; Reiter werden dabei ab 0 gezählt.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Meldung</p></th>
+<th class="head"><p>Ursache</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Starting the YAML string with ‚—‘ is required.</p></td>
+<td><p>Erste drei Zeichen sind nicht <code class="docutils literal notranslate"><span class="pre">---</span></code> (z. B. Leerzeile oder Kommentar davor).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Base structure is not valid. Please provide a hash with data in YAML format.</p></td>
+<td><p>Oberste Ebene ist keine Zuordnung.</p></td>
+</tr>
+<tr class="row-even"><td><p>%s is missing. Please provide data for %s in the definition.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Pages</span></code> oder <code class="docutils literal notranslate"><span class="pre">Sections</span></code> fehlt.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data for %s is not a %s. / Data for %s is empty.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Pages</span></code> ist keine Liste bzw. <code class="docutils literal notranslate"><span class="pre">Sections</span></code> keine Zuordnung, oder leer.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key ‚%s‘ is missing in the definition of page %s.</p></td>
+<td><p>Reiter ohne <code class="docutils literal notranslate"><span class="pre">Name</span></code> oder <code class="docutils literal notranslate"><span class="pre">Content</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Key %s for page %s is not an Array. / … is empty.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Content</span></code>, <code class="docutils literal notranslate"><span class="pre">Interfaces</span></code> oder <code class="docutils literal notranslate"><span class="pre">Groups</span></code> eines Reiters ist keine Liste bzw. leer.</p></td>
+</tr>
+<tr class="row-even"><td><p>A section in page %s is missing the key ‚Section‘ …</p></td>
+<td><p>Eintrag in <code class="docutils literal notranslate"><span class="pre">Pages[].Content</span></code> ohne <code class="docutils literal notranslate"><span class="pre">Section</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>The following sections are used in pages, but are not defined: %s</p></td>
+<td><p>Reiter verweist auf einen unbekannten Abschnitt — häufig ein fehlender
+<code class="docutils literal notranslate"><span class="pre">&lt;Alias&gt;::</span></code>-Präfix oder ein Tippfehler.</p></td>
+</tr>
+<tr class="row-even"><td><p>Either the content of section %s is entirely missing or not a hash.</p></td>
+<td><p>Abschnitt leer oder falsch eingerückt.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Invalid type in section %s.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Type</span></code> ist keiner der vier zulässigen Werte.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key ‚Content‘ is missing in section %s. / … is not an array.</p></td>
+<td><p>Feldabschnitt ohne <code class="docutils literal notranslate"><span class="pre">Content</span></code>-Liste.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Section %s has content which doesn’t provide one of the following entries &lt;DF Grid Header&gt;.</p></td>
+<td><p>Listeneintrag ohne <code class="docutils literal notranslate"><span class="pre">DF</span></code>, <code class="docutils literal notranslate"><span class="pre">Grid</span></code> oder <code class="docutils literal notranslate"><span class="pre">Header</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Data for ‚Content‘ of %s contains a grid without any rows. / … without DF in a cell.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Grid</span></code> ohne <code class="docutils literal notranslate"><span class="pre">Rows</span></code> oder Zelle ohne <code class="docutils literal notranslate"><span class="pre">DF</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dynamic field %s is used in section %s, but does not exist in the system …</p></td>
+<td><p>Feld existiert nicht, ist ungültig oder hat nicht den Objekttyp <em>ITSM ConfigElement</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Key %s is not a Hash.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Roles</span></code> ist keine Zuordnung.</p></td>
+</tr>
+<tr class="row-odd"><td><p>The role %s was not found.</p></td>
+<td><p>Rolle existiert nicht oder ist ungültig.</p></td>
+</tr>
+<tr class="row-even"><td><p>The role %s with version %s is not valid.</p></td>
+<td><p>Die unter <code class="docutils literal notranslate"><span class="pre">Version</span></code> angegebene Rollenversion existiert nicht.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="feldtypen.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Feldtypen und ihre Optionen</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../schnittstellen/konsole.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Konsolenbefehle</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Klassendefinition (YAML)</a><ul>
+<li><a class="reference internal" href="#aufbau-im-uberblick">Aufbau im Überblick</a></li>
+<li><a class="reference internal" href="#grundregeln">Grundregeln</a></li>
+<li><a class="reference internal" href="#pages-die-reiter">Pages — die Reiter</a><ul>
+<li><a class="reference internal" href="#interfaces-agent-kunde-offentlich">Interfaces — Agent, Kunde, öffentlich</a></li>
+<li><a class="reference internal" href="#groups-reiter-nur-fur-bestimmte-gruppen">Groups — Reiter nur für bestimmte Gruppen</a></li>
+<li><a class="reference internal" href="#content-abschnitte-auf-dem-reiter-platzieren">Content — Abschnitte auf dem Reiter platzieren</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sections-die-abschnitte">Sections — die Abschnitte</a><ul>
+<li><a class="reference internal" href="#abschnitt-mit-dynamischen-feldern">Abschnitt mit dynamischen Feldern</a></li>
+<li><a class="reference internal" href="#abschnitt-description">Abschnitt <code class="docutils literal notranslate"><span class="pre">Description</span></code></a></li>
+<li><a class="reference internal" href="#abschnitt-configitemlinks">Abschnitt <code class="docutils literal notranslate"><span class="pre">ConfigItemLinks</span></code></a></li>
+<li><a class="reference internal" href="#abschnitt-referencedsection">Abschnitt <code class="docutils literal notranslate"><span class="pre">ReferencedSection</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#roles-abschnitte-aus-rollen-einbinden">Roles — Abschnitte aus Rollen einbinden</a></li>
+<li><a class="reference internal" href="#vollstandiges-beispiel">Vollständiges Beispiel</a></li>
+<li><a class="reference internal" href="#fehlermeldungen-beim-speichern">Fehlermeldungen beim Speichern</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
