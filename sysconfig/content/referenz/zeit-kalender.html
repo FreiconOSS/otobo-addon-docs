@@ -1,0 +1,1285 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Dynamische Felder, Prozesse und Import/Export" href="felder-prozesse.html"><link rel="prev" title="Tickets" href="tickets.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Zeit und Kalender - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system.html">System und Betrieb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anmeldung.html">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Zeit und Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder-prozesse.html">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oberflaeche-basis.html">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-11-1.html">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="zeit-und-kalender">
+<h1>Zeit und Kalender<a class="headerlink" href="#zeit-und-kalender" title="Link to this heading">¶</a></h1>
+<p>Zeitzonen, Arbeitszeiten, Feiertage und Terminkalender.</p>
+<p>Diese Seite führt <strong>78 Einstellungen</strong>, gruppiert nach ihrem Platz im Navigationsbaum der Systemkonfiguration.</p>
+<section id="core-appointmentcalendar">
+<h2>Core::AppointmentCalendar<a class="headerlink" href="#core-appointmentcalendar" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AgentAppointmentEdit-Location-Link-1-GoogleMaps">
+<span class="sig-name descname"><span class="pre">AgentAppointmentEdit::Location::Link###1-GoogleMaps</span></span><a class="headerlink" href="#setting-AgentAppointmentEdit-Location-Link-1-GoogleMaps" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt ein Symbol mit Verknüpfung zur Google Maps Webseite mit dem aktuellen Standort als entsprechendes Ziel in der Terminbearbeitungs-Oberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">CSSClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GoogleMaps</span>
+<span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Location</span>
+<span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://maps.google.com/maps?z=7&amp;q=</span>
+<span class="nt">IconName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa-globe fa-lg</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-CalendarColors">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::CalendarColors</span></span><a class="headerlink" href="#setting-AppointmentCalendar-CalendarColors" title="Link to this definition">¶</a></dt>
+<dd><p>Liste an Farben in Hexadezimal RGB, welche verschiedenen Benutzerkalendern zugewiesen werden. Stellen Sie sicher, dass die Farben dunkel genug sind, um weißen Text darauf darzustellen. Sofern die Anzahl der Kalender die Anzahl der verfügbaren Farben überschreitet, wird diese Liste erneut von Anfang an genutzt.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#000000'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#1E1E1E'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#3A3A3A'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#545453'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#6E6E6E'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#878687'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#888787'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#A09FA0'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#B8B8B8'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#D0D0D0'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#E8E8E8'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#FFFFFF'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#891100'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#894800'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#888501'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#458401'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#028401'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#018448'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#008688'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#004A88'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#001888'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#491A88'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#891E88'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#891648'</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#FF2101'</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-CalendarLimitOverview">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::CalendarLimitOverview</span></span><a class="headerlink" href="#setting-AppointmentCalendar-CalendarLimitOverview" title="Link to this definition">¶</a></dt>
+<dd><p>Maximale Anzahl an aktiven Kalendern in der Kalenderübersicht oder Resourcenübersicht. Bitte beachten Sie, dass sich zuviele gleichzeitig aktive Kalender aufgrund vieler gleichzeitiger Anfragen auf die Performance des Systems auswirken kann.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">10</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-Import-RecurringMonthsLimit">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::Import::RecurringMonthsLimit</span></span><a class="headerlink" href="#setting-AppointmentCalendar-Import-RecurringMonthsLimit" title="Link to this definition">¶</a></dt>
+<dd><p>OTOBO unterstützt keine wiederholenden Termine ohne Enddatum oder Anzahl der Durchläufe. Während des Importierungsprozesses kann es vorkommen, dass die entsprechende ICS-Datei solche Termin enthält. Stattdessen wird das System alle vergangenen Termine erstellen, sowie zusätzlich Termine für die kommenden n Monate (120 Monate / 10 Jahre standardmäßig).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">120</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-appointmentcalendar-plugin">
+<h2>Core::AppointmentCalendar::Plugin<a class="headerlink" href="#core-appointmentcalendar-plugin" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-Plugin-0100-Ticket">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::Plugin###0100-Ticket</span></span><a class="headerlink" href="#setting-AppointmentCalendar-Plugin-0100-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Legt das Ticket-Plugin für Termine fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::Plugin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Plugin::Ticket</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+<span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;OTOBO_CONFIG_HttpType&gt;://&lt;OTOBO_CONFIG_FQDN&gt;/&lt;OTOBO_CONFIG_ScriptAlias&gt;index.pl?Action=AgentTicketZoom;TicketID=%s</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-appointmentcalendar-ticketappointments">
+<h2>Core::AppointmentCalendar::TicketAppointments<a class="headerlink" href="#core-appointmentcalendar-ticketappointments" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentSearchParam">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentSearchParam</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentSearchParam" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Liste der Parameter fest, welche mit der Ticketsuchfunktion verwendet werden kann.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Title</span>
+<span class="nt">Types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type</span>
+<span class="nt">States</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">State</span>
+<span class="nt">StateType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">State type</span>
+<span class="nt">Priorities</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Priority</span>
+<span class="nt">Services</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">SLAs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLA</span>
+<span class="nt">Locks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lock state</span>
+<span class="nt">OwnerIDs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
+<span class="nt">ResponsibleIDs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Responsible</span>
+<span class="nt">CustomerID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerID</span>
+<span class="nt">CustomerUserLogin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer user</span>
+<span class="nt">MIMEBase_From</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From</span>
+<span class="nt">MIMEBase_To</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">To</span>
+<span class="nt">MIMEBase_Cc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cc</span>
+<span class="nt">MIMEBase_Subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subject</span>
+<span class="nt">MIMEBase_Body</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Body</span>
+<span class="nt">MIMEBase_AttachmentName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Attachment Name</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentType-0100-FirstResponseTime">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentType###0100-FirstResponseTime</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentType-0100-FirstResponseTime" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt den Ticket-Termin-Backend Typ für Ticketeskalationen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Ticket::EscalationTime</span>
+<span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FirstResponseTime</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">First response time</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSLAUpdate|TicketQueueUpdate|TicketStateUpdate|TicketCreate|ArticleCreate</span>
+<span class="nt">Mark</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentType-0200-UpdateTime">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentType###0200-UpdateTime</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentType-0200-UpdateTime" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt den Ticket-Termin-Backend Typ für Ticketeskalationen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Ticket::EscalationTime</span>
+<span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UpdateTime</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update time</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSLAUpdate|TicketQueueUpdate|TicketStateUpdate|TicketCreate|ArticleCreate</span>
+<span class="nt">Mark</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentType-0300-SolutionTime">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentType###0300-SolutionTime</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentType-0300-SolutionTime" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt den Ticket-Termin-Backend Typ für Ticketeskalationen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Ticket::EscalationTime</span>
+<span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SolutionTime</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Solution time</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSLAUpdate|TicketQueueUpdate|TicketStateUpdate|TicketCreate|ArticleCreate</span>
+<span class="nt">Mark</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">E</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentType-0400-PendingTime">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentType###0400-PendingTime</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentType-0400-PendingTime" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt den Ticket-Termin-Backend Typ für Ticketpendingzeiten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Ticket::PendingTime</span>
+<span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PendingTime</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pending time</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketPendingTimeUpdate</span>
+<span class="nt">Mark</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">P</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentCalendar-TicketAppointmentType-0500-DynamicField">
+<span class="sig-name descname"><span class="pre">AppointmentCalendar::TicketAppointmentType###0500-DynamicField</span></span><a class="headerlink" href="#setting-AppointmentCalendar-TicketAppointmentType-0500-DynamicField" title="Link to this definition">¶</a></dt>
+<dd><p>Beschreibt den Ticket-Termin-Backend Typ für Datum/Uhrzeit durch dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::AppointmentCalendar::TicketAppointments</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Ticket::DynamicField</span>
+<span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicField_%s</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicField_%s</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketDynamicFieldUpdate_.*</span>
+<span class="nt">Mark</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">D</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time">
+<h2>Core::Time<a class="headerlink" href="#core-time" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Beginn einer Woche für den Datumswähler.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-MaximumCalendarNumber">
+<span class="sig-name descname"><span class="pre">MaximumCalendarNumber</span></span><a class="headerlink" href="#setting-MaximumCalendarNumber" title="Link to this definition">¶</a></dt>
+<dd><p>Maximale Anzahl an Kalendern, die in Auswahlmenüs angezeigt werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">50</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-OTOBOTimeZone">
+<span class="sig-name descname"><span class="pre">OTOBOTimeZone</span></span><a class="headerlink" href="#setting-OTOBOTimeZone" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Zeitzone fest, die intern von OTOBO genutzt werden soll (z. B. um Datumsangaben und Zeiten in der Datenbank zu speichern). ACHTUNG: Diese Einstellung darf nicht mehr geändert werden, sobald Tickets und/oder andere Objekte erstellt wurden, die Datumsangaben enthalten.</p>
+<div class="line-block">
+<div class="line">Zeitzone · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ShowUserTimeZoneSelectionNotification">
+<span class="sig-name descname"><span class="pre">ShowUserTimeZoneSelectionNotification</span></span><a class="headerlink" href="#setting-ShowUserTimeZoneSelectionNotification" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, werden Benutzer, die bislang noch keine Zeitzone ausgewählt haben, benachrichtigt dies zu tun. Hinweis: Die Benachrichtigung wird nicht angezeigt, wenn (1) der Benutzer noch keine Zeitzone ausgewählt hat und (2) OTOBOTimeZone und UserDefaultTimeZone identisch sind und (3) nicht auf UTC gesetzt sind.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeInputFormat">
+<span class="sig-name descname"><span class="pre">TimeInputFormat</span></span><a class="headerlink" href="#setting-TimeInputFormat" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das benutzte Datumseingabeformat in Formularen (Option für Eingabefelder).</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · pro Benutzer änderbar · Standard: <code class="docutils literal notranslate"><span class="pre">Option</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">Option</span></code>, <code class="docutils literal notranslate"><span class="pre">Input</span></code> (Eingabe)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeInputMinutesStep">
+<span class="sig-name descname"><span class="pre">TimeInputMinutesStep</span></span><a class="headerlink" href="#setting-TimeInputMinutesStep" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die verfügbaren Schritte in Zeitauswahlfeldern fest. Wähle Sie „Minuten“, um alle Minuten einer Stunde von 1-59 auswählen zu können. Wählen Sie „30 Minuten“, um nur ganze und halbe Stunden auswählbar zu machen.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">1</span></code> (Minute), <code class="docutils literal notranslate"><span class="pre">2</span></code> (2 Minuten), <code class="docutils literal notranslate"><span class="pre">5</span></code> (5 Minuten), <code class="docutils literal notranslate"><span class="pre">10</span></code> (10 Minuten), <code class="docutils literal notranslate"><span class="pre">15</span></code> (15 Minuten), <code class="docutils literal notranslate"><span class="pre">30</span></code> (30 Minuten)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeShowAlwaysLong">
+<span class="sig-name descname"><span class="pre">TimeShowAlwaysLong</span></span><a class="headerlink" href="#setting-TimeShowAlwaysLong" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt die Beschreibung der Zeitfelder in Langform (Tage, Stunden, Minuten), wenn dies aktiviert ist oder aber nur die initialen Buchstaben (T, S, M), wenn dies nicht aktiviert ist.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeShowCompleteDescription">
+<span class="sig-name descname"><span class="pre">TimeShowCompleteDescription</span></span><a class="headerlink" href="#setting-TimeShowCompleteDescription" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt die Beschreibung der Zeitfelder in Langform (Tage, Stunden, Minuten), wenn dies aktiviert ist oder aber nur die initialen Buchstaben (T, S, M), wenn dies nicht aktiviert ist.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays">
+<span class="sig-name descname"><span class="pre">TimeVacationDays</span></span><a class="headerlink" href="#setting-TimeVacationDays" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours</span></span><a class="headerlink" href="#setting-TimeWorkingHours" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Zeitraum und die Wochentage welche als Arbeitszeit zählen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone">
+<span class="sig-name descname"><span class="pre">TimeZone</span></span><a class="headerlink" href="#setting-TimeZone" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Einstellung ist veraltet. Bitte nutzen Sie stattdessen die Einstellung OTOBOTimeZone.</p>
+<div class="line-block">
+<div class="line">Auswahl · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">+0</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-UserDefaultTimeZone">
+<span class="sig-name descname"><span class="pre">UserDefaultTimeZone</span></span><a class="headerlink" href="#setting-UserDefaultTimeZone" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Zeitzone fest, die als Voreinstellung für neu angelegte Nutzer gelten soll. Diese Zeitzone wird dazu verwendet, um Datumsangaben und Uhrzeiten zwischen der OTOBO-Zeitzone und der Nutzer-Zeitzone korrekt zu konvertieren.</p>
+<div class="line-block">
+<div class="line">Zeitzone · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar1">
+<h2>Core::Time::Calendar1<a class="headerlink" href="#core-time-calendar1" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar1">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar1</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar1" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar1">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar1</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar1" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar1">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar1</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar1" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar1">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar1</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar1" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar1">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar1</span></span><a class="headerlink" href="#setting-TimeZone-Calendar1" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar1Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar1Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar1Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar1</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar2">
+<h2>Core::Time::Calendar2<a class="headerlink" href="#core-time-calendar2" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar2">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar2</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar2" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar2">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar2</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar2" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar2">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar2</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar2" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar2">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar2</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar2" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar2">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar2</span></span><a class="headerlink" href="#setting-TimeZone-Calendar2" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar2Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar2Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar2Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">2</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar2</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar3">
+<h2>Core::Time::Calendar3<a class="headerlink" href="#core-time-calendar3" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar3">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar3</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar3" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar3">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar3</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar3" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar3">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar3</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar3" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar3">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar3</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar3" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar3">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar3</span></span><a class="headerlink" href="#setting-TimeZone-Calendar3" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar3Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar3Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar3Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">3</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar3</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar4">
+<h2>Core::Time::Calendar4<a class="headerlink" href="#core-time-calendar4" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar4">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar4</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar4" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar4">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar4</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar4" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar4">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar4</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar4" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar4">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar4</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar4" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar4">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar4</span></span><a class="headerlink" href="#setting-TimeZone-Calendar4" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar4Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar4Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar4Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">4</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar4</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar5">
+<h2>Core::Time::Calendar5<a class="headerlink" href="#core-time-calendar5" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar5">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar5</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar5" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar5">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar5</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar5" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar5">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar5</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar5" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar5">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar5</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar5" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar5">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar5</span></span><a class="headerlink" href="#setting-TimeZone-Calendar5" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar5Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar5Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar5Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">5</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar5</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar6">
+<h2>Core::Time::Calendar6<a class="headerlink" href="#core-time-calendar6" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar6">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar6</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar6" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar6">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar6</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar6" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar6">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar6</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar6" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar6">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar6</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar6" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar6">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar6</span></span><a class="headerlink" href="#setting-TimeZone-Calendar6" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar6Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar6Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar6Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">6</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar6</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar7">
+<h2>Core::Time::Calendar7<a class="headerlink" href="#core-time-calendar7" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar7">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar7</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar7" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar7">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar7</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar7" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar7">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar7</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar7" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar7">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar7</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar7" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar7">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar7</span></span><a class="headerlink" href="#setting-TimeZone-Calendar7" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar7Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar7Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar7Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">7</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar7</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar8">
+<h2>Core::Time::Calendar8<a class="headerlink" href="#core-time-calendar8" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar8">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar8</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar8" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar8">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar8</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar8" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar8">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar8</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar8" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar8">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar8</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar8" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar8">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar8</span></span><a class="headerlink" href="#setting-TimeZone-Calendar8" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar8Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar8Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar8Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar8</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time-calendar9">
+<h2>Core::Time::Calendar9<a class="headerlink" href="#core-time-calendar9" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CalendarWeekDayStart-Calendar9">
+<span class="sig-name descname"><span class="pre">CalendarWeekDayStart::Calendar9</span></span><a class="headerlink" href="#setting-CalendarWeekDayStart-Calendar9" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wochentag, mit dem die Woche im angegebenen Kalender beginnt.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Sonntag), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Montag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Dienstag), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Mittwoch), <code class="docutils literal notranslate"><span class="pre">4</span></code> (Donnerstag), <code class="docutils literal notranslate"><span class="pre">5</span></code> (Freitag), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Samstag)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDays-Calendar9">
+<span class="sig-name descname"><span class="pre">TimeVacationDays::Calendar9</span></span><a class="headerlink" href="#setting-TimeVacationDays-Calendar9" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die dauerhaften Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Year's</span> <span class="pre">Day</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeVacationDaysOneTime-Calendar9">
+<span class="sig-name descname"><span class="pre">TimeVacationDaysOneTime::Calendar9</span></span><a class="headerlink" href="#setting-TimeVacationDaysOneTime-Calendar9" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt die einmaligen Urlaubstage für den angegebenen Kalender hinzu.</p>
+<div class="line-block">
+<div class="line">Einmalige Feiertage · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">test</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeWorkingHours-Calendar9">
+<span class="sig-name descname"><span class="pre">TimeWorkingHours::Calendar9</span></span><a class="headerlink" href="#setting-TimeWorkingHours-Calendar9" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Stunden und Wochentage des angegebenen Kalenders um die Arbeitszeit zu messen.</p>
+<div class="line-block">
+<div class="line">Arbeitszeiten · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar9">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar9</span></span><a class="headerlink" href="#setting-TimeZone-Calendar9" title="Link to this definition">¶</a></dt>
+<dd><p>Spezifiziert die Zeitzone des angezeigten Kalenders, welcher später einer bestimmten Queue zugewiesen werden kann.</p>
+<div class="line-block">
+<div class="line">Zeitzone · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UTC</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeZone-Calendar9Name">
+<span class="sig-name descname"><span class="pre">TimeZone::Calendar9Name</span></span><a class="headerlink" href="#setting-TimeZone-Calendar9Name" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des angezeigten Kalenders.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Calendar</span> <span class="pre">Name</span> <span class="pre">9</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time::Calendar9</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="felder-prozesse.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Dynamische Felder, Prozesse und Import/Export</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="tickets.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Tickets</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Zeit und Kalender</a><ul>
+<li><a class="reference internal" href="#core-appointmentcalendar">Core::AppointmentCalendar</a></li>
+<li><a class="reference internal" href="#core-appointmentcalendar-plugin">Core::AppointmentCalendar::Plugin</a></li>
+<li><a class="reference internal" href="#core-appointmentcalendar-ticketappointments">Core::AppointmentCalendar::TicketAppointments</a></li>
+<li><a class="reference internal" href="#core-time">Core::Time</a></li>
+<li><a class="reference internal" href="#core-time-calendar1">Core::Time::Calendar1</a></li>
+<li><a class="reference internal" href="#core-time-calendar2">Core::Time::Calendar2</a></li>
+<li><a class="reference internal" href="#core-time-calendar3">Core::Time::Calendar3</a></li>
+<li><a class="reference internal" href="#core-time-calendar4">Core::Time::Calendar4</a></li>
+<li><a class="reference internal" href="#core-time-calendar5">Core::Time::Calendar5</a></li>
+<li><a class="reference internal" href="#core-time-calendar6">Core::Time::Calendar6</a></li>
+<li><a class="reference internal" href="#core-time-calendar7">Core::Time::Calendar7</a></li>
+<li><a class="reference internal" href="#core-time-calendar8">Core::Time::Calendar8</a></li>
+<li><a class="reference internal" href="#core-time-calendar9">Core::Time::Calendar9</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>

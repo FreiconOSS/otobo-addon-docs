@@ -1,0 +1,1477 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Agentenoberfläche: Ticketmasken" href="agent-ticketmasken.html"><link rel="prev" title="Zeit und Kalender" href="zeit-kalender.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Dynamische Felder, Prozesse und Import/Export - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system.html">System und Betrieb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anmeldung.html">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeit-kalender.html">Zeit und Kalender</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oberflaeche-basis.html">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-11-1.html">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="dynamische-felder-prozesse-und-import-export">
+<h1>Dynamische Felder, Prozesse und Import/Export<a class="headerlink" href="#dynamische-felder-prozesse-und-import-export" title="Link to this heading">¶</a></h1>
+<p>Treiber und Objekttypen dynamischer Felder, datenbankgestützte Felder, das Prozessmanagement und das Import/Export-Framework.</p>
+<p>Diese Seite führt <strong>70 Einstellungen</strong>, gruppiert nach ihrem Platz im Navigationsbaum der Systemkonfiguration.</p>
+<section id="core-dynamicfielddb">
+<h2>Core::DynamicFieldDB<a class="headerlink" href="#core-dynamicfielddb" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0100-SourceDynamicField1">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0100-SourceDynamicField1</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0100-SourceDynamicField1" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0200-TargetDynamicFields1">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0200-TargetDynamicFields1</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0200-TargetDynamicFields1" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0300-SourceDynamicField2">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0300-SourceDynamicField2</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0300-SourceDynamicField2" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0400-TargetDynamicFields2">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0400-TargetDynamicFields2</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0400-TargetDynamicFields2" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0500-SourceDynamicField3">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0500-SourceDynamicField3</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0500-SourceDynamicField3" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0600-TargetDynamicFields3">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0600-TargetDynamicFields3</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0600-TargetDynamicFields3" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0700-SourceDynamicField4">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0700-SourceDynamicField4</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0700-SourceDynamicField4" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0800-TargetDynamicFields4">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0800-TargetDynamicFields4</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0800-TargetDynamicFields4" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-0900-SourceDynamicField5">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###0900-SourceDynamicField5</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-0900-SourceDynamicField5" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1000-TargetDynamicFields5">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1000-TargetDynamicFields5</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1000-TargetDynamicFields5" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1100-SourceDynamicField6">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1100-SourceDynamicField6</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1100-SourceDynamicField6" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1200-TargetDynamicFields6">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1200-TargetDynamicFields6</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1200-TargetDynamicFields6" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1300-SourceDynamicField7">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1300-SourceDynamicField7</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1300-SourceDynamicField7" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1400-TargetDynamicFields7">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1400-TargetDynamicFields7</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1400-TargetDynamicFields7" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1500-SourceDynamicField8">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1500-SourceDynamicField8</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1500-SourceDynamicField8" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1600-TargetDynamicFields8">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1600-TargetDynamicFields8</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1600-TargetDynamicFields8" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1700-SourceDynamicField9">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1700-SourceDynamicField9</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1700-SourceDynamicField9" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1800-TargetDynamicFields9">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1800-TargetDynamicFields9</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1800-TargetDynamicFields9" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-1900-SourceDynamicField10">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###1900-SourceDynamicField10</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-1900-SourceDynamicField10" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das dynamische Quell-Feld zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldDB-StoreHistoricalData-2000-TargetDynamicFields10">
+<span class="sig-name descname"><span class="pre">DynamicFieldDB::StoreHistoricalData###2000-TargetDynamicFields10</span></span><a class="headerlink" href="#setting-DynamicFieldDB-StoreHistoricalData-2000-TargetDynamicFields10" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die dynamischen Ziel-Felder zum Speichern historischer Daten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFieldDB</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseColumnName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TargetDynamicField</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-dynamicfields">
+<h2>Core::DynamicFields<a class="headerlink" href="#core-dynamicfields" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicField-Namespaces">
+<span class="sig-name descname"><span class="pre">DynamicField::Namespaces</span></span><a class="headerlink" href="#setting-DynamicField-Namespaces" title="Link to this definition">¶</a></dt>
+<dd><p>Definieren Sie mögliche Namensräume für dynamische Felder. Darf nur alphanumerische Zeichen enthalten. Ein Namensraum darf nicht länger als 64 Zeichen sein. Namensraum plus Name des dynamischen Feldes dürfen nicht länger als 190 Zeichen sein.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Diese Einstellung entfällt.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-dynamicfields-driverregistration">
+<h2>Core::DynamicFields::DriverRegistration<a class="headerlink" href="#core-dynamicfields-driverregistration" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-ActivityID">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###ActivityID</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-ActivityID" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ActivityID</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::ProcessManagement::ActivityID</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldText</span>
+<span class="nt">DisabledAdd</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Agent">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Agent</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Agent" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Agent</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Agent</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldReference</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Checkbox">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Checkbox</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Checkbox" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkbox</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Checkbox</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldCheckbox</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-ContactWD">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###ContactWD</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-ContactWD" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Contact with data</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::ContactWD</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldContactWD</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-CustomerCompany">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###CustomerCompany</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-CustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer Company</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::CustomerCompany</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldReference</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-CustomerUser">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###CustomerUser</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-CustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerUser</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::CustomerUser</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldReference</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Database">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Database</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Database" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Database</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Database</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldDB</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Date">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Date</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Date" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Date</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldDateTime</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-DateTime">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###DateTime</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-DateTime" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Date / Time</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::DateTime</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldDateTime</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Dropdown">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Dropdown</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Dropdown" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dropdown</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Dropdown</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldDropdown</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Lens">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Lens</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Lens" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lens</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Lens</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldLens</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Multiselect">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Multiselect</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Multiselect" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Multiselect</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Multiselect</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldMultiselect</span>
+<span class="nt">ItemSeparator</span><span class="p">:</span><span class="w"> </span><span class="s">','</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-ProcessID">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###ProcessID</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-ProcessID" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ProcessID</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::ProcessManagement::ProcessID</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldText</span>
+<span class="nt">DisabledAdd</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-RichText">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###RichText</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-RichText" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Richtext</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::RichText</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldText</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-ScriptTemplateToolkit">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###ScriptTemplateToolkit</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-ScriptTemplateToolkit" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Script (Template Toolkit)</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::ScriptTemplateToolkit</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldScript</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Set">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Set</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Set" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic Field Set</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Set</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldSet</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Text">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Text</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Text" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Text</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Text</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldText</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-TextArea">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###TextArea</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-TextArea" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Textarea</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::TextArea</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldText</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Ticket">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Ticket</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Ticket</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldReference</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ITSMConfigItem</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-Title">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###Title</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-Title" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Title</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::Title</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldTitle</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-Driver-WebService">
+<span class="sig-name descname"><span class="pre">DynamicFields::Driver###WebService</span></span><a class="headerlink" href="#setting-DynamicFields-Driver-WebService" title="Link to this definition">¶</a></dt>
+<dd><p>Backend-Registrierung für Dynamische Felder.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::DriverRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Web Service</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Driver::WebService</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminDynamicFieldWebService</span>
+<span class="nt">ObjectTypes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-dynamicfields-objecttyperegistration">
+<h2>Core::DynamicFields::ObjectTypeRegistration<a class="headerlink" href="#core-dynamicfields-objecttyperegistration" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-ObjectType-Article">
+<span class="sig-name descname"><span class="pre">DynamicFields::ObjectType###Article</span></span><a class="headerlink" href="#setting-DynamicFields-ObjectType-Article" title="Link to this definition">¶</a></dt>
+<dd><p>DynamischesFeld Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::ObjectTypeRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::ObjectType::Article</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'110'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-ObjectType-CustomerCompany">
+<span class="sig-name descname"><span class="pre">DynamicFields::ObjectType###CustomerCompany</span></span><a class="headerlink" href="#setting-DynamicFields-ObjectType-CustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>DynamischesFeld Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::ObjectTypeRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::ObjectType::CustomerCompany</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'120'</span>
+<span class="nt">UseObjectName</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-ObjectType-CustomerUser">
+<span class="sig-name descname"><span class="pre">DynamicFields::ObjectType###CustomerUser</span></span><a class="headerlink" href="#setting-DynamicFields-ObjectType-CustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>DynamischesFeld Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::ObjectTypeRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer User</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::ObjectType::CustomerUser</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'130'</span>
+<span class="nt">UseObjectName</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFields-ObjectType-Ticket">
+<span class="sig-name descname"><span class="pre">DynamicFields::ObjectType###Ticket</span></span><a class="headerlink" href="#setting-DynamicFields-ObjectType-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>DynamischesFeld Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::ObjectTypeRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DisplayName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::ObjectType::Ticket</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-dynamicfields-titletemplates">
+<h2>Core::DynamicFields::TitleTemplates<a class="headerlink" href="#core-dynamicfields-titletemplates" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminDynamicFieldTitle-Templates-001-Template">
+<span class="sig-name descname"><span class="pre">AdminDynamicFieldTitle::Templates###001-Template</span></span><a class="headerlink" href="#setting-AdminDynamicFieldTitle-Templates-001-Template" title="Link to this definition">¶</a></dt>
+<dd><p>Erstellt Vorlagen für AdminDynamicFieldTitle.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::TitleTemplates</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template1</span>
+<span class="nt">Italic</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Bold</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">UnderLine</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="s">'12'</span>
+<span class="nt">Color</span><span class="p">:</span><span class="w"> </span><span class="s">'#000000'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminDynamicFieldTitle-Templates-002-Template">
+<span class="sig-name descname"><span class="pre">AdminDynamicFieldTitle::Templates###002-Template</span></span><a class="headerlink" href="#setting-AdminDynamicFieldTitle-Templates-002-Template" title="Link to this definition">¶</a></dt>
+<dd><p>Erstellt Vorlagen für AdminDynamicFieldTitle.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::TitleTemplates</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template2</span>
+<span class="nt">Italic</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Bold</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">UnderLine</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="s">'12'</span>
+<span class="nt">Color</span><span class="p">:</span><span class="w"> </span><span class="s">'#000000'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminDynamicFieldTitle-Templates-003-Template">
+<span class="sig-name descname"><span class="pre">AdminDynamicFieldTitle::Templates###003-Template</span></span><a class="headerlink" href="#setting-AdminDynamicFieldTitle-Templates-003-Template" title="Link to this definition">¶</a></dt>
+<dd><p>Erstellt Vorlagen für AdminDynamicFieldTitle.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::TitleTemplates</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template3</span>
+<span class="nt">Italic</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Bold</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">UnderLine</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="s">'12'</span>
+<span class="nt">Color</span><span class="p">:</span><span class="w"> </span><span class="s">'#000000'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminDynamicFieldTitle-Templates-004-Template">
+<span class="sig-name descname"><span class="pre">AdminDynamicFieldTitle::Templates###004-Template</span></span><a class="headerlink" href="#setting-AdminDynamicFieldTitle-Templates-004-Template" title="Link to this definition">¶</a></dt>
+<dd><p>Erstellt Vorlagen für AdminDynamicFieldTitle.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DynamicFields::TitleTemplates</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template4</span>
+<span class="nt">Italic</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Bold</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">UnderLine</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="s">'12'</span>
+<span class="nt">Color</span><span class="p">:</span><span class="w"> </span><span class="s">'#000000'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport">
+<h2>Core::ImportExport<a class="headerlink" href="#core-importexport" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-FormatBackendRegistration-CSV">
+<span class="sig-name descname"><span class="pre">ImportExport::FormatBackendRegistration###CSV</span></span><a class="headerlink" href="#setting-ImportExport-FormatBackendRegistration-CSV" title="Link to this definition">¶</a></dt>
+<dd><p>Registrierung des CSV-Backendmoduls für das Import-/Export-Feature.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::ImportExport::FormatBackend::CSV</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CSV</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-FormatBackendRegistration-JSON">
+<span class="sig-name descname"><span class="pre">ImportExport::FormatBackendRegistration###JSON</span></span><a class="headerlink" href="#setting-ImportExport-FormatBackendRegistration-JSON" title="Link to this definition">¶</a></dt>
+<dd><p>Registrierung des JSON-Backendmoduls für das Import-/Export-Feature.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::ImportExport::FormatBackend::JSON</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JSON</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport-objectbackend-moduleregistration">
+<h2>Core::ImportExport::ObjectBackend::ModuleRegistration<a class="headerlink" href="#core-importexport-objectbackend-moduleregistration" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-ObjectBackendRegistration-Translations">
+<span class="sig-name descname"><span class="pre">ImportExport::ObjectBackendRegistration###Translations</span></span><a class="headerlink" href="#setting-ImportExport-ObjectBackendRegistration-Translations" title="Link to this definition">¶</a></dt>
+<dd><p>Objekt-Backend-Modulregistrierung für das Import-/Export-Modul.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::ImportExport::ObjectBackend::Translations</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Translations</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport-translationsimportexport">
+<h2>Core::ImportExport::TranslationsImportExport<a class="headerlink" href="#core-importexport-translationsimportexport" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-TranslationsImportExport-ForceCSVMappingRecreation">
+<span class="sig-name descname"><span class="pre">ImportExport::TranslationsImportExport::ForceCSVMappingRecreation</span></span><a class="headerlink" href="#setting-ImportExport-TranslationsImportExport-ForceCSVMappingRecreation" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, ob vorhandene CSV-Mappings bei der nächsten Installation des Paketes oder einem Upgrade neu erstellt werden sollen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::TranslationsImportExport</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Diese Einstellung entfällt.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-processmanagement">
+<h2>Core::ProcessManagement<a class="headerlink" href="#core-processmanagement" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-CacheTTL">
+<span class="sig-name descname"><span class="pre">Process::CacheTTL</span></span><a class="headerlink" href="#setting-Process-CacheTTL" title="Link to this definition">¶</a></dt>
+<dd><p>Cache-Zeit in Sekunden für Datenbank Prozess-Backends.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">3600</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DefaultLock">
+<span class="sig-name descname"><span class="pre">Process::DefaultLock</span></span><a class="headerlink" href="#setting-Process-DefaultLock" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Option setzt die Prozess-Ticket Standardsperre.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">unlock</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DefaultPriority">
+<span class="sig-name descname"><span class="pre">Process::DefaultPriority</span></span><a class="headerlink" href="#setting-Process-DefaultPriority" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Option setzt die Prozess-Ticket Standardpriorität.</p>
+<div class="line-block">
+<div class="line">Objekt · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">normal</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DefaultQueue">
+<span class="sig-name descname"><span class="pre">Process::DefaultQueue</span></span><a class="headerlink" href="#setting-Process-DefaultQueue" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Option setzt die Prozess-Ticket Standard-Queue.</p>
+<div class="line-block">
+<div class="line">Objekt · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Raw</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DefaultState">
+<span class="sig-name descname"><span class="pre">Process::DefaultState</span></span><a class="headerlink" href="#setting-Process-DefaultState" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Option setzt den Standard-Status für Prozess-Tickets.</p>
+<div class="line-block">
+<div class="line">Objekt · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">new</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DynamicFieldProcessManagementActivityID">
+<span class="sig-name descname"><span class="pre">Process::DynamicFieldProcessManagementActivityID</span></span><a class="headerlink" href="#setting-Process-DynamicFieldProcessManagementActivityID" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, in welchem dynamischen Feld die Aktivitäts-ID im Prozessmanagement gespeichert werden soll.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">ProcessManagementActivityID</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-DynamicFieldProcessManagementProcessID">
+<span class="sig-name descname"><span class="pre">Process::DynamicFieldProcessManagementProcessID</span></span><a class="headerlink" href="#setting-Process-DynamicFieldProcessManagementProcessID" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, in welchem dynamischen Feld die Prozess-ID im Prozessmanagement gespeichert werden soll.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">ProcessManagementProcessID</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-Entity-Prefix">
+<span class="sig-name descname"><span class="pre">Process::Entity::Prefix</span></span><a class="headerlink" href="#setting-Process-Entity-Prefix" title="Link to this definition">¶</a></dt>
+<dd><p>Standard Entitäts-Präfixe des Prozessmanagements für Entitäts-IDs, die automatisch generiert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Process</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">P</span>
+<span class="nt">Activity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A</span>
+<span class="nt">ActivityDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AD</span>
+<span class="nt">Transition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">T</span>
+<span class="nt">TransitionAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TA</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Process-NavBarOutput-CacheTTL">
+<span class="sig-name descname"><span class="pre">Process::NavBarOutput::CacheTTL</span></span><a class="headerlink" href="#setting-Process-NavBarOutput-CacheTTL" title="Link to this definition">¶</a></dt>
+<dd><p>Cache-Zeit in Sekunden für das Ticket-Prozess-Navigationsleisten-Ausgabemodul.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">900</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ProcessManagement-Transition-Debug-Enabled">
+<span class="sig-name descname"><span class="pre">ProcessManagement::Transition::Debug::Enabled</span></span><a class="headerlink" href="#setting-ProcessManagement-Transition-Debug-Enabled" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, werden Debugging-Informationen für Übergänge in Prozesstickets geloggt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ProcessManagement-Transition-Debug-Filter-00-Default">
+<span class="sig-name descname"><span class="pre">ProcessManagement::Transition::Debug::Filter###00-Default</span></span><a class="headerlink" href="#setting-ProcessManagement-Transition-Debug-Filter-00-Default" title="Link to this definition">¶</a></dt>
+<dd><p>Filter zum Debuggen von Übergängen. Hinweis: Weitere Filter können im Format &lt;OTOBO_TICKET_Attribute&gt; (z. B. &lt;OTOBO_TICKET_Priority&gt;) hinzugefügt werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">TransitionEntityID</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">&lt;OTOBO_TICKET_TicketNumber&gt;</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ProcessManagement-Transition-Debug-LogPriority">
+<span class="sig-name descname"><span class="pre">ProcessManagement::Transition::Debug::LogPriority</span></span><a class="headerlink" href="#setting-ProcessManagement-Transition-Debug-LogPriority" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Priorität in welcher die Information aufgezeichnet und präsentiert wird.</p>
+<div class="line-block">
+<div class="line">Auswahl · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">debug</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ProcessManagement</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">debug</span></code> (Debug), <code class="docutils literal notranslate"><span class="pre">info</span></code> (Info), <code class="docutils literal notranslate"><span class="pre">notice</span></code> (Hinweis), <code class="docutils literal notranslate"><span class="pre">error</span></code> (Fehler)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base-dynamicfieldscreens">
+<h2>Frontend::Base::DynamicFieldScreens<a class="headerlink" href="#frontend-base-dynamicfieldscreens" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultColumnsScreens-Framework">
+<span class="sig-name descname"><span class="pre">DefaultColumnsScreens###Framework</span></span><a class="headerlink" href="#setting-DefaultColumnsScreens-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfigurationsoption definiert alle möglichen Oberflächen, auf denen Standard-Spalten aktiviert oder deaktiviert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::DynamicFieldScreens</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketStatusView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketStatusView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketQueue###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketQueue</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketResponsibleView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketResponsibleView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketWatchView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketWatchView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketLockedView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketLockedView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEscalationView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEscalationView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketSearch###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketService###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketService</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0100-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0110-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0120-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0130-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketOpen</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0140-RunningTicketProcess</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget RunningTicketProcess</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0100-CIC-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0110-CIC-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0120-CIC-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0130-CIC-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketOpen</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0100-CUIC-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0110-CUIC-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0120-CUIC-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0130-CUIC-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketOpen</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketStatusView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketStatusView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketQueue###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketQueue</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketResponsibleView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketResponsibleView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketWatchView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketWatchView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketLockedView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketLockedView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEscalationView###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEscalationView</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketSearch###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketService###DefaultColumns</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketService</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketSearch###SearchOverviewDynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0100-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0110-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0120-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0130-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget TicketOpen</span>
+<span class="l l-Scalar l-Scalar-Plain">DashboardBackend###0140-RunningTicketProcess</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget RunningTicketProcess</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0100-CIC-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0110-CIC-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0120-CIC-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter::Backend###0130-CIC-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CIC-TicketOpen</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0100-CUIC-TicketPendingReminder</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketPendingReminder</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0110-CUIC-TicketEscalation</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketEscalation</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0120-CUIC-TicketNew</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketNew</span>
+<span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter::Backend###0130-CUIC-TicketOpen</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DashboardWidget CUIC-TicketOpen</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldScreens-Framework">
+<span class="sig-name descname"><span class="pre">DynamicFieldScreens###Framework</span></span><a class="headerlink" href="#setting-DynamicFieldScreens-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration definiert alle möglichen Oberflächen, auf denen dynamische Felder aktiviert oder deaktiviert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::DynamicFieldScreens</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketArticleEdit###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketArticleEdit</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketClose###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketClose</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketCompose###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketCompose</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEmail###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmail</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEmailOutbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmailOutbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketForward###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketForward</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketFreeText###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketFreeText</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketMove###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketMove</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketNote###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketNote</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketOwner###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketOwner</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPending###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPending</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhone###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhone</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhoneInbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneInbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhoneOutbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneOutbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPrint###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPrint</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPriority###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPriority</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketResponsible###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketResponsible</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketSearch###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketZoom</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketMessage###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketMessage</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketPrint###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketPrint</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketSearch###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketZoom</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketZoom###DynamicFieldWidgetDynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldWidgetDynamicField</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::OverviewMedium###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OverviewMedium</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketArticleEdit###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketArticleEdit</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketClose###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketClose</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketCompose###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketCompose</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEmail###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmail</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketEmailOutbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmailOutbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketForward###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketForward</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketFreeText###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketFreeText</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketMove###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketMove</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketNote###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketNote</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketOwner###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketOwner</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPending###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPending</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhone###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhone</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhoneInbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneInbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPhoneOutbound###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneOutbound</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPrint###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPrint</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketPriority###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPriority</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketResponsible###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketResponsible</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketSearch###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketZoom</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketMessage###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketMessage</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketPrint###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketPrint</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketSearch###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketZoom</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::CustomerTicketZoom###FollowUpDynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketZoomReply</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketZoom###DynamicFieldWidgetDynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldWidgetDynamicField</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldScreens-ITSMChangeManagement">
+<span class="sig-name descname"><span class="pre">DynamicFieldScreens###ITSMChangeManagement</span></span><a class="headerlink" href="#setting-DynamicFieldScreens-ITSMChangeManagement" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration definiert alle möglichen Oberflächen, auf denen dynamische Felder aktiviert oder deaktiviert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::DynamicFieldScreens</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMChangeAdd###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMChangeAdd</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMChangeEdit###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMChangeEdit</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMChangePrint###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMChangePrint</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMChangeSearch###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMChangeSearch</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMChangeZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMChangeZoom</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMChange::Frontend::AgentITSMWorkOrderAdd###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMWorkOrderAdd</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMWorkOrder::Frontend::AgentITSMWorkOrderEdit###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMWorkOrderEdit</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMWorkOrder::Frontend::AgentITSMWorkOrderReport###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMWorkOrderReport</span>
+<span class="l l-Scalar l-Scalar-Plain">ITSMWorkOrder::Frontend::AgentITSMWorkOrderZoom###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentITSMWorkOrderZoom</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicFieldScreens-ITSMIncidentProblemManagement">
+<span class="sig-name descname"><span class="pre">DynamicFieldScreens###ITSMIncidentProblemManagement</span></span><a class="headerlink" href="#setting-DynamicFieldScreens-ITSMIncidentProblemManagement" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration definiert alle möglichen Oberflächen, auf denen dynamische Felder aktiviert oder deaktiviert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::DynamicFieldScreens</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketAddtlITSMField###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketAddtlITSMField</span>
+<span class="l l-Scalar l-Scalar-Plain">Ticket::Frontend::AgentTicketDecision###DynamicField</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketDecision</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="agent-ticketmasken.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Agentenoberfläche: Ticketmasken</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="zeit-kalender.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Zeit und Kalender</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Dynamische Felder, Prozesse und Import/Export</a><ul>
+<li><a class="reference internal" href="#core-dynamicfielddb">Core::DynamicFieldDB</a></li>
+<li><a class="reference internal" href="#core-dynamicfields">Core::DynamicFields</a></li>
+<li><a class="reference internal" href="#core-dynamicfields-driverregistration">Core::DynamicFields::DriverRegistration</a></li>
+<li><a class="reference internal" href="#core-dynamicfields-objecttyperegistration">Core::DynamicFields::ObjectTypeRegistration</a></li>
+<li><a class="reference internal" href="#core-dynamicfields-titletemplates">Core::DynamicFields::TitleTemplates</a></li>
+<li><a class="reference internal" href="#core-importexport">Core::ImportExport</a></li>
+<li><a class="reference internal" href="#core-importexport-objectbackend-moduleregistration">Core::ImportExport::ObjectBackend::ModuleRegistration</a></li>
+<li><a class="reference internal" href="#core-importexport-translationsimportexport">Core::ImportExport::TranslationsImportExport</a></li>
+<li><a class="reference internal" href="#core-processmanagement">Core::ProcessManagement</a></li>
+<li><a class="reference internal" href="#frontend-base-dynamicfieldscreens">Frontend::Base::DynamicFieldScreens</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>

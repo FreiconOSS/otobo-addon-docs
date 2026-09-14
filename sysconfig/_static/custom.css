@@ -1,0 +1,32 @@
+/* wider content column so 1100px screenshots are shown at full size */
+:root { --content-width: 68em; }
+
+/* keep the OTOBO logo readable in dark mode */
+body[data-theme="dark"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
+@media (prefers-color-scheme: dark) {
+  body[data-theme="auto"] img.otobo-logo { filter: brightness(0) invert(1); opacity: .9; }
+}
+
+/* OTOBO 11.1 deviation boxes: same visual weight everywhere in the handbook */
+.admonition.version-11-1 { border-left-color: #7b5cc4; }
+.admonition.version-11-1 > .admonition-title { background: rgba(123, 92, 196, .12); }
+.admonition.version-11-1 > .admonition-title::before { background-color: #7b5cc4; }
+
+/* long SysConfig names in definition lists must wrap instead of overflowing */
+dl dt code { word-break: break-all; }
+
+/* generated reference: setting names are long and must wrap, the entries need air between them */
+dl.std.setting > dt { word-break: break-all; font-size: 0.95em; }
+dl.std.setting { margin-bottom: 1.6em; }
+dl.std.setting > dd .line-block { margin: 0.4em 0; font-size: 0.9em; color: var(--color-foreground-secondary); }
+
+/* "Mein OTOBO": address box in the sidebar and the link on every setting */
+.otobo-base { padding: 0.6em var(--sidebar-item-spacing-horizontal, 1rem) 0.8em; border-bottom: 1px solid var(--color-sidebar-search-border); }
+.otobo-base label { display: block; font-size: var(--sidebar-caption-font-size, 0.8em); font-weight: 700; text-transform: uppercase; color: var(--color-sidebar-caption-text); margin-bottom: 0.35em; }
+.otobo-base-row { display: flex; gap: 0.35em; }
+.otobo-base input { flex: 1; min-width: 0; font: inherit; font-size: 0.85em; padding: 0.3em 0.45em; color: var(--color-foreground-primary); background: var(--color-background-primary); border: 1px solid var(--color-background-border); border-radius: 4px; }
+.otobo-base button { font: inherit; font-size: 0.8em; padding: 0.3em 0.6em; color: #fff; background: var(--color-brand-primary); border: 0; border-radius: 4px; cursor: pointer; }
+.otobo-base-hint { margin: 0.45em 0 0; font-size: 0.75em; line-height: 1.35; color: var(--color-foreground-secondary); }
+dl.std.setting > dt .otobo-open { margin-left: 0.8em; font-family: var(--font-stack); font-size: 0.8em; font-weight: 400; white-space: nowrap; word-break: normal; }
+h2 > .otobo-open-group, h3 > .otobo-open-group { margin-left: 0.8em; font-size: 0.5em; font-weight: 400; vertical-align: middle; white-space: nowrap; }
+h3 > .otobo-open-group { font-size: 0.6em; }

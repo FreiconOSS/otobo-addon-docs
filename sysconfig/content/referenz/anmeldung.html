@@ -1,0 +1,1251 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="E-Mail und Kommunikation" href="email.html"><link rel="prev" title="System und Betrieb" href="system.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Anmeldung, Sitzungen und Sicherheit - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system.html">System und Betrieb</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeit-kalender.html">Zeit und Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder-prozesse.html">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oberflaeche-basis.html">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-11-1.html">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="anmeldung-sitzungen-und-sicherheit">
+<h1>Anmeldung, Sitzungen und Sicherheit<a class="headerlink" href="#anmeldung-sitzungen-und-sicherheit" title="Link to this heading">¶</a></h1>
+<p>Authentifizierung von Agenten und Kunden (Datenbank, LDAP, HTTP-Basic, Radius), Sitzungsverwaltung, Berechtigungen sowie Verschlüsselung und Signatur (PGP, S/MIME).</p>
+<p>Diese Seite führt <strong>80 Einstellungen</strong>, gruppiert nach ihrem Platz im Navigationsbaum der Systemkonfiguration.</p>
+<section id="core-auth">
+<h2>Core::Auth<a class="headerlink" href="#core-auth" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SimpleBruteForceProtection-GeneralSettings">
+<span class="sig-name descname"><span class="pre">SimpleBruteForceProtection::GeneralSettings</span></span><a class="headerlink" href="#setting-SimpleBruteForceProtection-GeneralSettings" title="Link to this definition">¶</a></dt>
+<dd><p>Schutz vor Brute-Force-Angriffen. MaxAttempt: Wie viele Anmeldeversuche zugelassen werden, bevor ein Anwender gesperrt wird. BanDuration: Dauer der Sperre. KeepCacheDuration: Wie lange fehlgeschlagene Anmeldeversuche gespeichert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">KeepCacheDuration</span><span class="p">:</span><span class="w"> </span><span class="s">'60'</span>
+<span class="nt">MaxAttempt</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span>
+<span class="nt">BanDuration</span><span class="p">:</span><span class="w"> </span><span class="s">'30'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-auth-agent-twofactor">
+<h2>Core::Auth::Agent::TwoFactor<a class="headerlink" href="#core-auth-agent-twofactor" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AuthTwoFactorModule">
+<span class="sig-name descname"><span class="pre">AuthTwoFactorModule</span></span><a class="headerlink" href="#setting-AuthTwoFactorModule" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Modul für die Zwei-Faktor-Authentifizierung von Agenten.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::Auth::TwoFactor::GoogleAuthenticator</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Agent::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AuthTwoFactorModule-AllowEmptySecret">
+<span class="sig-name descname"><span class="pre">AuthTwoFactorModule::AllowEmptySecret</span></span><a class="headerlink" href="#setting-AuthTwoFactorModule-AllowEmptySecret" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert, ob Agenten, die kein gemeinsames Geheimnis in ihren Einstellungen hinterlegt haben und folglich die Zweifaktor-Authentifizierung nicht nutzen, sich im System einloggen dürfen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Agent::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AuthTwoFactorModule-AllowPreviousToken">
+<span class="sig-name descname"><span class="pre">AuthTwoFactorModule::AllowPreviousToken</span></span><a class="headerlink" href="#setting-AuthTwoFactorModule-AllowPreviousToken" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert, ob das vorherige, gültige Token für die Authentifizierung akzeptiert werden soll. Dies ist etwas weniger sicher, gibt Nutzern aber 30 Sekunden mehr Zeit, Ihre Einmal-Passwort einzugeben.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Agent::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AuthTwoFactorModule-SecretPreferencesKey">
+<span class="sig-name descname"><span class="pre">AuthTwoFactorModule::SecretPreferencesKey</span></span><a class="headerlink" href="#setting-AuthTwoFactorModule-SecretPreferencesKey" title="Link to this definition">¶</a></dt>
+<dd><p>Defininiert das Einstellungsfeld für Agenten, in dem der Share Secret-Key gespeichert wird.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">UserGoogleAuthenticatorSecretKey</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Agent::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-auth-customer">
+<h2>Core::Auth::Customer<a class="headerlink" href="#core-auth-customer" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule</span></span><a class="headerlink" href="#setting-Customer-AuthModule" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Modul um Kunden zu authentifizieren.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::CustomerAuth::DB</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-Attribute">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::Attribute</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-Attribute" title="Link to this definition">¶</a></dt>
+<dd><p>These attributes are passed when connecting to the database. A common use case is a connection which is secured by TLS.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mysql_ssl</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">mysql_client_cert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/otobo/tls/client-cert.pem</span>
+<span class="nt">mysql_client_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/otobo/tls/client-key.pem</span>
+<span class="nt">mysql_ssl_optional</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mariadb_ssl</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">mariadb_client_cert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/otobo/tls/client-cert.pem</span>
+<span class="nt">mariadb_client_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/otobo/tls/client-key.pem</span>
+<span class="nt">mariadb_ssl_optional</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-bcryptCost">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::bcryptCost</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-bcryptCost" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „bcrypt“ als CryptType gewählt wurde, wird der hier eingetragene Cost-Parameter zur Berechnung verwendet. Derzeit wird als Wert maximal 31 unterstützt.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">12</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-CryptType">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::CryptType</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-CryptType" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, muss hier der Verschlüsselungstyp für Passwörter hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">sha2</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">crypt</span></code> (Crypt), <code class="docutils literal notranslate"><span class="pre">apr1</span></code> (Apache MD5), <code class="docutils literal notranslate"><span class="pre">md5</span></code> (MD5-Crypt), <code class="docutils literal notranslate"><span class="pre">plain</span></code> (Unformatiert), <code class="docutils literal notranslate"><span class="pre">sha1</span></code> (SHA-1), <code class="docutils literal notranslate"><span class="pre">sha2</span></code> (SHA-2), <code class="docutils literal notranslate"><span class="pre">sha512</span></code> (SHA-512), <code class="docutils literal notranslate"><span class="pre">bcrypt</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-CustomerKey">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::CustomerKey</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-CustomerKey" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, muss hier der Name der Spalte, die CustomerKey enthält, hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">login</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-CustomerPassword">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::CustomerPassword</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-CustomerPassword" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, muss hier der Name der Spalte, die das Kundenpasswort enthält, hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">pw</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-DSN">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::DSN</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-DSN" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, muss hier der DSN zum Verbinden zur Datenbank hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">DBI:mysql:database=customerdb;host=customerdbhost</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<p>Neu: <code class="docutils literal notranslate"><span class="pre">DBI:MariaDB:database=customerdb;host=customerdbhost</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-Password">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::Password</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-Password" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, kann hier ein Passwort zum Verbinden zur Datenbank hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Passwort · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">some_password</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-Table">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::Table</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-Table" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, muss hier der Name der Tabelle, in der Kundendaten gespeichert werden sollen, hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">customer_user</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-Type">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::Type</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-Type" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, kann hier ein Datenbanktreiber definiert werden. Ansonsten wird der benötigte Treiber automatisch ermittelt.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">mysql</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-DB-User">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::DB::User</span></span><a class="headerlink" href="#setting-Customer-AuthModule-DB-User" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als Customer::AuthModule ausgewählt ist, kann hier ein Benutzername zum Verbinden zur Datenbank hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">some_user</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-HTTPBasicAuth-Replace">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::HTTPBasicAuth::Replace</span></span><a class="headerlink" href="#setting-Customer-AuthModule-HTTPBasicAuth-Replace" title="Link to this definition">¶</a></dt>
+<dd><p>If „HTTPBasicAuth“ was selected for Customer::AuthModule, you can specify to strip leading parts of user names (e. g. for domains like example_domain\user to user).</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">example_domain\\</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-HTTPBasicAuth-ReplaceRegExp">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::HTTPBasicAuth::ReplaceRegExp</span></span><a class="headerlink" href="#setting-Customer-AuthModule-HTTPBasicAuth-ReplaceRegExp" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „HTTPBasicAuth“ als Customer::AuthModule ausgewählt ist, kann hier ein regulärer Ausdruck definiert werden, um Teile von REMOTE_USER zu entfernen (z.B. für anhängende Domänen). Hinweis: $1 enthält den neuen Login-Namen.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">^(.+?)&#64;.+?$</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-AccessAttr">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::AccessAttr</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-AccessAttr" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, können hier Zugangs-Attribute bestimmt werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">memberUid</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-AlwaysFilter">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::AlwaysFilter</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-AlwaysFilter" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, können Sie hier Filter für jede LDAP-Anfrage festlegen, z.B. (mail=*), (objectclass=user) oder (!objectclass=computer).</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">(!objectclass=computer)</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-BaseDN">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::BaseDN</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-BaseDN" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, muss das BaseDN hier angegeben werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">dc=example,dc=com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-Die">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::Die</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-Die" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, können Sie hier festlegen, ob Anwendungen stoppen sollen, wenn z.B. die Verbindung zum Server aufgrund von Netzwerkproblemen nicht hergestellt werden kann.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-GroupDN">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::GroupDN</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-GroupDN" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, können Sie prüfen, ob der Benutzer aufgrund seiner Mitgliedschaft in einer posixGroup Authentifizierungsberechtigt (z.B. wenn ein Nutzer Mitglied der Gruppe xyz sein muss, um OTOBO nutzen zu dürfen). Legen Sie diese Gruppe hier fest.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">cn=otoboallow,ou=posixGroups,dc=example,dc=com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-Host">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::Host</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-Host" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, kann der LDAP-Host hier angegeben werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">ldap.example.com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-Params">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::Params</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-Params" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist und spezielle Parameter für das Perl-Modul Net::LDAP benötigt werden, können Sie diese hier angeben. Nutzen Sie „perldoc Net::LDAP“ für weitere Informationen zu den Parametern.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="s">'389'</span>
+<span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="s">'120'</span>
+<span class="nt">async</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-SearchUserDN">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::SearchUserDN</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-SearchUserDN" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist und Ihre Nutzer nur anonymen Zugriff auf den LDAP-Baum haben, Sie die Daten aber durchsuchen möchten, können Sie dies mithilfe eines speziellen Users tun, dessen Benutzernamen Sie hier angeben können.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">cn=binduser,ou=users,dc=example,dc=com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-SearchUserPw">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::SearchUserPw</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-SearchUserPw" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist und Ihre Nutzer nur anonymen Zugriff auf den LDAP-Baum haben, Sie die Daten aber durchsuchen möchten, können Sie dies mithilfe eines speziellen Users tun, dessen Passwort Sie hier angeben können.</p>
+<div class="line-block">
+<div class="line">Passwort · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">some_password</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-StartTLS">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::StartTLS</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-StartTLS" title="Link to this definition">¶</a></dt>
+<dd><p>Wurde „LDAP“ für das Customer::AuthModule ausgewählt und soll TLS zur sicheren Kommunikation mit dem LDAP-Server verwendet werden, können Sie hier den „Verify“-Parameter definieren. Weitere Informationen dazu finden Sie unter Net::LDAP::start_tls.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">required</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-UID">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::UID</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-UID" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, muss der User-Identifier hier angegeben werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">uid</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-UserAttr">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::UserAttr</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-UserAttr" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist, können hier Benutzer-Attribute spezifiziert werden. Nutzen Sie UID für LDAP-posixGroups, den vollen Benutzer-DN für nicht-LDAP-posixGroups.</p>
+<div class="line-block">
+<div class="line">Auswahl · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">UID</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">UID</span></code>, <code class="docutils literal notranslate"><span class="pre">DN</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-LDAP-UserSuffix">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::LDAP::UserSuffix</span></span><a class="headerlink" href="#setting-Customer-AuthModule-LDAP-UserSuffix" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „LDAP“ als Customer::AuthModule ausgewählt ist und Sie einen Suffix zu jedem Kunden-Loginnamen hinzufügen möchten, können Sie dies hier festlegen (z.B. wenn „benutzername“ im LDAP als „benutzername&#64;domain“ existiert).</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">&#64;domain.com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-Radius-Die">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::Radius::Die</span></span><a class="headerlink" href="#setting-Customer-AuthModule-Radius-Die" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „Radius“ als Customer::AuthModule ausgewählt ist, können Sie hier festlegen, ob Anwendungen stoppen sollen, wenn z.B. die Verbindung zum Server aufgrund von Netzwerkproblemen nicht hergestellt werden kann.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-Radius-Host">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::Radius::Host</span></span><a class="headerlink" href="#setting-Customer-AuthModule-Radius-Host" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „Radius“ als Customer::AuthModule ausgewählt ist, muss hier der Radius-Host hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">radiushost</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthModule-Radius-Password">
+<span class="sig-name descname"><span class="pre">Customer::AuthModule::Radius::Password</span></span><a class="headerlink" href="#setting-Customer-AuthModule-Radius-Password" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „Radius“ als Customer::AuthModule ausgewählt ist, muss hier das Passwort zur Authentifizierung beim Radius-Host hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Passwort · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">radiussecret</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-auth-customer-twofactor">
+<h2>Core::Auth::Customer::TwoFactor<a class="headerlink" href="#core-auth-customer-twofactor" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthTwoFactorModule">
+<span class="sig-name descname"><span class="pre">Customer::AuthTwoFactorModule</span></span><a class="headerlink" href="#setting-Customer-AuthTwoFactorModule" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Modul für die Zwei-Faktor-Authentifizierung von Kunden.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::CustomerAuth::TwoFactor::GoogleAuthenticator</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthTwoFactorModule-AllowEmptySecret">
+<span class="sig-name descname"><span class="pre">Customer::AuthTwoFactorModule::AllowEmptySecret</span></span><a class="headerlink" href="#setting-Customer-AuthTwoFactorModule-AllowEmptySecret" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert, ob Kunden, die kein gemeinsames Geheimnis in ihren Einstellungen hinterlegt haben und folglich die Zweifaktor-Authentifizierung nicht nutzen, sich im System einloggen dürfen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthTwoFactorModule-AllowPreviousToken">
+<span class="sig-name descname"><span class="pre">Customer::AuthTwoFactorModule::AllowPreviousToken</span></span><a class="headerlink" href="#setting-Customer-AuthTwoFactorModule-AllowPreviousToken" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert, ob das vorherige, gültige Token für die Authentifizierung akzeptiert werden soll. Dies ist etwas weniger sicher, gibt Nutzern aber 30 Sekunden mehr Zeit, Ihre Einmal-Passwort einzugeben.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Customer-AuthTwoFactorModule-SecretPreferencesKey">
+<span class="sig-name descname"><span class="pre">Customer::AuthTwoFactorModule::SecretPreferencesKey</span></span><a class="headerlink" href="#setting-Customer-AuthTwoFactorModule-SecretPreferencesKey" title="Link to this definition">¶</a></dt>
+<dd><p>Defininiert das Einstellungsfeld für Kunden, in dem der Share Secret-Key gespeichert wird.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">UserGoogleAuthenticatorSecretKey</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Auth::Customer::TwoFactor</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-crypt-pgp">
+<h2>Core::Crypt::PGP<a class="headerlink" href="#core-crypt-pgp" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP">
+<span class="sig-name descname"><span class="pre">PGP</span></span><a class="headerlink" href="#setting-PGP" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert PGP-Support. Wenn PGP-Support für das signieren und verschlüsseln von Mails eingeschaltet ist, wird dringend empfohlen, den Webserver unter dem OTOBO-Benutzer zu betreiben. Andernfalls werden Probleme mit den Berechtigungen auftreten, wenn auf das .gnupg-Verzeichnis zugegriffen wird.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Bin">
+<span class="sig-name descname"><span class="pre">PGP::Bin</span></span><a class="headerlink" href="#setting-PGP-Bin" title="Link to this definition">¶</a></dt>
+<dd><p>Bestimmt den Pfad zur PGP-Binärdatei.</p>
+<div class="line-block">
+<div class="line">Datei · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/usr/bin/gpg</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Key-Password">
+<span class="sig-name descname"><span class="pre">PGP::Key::Password</span></span><a class="headerlink" href="#setting-PGP-Key-Password" title="Link to this definition">¶</a></dt>
+<dd><p>Legt das Passwort für den privaten PGP-Schlüssel fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">D2DF79FA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomePassword</span>
+<span class="nt">488A0B8F</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomePassword</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Log">
+<span class="sig-name descname"><span class="pre">PGP::Log</span></span><a class="headerlink" href="#setting-PGP-Log" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie Ihren eigenen Log-Text für PGP.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SIG_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Signature data.</span>
+<span class="nt">GOODSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Good PGP signature.</span>
+<span class="nt">VALIDSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature with the keyid is good.</span>
+<span class="nt">TRUST_UNDEFINED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This key is not certified with a trusted signature!</span>
+<span class="nt">KEYREVOKED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature was made by a revoked key, this could mean that the signature is forged.</span>
+<span class="nt">REVKEYSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature was made by a revoked key, this could mean that the signature is forged.</span>
+<span class="nt">BADSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature with the keyid has not been verified successfully.</span>
+<span class="nt">ERRSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">It was not possible to check the PGP signature, this may be caused by a missing public key or</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">an unsupported algorithm.</span>
+<span class="nt">SIGEXPIRED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature is expired.</span>
+<span class="nt">EXPKEYSIG</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The PGP signature was made by an expired key.</span>
+<span class="nt">NO_PUBKEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">No public key found.</span>
+<span class="nt">NODATA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">No valid OpenPGP data found.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Method">
+<span class="sig-name descname"><span class="pre">PGP::Method</span></span><a class="headerlink" href="#setting-PGP-Method" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Methode fest, mit der PGP E-Mails signieren und verschlüsseln soll. Bitte beachten Sie, dass die Methode „Inline“ nicht für Richtext-Nachrichten verwendet werden kann.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Detached</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">Detached</span></code> (Losgelöst), <code class="docutils literal notranslate"><span class="pre">Inline</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Options">
+<span class="sig-name descname"><span class="pre">PGP::Options</span></span><a class="headerlink" href="#setting-PGP-Options" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Optionen für die PGP-Binärdatei fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">--homedir</span> <span class="pre">/opt/otobo/.gnupg/</span> <span class="pre">--batch</span> <span class="pre">--no-tty</span> <span class="pre">--yes</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-Options-DigestPreference">
+<span class="sig-name descname"><span class="pre">PGP::Options::DigestPreference</span></span><a class="headerlink" href="#setting-PGP-Options-DigestPreference" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den bevorzugten Digest für die PGP-Binärdatei fest.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">sha256</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+<div class="line"><em>Auswahl:</em> <em>(leer)</em>, <code class="docutils literal notranslate"><span class="pre">sha1</span></code> (SHA1), <code class="docutils literal notranslate"><span class="pre">sha224</span></code> (SHA224), <code class="docutils literal notranslate"><span class="pre">sha256</span></code> (SHA256), <code class="docutils literal notranslate"><span class="pre">sha384</span></code> (SHA384), <code class="docutils literal notranslate"><span class="pre">sha512</span></code> (SHA512)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PGP-TrustedNetwork">
+<span class="sig-name descname"><span class="pre">PGP::TrustedNetwork</span></span><a class="headerlink" href="#setting-PGP-TrustedNetwork" title="Link to this definition">¶</a></dt>
+<dd><p>Aktivieren Sie diese Einstellung, wenn Sie allen öffentlichen und privaten PGP-Schlüsseln vertrauen, selbst wenn diese nicht mit einer vertrauten Signatur signiert wurden.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::PGP</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-crypt-smime">
+<h2>Core::Crypt::SMIME<a class="headerlink" href="#core-crypt-smime" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME">
+<span class="sig-name descname"><span class="pre">SMIME</span></span><a class="headerlink" href="#setting-SMIME" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert unterstützung für S/MIME.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-Bin">
+<span class="sig-name descname"><span class="pre">SMIME::Bin</span></span><a class="headerlink" href="#setting-SMIME-Bin" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Pfad zum OpenSSL-Binary fest. Es benötigt möglicherweise ein HOME-Env ($ENV{HOME} = ‚/var/lib/wwwrun‘;).</p>
+<div class="line-block">
+<div class="line">Datei · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/usr/bin/openssl</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-CacheTTL">
+<span class="sig-name descname"><span class="pre">SMIME::CacheTTL</span></span><a class="headerlink" href="#setting-SMIME-CacheTTL" title="Link to this definition">¶</a></dt>
+<dd><p>Cache-Zeit in Sekunden für SSL-Zertifikatsattribute.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">86400</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-CertPath">
+<span class="sig-name descname"><span class="pre">SMIME::CertPath</span></span><a class="headerlink" href="#setting-SMIME-CertPath" title="Link to this definition">¶</a></dt>
+<dd><p>Legt das Verzeichnis, wo SSL-Zertifikate gespeichert sind, fest.</p>
+<div class="line-block">
+<div class="line">Verzeichnis · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/etc/ssl/certs</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-Cipher">
+<span class="sig-name descname"><span class="pre">SMIME::Cipher</span></span><a class="headerlink" href="#setting-SMIME-Cipher" title="Link to this definition">¶</a></dt>
+<dd><p>Wählen Sie den zur Verschlüsselung verwendeten Algorithmus aus. Als Fallback wird aes256 verwendet. Geben Sie „/usr/bin/openssl enc -ciphers“ ein, um eine Liste der von Ihrem System unterstützten Ciphers zu erhalten (Eingabe ohne vorangestelltes ‚-‚).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">aes256</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-FetchFromCustomer">
+<span class="sig-name descname"><span class="pre">SMIME::FetchFromCustomer</span></span><a class="headerlink" href="#setting-SMIME-FetchFromCustomer" title="Link to this definition">¶</a></dt>
+<dd><p>Schaltet S/MIME-Unterstützung für das Anfragen von Kundenbenutzer-Backends ein.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SMIME-PrivatePath">
+<span class="sig-name descname"><span class="pre">SMIME::PrivatePath</span></span><a class="headerlink" href="#setting-SMIME-PrivatePath" title="Link to this definition">¶</a></dt>
+<dd><p>Legt das Verzeichnis fest, in welchem die privaten SSL Zertifikate gespeichert sind.</p>
+<div class="line-block">
+<div class="line">Verzeichnis · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/etc/ssl/private</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Crypt::SMIME</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-permission">
+<h2>Core::Permission<a class="headerlink" href="#core-permission" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-EditAnotherUsersPreferencesGroup">
+<span class="sig-name descname"><span class="pre">EditAnotherUsersPreferencesGroup</span></span><a class="headerlink" href="#setting-EditAnotherUsersPreferencesGroup" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Gruppe fest, für die ein Agent Schreibrechte besitzen muss, um die persönlichen Einstellungen anderer Agenten verändern zu können.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">admin</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SwitchToCustomer">
+<span class="sig-name descname"><span class="pre">SwitchToCustomer</span></span><a class="headerlink" href="#setting-SwitchToCustomer" title="Link to this definition">¶</a></dt>
+<dd><p>Erlaubt Administratoren sich als Kunde über die Customer-User-Administrationsoberfläche anzumelden.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SwitchToCustomer-PermissionGroup">
+<span class="sig-name descname"><span class="pre">SwitchToCustomer::PermissionGroup</span></span><a class="headerlink" href="#setting-SwitchToCustomer-PermissionGroup" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Gruppe fest, für die ein Agent Schreibrechte besitzen muss, um Zugriff auf die „SwitchToCustomer“-Funktion zu haben.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">admin</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SwitchToUser">
+<span class="sig-name descname"><span class="pre">SwitchToUser</span></span><a class="headerlink" href="#setting-SwitchToUser" title="Link to this definition">¶</a></dt>
+<dd><p>Erlaubt Administratoren sich als anderer Agent über die Agenten-Administrationsoberfläche anzumelden.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-System-Customer-Permission">
+<span class="sig-name descname"><span class="pre">System::Customer::Permission</span></span><a class="headerlink" href="#setting-System-Customer-Permission" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die verfügbaren Standardberechtigungen für Kunden innerhalb der Applikation fest. Werden mehr Berechtigungen benötigt, können sie hier eingegeben werden. Berechtigungen müssen hart-kodiert sein, um Auswirkungen zu haben. Bitte stellen Sie beim Anlegen neuer Berechtigungen sicher, dass „rw“ immer der letzte Eintrag bleibt.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ro</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rw</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-System-Permission">
+<span class="sig-name descname"><span class="pre">System::Permission</span></span><a class="headerlink" href="#setting-System-Permission" title="Link to this definition">¶</a></dt>
+<dd><p>Standardmäßig verfügbare Berechtigungen für Agenten in der Anwendung. Sind weitere Berechtigungen erforderlich, können diese hier eingeben werden. Berechtigungen müssen definiert werden, um wirksam zu sein. Einige andere empfehlenswerte Berechtigungen werden bereits standardmäßig zur Verfügung gestellt: Notiz, Schließen, Warten auf…., Kunde, Freitext, Bewegen, Erstellen, Verantwortlich, Weiterleiten und Umleiten. Es ist zu beachten, dass „rw“ immer die letzte registrierte Berechtigung ist, weil diese alle zusätzlichen Berechtigungen gewährt.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Permission</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ro</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">move_into</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">note</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">owner</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">priority</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rw</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-session">
+<h2>Core::Session<a class="headerlink" href="#core-session" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AgentSessionLimit">
+<span class="sig-name descname"><span class="pre">AgentSessionLimit</span></span><a class="headerlink" href="#setting-AgentSessionLimit" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die maximale Anzahl an aktiven Agenten innerhalb der in SessionMaxIdleTime festgelegten Zeitspanne fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AgentSessionLimitPriorWarning">
+<span class="sig-name descname"><span class="pre">AgentSessionLimitPriorWarning</span></span><a class="headerlink" href="#setting-AgentSessionLimitPriorWarning" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die maximale Anzahl aktiver Agenten innerhalb der in SessionActiveTime definierten Zeitspanne, bevor eine Warnung für die eingeloggten Agenten angezeigt wird.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">90</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AgentSessionPerUserLimit">
+<span class="sig-name descname"><span class="pre">AgentSessionPerUserLimit</span></span><a class="headerlink" href="#setting-AgentSessionPerUserLimit" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die maximale Anzahl an aktiven Sitzungen pro Agent innerhalb der in SessionMaxIdleTime festgelegten Zeitspanne fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">20</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerPanelSessionName">
+<span class="sig-name descname"><span class="pre">CustomerPanelSessionName</span></span><a class="headerlink" href="#setting-CustomerPanelSessionName" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des Schlüssels für die Kunden-Sessions.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">OTOBOCustomerInterface</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerSessionLimit">
+<span class="sig-name descname"><span class="pre">CustomerSessionLimit</span></span><a class="headerlink" href="#setting-CustomerSessionLimit" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die maximale Anzahl an aktiven Kundenbenutzern innerhalb der in SessionMaxIdleTime festgelegten Zeitspanne fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerSessionPerUserLimit">
+<span class="sig-name descname"><span class="pre">CustomerSessionPerUserLimit</span></span><a class="headerlink" href="#setting-CustomerSessionPerUserLimit" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die maximale Anzahl an aktiven Sitzungen pro Kundenbenutzer innerhalb der in SessionMaxIdleTime festgelegten Zeitspanne fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">20</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionAgentOnlineThreshold">
+<span class="sig-name descname"><span class="pre">SessionAgentOnlineThreshold</span></span><a class="headerlink" href="#setting-SessionAgentOnlineThreshold" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Zeitraum in Minuten fest, bevor ein Agent aufgrund von Inaktivität als „abwesend“ markiert wird (z. B. im „Angemeldete Nutzer“-Dashlet oder im Chat).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">5</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionCheckRemoteIP">
+<span class="sig-name descname"><span class="pre">SessionCheckRemoteIP</span></span><a class="headerlink" href="#setting-SessionCheckRemoteIP" title="Link to this definition">¶</a></dt>
+<dd><p>Schaltet den Remote-IP-Adressencheck ein. Es sollte ausgeschaltet werden, wenn die Applikation z. B. durch eine Proxy-Farm oder eine Einwahlverbindung genutzt wird, da sich die IP-Adresse bei dieser Nutzung pro Anfrage unterscheiden kann.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionCSRFProtection">
+<span class="sig-name descname"><span class="pre">SessionCSRFProtection</span></span><a class="headerlink" href="#setting-SessionCSRFProtection" title="Link to this definition">¶</a></dt>
+<dd><p>Schutz gegen CSRF-Lücken (Cross Site Request Forgery). Besuchen Sie <a class="reference external" href="https://de.wikipedia.org/wiki/Cross-Site-Request-Forgery">https://de.wikipedia.org/wiki/Cross-Site-Request-Forgery</a> für mehr Informationen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionCustomerOnlineThreshold">
+<span class="sig-name descname"><span class="pre">SessionCustomerOnlineThreshold</span></span><a class="headerlink" href="#setting-SessionCustomerOnlineThreshold" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Zeitraum in Minuten fest, bevor ein Kunde aufgrund von Inaktivität als „abwesend“ markiert wird (z. B. im „Angemeldete Nutzer“-Dashlet oder im Chat).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">5</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionDeleteIfNotRemoteID">
+<span class="sig-name descname"><span class="pre">SessionDeleteIfNotRemoteID</span></span><a class="headerlink" href="#setting-SessionDeleteIfNotRemoteID" title="Link to this definition">¶</a></dt>
+<dd><p>Löscht die Sitzung, wenn die Sitzungs-ID mit einer ungültigen IP-Adresse benutzt wird.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionDeleteIfTimeToOld">
+<span class="sig-name descname"><span class="pre">SessionDeleteIfTimeToOld</span></span><a class="headerlink" href="#setting-SessionDeleteIfTimeToOld" title="Link to this definition">¶</a></dt>
+<dd><p>Löscht die angefragte Sitzung, wenn ein Timeout vorliegt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionDir">
+<span class="sig-name descname"><span class="pre">SessionDir</span></span><a class="headerlink" href="#setting-SessionDir" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „FS“ als SessionModule ausgewählt ist, muss hier der Name des Verzeichnisses, in dem Sitzungsdaten gespeichert werden sollen, hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Home&gt;/var/sessions</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionMaxIdleTime">
+<span class="sig-name descname"><span class="pre">SessionMaxIdleTime</span></span><a class="headerlink" href="#setting-SessionMaxIdleTime" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Zeit in Sekunden fest, in der ein Nutzer untätig sein darf, bevor seine Sitzung automatisch beendet und der Nutzer ausgeloggt wird.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">7200</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionMaxTime">
+<span class="sig-name descname"><span class="pre">SessionMaxTime</span></span><a class="headerlink" href="#setting-SessionMaxTime" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die maximale Gültigkeitsdauer (in Sekunden) für eine Sitzungs-ID.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">57600</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionModule">
+<span class="sig-name descname"><span class="pre">SessionModule</span></span><a class="headerlink" href="#setting-SessionModule" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, welches Modul für das Speichern der Sitzungsdaten verwendet werden soll. Mit „DB“ kann der Anzeige Server getrennt vom DB-Server betrieben werden. „FS“ ist schneller.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::AuthSession::DB</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionName">
+<span class="sig-name descname"><span class="pre">SessionName</span></span><a class="headerlink" href="#setting-SessionName" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen des Session-Schlüssels. Zum Beispiel: Session, SessionID oder OTOBO.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">OTOBOAgentInterface</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionSameSite">
+<span class="sig-name descname"><span class="pre">SessionSameSite</span></span><a class="headerlink" href="#setting-SessionSameSite" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Wert des SameSite Attributs des OTOBO Session Cookies. Wird in otobo.psgi verwendet.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Lax</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">Strict</span></code> (Strikt), <code class="docutils literal notranslate"><span class="pre">Lax</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> (Keine)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionTable">
+<span class="sig-name descname"><span class="pre">SessionTable</span></span><a class="headerlink" href="#setting-SessionTable" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „DB“ als SessionModule ausgewählt ist, muss hier der Name der Tabelle, in der Sitzungsdaten gespeichert werden sollen, hinterlegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">sessions</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionUseCookie">
+<span class="sig-name descname"><span class="pre">SessionUseCookie</span></span><a class="headerlink" href="#setting-SessionUseCookie" title="Link to this definition">¶</a></dt>
+<dd><p>Benutzt für das Session-Management HTML-Cookies. Wenn HTML-Cookies deaktiviert sind oder im Browser HTML-Cookies deaktiviert sind, arbeitet das System wie immer und fügt die Session-ID and Links an.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Diese Einstellung entfällt.</p>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SessionUseCookieAfterBrowserClose">
+<span class="sig-name descname"><span class="pre">SessionUseCookieAfterBrowserClose</span></span><a class="headerlink" href="#setting-SessionUseCookieAfterBrowserClose" title="Link to this definition">¶</a></dt>
+<dd><p>Speichert Cookies nach dem Schließen des Browsers.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Session</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="email.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">E-Mail und Kommunikation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="system.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">System und Betrieb</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Anmeldung, Sitzungen und Sicherheit</a><ul>
+<li><a class="reference internal" href="#core-auth">Core::Auth</a></li>
+<li><a class="reference internal" href="#core-auth-agent-twofactor">Core::Auth::Agent::TwoFactor</a></li>
+<li><a class="reference internal" href="#core-auth-customer">Core::Auth::Customer</a></li>
+<li><a class="reference internal" href="#core-auth-customer-twofactor">Core::Auth::Customer::TwoFactor</a></li>
+<li><a class="reference internal" href="#core-crypt-pgp">Core::Crypt::PGP</a></li>
+<li><a class="reference internal" href="#core-crypt-smime">Core::Crypt::SMIME</a></li>
+<li><a class="reference internal" href="#core-permission">Core::Permission</a></li>
+<li><a class="reference internal" href="#core-session">Core::Session</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>

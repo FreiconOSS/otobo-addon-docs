@@ -1,0 +1,1997 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="prev" title="Modul- und Menüregistrierungen" href="registrierungen.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Unterschiede in OTOBO 11.1 - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system.html">System und Betrieb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anmeldung.html">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeit-kalender.html">Zeit und Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder-prozesse.html">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oberflaeche-basis.html">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="unterschiede-in-otobo-11-1">
+<h1>Unterschiede in OTOBO 11.1<a class="headerlink" href="#unterschiede-in-otobo-11-1" title="Link to this heading">¶</a></h1>
+<p>Gemessen an der 11.1-Linie (Stand <code class="docutils literal notranslate"><span class="pre">rel-11_1_0-beta2</span></code>) sind <strong>67 Einstellungen</strong> verändert und <strong>18</strong> entfallen; <strong>89</strong> kommen neu hinzu. Die veränderten und entfallenden Einträge tragen in der Referenz einen violetten Hinweis; die neuen stehen nur hier.</p>
+<section id="verandert-oder-entfallen">
+<h2>Verändert oder entfallen<a class="headerlink" href="#verandert-oder-entfallen" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="tickets.html#setting-ACLKeysLevel3-Actions-100-Default"><code class="xref std std-setting docutils literal notranslate"><span class="pre">ACLKeysLevel3::Actions###100-Default</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-AdditionalMirrors-1"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::AdditionalMirrors###1</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-AdditionalMirrors-2"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::AdditionalMirrors###2</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-AdditionalMirrors-3"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::AdditionalMirrors###3</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-AdditionalMirrors-4"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::AdditionalMirrors###4</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-AdditionalMirrors-5"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::AdditionalMirrors###5</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Core-MirrorDB-DSN"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Core::MirrorDB::DSN</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="anmeldung.html#setting-Customer-AuthModule-DB-Attribute"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Customer::AuthModule::DB::Attribute</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="anmeldung.html#setting-Customer-AuthModule-DB-DSN"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Customer::AuthModule::DB::DSN</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-CustomerDashboard-Tiles-FeaturedLink-01"><code class="xref std std-setting docutils literal notranslate"><span class="pre">CustomerDashboard::Tiles###FeaturedLink-01</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-CustomerFrontend-Module-CustomerTicketSearch"><code class="xref std std-setting docutils literal notranslate"><span class="pre">CustomerFrontend::Module###CustomerTicketSearch</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-CustomerFrontend-Navigation-CustomerTicketSearch-002-Ticket"><code class="xref std std-setting docutils literal notranslate"><span class="pre">CustomerFrontend::Navigation###CustomerTicketSearch###002-Ticket</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-allgemein.html#setting-DashboardEventsTicketCalendar-Queues"><code class="xref std std-setting docutils literal notranslate"><span class="pre">DashboardEventsTicketCalendar###Queues</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="felder-prozesse.html#setting-DefaultColumnsScreens-Framework"><code class="xref std std-setting docutils literal notranslate"><span class="pre">DefaultColumnsScreens###Framework</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="felder-prozesse.html#setting-DynamicField-Namespaces"><code class="xref std std-setting docutils literal notranslate"><span class="pre">DynamicField::Namespaces</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="felder-prozesse.html#setting-DynamicFieldScreens-Framework"><code class="xref std std-setting docutils literal notranslate"><span class="pre">DynamicFieldScreens###Framework</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="system.html#setting-Elasticsearch-ExcludedQueues"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Elasticsearch::ExcludedQueues</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="oberflaeche-basis.html#setting-Events-Article"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Events###Article</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="oberflaeche-basis.html#setting-Events-Ticket"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Events###Ticket</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-Frontend-Module-AdminResponseTemplatesStatePreselection"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Frontend::Module###AdminResponseTemplatesStatePreselection</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-Frontend-Module-AgentZoom"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Frontend::Module###AgentZoom</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-Frontend-Navigation-AdminResponseTemplatesStatePreselection-002-ResponseTemplatesStatePreselection"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Frontend::Navigation###AdminResponseTemplatesStatePreselection###002-ResponseTemplatesStatePreselection</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-Frontend-NavigationModule-AdminResponseTemplatesStatePreselection"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Frontend::NavigationModule###AdminResponseTemplatesStatePreselection</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="oberflaeche-basis.html#setting-Frontend-RichTextWidth"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Frontend::RichTextWidth</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="felder-prozesse.html#setting-ImportExport-TranslationsImportExport-ForceCSVMappingRecreation"><code class="xref std std-setting docutils literal notranslate"><span class="pre">ImportExport::TranslationsImportExport::ForceCSVMappingRecreation</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="registrierungen.html#setting-Loader-Module-AdminResponseTemplatesStatePreselection-002-ResponseTemplatesStatePreselection"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Loader::Module::AdminResponseTemplatesStatePreselection###002-ResponseTemplatesStatePreselection</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="system.html#setting-PhantomJS-Bin"><code class="xref std std-setting docutils literal notranslate"><span class="pre">PhantomJS::Bin</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="email.html#setting-PostmasterX-Header"><code class="xref std std-setting docutils literal notranslate"><span class="pre">PostmasterX-Header</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="anmeldung.html#setting-SessionUseCookie"><code class="xref std std-setting docutils literal notranslate"><span class="pre">SessionUseCookie</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="tickets.html#setting-StandardTemplate-Types"><code class="xref std std-setting docutils literal notranslate"><span class="pre">StandardTemplate::Types</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketArticleEdit-NoteMandatory"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###NoteMandatory</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketArticleEdit-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketBounce-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketBounce###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketBulk-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketBulk###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketClose-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketClose###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketCompose-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketCompose###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketEmail-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketEmail###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketEmailOutbound-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketEmailOutbound###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketEscalationView-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketEscalationView###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketForward-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketForward###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketFreeText-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketFreeText###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketLockedView-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketLockedView###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketMove-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketMove###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketNote-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketNote###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketOwner-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketOwner###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketPending-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketPending###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketPhone-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketPhone###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketPhoneInbound-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketPhoneInbound###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketPhoneOutbound-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketPhoneOutbound###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketPriority-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketPriority###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketProcess-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketProcess###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketQueue-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketQueue###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketResponsible-QuickDateButtons"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketResponsible###QuickDateButtons</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketResponsible-Title"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketResponsible###Title</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketResponsibleView-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketResponsibleView###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketSearch-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketSearch###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketService-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketService###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketStatusView-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketStatusView###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketWatchView-DefaultColumns"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketWatchView###DefaultColumns</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-AgentTicketZoom-DynamicField"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketZoom###DynamicField</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-Article-Actions-Chat"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::Article::Actions###Chat</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-Article-Actions-Email"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::Article::Actions###Email</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-Article-Actions-Internal"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::Article::Actions###Internal</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-Article-Actions-Invalid"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::Article::Actions###Invalid</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-Article-Actions-Phone"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::Article::Actions###Phone</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-010"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###010</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-020"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###020</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-030"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###030</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-040"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###040</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-050"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###050</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-060"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###060</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-070"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###070</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-080"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###080</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-090"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###090</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-100"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###100</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-110"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###110</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-120"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###120</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-130"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###130</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketCategories-DynamicField-140"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketCategories###DynamicField###140</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketOverview-Owner"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketOverview###Owner</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketOverview-Queue"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketOverview###Queue</span></code></a> — entfällt</p></li>
+<li><p><a class="reference internal" href="kunde.html#setting-Ticket-Frontend-CustomerTicketZoom-DynamicField"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::CustomerTicketZoom###DynamicField</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-HistoryOrder"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::HistoryOrder</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="agent-ticketmasken.html#setting-Ticket-Frontend-MenuModule-451-QuickClose"><code class="xref std std-setting docutils literal notranslate"><span class="pre">Ticket::Frontend::MenuModule###451-QuickClose</span></code></a> — verändert</p></li>
+<li><p><a class="reference internal" href="tickets.html#setting-TicketACL-Autoselect"><code class="xref std std-setting docutils literal notranslate"><span class="pre">TicketACL::Autoselect</span></code></a> — verändert</p></li>
+</ul>
+</section>
+<section id="neu-in-otobo-11-1">
+<h2>Neu in OTOBO 11.1<a class="headerlink" href="#neu-in-otobo-11-1" title="Link to this heading">¶</a></h2>
+<section id="core-elasticsearch-settings">
+<h3>Core::Elasticsearch::Settings<a class="headerlink" href="#core-elasticsearch-settings" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-Settings-SimilarSearch">
+<span class="sig-name descname"><span class="pre">Elasticsearch::Settings::SimilarSearch</span></span><a class="headerlink" href="#setting-Elasticsearch-Settings-SimilarSearch" title="Link to this definition">¶</a></dt>
+<dd><p>Einstellungen für die Suche nach ähnlichen Tickets in der Elasticsearch.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Limit</span><span class="p">:</span><span class="w"> </span><span class="s">'6'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ElasticsearchWidgetBackend-01-ElasticsearchTickets">
+<span class="sig-name descname"><span class="pre">ElasticsearchWidgetBackend###01-ElasticsearchTickets</span></span><a class="headerlink" href="#setting-ElasticsearchWidgetBackend-01-ElasticsearchTickets" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Parameter für das Backend des Elasticsearch-Widgets.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::Elasticsearch::ElasticsearchTicketGeneric</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Tickets</span>
+<span class="nt">Permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketZoom</span>
+<span class="nt">Default</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ElasticsearchWidgetBackend-02-ElasticsearchCustomerCompany">
+<span class="sig-name descname"><span class="pre">ElasticsearchWidgetBackend###02-ElasticsearchCustomerCompany</span></span><a class="headerlink" href="#setting-ElasticsearchWidgetBackend-02-ElasticsearchCustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Parameter für das Backend des Elasticsearch-Widgets.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::Elasticsearch::ElasticsearchCustomerGeneric</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customers</span>
+<span class="nt">Permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentCustomerInformationCenter</span>
+<span class="nt">Default</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ElasticsearchWidgetBackend-03-ElasticsearchCustomerUser">
+<span class="sig-name descname"><span class="pre">ElasticsearchWidgetBackend###03-ElasticsearchCustomerUser</span></span><a class="headerlink" href="#setting-ElasticsearchWidgetBackend-03-ElasticsearchCustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Parameter für das Backend des Elasticsearch-Widgets.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::Elasticsearch::ElasticsearchCustomerUserGeneric</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer Users</span>
+<span class="nt">Permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentCustomerUserInformationCenter</span>
+<span class="nt">Default</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-email">
+<h3>Core::Email<a class="headerlink" href="#core-email" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SendmailModule-OAuth2FunctionalAccount">
+<span class="sig-name descname"><span class="pre">SendmailModule::OAuth2FunctionalAccount</span></span><a class="headerlink" href="#setting-SendmailModule-OAuth2FunctionalAccount" title="Link to this definition">¶</a></dt>
+<dd><p>Sofern ‚XOAUTH2‘ oder ‚OAUTHBEARER‘ in der Einstellung ‚SendmailModule::OAuth2Method‘ ausgewählt ist, muss diese Einstellung aktiviert und auf ein gültiges Funktionskonto gesetzt werden. OIDC Konten können im Modul ‚OAuth Funktionskonten‘ im Admin-Bereich konfiguriert werden.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">FunctionalAccount</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Email</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SendmailModule-OAuth2Method">
+<span class="sig-name descname"><span class="pre">SendmailModule::OAuth2Method</span></span><a class="headerlink" href="#setting-SendmailModule-OAuth2Method" title="Link to this definition">¶</a></dt>
+<dd><p>The authentication method to use for SMTP Authentication, defaults to ‚Basic Auth‘. If ‚XOAUTH2‘ or ‚OAUTHBEARER‘ is selected, then the ‚„SendmailModule ‚„SendmailModule::OAuth2FunctionalAccount‘ setting needs to be enabled and set to a valid OIDC Functional Account. OIDC Accounts can be configured in the Admin UI ‚OAuth Functional Accounts‘ Module.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">Basic</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Email</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">Basic</span></code> (Basic Auth), <code class="docutils literal notranslate"><span class="pre">XOAUTH2</span></code>, <code class="docutils literal notranslate"><span class="pre">OAUTHBEARER</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-event-ticket">
+<h3>Core::Event::Ticket<a class="headerlink" href="#core-event-ticket" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DynamicField-EventModulePost-500-UpdateLensFieldMultiValue">
+<span class="sig-name descname"><span class="pre">DynamicField::EventModulePost###500-UpdateLensFieldMultiValue</span></span><a class="headerlink" href="#setting-DynamicField-EventModulePost-500-UpdateLensFieldMultiValue" title="Link to this definition">¶</a></dt>
+<dd><p>Event-Modul für dynamische Felder, welche das Merhfachwerte-Attribut der Linsen-Feldkonfiguration anpassen, um mit dem Mehrfachwerte-Attribut des Attributfelds zusammenzupassen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Event::Ticket</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::DynamicField::Event::UpdateLensFieldMultiValue</span>
+<span class="nt">Event</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldAdd|DynamicFieldUpdate</span>
+<span class="nt">Transaction</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport-objectbackend-moduleregistration">
+<h3>Core::ImportExport::ObjectBackend::ModuleRegistration<a class="headerlink" href="#core-importexport-objectbackend-moduleregistration" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-ObjectBackendRegistration-CustomerCompany">
+<span class="sig-name descname"><span class="pre">ImportExport::ObjectBackendRegistration###CustomerCompany</span></span><a class="headerlink" href="#setting-ImportExport-ObjectBackendRegistration-CustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>Objekt-Backend-Modulregistrierung für das Import-/Export-Modul.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::ImportExport::ObjectBackend::CustomerCompany</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompany</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-ObjectBackendRegistration-Ticket">
+<span class="sig-name descname"><span class="pre">ImportExport::ObjectBackendRegistration###Ticket</span></span><a class="headerlink" href="#setting-ImportExport-ObjectBackendRegistration-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Objekt-Backend-Modulregistrierung für das Import-/Export-Modul.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::ImportExport::ObjectBackend::Ticket</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport-objectbackend-ticket">
+<h3>Core::ImportExport::ObjectBackend::Ticket<a class="headerlink" href="#core-importexport-objectbackend-ticket" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-SynchronizeWithForeignDB">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::SynchronizeWithForeignDB</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-SynchronizeWithForeignDB" title="Link to this definition">¶</a></dt>
+<dd><p>Sofern aktiviert, werden zusätzliche Daten wie die Historie und Links von einer Fremd-Datenbank gelesen, welche die exportierten Tickets beinhaltet und zu den importierten Ticket auf diesem System hinzugefügt. Dies funktioniert nur für neu erstellte, nicht für aktualisierte Tickets.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DatabaseDSN</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">DatabaseUser</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">DatabasePw</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-importexport-objectbackend-ticket-importvaluemaps">
+<h3>Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps<a class="headerlink" href="#core-importexport-objectbackend-ticket-importvaluemaps" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-001-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###001-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-001-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queue</span>
+<span class="nt">Map</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">OtherSystemMisc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Misc</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-002-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###002-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-002-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Article_DynamicField_NoMulti</span>
+<span class="nt">Map</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">OtherSystem5</span><span class="p">:</span><span class="w"> </span><span class="s">'7'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-003-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###003-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-003-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-004-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###004-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-004-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-005-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###005-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-005-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-006-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###006-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-006-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-007-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###007-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-007-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-008-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###008-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-008-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-009-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###009-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-009-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-010-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###010-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-010-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-011-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###011-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-011-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-012-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###012-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-012-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-013-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###013-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-013-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-014-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###014-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-014-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-015-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###015-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-015-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-016-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###016-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-016-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-017-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###017-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-017-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-018-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###018-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-018-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-019-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###019-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-019-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-020-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###020-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-020-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-021-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###021-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-021-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-022-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###022-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-022-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-023-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###023-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-023-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-024-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###024-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-024-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ImportExport-Ticket-ImportValueMap-025-Custom">
+<span class="sig-name descname"><span class="pre">ImportExport::Ticket::ImportValueMap###025-Custom</span></span><a class="headerlink" href="#setting-ImportExport-Ticket-ImportValueMap-025-Custom" title="Link to this definition">¶</a></dt>
+<dd><p>Wertzuordnung. Definieren Sie eine Schlüssel- und Wertzuordnung von der Importdatei zu OTOBO.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Key</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">Map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-namespaces">
+<h3>Core::Namespaces<a class="headerlink" href="#core-namespaces" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Namespaces-DynamicField">
+<span class="sig-name descname"><span class="pre">Namespaces###DynamicField</span></span><a class="headerlink" href="#setting-Namespaces-DynamicField" title="Link to this definition">¶</a></dt>
+<dd><p>Definieren Sie mögliche Namensräume für dynamische Felder. Darf nur alphanumerische Zeichen enthalten. Ein Namensraum darf nicht länger als 64 Zeichen sein. Namensraum plus Name des dynamischen Feldes dürfen nicht länger als 190 Zeichen sein.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Namespaces</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Namespaces-Global">
+<span class="sig-name descname"><span class="pre">Namespaces###Global</span></span><a class="headerlink" href="#setting-Namespaces-Global" title="Link to this definition">¶</a></dt>
+<dd><p>Definieren Sie mögliche Namensräume für globale Verwendung (momentan Dynamische Felder und Prozesselemente). Darf nur alphanumerische Zeichen enthalten. Ein Namensraum darf nicht länger als 64 Zeichen sein. Namensraum plus Name des dynamischen Feldes dürfen nicht länger als 190 Zeichen sein.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Namespaces</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Namespaces-ProcessManagement">
+<span class="sig-name descname"><span class="pre">Namespaces###ProcessManagement</span></span><a class="headerlink" href="#setting-Namespaces-ProcessManagement" title="Link to this definition">¶</a></dt>
+<dd><p>Definieren Sie mögliche Namensräume speziell für Prozesselemente. Darf nur alphanumerische Zeichen enthalten. Ein Namensraum darf nicht länger als 64 Zeichen sein.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Namespaces</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-time">
+<h3>Core::Time<a class="headerlink" href="#core-time" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TimeShowLocalization">
+<span class="sig-name descname"><span class="pre">TimeShowLocalization</span></span><a class="headerlink" href="#setting-TimeShowLocalization" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt Zeitstempel entweder mit Lokalisierungsindikator (01.01.1970 00:01 (Europe/Berlin)), falls aktiviert, oder ohne diesen (01.01.1970 00:01), falls deaktiviert.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Time</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="daemon-schedulercrontaskmanager-task">
+<h3>Daemon::SchedulerCronTaskManager::Task<a class="headerlink" href="#daemon-schedulercrontaskmanager-task" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Daemon-SchedulerCronTaskManager-Task-TokenStoreUpdater">
+<span class="sig-name descname"><span class="pre">Daemon::SchedulerCronTaskManager::Task###TokenStoreUpdater</span></span><a class="headerlink" href="#setting-Daemon-SchedulerCronTaskManager-Task-TokenStoreUpdater" title="Link to this definition">¶</a></dt>
+<dd><p>Führt ein benutzerdefiniertes Kommando oder Modul aus. Hinweis: Wird ein Modul benutzt, muss eine Funktion vorhanden sein.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Daemon::SchedulerCronTaskManager::Task</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">TaskName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TokenStoreUpdater</span>
+<span class="nt">Schedule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0 * * * *</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::OpenIDConnect::TokenStoreUpdater</span>
+<span class="nt">Function</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run</span>
+<span class="nt">MaximumParallelInstances</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">Params</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Interval</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'3600'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-moduleregistration">
+<h3>Frontend::Admin::ModuleRegistration<a class="headerlink" href="#frontend-admin-moduleregistration" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminGenericAgentImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminGenericAgentImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminGenericAgentImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GenericAgent Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GenericAgentImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminGroupImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminGroupImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminGroupImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Group Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GroupImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminOAuthTokenStore">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminOAuthTokenStore</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminOAuthTokenStore" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agent-Interface.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAuth Tokens</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminOIDCProfiles">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminOIDCProfiles</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminOIDCProfiles" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agent-Interface.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDC Profiles</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminQueueImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminQueueImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminQueueImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queue Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QueueImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminQueueTemplatesImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminQueueTemplatesImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminQueueTemplatesImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queue-Template relations Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QueueTemplatesImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminRoleGroupImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminRoleGroupImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminRoleGroupImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role-Group Relations Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleGroupImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminRoleImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminRoleImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminRoleImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminServiceImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminServiceImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminServiceImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminSLAImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminSLAImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminSLAImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLA Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLAImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminTemplateImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminTemplateImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminTemplateImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TemplateImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminTypeImportExport">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminTypeImportExport</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminTypeImportExport" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Type Import Export</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TypeImportExport</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-moduleregistration-adminoverview">
+<h3>Frontend::Admin::ModuleRegistration::AdminOverview<a class="headerlink" href="#frontend-admin-moduleregistration-adminoverview" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-NavigationModule-AdminOAuthTokenStore">
+<span class="sig-name descname"><span class="pre">Frontend::NavigationModule###AdminOAuthTokenStore</span></span><a class="headerlink" href="#setting-Frontend-NavigationModule-AdminOAuthTokenStore" title="Link to this definition">¶</a></dt>
+<dd><p>Navigation der Adminoberfläche für das Agenten-Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::AdminOverview</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::NavBar::ModuleAdmin</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAuth Functional Accounts</span>
+<span class="nt">Block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administration</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Functional Account and Token Management.</span>
+<span class="nt">IconBig</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa-circle-o</span>
+<span class="nt">IconSmall</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-NavigationModule-AdminOIDCProfiles">
+<span class="sig-name descname"><span class="pre">Frontend::NavigationModule###AdminOIDCProfiles</span></span><a class="headerlink" href="#setting-Frontend-NavigationModule-AdminOIDCProfiles" title="Link to this definition">¶</a></dt>
+<dd><p>Navigation der Adminoberfläche für das Agenten-Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::AdminOverview</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::NavBar::ModuleAdmin</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OIDC Profile Management</span>
+<span class="nt">Block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administration</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Manage OpendID Connect OAuth2 Profiles.</span>
+<span class="nt">IconBig</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa-circle-o</span>
+<span class="nt">IconSmall</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-moduleregistration-loader">
+<h3>Frontend::Admin::ModuleRegistration::Loader<a class="headerlink" href="#frontend-admin-moduleregistration-loader" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminGenericAgentImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminGenericAgentImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminGenericAgentImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.GenericAgentImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminGroupImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminGroupImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminGroupImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.GroupImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminOAuthTokenStore-001-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminOAuthTokenStore###001-Framework</span></span><a class="headerlink" href="#setting-Loader-Module-AdminOAuthTokenStore-001-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.OAuth2Module.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminQueueImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminQueueImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminQueueImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.QueueImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminQueueTemplatesImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminQueueTemplatesImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminQueueTemplatesImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.QueueTemplatesImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminRoleGroupImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminRoleGroupImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminRoleGroupImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.RoleGroupImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminRoleImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminRoleImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminRoleImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.RoleImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminServiceImportExport-002-Ticket">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminServiceImportExport###002-Ticket</span></span><a class="headerlink" href="#setting-Loader-Module-AdminServiceImportExport-002-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.ServiceImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminSLAImportExport-002-Ticket">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminSLAImportExport###002-Ticket</span></span><a class="headerlink" href="#setting-Loader-Module-AdminSLAImportExport-002-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.SLAImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminTemplateImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminTemplateImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminTemplateImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.TemplateImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AdminTypeImportExport-003-ImportExportStandardObjects">
+<span class="sig-name descname"><span class="pre">Loader::Module::AdminTypeImportExport###003-ImportExportStandardObjects</span></span><a class="headerlink" href="#setting-Loader-Module-AdminTypeImportExport-003-ImportExportStandardObjects" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Admin.TypeImportExport.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-moduleregistration-mainmenu">
+<h3>Frontend::Admin::ModuleRegistration::MainMenu<a class="headerlink" href="#frontend-admin-moduleregistration-mainmenu" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Navigation-AdminOAuthTokenStore-001-Framework">
+<span class="sig-name descname"><span class="pre">Frontend::Navigation###AdminOAuthTokenStore###001-Framework</span></span><a class="headerlink" href="#setting-Frontend-Navigation-AdminOAuthTokenStore-001-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Hauptmenü-Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::MainMenu</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Navigation-AdminOIDCProfiles-001-Framework">
+<span class="sig-name descname"><span class="pre">Frontend::Navigation###AdminOIDCProfiles###001-Framework</span></span><a class="headerlink" href="#setting-Frontend-Navigation-AdminOIDCProfiles-001-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Hauptmenü-Objektregistrierung.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::ModuleRegistration::MainMenu</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-moduleregistration">
+<h3>Frontend::Agent::ModuleRegistration<a class="headerlink" href="#frontend-agent-moduleregistration" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AgentElasticsearch">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AgentElasticsearch</span></span><a class="headerlink" href="#setting-Frontend-Module-AgentElasticsearch" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agent-Interface.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Group</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Elastic Module</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="s">''</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dashboard</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-moduleregistration-loader">
+<h3>Frontend::Agent::ModuleRegistration::Loader<a class="headerlink" href="#frontend-agent-moduleregistration-loader" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-AgentElasticsearch-001-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Module::AgentElasticsearch###001-Framework</span></span><a class="headerlink" href="#setting-Loader-Module-AgentElasticsearch-001-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für die Agentenoberfläche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">CSS</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Dashboard.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.AllocationList.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/fullcalendar-3.10.2/fullcalendar.min.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nvd3-1.7.1/nv.d3.css</span>
+<span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/momentjs-2.29.3/moment.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/fullcalendar-3.10.2/fullcalendar.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/d3-3.5.6/d3.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nvd3-1.7.1/nvd3.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nvd3-1.7.1/models/OTOBOLineChart.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nvd3-1.7.1/models/OTOBOMultiBarChart.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nvd3-1.7.1/models/OTOBOStackedAreaChart.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/canvg-1.4/rgbcolor.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/canvg-1.4/StackBlur.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/canvg-1.4/canvg.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/StringView-8/stringview.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.AdvancedChart.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.AllocationList.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.TableFilters.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Dashboard.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Statistics.ParamsWidget.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-ticket-accountedtime">
+<h3>Frontend::Agent::Ticket::AccountedTime<a class="headerlink" href="#frontend-agent-ticket-accountedtime" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AccountedTime-UsedUnits">
+<span class="sig-name descname"><span class="pre">AccountedTime::UsedUnits</span></span><a class="headerlink" href="#setting-AccountedTime-UsedUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Welche Einheiten werden in der Zeiteinheiten-Übersicht verwendet und angezeigt?</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Minutes</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::Ticket::AccountedTime</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-view-ticketarticleedit">
+<h3>Frontend::Agent::View::TicketArticleEdit<a class="headerlink" href="#frontend-agent-view-ticketarticleedit" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketArticleEdit-Article">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###Article</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketArticleEdit-Article" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, für welche Artikeltypen das Bearbeiten von Betreff, Body und Anhänge aktiviert ist. „Beides“ beinhaltet „Telefon“ und „Intern“.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">Internal</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketArticleEdit</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">Phone</span></code> (Telefon), <code class="docutils literal notranslate"><span class="pre">Internal</span></code> (Intern), <code class="docutils literal notranslate"><span class="pre">Both</span></code> (Beides), <code class="docutils literal notranslate"><span class="pre">None</span></code> (Keine)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketArticleEdit-ArticleCustomerVisible">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###ArticleCustomerVisible</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketArticleEdit-ArticleCustomerVisible" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert oder deaktiviert die Bearbeitung von für Kunden sichtbaren Artikeln im Allgemeinen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketArticleEdit</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketArticleEdit-EditCustomerArticles">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###EditCustomerArticles</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketArticleEdit-EditCustomerArticles" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, ob von Kunden geschriebene Artikel bearbeitbar sind.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketArticleEdit</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketArticleEdit-IsVisibleForCustomer">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###IsVisibleForCustomer</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketArticleEdit-IsVisibleForCustomer" title="Link to this definition">¶</a></dt>
+<dd><p>Setzt die Sichtbarkeit von Artikel für Kunden im Artikel-Bearbeiten-Fenster im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketArticleEdit</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketArticleEdit-TimeUnits">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketArticleEdit###TimeUnits</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketArticleEdit-TimeUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Setzt die Zeiteinheiten im Notiz-Bildschirm für Tickets im Agentenbereich.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketArticleEdit</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-view-ticketpending">
+<h3>Frontend::Agent::View::TicketPending<a class="headerlink" href="#frontend-agent-view-ticketpending" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-RestorePendingInformation-Actions">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::RestorePendingInformation###Actions</span></span><a class="headerlink" href="#setting-Ticket-Frontend-RestorePendingInformation-Actions" title="Link to this definition">¶</a></dt>
+<dd><p>Oberflächen, für die das Wiederherstellen der Wartezeit aktiviert ist.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketPending</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AgentTicketPending</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-view-ticketzoom">
+<h3>Frontend::Agent::View::TicketZoom<a class="headerlink" href="#frontend-agent-view-ticketzoom" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketZoom-ArticleListShowTimeUnits">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketZoom###ArticleListShowTimeUnits</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketZoom-ArticleListShowTimeUnits" title="Link to this definition">¶</a></dt>
+<dd><p>Sofern erfasste Zeiteinheiten für Artikel in der Artikelliste gezeigt werden. Wird nur angezeigt, sofern für mindestens ein Artikel Zeit erfasst wurde.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AgentTicketZoom-Widgets-0400-SimilarTickets">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AgentTicketZoom###Widgets###0400-SimilarTickets</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AgentTicketZoom-Widgets-0400-SimilarTickets" title="Link to this definition">¶</a></dt>
+<dd><p>Widget für AgentTicketZoom, das weitere Daten des aktuellen Tickets anzeigt.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::TicketZoom::SimilarTickets</span>
+<span class="nt">Location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Sidebar</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-agent-view-ticketzoom-articleaction">
+<h3>Frontend::Agent::View::TicketZoom::ArticleAction<a class="headerlink" href="#frontend-agent-view-ticketzoom-articleaction" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-Article-Actions-Email-000-Ticket">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::Article::Actions::Email###000-Ticket</span></span><a class="headerlink" href="#setting-Ticket-Frontend-Article-Actions-Email-000-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert verfügbare Artikelaktionen für E-Mail-Artikel.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom::ArticleAction</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AgentTicketArticleEdit</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleEdit</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'40'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketCompose</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketCompose</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketForward</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketForward</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'200'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketBounce</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketBounce</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'300'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketPhone</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketPhone</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'400'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketPrint</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketPrint</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'500'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketMessageLog</span><span class="p">:</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-Article-Actions-Internal-000-Ticket">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::Article::Actions::Internal###000-Ticket</span></span><a class="headerlink" href="#setting-Ticket-Frontend-Article-Actions-Internal-000-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Legt verfügbare Artikel-Aktionen für interne Artikel fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom::ArticleAction</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AgentTicketArticleRestore</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleRestore</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'10'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleDelete</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleDelete</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'20'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleVersion</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleVersion</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'30'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleEdit</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleEdit</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'40'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketCompose</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketCompose</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketForward</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketForward</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'200'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketBounce</span><span class="p">:</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-Article-Actions-Invalid-000-Ticket">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::Article::Actions::Invalid###000-Ticket</span></span><a class="headerlink" href="#setting-Ticket-Frontend-Article-Actions-Invalid-000-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Legt verfügbare Artikel-Aktionen für ungültige Artikel fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom::ArticleAction</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ReinstallPackageLink</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::ReinstallPackageLink</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'200'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">GetHelpLink</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::GetHelpLink</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-Article-Actions-Phone-000-Ticket">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::Article::Actions::Phone###000-Ticket</span></span><a class="headerlink" href="#setting-Ticket-Frontend-Article-Actions-Phone-000-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Legt verfügbare Artikel-Aktionen für Telefon-Artikel fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Agent::View::TicketZoom::ArticleAction</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AgentTicketCompose</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketCompose</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleRestore</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleRestore</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'10'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleDelete</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleDelete</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'20'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleVersion</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleVersion</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'30'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketArticleEdit</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketArticleEdit</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'40'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketForward</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::ArticleAction::AgentTicketForward</span>
+<span class="w">  </span><span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'200'</span>
+<span class="w">  </span><span class="nt">Valid</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">AgentTicketBounce</span><span class="p">:</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base">
+<h3>Frontend::Base<a class="headerlink" href="#frontend-base" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-CKEditorPlugins">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::CKEditorPlugins</span></span><a class="headerlink" href="#setting-CustomerFrontend-CKEditorPlugins" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aktiver CKEditor-Plugins. (Wird nur verwendet, falls `CustomerFrontend::RichText::EnhancedMode` aktiviert ist).</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alignment</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Autoformat</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BlockQuote</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bold</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CodeBlock</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DataFilter</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DataSchema</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FindAndReplace</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontFamily</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontSize</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontBackgroundColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeneralHtmlSupport</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Heading</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HorizontalLine</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Image</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageResize</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageStyle</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageUpload</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageToolbar</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageInsert</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indent</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IndentBlock</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Italic</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Link</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-EnhancedCKEditorToolbar">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::EnhancedCKEditorToolbar</span></span><a class="headerlink" href="#setting-CustomerFrontend-EnhancedCKEditorToolbar" title="Link to this definition">¶</a></dt>
+<dd><p>Die im Erweiterten Modus gezeigten Steuerelemente der CKEditor-Toolbar. Jedes Array definiert eine Button-Gruppe, die im Editor sichtbar getrennt wird. (Nur sofern die Einstellung `CustomerFrontend::RichText::EnhancedMode` aktiviert ist).</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heading</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bold</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">italic</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">underline</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">strikethrough</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bulletedList</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numberedList</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">todoList</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insertTable</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indent</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">outdent</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alignment</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">undo</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redo</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insertImage</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">horizontalLine</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blockQuote</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">findAndReplace</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontBackgroundColor</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">removeFormat</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sourceEditing</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specialCharacters</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontFamily</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-CKEditorPlugins">
+<span class="sig-name descname"><span class="pre">Frontend::CKEditorPlugins</span></span><a class="headerlink" href="#setting-Frontend-CKEditorPlugins" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aktiver CKEditor-Plugins. (Wird nur verwendet, falls `Frontend::RichText::EnhancedMode` aktiviert ist).</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Alignment</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Autoformat</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BlockQuote</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bold</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CodeBlock</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DataFilter</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DataSchema</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FindAndReplace</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontFamily</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontSize</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FontBackgroundColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GeneralHtmlSupport</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Heading</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HorizontalLine</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Image</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageResize</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageStyle</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageUpload</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageToolbar</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageInsert</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indent</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IndentBlock</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Italic</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Link</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-EnhancedCKEditorToolbar">
+<span class="sig-name descname"><span class="pre">Frontend::EnhancedCKEditorToolbar</span></span><a class="headerlink" href="#setting-Frontend-EnhancedCKEditorToolbar" title="Link to this definition">¶</a></dt>
+<dd><p>Die im Erweiterten Modus gezeigten Steuerelemente der CKEditor-Toolbar. Jedes Array definiert eine Button-Gruppe, die im Editor sichtbar getrennt wird. (Nur sofern die Einstellung `Frontend::RichText::EnhancedMode` aktiviert ist).</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">heading</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bold</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">italic</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">underline</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">strikethrough</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bulletedList</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">numberedList</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">todoList</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insertTable</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indent</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">outdent</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alignment</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">link</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">undo</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redo</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">insertImage</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">horizontalLine</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">blockQuote</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">findAndReplace</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontColor</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontBackgroundColor</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">removeFormat</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sourceEditing</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">specialCharacters</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fontFamily</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-customer">
+<h3>Frontend::Customer<a class="headerlink" href="#frontend-customer" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-TimeShowCreatedAt">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::TimeShowCreatedAt</span></span><a class="headerlink" href="#setting-CustomerFrontend-TimeShowCreatedAt" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt das Erstelldatum statt dem Alter in der Kundenoberfläche, falls das Ticket älter als der konfigurierte Wert (Tage) ist.</p>
+<div class="line-block">
+<div class="line">Auswahl · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Customer</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (immer), <code class="docutils literal notranslate"><span class="pre">1</span></code> (1 Tag), <code class="docutils literal notranslate"><span class="pre">2</span></code> (2 Tage), <code class="docutils literal notranslate"><span class="pre">7</span></code> (7 Tage)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-customer-moduleregistration-loader">
+<h3>Frontend::Customer::ModuleRegistration::Loader<a class="headerlink" href="#frontend-customer-moduleregistration-loader" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Module-CustomerTicketSearch-002-Ticket">
+<span class="sig-name descname"><span class="pre">Loader::Module::CustomerTicketSearch###002-Ticket</span></span><a class="headerlink" href="#setting-Loader-Module-CustomerTicketSearch-002-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Loader-Modulregistrierung für das Kunden-Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Customer::ModuleRegistration::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">CSS</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Widget.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.TicketList.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.TicketOverview.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.AllocationList.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.TicketSearch.css</span>
+<span class="nt">JavaScript</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.AllocationList.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.TableFilters.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Overview.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.TicketSplit.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.DynamicFieldReferenceSearch.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Customer.TicketList.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Customer.Search.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="genericinterface-operation-ticketupdate">
+<h3>GenericInterface::Operation::TicketUpdate<a class="headerlink" href="#genericinterface-operation-ticketupdate" title="Link to this heading">¶</a></h3>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-GenericInterface-Operation-TicketUpdate-ExternalIdentifierDynamicField">
+<span class="sig-name descname"><span class="pre">GenericInterface::Operation::TicketUpdate###ExternalIdentifierDynamicField</span></span><a class="headerlink" href="#setting-GenericInterface-Operation-TicketUpdate-ExternalIdentifierDynamicField" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Dynamische Feld, wonach die Tickets für diese Handlung identifiziert werden. Bitte den Feldnamen nur ohne den ‚DynamicField_‘ Präfix.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">GenericInterface::Operation::TicketUpdate</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="registrierungen.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Modul- und Menüregistrierungen</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Unterschiede in OTOBO 11.1</a><ul>
+<li><a class="reference internal" href="#verandert-oder-entfallen">Verändert oder entfallen</a></li>
+<li><a class="reference internal" href="#neu-in-otobo-11-1">Neu in OTOBO 11.1</a><ul>
+<li><a class="reference internal" href="#core-elasticsearch-settings">Core::Elasticsearch::Settings</a></li>
+<li><a class="reference internal" href="#core-email">Core::Email</a></li>
+<li><a class="reference internal" href="#core-event-ticket">Core::Event::Ticket</a></li>
+<li><a class="reference internal" href="#core-importexport-objectbackend-moduleregistration">Core::ImportExport::ObjectBackend::ModuleRegistration</a></li>
+<li><a class="reference internal" href="#core-importexport-objectbackend-ticket">Core::ImportExport::ObjectBackend::Ticket</a></li>
+<li><a class="reference internal" href="#core-importexport-objectbackend-ticket-importvaluemaps">Core::ImportExport::ObjectBackend::Ticket::ImportValueMaps</a></li>
+<li><a class="reference internal" href="#core-namespaces">Core::Namespaces</a></li>
+<li><a class="reference internal" href="#core-time">Core::Time</a></li>
+<li><a class="reference internal" href="#daemon-schedulercrontaskmanager-task">Daemon::SchedulerCronTaskManager::Task</a></li>
+<li><a class="reference internal" href="#frontend-admin-moduleregistration">Frontend::Admin::ModuleRegistration</a></li>
+<li><a class="reference internal" href="#frontend-admin-moduleregistration-adminoverview">Frontend::Admin::ModuleRegistration::AdminOverview</a></li>
+<li><a class="reference internal" href="#frontend-admin-moduleregistration-loader">Frontend::Admin::ModuleRegistration::Loader</a></li>
+<li><a class="reference internal" href="#frontend-admin-moduleregistration-mainmenu">Frontend::Admin::ModuleRegistration::MainMenu</a></li>
+<li><a class="reference internal" href="#frontend-agent-moduleregistration">Frontend::Agent::ModuleRegistration</a></li>
+<li><a class="reference internal" href="#frontend-agent-moduleregistration-loader">Frontend::Agent::ModuleRegistration::Loader</a></li>
+<li><a class="reference internal" href="#frontend-agent-ticket-accountedtime">Frontend::Agent::Ticket::AccountedTime</a></li>
+<li><a class="reference internal" href="#frontend-agent-view-ticketarticleedit">Frontend::Agent::View::TicketArticleEdit</a></li>
+<li><a class="reference internal" href="#frontend-agent-view-ticketpending">Frontend::Agent::View::TicketPending</a></li>
+<li><a class="reference internal" href="#frontend-agent-view-ticketzoom">Frontend::Agent::View::TicketZoom</a></li>
+<li><a class="reference internal" href="#frontend-agent-view-ticketzoom-articleaction">Frontend::Agent::View::TicketZoom::ArticleAction</a></li>
+<li><a class="reference internal" href="#frontend-base">Frontend::Base</a></li>
+<li><a class="reference internal" href="#frontend-customer">Frontend::Customer</a></li>
+<li><a class="reference internal" href="#frontend-customer-moduleregistration-loader">Frontend::Customer::ModuleRegistration::Loader</a></li>
+<li><a class="reference internal" href="#genericinterface-operation-ticketupdate">GenericInterface::Operation::TicketUpdate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>

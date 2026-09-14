@@ -1,0 +1,2072 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Generic Interface" href="generic-interface.html"><link rel="prev" title="Kunden- und öffentliche Oberfläche" href="kunde.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Oberfläche: Basis und Administration - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="system.html">System und Betrieb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anmeldung.html">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeit-kalender.html">Zeit und Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder-prozesse.html">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-11-1.html">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="oberflache-basis-und-administration">
+<h1>Oberfläche: Basis und Administration<a class="headerlink" href="#oberflache-basis-und-administration" title="Link to this heading">¶</a></h1>
+<p>Einstellungen, die alle Oberflächen betreffen (Adresse, Design, Loader, Ausgabefilter, Navigationsleiste), und die Admin-Masken.</p>
+<p>Diese Seite führt <strong>109 Einstellungen</strong>, gruppiert nach ihrem Platz im Navigationsbaum der Systemkonfiguration.</p>
+<section id="frontend-admin">
+<h2>Frontend::Admin<a class="headerlink" href="#frontend-admin" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Appointment">
+<span class="sig-name descname"><span class="pre">Events###Appointment</span></span><a class="headerlink" href="#setting-Events-Appointment" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Termin-Events, welche in der Benutzeroberfläche angezeigt werden.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AppointmentCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AppointmentUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AppointmentDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AppointmentNotification</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Article">
+<span class="sig-name descname"><span class="pre">Events###Article</span></span><a class="headerlink" href="#setting-Events-Article" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Artikel-Ereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleSend</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleBounce</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleAgentNotification</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleCustomerNotification</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleAutoResponse</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleFlagSet</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleFlagDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingQueued</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingSent</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingError</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleTransmissionErrorCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleTransmissionErrorUpdate</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEdit</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleDynamicFieldUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleSend</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleBounce</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleAgentNotification</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleCustomerNotification</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleAutoResponse</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleFlagSet</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleFlagDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingQueued</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingSent</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleEmailSendingError</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleTransmissionErrorCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ArticleTransmissionErrorUpdate</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Calendar">
+<span class="sig-name descname"><span class="pre">Events###Calendar</span></span><a class="headerlink" href="#setting-Events-Calendar" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Kalenderereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CalendarCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CalendarUpdate</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-CustomerCompany">
+<span class="sig-name descname"><span class="pre">Events###CustomerCompany</span></span><a class="headerlink" href="#setting-Events-CustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Kundenereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyUpdate</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-CustomerUser">
+<span class="sig-name descname"><span class="pre">Events###CustomerUser</span></span><a class="headerlink" href="#setting-Events-CustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Kundenbenutzerereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerUserAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerUserUpdate</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-DynamicField">
+<span class="sig-name descname"><span class="pre">Events###DynamicField</span></span><a class="headerlink" href="#setting-Events-DynamicField" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller DynamischesFeld-Ereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldDelete</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-LinkObject">
+<span class="sig-name descname"><span class="pre">Events###LinkObject</span></span><a class="headerlink" href="#setting-Events-LinkObject" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller LinkObject-Ereignisse die in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LinkObjectLinkAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LinkObjectLinkDelete</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Package">
+<span class="sig-name descname"><span class="pre">Events###Package</span></span><a class="headerlink" href="#setting-Events-Package" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Paket-Ereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PackageInstall</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PackageReinstall</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PackageUpgrade</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PackageUninstall</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Queue">
+<span class="sig-name descname"><span class="pre">Events###Queue</span></span><a class="headerlink" href="#setting-Events-Queue" title="Link to this definition">¶</a></dt>
+<dd><p>Liste alle Queue-Ereignisse, die in der Benutzeroberfläche angezeigt werden.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QueueCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QueueUpdate</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Events-Ticket">
+<span class="sig-name descname"><span class="pre">Events###Ticket</span></span><a class="headerlink" href="#setting-Events-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Ticket-Ereignisse, welche in der grafischen Benutzeroberfläche angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketTitleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketUnlockTimeoutUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketQueueUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketTypeUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketServiceUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSLAUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketCustomerUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketPendingTimeUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketLockUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketArchiveFlagUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketStateUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketOwnerUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketResponsibleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketPriorityUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoryAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoryDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketAccountTime</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketMerge</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSubscribe</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketUnsubscribe</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketFlagSet</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketFlagDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EscalationResponseTimeNotifyBefore</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketCreate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketTitleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketUnlockTimeoutUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketQueueUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketTypeUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketServiceUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSLAUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketCustomerUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketPendingTimeUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketLockUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketArchiveFlagUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketStateUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketOwnerUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketResponsibleUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketPriorityUpdate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoryAdd</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HistoryDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketAccountTime</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketMerge</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketSubscribe</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketUnsubscribe</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketFlagSet</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketFlagDelete</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EscalationResponseTimeNotifyBefore</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-customerdashboardinfotile">
+<h2>Frontend::Admin::CustomerDashboardInfoTile<a class="headerlink" href="#frontend-admin-customerdashboardinfotile" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminCustomerDashboardInfoTile">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminCustomerDashboardInfoTile</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminCustomerDashboardInfoTile" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modul für die Dashboard Infokachel im Kundenbereich.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::CustomerDashboardInfoTile</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer Info</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-adminprocessmanagement">
+<h2>Frontend::Admin::View::AdminProcessManagement<a class="headerlink" href="#frontend-admin-view-adminprocessmanagement" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-TransitionActionParams-SetOptionalParameters">
+<span class="sig-name descname"><span class="pre">TransitionActionParams::SetOptionalParameters</span></span><a class="headerlink" href="#setting-TransitionActionParams-SetOptionalParameters" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt auch optionale Parameter in der Parameterliste an. Ist die Option deaktiviert, werden optionale Parameter in einer separaten Tabelle angezeigt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::AdminProcessManagement</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-contactwd">
+<h2>Frontend::Admin::View::ContactWD<a class="headerlink" href="#frontend-admin-view-contactwd" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminContactWD-RunInitialWildcardSearch">
+<span class="sig-name descname"><span class="pre">AdminContactWD::RunInitialWildcardSearch</span></span><a class="headerlink" href="#setting-AdminContactWD-RunInitialWildcardSearch" title="Link to this definition">¶</a></dt>
+<dd><p>Führt eine initiale Wildcard-Suche nach bestehenden Kontaktdaten aus, sobald auf das AdminContactWD-Modul zugegriffen wird.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::ContactWD</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-customercompany">
+<h2>Frontend::Admin::View::CustomerCompany<a class="headerlink" href="#frontend-admin-view-customercompany" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminCustomerCompany-RunInitialWildcardSearch">
+<span class="sig-name descname"><span class="pre">AdminCustomerCompany::RunInitialWildcardSearch</span></span><a class="headerlink" href="#setting-AdminCustomerCompany-RunInitialWildcardSearch" title="Link to this definition">¶</a></dt>
+<dd><p>Führt eine initiale Wildcard-Suche für bestehende Kundenfirmen aus, wenn auf AdminCustomerCompany zugegriffen wird.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::CustomerCompany</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-customeruser">
+<h2>Frontend::Admin::View::CustomerUser<a class="headerlink" href="#frontend-admin-view-customeruser" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminCustomerUser-RunInitialWildcardSearch">
+<span class="sig-name descname"><span class="pre">AdminCustomerUser::RunInitialWildcardSearch</span></span><a class="headerlink" href="#setting-AdminCustomerUser-RunInitialWildcardSearch" title="Link to this definition">¶</a></dt>
+<dd><p>Führt eine initiale Wildcard-Suche für bestehende Kundenbenutzer aus, wenn auf AdminCustomerUser zugegriffen wird.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::CustomerUser</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminCustomerUser-UseAutoComplete">
+<span class="sig-name descname"><span class="pre">AdminCustomerUser::UseAutoComplete</span></span><a class="headerlink" href="#setting-AdminCustomerUser-UseAutoComplete" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, ob das Autovervollständigen-Feld in der Kundennummerauswahl des AdminCustomerUser-Bereichs genutzt werden soll.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::CustomerUser</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-notificationevent">
+<h2>Frontend::Admin::View::NotificationEvent<a class="headerlink" href="#frontend-admin-view-notificationevent" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AppointmentNotification-Transport-Email">
+<span class="sig-name descname"><span class="pre">AppointmentNotification::Transport###Email</span></span><a class="headerlink" href="#setting-AppointmentNotification-Transport-Email" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert alle Parameter für diesen Benachrichtigungs-Transport.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Calendar::Event::Transport::Email</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Email</span>
+<span class="nt">Icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-envelope</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="nt">AgentEnabledByDefault</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminAppointmentNotificationEvent-EventObjectTypes">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminAppointmentNotificationEvent###EventObjectTypes</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminAppointmentNotificationEvent-EventObjectTypes" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Event-Objekttypen fest, welche via AdminAppointmentNotificationEvent verarbeitet werden.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calendar</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Appointment</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichText">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminAppointmentNotificationEvent###RichText</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichText" title="Link to this definition">¶</a></dt>
+<dd><p>Nutzt richtext zum betrachten und bearbeiten von Ticket-Benachrichtigungen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichTextHeight">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminAppointmentNotificationEvent###RichTextHeight</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichTextHeight" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Anfangshöhe in Pixeln für die Rich-Text-Editor-Komponente für diesen Bildschirm fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">320</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichTextWidth">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminAppointmentNotificationEvent###RichTextWidth</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminAppointmentNotificationEvent-RichTextWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Breite der RichText-Editor Komponente. Geben Sie einen Zahlen- (Pixel) oder Prozenwert (relativ) an.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">620</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminNotificationEvent-RichText">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminNotificationEvent###RichText</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminNotificationEvent-RichText" title="Link to this definition">¶</a></dt>
+<dd><p>Nutzt richtext zum betrachten und bearbeiten von Ticket-Benachrichtigungen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminNotificationEvent-RichTextHeight">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminNotificationEvent###RichTextHeight</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminNotificationEvent-RichTextHeight" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Anfangshöhe in Pixeln für die Rich-Text-Editor-Komponente für diesen Bildschirm fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · pro Benutzer änderbar · Standard: <code class="docutils literal notranslate"><span class="pre">320</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Admin-AdminNotificationEvent-RichTextWidth">
+<span class="sig-name descname"><span class="pre">Frontend::Admin::AdminNotificationEvent###RichTextWidth</span></span><a class="headerlink" href="#setting-Frontend-Admin-AdminNotificationEvent-RichTextWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Breite der RichText-Editor Komponente. Geben Sie einen Zahlen- (Pixel) oder Prozenwert (relativ) an.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · pro Benutzer änderbar · Standard: <code class="docutils literal notranslate"><span class="pre">620</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Notification-CharactersPerLine">
+<span class="sig-name descname"><span class="pre">Notification::CharactersPerLine</span></span><a class="headerlink" href="#setting-Notification-CharactersPerLine" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Anzahl von Zeichen pro Zeile für die Artikel-Vorschau-Ersetzung im TemplateGenerator für EventNotifications fest.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">80</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Notification-Transport-Email">
+<span class="sig-name descname"><span class="pre">Notification::Transport###Email</span></span><a class="headerlink" href="#setting-Notification-Transport-Email" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert alle Parameter für diesen Benachrichtigungs-Transport.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::NotificationEvent</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::System::Ticket::Event::NotificationEvent::Transport::Email</span>
+<span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Email</span>
+<span class="nt">Icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-envelope</span>
+<span class="nt">Prio</span><span class="p">:</span><span class="w"> </span><span class="s">'100'</span>
+<span class="nt">AgentEnabledByDefault</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-selectbox">
+<h2>Frontend::Admin::View::SelectBox<a class="headerlink" href="#frontend-admin-view-selectbox" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AdminSelectBox-AllowDatabaseModification">
+<span class="sig-name descname"><span class="pre">AdminSelectBox::AllowDatabaseModification</span></span><a class="headerlink" href="#setting-AdminSelectBox-AllowDatabaseModification" title="Link to this definition">¶</a></dt>
+<dd><p>Überprüft ob der Administrator die Berechtigung besitzt Änderungen in der Datenbank über die AdminSelectBox zu tätigen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::SelectBox</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-admin-view-sysconfig">
+<h2>Frontend::Admin::View::SysConfig<a class="headerlink" href="#frontend-admin-view-sysconfig" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ConfigLevel">
+<span class="sig-name descname"><span class="pre">ConfigLevel</span></span><a class="headerlink" href="#setting-ConfigLevel" title="Link to this definition">¶</a></dt>
+<dd><p>Bestimmt das Konfigurationslevel des Administrators. Abhängig von diesem Level werden einige Optionen der Sysconfig nicht angezeigt. Die verfügbaren Level sind in absteigender Reihenfolge: Experte, Fortgeschrittener, Anfänger. Je höher das Level ist (wobei Anfänger das höchste Level ist), desto niedriger ist die Wahrscheinlichkeit, dass der Nutzer das System versehentlich so konfiguriert, dass es nicht mehr nutzbar ist.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Admin::View::SysConfig</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">100</span></code> (100 (Experte)), <code class="docutils literal notranslate"><span class="pre">200</span></code> (200 (Fortgeschritten)), <code class="docutils literal notranslate"><span class="pre">300</span></code> (300 (Anfänger))</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base">
+<h2>Frontend::Base<a class="headerlink" href="#frontend-base" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AttachmentDownloadType">
+<span class="sig-name descname"><span class="pre">AttachmentDownloadType</span></span><a class="headerlink" href="#setting-AttachmentDownloadType" title="Link to this definition">¶</a></dt>
+<dd><p>Ermöglicht die Wahl zwischen der Anzeige der Anhänge eines Tickets im Browser (Inline) oder bietet sie einfach nur zum Herunterladen an (Anhang).</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">attachment</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">inline</span></code>, <code class="docutils literal notranslate"><span class="pre">attachment</span></code> (Anhang)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-RichText-DefaultCSS">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::RichText::DefaultCSS</span></span><a class="headerlink" href="#setting-CustomerFrontend-RichText-DefaultCSS" title="Link to this definition">¶</a></dt>
+<dd><p>Benutzerdefinierte CSS-Stile für RichText-Artikel.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-RichTextArticleStyles">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::RichTextArticleStyles</span></span><a class="headerlink" href="#setting-CustomerFrontend-RichTextArticleStyles" title="Link to this definition">¶</a></dt>
+<dd><p>Pfad zur CKEditor-CSS-Datei. Änderungen an dieser Einstellung werden erst nach dem Löschen des OTOBO-Cache über den Befehl Maint::Cache::Delete konsistent übernommen!</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">common/css/ckeditor5-47.6.1-content.css</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CustomerFrontend-RichTextEditorStyles">
+<span class="sig-name descname"><span class="pre">CustomerFrontend::RichTextEditorStyles</span></span><a class="headerlink" href="#setting-CustomerFrontend-RichTextEditorStyles" title="Link to this definition">¶</a></dt>
+<dd><p>Pfad zur CSS-Datei des CKEditor-Editors. Änderungen an dieser Einstellung werden erst nach dem Löschen des OTOBO-Cache über den Befehl Maint::Cache::Delete konsistent übernommen!</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">common/css/ckeditor5-47.6.1-editor.css</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultLanguage">
+<span class="sig-name descname"><span class="pre">DefaultLanguage</span></span><a class="headerlink" href="#setting-DefaultLanguage" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Standardsprache für das Frontend fest. Welche Sprachen zur Verfügung stehen, ergibt sich durch die im System verfügbaren Sprachdateien. Diese Werte werden als Schlüssel in der Einstellung ‚DefaultUsedLanguages‘ angezeigt.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">en</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultTheme">
+<span class="sig-name descname"><span class="pre">DefaultTheme</span></span><a class="headerlink" href="#setting-DefaultTheme" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Standard (HTML) Frontend Theme für Agenten und Kunden. Sie können ein eigenes Theme hinzufügen. Weitere Informationen dazu im Admin Handbuch unter <a class="reference external" href="https://doc.otobo.org/">https://doc.otobo.org/</a>.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Standard</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultTheme-HostBased">
+<span class="sig-name descname"><span class="pre">DefaultTheme::HostBased</span></span><a class="headerlink" href="#setting-DefaultTheme-HostBased" title="Link to this definition">¶</a></dt>
+<dd><p>Es ist möglich, verschiedene Themes zu konfigurieren, zum Beispiel um zwischen verschiedenen Agenten und Kunden auf Basis der jeweiligen Domain zu unterscheiden. Sie können durch Nutzung von regulären Ausdrücken mithilfe von Schlüssel-/Wert-Paaren auf Domains prüfen. Der Inhalt von „Schlüssel“ sollte die Prüfung auf die Domain beinhalten, der Inhalt von „Wert“ den Namen des zu selektierenden Themes für diese Domain. Bitte beachten Sie die Einträge mit Beispielen für korrekte reguläre Ausdrücke.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">host1\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomeTheme1</span>
+<span class="nt">host2\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomeTheme2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultUsedLanguages">
+<span class="sig-name descname"><span class="pre">DefaultUsedLanguages</span></span><a class="headerlink" href="#setting-DefaultUsedLanguages" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert alle Sprachen, die der Applikation zur Verfügung stehen. Geben Sie nur Englische Sprachnamen an.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ar_SA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Arabic (Saudi Arabia)</span>
+<span class="nt">bg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bulgarian</span>
+<span class="nt">ca</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Catalan</span>
+<span class="nt">cs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Czech</span>
+<span class="nt">da</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Danish</span>
+<span class="nt">de</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">German</span>
+<span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (United States)</span>
+<span class="nt">en_CA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (Canada)</span>
+<span class="nt">en_GB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (United Kingdom)</span>
+<span class="nt">es</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Spanish</span>
+<span class="nt">es_CO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Spanish (Colombia)</span>
+<span class="nt">es_MX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Spanish (Mexico)</span>
+<span class="nt">et</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Estonian</span>
+<span class="nt">el</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Greek</span>
+<span class="nt">fa</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Persian</span>
+<span class="nt">fi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Finnish</span>
+<span class="nt">fr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">French</span>
+<span class="nt">fr_CA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">French (Canada)</span>
+<span class="nt">gl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Galician</span>
+<span class="nt">he</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hebrew</span>
+<span class="nt">hi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hindi</span>
+<span class="nt">hr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Croatian</span>
+<span class="nt">hu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hungarian</span>
+<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Indonesian</span>
+<span class="nt">it</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Italian</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultUsedLanguagesNative">
+<span class="sig-name descname"><span class="pre">DefaultUsedLanguagesNative</span></span><a class="headerlink" href="#setting-DefaultUsedLanguagesNative" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert alle Sprachen, die der Applikation zur Verfügung stehen. Geben Sie nur die einheimischen Sprachnamen an.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ar_SA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">العَرَبِية‎</span>
+<span class="nt">bg</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Български</span>
+<span class="nt">ca</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Català</span>
+<span class="nt">cs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Česky</span>
+<span class="nt">da</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dansk</span>
+<span class="nt">de</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deutsch</span>
+<span class="nt">en</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (United States)</span>
+<span class="nt">en_CA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (Canada)</span>
+<span class="nt">en_GB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">English (United Kingdom)</span>
+<span class="nt">es</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Español</span>
+<span class="nt">es_CO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Español (Colombia)</span>
+<span class="nt">es_MX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Español (México)</span>
+<span class="nt">et</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Eesti</span>
+<span class="nt">el</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ελληνικά</span>
+<span class="nt">fa</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">فارسى</span>
+<span class="nt">fi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Suomi</span>
+<span class="nt">fr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Français</span>
+<span class="nt">fr_CA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Français (Canada)</span>
+<span class="nt">gl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Galego</span>
+<span class="nt">he</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">עברית</span>
+<span class="nt">hi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">हिन्दी</span>
+<span class="nt">hr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hrvatski</span>
+<span class="nt">hu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Magyar</span>
+<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bahasa Indonesia</span>
+<span class="nt">it</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Italiano</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultViewLines">
+<span class="sig-name descname"><span class="pre">DefaultViewLines</span></span><a class="headerlink" href="#setting-DefaultViewLines" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Anzahl an Zeilen fest, die von Textnachrichten angezeigt werden sollen (z. B. von Tickets in der Queue-Ansicht).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">6000</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DefaultViewNewLine">
+<span class="sig-name descname"><span class="pre">DefaultViewNewLine</span></span><a class="headerlink" href="#setting-DefaultViewNewLine" title="Link to this definition">¶</a></dt>
+<dd><p>Automatischer Zeilenumbruch in Textnachrichten nach x-Zeichen.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">90</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DisableContentSecurityPolicy">
+<span class="sig-name descname"><span class="pre">DisableContentSecurityPolicy</span></span><a class="headerlink" href="#setting-DisableContentSecurityPolicy" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn HTTP-Header „Content-Security-Policy“ ausgeschaltet ist, können externe Scripts geladen werden. Dies stellt eine Sicherheitslücke dar! Daher sollte diese Einstellung nur deaktivieren werden, wenn Sie sich über die Konsequenzen im Klaren sind!</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DisableIFrameOriginRestricted">
+<span class="sig-name descname"><span class="pre">DisableIFrameOriginRestricted</span></span><a class="headerlink" href="#setting-DisableIFrameOriginRestricted" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn der HTTP-Header „X-Frame-Options: SAMEORIGIN“ ausgeschaltet ist, kann OTOBO als IFrame in andere Websites integriert werden. Dies stellt eine Sicherheitslücke dar! Daher sollte diese Einstellung nur deaktivieren werden, wenn Sie sich über die Konsequenzen im Klaren sind!</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DisableLoginAutocomplete">
+<span class="sig-name descname"><span class="pre">DisableLoginAutocomplete</span></span><a class="headerlink" href="#setting-DisableLoginAutocomplete" title="Link to this definition">¶</a></dt>
+<dd><p>Autovervollständigen in der Anmeldemaske deaktivieren.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-FirstnameLastnameOrder">
+<span class="sig-name descname"><span class="pre">FirstnameLastnameOrder</span></span><a class="headerlink" href="#setting-FirstnameLastnameOrder" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Reihenfolge fest, in der Vorname und Nachname von Agenten angezeigt wird.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Vorname Nachname), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Nachname, Vorname), <code class="docutils literal notranslate"><span class="pre">2</span></code> (Vorname Nachname (BenutzerLogin)), <code class="docutils literal notranslate"><span class="pre">3</span></code> (Nachname, Vorname (BenutzerLogin)), <code class="docutils literal notranslate"><span class="pre">4</span></code> ((BenutzerLogin) Vorname Nachname), <code class="docutils literal notranslate"><span class="pre">5</span></code> ((BenutzerLogin) Nachname, Vorname), <code class="docutils literal notranslate"><span class="pre">6</span></code> (Nachname Vorname), <code class="docutils literal notranslate"><span class="pre">7</span></code> (Nachname Vorname (BenutzerAnmeldung)), <code class="docutils literal notranslate"><span class="pre">8</span></code> ((BenutzerLogin) Nachname Vorname), <code class="docutils literal notranslate"><span class="pre">9</span></code> (NachnameVorname)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-AjaxDebug">
+<span class="sig-name descname"><span class="pre">Frontend::AjaxDebug</span></span><a class="headerlink" href="#setting-Frontend-AjaxDebug" title="Link to this definition">¶</a></dt>
+<dd><p>Liefert im Frontend erweiterte Debugging-Informationen zu AJAX-Fehlern, wenn aktiviert.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-CSSPath">
+<span class="sig-name descname"><span class="pre">Frontend::CSSPath</span></span><a class="headerlink" href="#setting-Frontend-CSSPath" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den URL-CSS-Pfad.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Frontend::WebPath&gt;css/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-DebugMode">
+<span class="sig-name descname"><span class="pre">Frontend::DebugMode</span></span><a class="headerlink" href="#setting-Frontend-DebugMode" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert oder deaktiviert den Debug-Modus für das Frontend.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-DefaultInterface">
+<span class="sig-name descname"><span class="pre">Frontend::DefaultInterface</span></span><a class="headerlink" href="#setting-Frontend-DefaultInterface" title="Link to this definition">¶</a></dt>
+<dd><p>Definieren der Standardschnittstelle. Unbekannte Pfade unter dem Skript-Alias werden auf die ausgewählte Schnittstelle weitergeleitet.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">index.pl</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">index.pl</span></code> (Agenten-Interface), <code class="docutils literal notranslate"><span class="pre">customer.pl</span></code> (Kunden-Oberfläche), <code class="docutils literal notranslate"><span class="pre">public.pl</span></code> (Public Interface)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-ImagePath">
+<span class="sig-name descname"><span class="pre">Frontend::ImagePath</span></span><a class="headerlink" href="#setting-Frontend-ImagePath" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den URL des Bildpfads von Symbolen für die Navigation.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Frontend::WebPath&gt;skins/Agent/default/img/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-JavaScriptPath">
+<span class="sig-name descname"><span class="pre">Frontend::JavaScriptPath</span></span><a class="headerlink" href="#setting-Frontend-JavaScriptPath" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den URL des JavaScript-Pfads.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Frontend::WebPath&gt;js/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-MenuDragDropEnabled">
+<span class="sig-name descname"><span class="pre">Frontend::MenuDragDropEnabled</span></span><a class="headerlink" href="#setting-Frontend-MenuDragDropEnabled" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert Drag und Drop für die Hauptnavigation.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichText">
+<span class="sig-name descname"><span class="pre">Frontend::RichText</span></span><a class="headerlink" href="#setting-Frontend-RichText" title="Link to this definition">¶</a></dt>
+<dd><p>Nutzt richtext zum betrachten und bearbeiten von: Artikeln, Begrüßungen, Signaturen, Standard Vorlagen, Automatische Antworten und Benachrichtigungen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichText-DefaultCSS">
+<span class="sig-name descname"><span class="pre">Frontend::RichText::DefaultCSS</span></span><a class="headerlink" href="#setting-Frontend-RichText-DefaultCSS" title="Link to this definition">¶</a></dt>
+<dd><p>Benutzerdefinierte CSS-Stile für RichText-Artikel.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichText-EnhancedMode">
+<span class="sig-name descname"><span class="pre">Frontend::RichText::EnhancedMode</span></span><a class="headerlink" href="#setting-Frontend-RichText-EnhancedMode" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest ,ob der erweiterte Modus im Agenteninterface verwendet wird (aktiviert Tabellen, Ersetzen, Tiefgestellt, Hochgestellt, Einfügen aus Word und weitere Funktionen).</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichText-EnhancedMode-Customer">
+<span class="sig-name descname"><span class="pre">Frontend::RichText::EnhancedMode::Customer</span></span><a class="headerlink" href="#setting-Frontend-RichText-EnhancedMode-Customer" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, ob im Kundenbereich der erweiterte Modus genutzt werden soll (erlaubt die Nutzung von Tabellen, Ersetzen, Hochstellen, Tiefstellen, Einfügen aus Word, usw.).</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichTextArticleStyles">
+<span class="sig-name descname"><span class="pre">Frontend::RichTextArticleStyles</span></span><a class="headerlink" href="#setting-Frontend-RichTextArticleStyles" title="Link to this definition">¶</a></dt>
+<dd><p>Pfad zur CKEditor-CSS-Datei. Änderungen an dieser Einstellung werden erst nach dem Löschen des OTOBO-Cache über den Befehl Maint::Cache::Delete konsistent übernommen!</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">common/css/ckeditor5-47.6.1-content.css</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichTextEditorStyles">
+<span class="sig-name descname"><span class="pre">Frontend::RichTextEditorStyles</span></span><a class="headerlink" href="#setting-Frontend-RichTextEditorStyles" title="Link to this definition">¶</a></dt>
+<dd><p>Pfad zur CSS-Datei des CKEditor-Editors. Änderungen an dieser Einstellung werden erst nach dem Löschen des OTOBO-Cache über den Befehl Maint::Cache::Delete konsistent übernommen!</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">common/css/ckeditor5-47.6.1-editor.css</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichTextHeight">
+<span class="sig-name descname"><span class="pre">Frontend::RichTextHeight</span></span><a class="headerlink" href="#setting-Frontend-RichTextHeight" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert die Höhe der Richtext-Editor-Komponente. Geben Sie eine Zahl (für die Höhe in Pixeln) oder einen prozentualen Wert (für eine relative Höhe) an.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">320</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichTextPath">
+<span class="sig-name descname"><span class="pre">Frontend::RichTextPath</span></span><a class="headerlink" href="#setting-Frontend-RichTextPath" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den URL-RichTextEditor-Pfad.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Frontend::WebPath&gt;js/thirdparty/ckeditor5-47.6.1/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-RichTextWidth">
+<span class="sig-name descname"><span class="pre">Frontend::RichTextWidth</span></span><a class="headerlink" href="#setting-Frontend-RichTextWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Breite der RichText-Editor Komponente. Geben Sie einen Zahlen- (Pixel) oder Prozenwert (relativ) an.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">620</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Diese Einstellung entfällt.</p>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-TemplateCache">
+<span class="sig-name descname"><span class="pre">Frontend::TemplateCache</span></span><a class="headerlink" href="#setting-Frontend-TemplateCache" title="Link to this definition">¶</a></dt>
+<dd><p>Schaltet das Caching von Vorlagen an oder aus. Warnung: Schalten Sie das Vorlagen-Caching auf Produktivsystemen nicht ab, da dies massive Performance-Beeinträchtigungen auslösen würde. Diese Einstellung sollte nur zur Fehlerbehebung abgeschaltet werden!</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Themes">
+<span class="sig-name descname"><span class="pre">Frontend::Themes</span></span><a class="headerlink" href="#setting-Frontend-Themes" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert die verfügbaren Skins auf dem System. Wert 1 bedeutet aktiv, 0 bedeutet inaktiv.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Standard</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">Lite</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-TicketMasks-002-DynamicField">
+<span class="sig-name descname"><span class="pre">Frontend::TicketMasks###002-DynamicField</span></span><a class="headerlink" href="#setting-Frontend-TicketMasks-002-DynamicField" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der Ticketmasken, die via AdminTicketMask geändert werden können.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketArticleEdit</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketClose</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketCompose</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmailOutbound</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketEmail</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketForward</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketFreeText</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketMove</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketNote</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketOwner</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPending</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhone</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneInbound</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPhoneOutbound</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketPriority</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AgentTicketResponsible</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketMessage</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerTicketZoom</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-TranslationsDebug">
+<span class="sig-name descname"><span class="pre">Frontend::TranslationsDebug</span></span><a class="headerlink" href="#setting-Frontend-TranslationsDebug" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert oder deaktiviert den Debug-Modus für das Übersetzungsmodul.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-WebPath">
+<span class="sig-name descname"><span class="pre">Frontend::WebPath</span></span><a class="headerlink" href="#setting-Frontend-WebPath" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den URL-Basispfad von Symbolen, CSS und JavaScript.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">/otobo-web/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-HTTPSForceRedirect">
+<span class="sig-name descname"><span class="pre">HTTPSForceRedirect</span></span><a class="headerlink" href="#setting-HTTPSForceRedirect" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, ob eine Weiterleitung aller Anfragen von http zu https erzwungen werden soll. Bitte stellen Sie sicher, dass Ihr Webserver korrekt für die Verwendung von https konfiguriert wurde, bevor Sie diese Einstellung aktivieren.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-HttpType">
+<span class="sig-name descname"><span class="pre">HttpType</span></span><a class="headerlink" href="#setting-HttpType" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, welches Protokoll der Webserver zum Austausch mit der Applikation verwendet. Nutzt der Webserver HTTP statt HTTPS, muss hier ‚http‘ angegeben werden. Die Einstellung ‚HttpType‘ hat keine Auswirkung auf Einstellungen oder Verhalten des Webservers. Sie wird insbesondere nicht verändern, wie auf die Anwendung zugegriffen wird. Ist die Einstellung falsch, wird dies nicht dazu führen, dass Sie nicht auf die Anwendung zugreifen können. Die Einstellung wird vorwiegend über die Template-Variable OTOBO_CONFIG_HttpType verwendet. Diese Variable kann in allen Benachrichtigungsformen der Anwendung gefunden werden. Sie wird verwendet, um Links zu Tickets in Ihrem System aufzubauen. Eine weitere Auswirkung dessen, den ‚HttpType‘ auf ‚https‘ zu belassen ist , dass nur für sichere Verbindungen ein Session Cookie gesetzt wird.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">https</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-OutOfOfficeMessageTemplate">
+<span class="sig-name descname"><span class="pre">OutOfOfficeMessageTemplate</span></span><a class="headerlink" href="#setting-OutOfOfficeMessageTemplate" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Vorlage für Abwesenheits-Nachrichten. Zwei String-Parameter (%s) stehen zur Verfügung: Enddatum und Anzahl der übrigen Tage.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">***</span> <span class="pre">out</span> <span class="pre">of</span> <span class="pre">office</span> <span class="pre">until</span> <span class="pre">%s</span> <span class="pre">(%s</span> <span class="pre">d</span> <span class="pre">left)</span> <span class="pre">***</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ScriptAlias">
+<span class="sig-name descname"><span class="pre">ScriptAlias</span></span><a class="headerlink" href="#setting-ScriptAlias" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Prefix zum Skripte-Verzeichnis auf dem Server fest, analog zur Konfiguration des Webservers. Diese Einstellung wird als Variable OTOBO_CONFIG_ScriptAlias in allen Nachrichten-Formularen innerhalb der Applikation genutzt, um Links zu Tickets in Ihrem System zu generieren.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">otobo/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-AsteriskExplanation">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::AsteriskExplanation</span></span><a class="headerlink" href="#setting-Ticket-Frontend-AsteriskExplanation" title="Link to this definition">¶</a></dt>
+<dd><p>Zeigt eine Meldung die erklärt, dass das Sternchen Pflichtfelder kennzeichnet.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Ticket-Frontend-BlockLoadingRemoteContent">
+<span class="sig-name descname"><span class="pre">Ticket::Frontend::BlockLoadingRemoteContent</span></span><a class="headerlink" href="#setting-Ticket-Frontend-BlockLoadingRemoteContent" title="Link to this definition">¶</a></dt>
+<dd><p>Lässt die Anwendung das Laden externer Inhalte blockieren.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-WebMaxFileUpload">
+<span class="sig-name descname"><span class="pre">WebMaxFileUpload</span></span><a class="headerlink" href="#setting-WebMaxFileUpload" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die maximale Größe (in Bytes) für das Hochladen von Dateien mit dem Browser. Achtung: Wenn man die Größe zu klein wählt können viele Eingabemasken in ihrer OTOBO-Instanz nicht mehr funktionieren (vermutlich jede Maske die Benutzereingaben erwartet).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">48000000</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-WebUploadCacheModule">
+<span class="sig-name descname"><span class="pre">WebUploadCacheModule</span></span><a class="headerlink" href="#setting-WebUploadCacheModule" title="Link to this definition">¶</a></dt>
+<dd><p>Auswahl wie Uploads über die Web-Oberfläche gehandhabt werden sollen. „DB“ speichert alle Uploads in der Datenbank, „FS“ nutzt das Dateisystem.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::Web::UploadCache::DB</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base-loader">
+<h2>Frontend::Base::Loader<a class="headerlink" href="#frontend-base-loader" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonCSS-000-DynamicFieldDB">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonCSS###000-DynamicFieldDB</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonCSS-000-DynamicFieldDB" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der CSS-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldDB.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonCSS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonCSS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonCSS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der CSS-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Reset.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Default.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Header.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.OverviewControl.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.OverviewSmall.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.OverviewMedium.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.OverviewLarge.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Footer.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.PageLayout.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Form.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Table.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Login.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Widget.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.WidgetMenu.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.TicketDetail.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Tooltip.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Dialog.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.InputFields.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Print.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Animations.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Icons.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonCSS-001-Daemon">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonCSS###001-Daemon</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonCSS-001-Daemon" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der CSS-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Daemon.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-3.7.1/jquery.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-browser-detection/jquery-browser-detection.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-ui-1.14.1/jquery-ui.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-ui-touch-punch-0.2.3/jquery.ui.touch-punch.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-validate-1.21.0/jquery.validate.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-pubsub/pubsub.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-jstree-3.3.7/jquery.jstree.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nunjucks-3.2.4/nunjucks.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Init.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.JavaScriptEnhancements.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Debug.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Exception.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Data.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Config.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Language.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Template.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.JSON.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.App.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.App.Responsive.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.AJAX.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.InputFields.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.Accordion.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.Datepicker.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.DnD.js</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-001-Daemon">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###001-Daemon</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-001-Daemon" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Daemon.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-200-DynamicFieldContactWD">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###200-DynamicFieldContactWD</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-200-DynamicFieldContactWD" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.DynamicFieldContactWDSearch.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-200-DynamicFieldDB">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###200-DynamicFieldDB</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-200-DynamicFieldDB" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.DynamicFieldDBSearch.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-200-DynamicFieldReference">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###200-DynamicFieldReference</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-200-DynamicFieldReference" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.DynamicFieldReferenceSearch.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-CommonJS-999-Znuny4OTOBOShowPendingTimeIfNeeded">
+<span class="sig-name descname"><span class="pre">Loader::Agent::CommonJS###999-Znuny4OTOBOShowPendingTimeIfNeeded</span></span><a class="headerlink" href="#setting-Loader-Agent-CommonJS-999-Znuny4OTOBOShowPendingTimeIfNeeded" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Agenten-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.Znuny4OTOBOShowPendingTimeIfNeeded.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-DefaultSelectedSkin">
+<span class="sig-name descname"><span class="pre">Loader::Agent::DefaultSelectedSkin</span></span><a class="headerlink" href="#setting-Loader-Agent-DefaultSelectedSkin" title="Link to this definition">¶</a></dt>
+<dd><p>Der interne Name des Skins, der im Agentenbereich genutzt werden soll. Verfügbare Skins finden Sie unter Frontend::Agent::Skins.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">default</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-DefaultSelectedSkin-HostBased">
+<span class="sig-name descname"><span class="pre">Loader::Agent::DefaultSelectedSkin::HostBased</span></span><a class="headerlink" href="#setting-Loader-Agent-DefaultSelectedSkin-HostBased" title="Link to this definition">¶</a></dt>
+<dd><p>Es ist möglich, verschiedene Skins zu konfigurieren, zum Beispiel um zwischen verschiedenen Agenten auf Basis der jeweiligen Domain zu unterscheiden. Sie können durch Nutzung von regulären Ausdrücken mithilfe von Schlüssel-/Wert-Paaren auf Domains prüfen. Der Inhalt von „Schlüssel“ sollte die Prüfung auf die Domain beinhalten, der Inhalt von „Wert“ den Namen des zu selektierenden Skins für diese Domain. Bitte beachten Sie die Einträge mit Beispielen für korrekte reguläre Ausdrücke.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">host1\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomeSkin1</span>
+<span class="nt">host2\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SomeSkin2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-ResponsiveCSS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Agent::ResponsiveCSS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Agent-ResponsiveCSS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste von Responsive-CSS-Dateien, die im Agenten-Bereich immer geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Responsive.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-Skin-000-default">
+<span class="sig-name descname"><span class="pre">Loader::Agent::Skin###000-default</span></span><a class="headerlink" href="#setting-Loader-Agent-Skin-000-default" title="Link to this definition">¶</a></dt>
+<dd><p>Standard-Skin für das Agenten-Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">InternalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">VisibleName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is the default orange - black skin.</span>
+<span class="nt">HomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.otobo.org</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Agent-Skin-002-high-contrast">
+<span class="sig-name descname"><span class="pre">Loader::Agent::Skin###002-high-contrast</span></span><a class="headerlink" href="#setting-Loader-Agent-Skin-002-high-contrast" title="Link to this definition">¶</a></dt>
+<dd><p>Skin mit hohem Kontrast für Nutzer mit Sehschwäche.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">InternalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">highcontrast</span>
+<span class="nt">VisibleName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High Contrast</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High contrast skin for visually impaired users.</span>
+<span class="nt">HomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.otobo.io</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-CommonCSS-000-DynamicFieldDB">
+<span class="sig-name descname"><span class="pre">Loader::Customer::CommonCSS###000-DynamicFieldDB</span></span><a class="headerlink" href="#setting-Loader-Customer-CommonCSS-000-DynamicFieldDB" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der CSS-Dateien, die immer im Kunden-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicFieldDB.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-CommonCSS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Customer::CommonCSS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Customer-CommonCSS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der CSS-Dateien, die immer im Kunden-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Layout.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.NavigationBar.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Reset.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Default.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Form.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Dialog.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Control.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Table.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.InputFields.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Print.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Animations.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Icons.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Footer.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Items.css</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExtendedCDBInfo.Tile.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-CommonJS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Customer::CommonJS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Customer-CommonJS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Kunden-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-3.7.1/jquery.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-browser-detection/jquery-browser-detection.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-validate-1.21.0/jquery.validate.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-ui-1.14.1/jquery-ui.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-pubsub/pubsub.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/jquery-jstree-3.3.7/jquery.jstree.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thirdparty/nunjucks-3.2.4/nunjucks.min.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Init.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Debug.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Exception.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Data.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.JSON.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.JavaScriptEnhancements.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Config.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Language.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Template.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.App.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.App.Responsive.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.AJAX.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.InputFields.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.Accessibility.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.Dialog.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.Floater.js</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.UI.RichTextEditor.js</span>
+<span class="c1"># … (gekürzt)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-CommonJS-200-DynamicFieldDB">
+<span class="sig-name descname"><span class="pre">Loader::Customer::CommonJS###200-DynamicFieldDB</span></span><a class="headerlink" href="#setting-Loader-Customer-CommonJS-200-DynamicFieldDB" title="Link to this definition">¶</a></dt>
+<dd><p>Liste der JavaScript-Dateien, die immer im Kunden-Interface geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Agent.DynamicFieldDBSearch.js</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-ResponsiveCSS-000-Framework">
+<span class="sig-name descname"><span class="pre">Loader::Customer::ResponsiveCSS###000-Framework</span></span><a class="headerlink" href="#setting-Loader-Customer-ResponsiveCSS-000-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Liste von Responsive-CSS-Dateien, die im Kunden-Bereich immer geladen werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Core.Responsive.css</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-SelectedSkin">
+<span class="sig-name descname"><span class="pre">Loader::Customer::SelectedSkin</span></span><a class="headerlink" href="#setting-Loader-Customer-SelectedSkin" title="Link to this definition">¶</a></dt>
+<dd><p>Der interne Name des Skins, der im Kundenbereich genutzt werden soll. Verfügbare Skins finden Sie unter Frontend::Customer::Skins.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">default</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-SelectedSkin-HostBased">
+<span class="sig-name descname"><span class="pre">Loader::Customer::SelectedSkin::HostBased</span></span><a class="headerlink" href="#setting-Loader-Customer-SelectedSkin-HostBased" title="Link to this definition">¶</a></dt>
+<dd><p>Es ist möglich, verschiedene Skins zu konfigurieren, zum Beispiel um zwischen verschiedenen Kunden auf Basis der jeweiligen Domain zu unterscheiden. Sie können durch Nutzung von regulären Ausdrücken mithilfe von Schlüssel-/Wert-Paaren auf Domains prüfen. Der Inhalt von „Schlüssel“ sollte die Prüfung auf die Domain beinhalten, der Inhalt von „Wert“ den Namen des zu selektierenden Skins für diese Domain. Bitte beachten Sie die Einträge mit Beispielen für korrekte reguläre Ausdrücke.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">host1\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Someskin1</span>
+<span class="nt">host2\.example\.com</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Someskin2</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-Skin-000-default">
+<span class="sig-name descname"><span class="pre">Loader::Customer::Skin###000-default</span></span><a class="headerlink" href="#setting-Loader-Customer-Skin-000-default" title="Link to this definition">¶</a></dt>
+<dd><p>Standard-Skin für das Kunden Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">InternalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">VisibleName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Default</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This is the default orange - black skin for the customer interface.</span>
+<span class="nt">HomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.otobo.org</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Customer-Skin-001-high-contrast">
+<span class="sig-name descname"><span class="pre">Loader::Customer::Skin###001-high-contrast</span></span><a class="headerlink" href="#setting-Loader-Customer-Skin-001-high-contrast" title="Link to this definition">¶</a></dt>
+<dd><p>Standard-Skin für das Kunden Interface.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">InternalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">highcontrast</span>
+<span class="nt">VisibleName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High Contrast</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High contrast skin for visually impaired users.</span>
+<span class="nt">HomePage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.otobo.org</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Enabled-CSS">
+<span class="sig-name descname"><span class="pre">Loader::Enabled::CSS</span></span><a class="headerlink" href="#setting-Loader-Enabled-CSS" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, liefert OTOBO CSS-Dateien in minifizierter Form aus.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Loader-Enabled-JS">
+<span class="sig-name descname"><span class="pre">Loader::Enabled::JS</span></span><a class="headerlink" href="#setting-Loader-Enabled-JS" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, liefert OTOBO JavaScript-Dateien in minifizierter Form aus.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::Loader</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base-navbarmodule">
+<h2>Frontend::Base::NavBarModule<a class="headerlink" href="#frontend-base-navbarmodule" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-AdminModuleGroups-001-Framework">
+<span class="sig-name descname"><span class="pre">Frontend::AdminModuleGroups###001-Framework</span></span><a class="headerlink" href="#setting-Frontend-AdminModuleGroups-001-Framework" title="Link to this definition">¶</a></dt>
+<dd><p>Legt verfügbare Gruppen für die Administrator-Übersicht fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::NavBarModule</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Ticket</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket Settings</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'1000'</span>
+<span class="nt">Communication</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Communication &amp; Notifications</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'2000'</span>
+<span class="nt">Users</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Users, Groups &amp; Roles</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'3000'</span>
+<span class="nt">Automation</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Processes &amp; Automation</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'4000'</span>
+<span class="nt">OTOBOTeamServices</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OTOBO Team Services</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'5000'</span>
+<span class="nt">Administration</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Administration</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'6000'</span>
+<span class="nt">Miscellaneous</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Miscellaneous</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'7000'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-AdminModuleGroups-002-Translations">
+<span class="sig-name descname"><span class="pre">Frontend::AdminModuleGroups###002-Translations</span></span><a class="headerlink" href="#setting-Frontend-AdminModuleGroups-002-Translations" title="Link to this definition">¶</a></dt>
+<dd><p>Legt verfügbare Gruppen für die Administrator-Übersicht fest.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::NavBarModule</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Translations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Languages</span>
+<span class="w">  </span><span class="nt">Order</span><span class="p">:</span><span class="w"> </span><span class="s">'4500'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="frontend-base-outputfilter">
+<h2>Frontend::Base::OutputFilter<a class="headerlink" href="#frontend-base-outputfilter" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-FilterElementPost-OutputFilterPostAddDynamicFieldNames">
+<span class="sig-name descname"><span class="pre">Frontend::Output::FilterElementPost###OutputFilterPostAddDynamicFieldNames</span></span><a class="headerlink" href="#setting-Frontend-Output-FilterElementPost-OutputFilterPostAddDynamicFieldNames" title="Link to this definition">¶</a></dt>
+<dd><p>Output-Filter zum verdeckten Einlesen der erforderlichen Dynamic Field-Namen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::FilterElementPost::AddDynamicFieldNames</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketEmail</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketPhone</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">CustomerTicketMessage</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">ProcessManagement/DynamicField</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">ProcessManagement/CustomerActivityDialogFooter</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">ProcessManagement/AgentActivityDialogFooter</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-FilterElementPost-Znuny4OTOBOAdvancedDynamicFields">
+<span class="sig-name descname"><span class="pre">Frontend::Output::FilterElementPost###Znuny4OTOBOAdvancedDynamicFields</span></span><a class="headerlink" href="#setting-Frontend-Output-FilterElementPost-Znuny4OTOBOAdvancedDynamicFields" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den zum Verarbeiten der HTML-Vorlagen verwendeten Filter.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::FilterElementPost::Znuny4OTOBOAdvancedDynamicFields</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AdminDynamicField</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-FilterElementPost-Znuny4OTOBOShowPendingTimeIfNeeded">
+<span class="sig-name descname"><span class="pre">Frontend::Output::FilterElementPost###Znuny4OTOBOShowPendingTimeIfNeeded</span></span><a class="headerlink" href="#setting-Frontend-Output-FilterElementPost-Znuny4OTOBOShowPendingTimeIfNeeded" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration registriert ein OutputFilter-Modul, das die JavaScript-Funktionalität zur Entfernung der PendingTime (Warten bis) einbringt.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::FilterElementPost::Znuny4OTOBOShowPendingTimeIfNeeded</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketBulk</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketActionCommon</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketClose</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketNote</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketOwner</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketPending</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketPriority</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketResponsible</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketCompose</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketEmail</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketEmailOutbound</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketForward</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketMove</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketPhone</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketPhoneCommon</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketFreeText</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="w">  </span><span class="nt">AgentTicketArticleEdit</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-FilterText-AAAURL">
+<span class="sig-name descname"><span class="pre">Frontend::Output::FilterText###AAAURL</span></span><a class="headerlink" href="#setting-Frontend-Output-FilterText-AAAURL" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Filter, der Text in Artikeln verarbeitet, um URLs zu highlighten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::FilterText::URL</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-FilterText-OutputFilterTextAutoLink">
+<span class="sig-name descname"><span class="pre">Frontend::Output::FilterText###OutputFilterTextAutoLink</span></span><a class="headerlink" href="#setting-Frontend-Output-FilterText-OutputFilterTextAutoLink" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter, um den Text in den Artikel zu verarbeiten, um vordefinierte Schlüsselwörter zu markieren.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Output::HTML::FilterText::AutoLink</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-OutputFilterTextAutoLink-Bugtraq">
+<span class="sig-name descname"><span class="pre">Frontend::Output::OutputFilterTextAutoLink###Bugtraq</span></span><a class="headerlink" href="#setting-Frontend-Output-OutputFilterTextAutoLink-Bugtraq" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter für die HTML-Ausgabe um Links hinter Bugtraq-Nummern hinzufügen. Das Element Bild erlaubt zwei Eingabearten. Zum einem den Namen eines Bildes (Beispielsweise faq.png). In diesem Fall wird der OTOBO-Bildpfad verwendet. Die zweite Möglichkeit ist, den Link zu dem Bild einzufügen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">RegExp</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bugtraq[\s\w\t]*?ID[\s\w\t]*?:[\s\w\t]*?(\d{2,8})</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bugtraq[\s\w\t]*?ID[\s\w\t]*?(\d{2,8})</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bugtraq[\s\w\t]*?:[\s\w\t]*?(\d{2,8})</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Bugtraq[\s\w\t]*?(\d{2,8})</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BID[\s\w\t]*?:[\s\w\t]*?(\d{2,8})</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BID[\s\w\t]*?(\d{2,8})</span>
+<span class="nt">URL1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Security Focus</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.securityfocus.com/bid/&lt;MATCH1&gt;/info</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.securityfocus.com/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://google.com/search?q=&lt;MATCH&gt;</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.google.de/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-OutputFilterTextAutoLink-CVE">
+<span class="sig-name descname"><span class="pre">Frontend::Output::OutputFilterTextAutoLink###CVE</span></span><a class="headerlink" href="#setting-Frontend-Output-OutputFilterTextAutoLink-CVE" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter für die HTML-Ausgabe um Links hinter CVE-Nummern hinzufügen. Das Element Bild erlaubt zwei Eingabearten. Zum einem den Namen eines Bildes (Beispielsweise faq.png). In diesem Fall wird der OTOBO-Bildpfad verwendet. Die zweite Möglichkeit ist, den Link zu dem Bild einzufügen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">RegExp</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(CVE|CAN)\-(\d{3,4})\-(\d{2,})</span>
+<span class="nt">URL1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mitre</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cve.mitre.org/cgi-bin/cvename.cgi?name=&lt;MATCH1&gt;-&lt;MATCH2&gt;-&lt;MATCH3&gt;</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://cve.mitre.org/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://google.com/search?q=&lt;MATCH1&gt;-&lt;MATCH2&gt;-&lt;MATCH3&gt;</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.google.de/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">US-CERT NVD</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://nvd.nist.gov/nvd.cfm?cvename=&lt;MATCH1&gt;-&lt;MATCH2&gt;-&lt;MATCH3&gt;</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://nvd.nist.gov/site-media/images/favicons/favicon-16x16.png</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-OutputFilterTextAutoLink-MSBulletins">
+<span class="sig-name descname"><span class="pre">Frontend::Output::OutputFilterTextAutoLink###MSBulletins</span></span><a class="headerlink" href="#setting-Frontend-Output-OutputFilterTextAutoLink-MSBulletins" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter für die HTML-Ausgabe um Links hinter einer MSBulletin-Nummer hinzufügen. Das Element Bild erlaubt zwei Eingabearten. Zum einem den Namen eines Bildes (Beispielsweise faq.png). In diesem Fall wird der OTOBO-Bildpfad verwendet. Die zweite Möglichkeit ist, den Link zu dem Bild einzufügen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">RegExp</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MS[^A-Za-z]{0,5}(\d\d).?(\d{2,4})</span>
+<span class="nt">URL1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Microsoft Technet</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.microsoft.com/technet/security/bulletin/MS&lt;MATCH1&gt;-&lt;MATCH2&gt;.mspx</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.microsoft.com/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Google</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://google.com/search?q=MS&lt;MATCH1&gt;-&lt;MATCH2&gt;</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.google.de/favicon.ico</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-OutputFilterTextAutoLink-Setting1">
+<span class="sig-name descname"><span class="pre">Frontend::Output::OutputFilterTextAutoLink###Setting1</span></span><a class="headerlink" href="#setting-Frontend-Output-OutputFilterTextAutoLink-Setting1" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter für die HTML-Ausgabe um Links hinter einer bestimmten Zeichenfolge hinzufügen. Dieses Element erlaubt zwei Eingabearten. Zum einem den Namen eines Bildes (Beispielsweise faq.png). In diesem Fall wird der OTOBO-Bildpfad verwendet. Die zweite Möglichkeit ist, den Link zu dem Bild einzufügen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">RegExp</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RegExp</span>
+<span class="nt">URL1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">right-small.png</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Image</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Output-OutputFilterTextAutoLink-Setting2">
+<span class="sig-name descname"><span class="pre">Frontend::Output::OutputFilterTextAutoLink###Setting2</span></span><a class="headerlink" href="#setting-Frontend-Output-OutputFilterTextAutoLink-Setting2" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert einen Filter für die HTML-Ausgabe um Links hinter einer bestimmten Zeichenfolge hinzufügen. Das Element Bild erlaubt zwei Eingabearten. Zum einem den Namen eines Bildes (Beispielsweise faq.png). In diesem Fall wird der OTOBO-Bildpfad verwendet. Die zweite Möglichkeit ist, den Link zu dem Bild einzufügen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Frontend::Base::OutputFilter</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">RegExp</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RegExp</span>
+<span class="nt">URL1</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">right-small.png</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL2</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Image</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">URL3</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Description</span>
+<span class="w">  </span><span class="nt">URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">URL</span>
+<span class="w">  </span><span class="nt">Image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Image</span>
+<span class="w">  </span><span class="nt">Target</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">_blank</span>
+<span class="nt">Templates</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">AgentTicketZoom</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="generic-interface.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Generic Interface</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="kunde.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Kunden- und öffentliche Oberfläche</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Oberfläche: Basis und Administration</a><ul>
+<li><a class="reference internal" href="#frontend-admin">Frontend::Admin</a></li>
+<li><a class="reference internal" href="#frontend-admin-customerdashboardinfotile">Frontend::Admin::CustomerDashboardInfoTile</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-adminprocessmanagement">Frontend::Admin::View::AdminProcessManagement</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-contactwd">Frontend::Admin::View::ContactWD</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-customercompany">Frontend::Admin::View::CustomerCompany</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-customeruser">Frontend::Admin::View::CustomerUser</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-notificationevent">Frontend::Admin::View::NotificationEvent</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-selectbox">Frontend::Admin::View::SelectBox</a></li>
+<li><a class="reference internal" href="#frontend-admin-view-sysconfig">Frontend::Admin::View::SysConfig</a></li>
+<li><a class="reference internal" href="#frontend-base">Frontend::Base</a></li>
+<li><a class="reference internal" href="#frontend-base-loader">Frontend::Base::Loader</a></li>
+<li><a class="reference internal" href="#frontend-base-navbarmodule">Frontend::Base::NavBarModule</a></li>
+<li><a class="reference internal" href="#frontend-base-outputfilter">Frontend::Base::OutputFilter</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>

@@ -1,0 +1,1797 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html"><link rel="next" title="Anmeldung, Sitzungen und Sicherheit" href="anmeldung.html"><link rel="prev" title="Daemon, Cache und Protokolle" href="../themen/betrieb.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>System und Betrieb - OTOBO Systemkonfiguration — Handbuch und Referenz</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7965dac4" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">OTOBO Systemkonfiguration — Handbuch und Referenz</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">OTOBO Systemkonfiguration — Handbuch und Referenz</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Grundlagen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/aufbau.html">Wie die Systemkonfiguration arbeitet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/bedienung.html">Die Systemkonfiguration bedienen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grundlagen/konsole.html">Konsole und Automatisierung</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Themen</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../themen/neues-system.html">Ein neues System einrichten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/tickets.html">Ticketnummern, Betreff und Ticketfunktionen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/email.html">E-Mail-Versand und -Empfang</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/agentenmasken.html">Agentenmasken anpassen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/kundenportal.html">Kundenportal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/anmeldung.html">Anmeldung, Passwörter und Sitzungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../themen/betrieb.html">Daemon, Cache und Protokolle</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Referenz</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">System und Betrieb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anmeldung.html">Anmeldung, Sitzungen und Sicherheit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email.html">E-Mail und Kommunikation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Tickets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeit-kalender.html">Zeit und Kalender</a></li>
+<li class="toctree-l1"><a class="reference internal" href="felder-prozesse.html">Dynamische Felder, Prozesse und Import/Export</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-ticketmasken.html">Agentenoberfläche: Ticketmasken</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent-allgemein.html">Agentenoberfläche: allgemein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kunde.html">Kunden- und öffentliche Oberfläche</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oberflaeche-basis.html">Oberfläche: Basis und Administration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generic-interface.html">Generic Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="daemon.html">Daemon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registrierungen.html">Modul- und Menüregistrierungen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="version-11-1.html">Unterschiede in OTOBO 11.1</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="system-und-betrieb">
+<h1>System und Betrieb<a class="headerlink" href="#system-und-betrieb" title="Link to this heading">¶</a></h1>
+<p>Grundeinstellungen des Systems: Identität, Datenbank, Cache, Protokollierung, Pakete, Übersetzungen, PDF-Erzeugung, Elasticsearch und Wartungsmodus.</p>
+<p>Diese Seite führt <strong>108 Einstellungen</strong>, gruppiert nach ihrem Platz im Navigationsbaum der Systemkonfiguration.</p>
+<section id="cloudservice">
+<h2>CloudService<a class="headerlink" href="#cloudservice" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CloudServices-Disabled">
+<span class="sig-name descname"><span class="pre">CloudServices::Disabled</span></span><a class="headerlink" href="#setting-CloudServices-Disabled" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, ob eine Kommunikation zwischen diesem System und den Servern, über die Cloud Services angeboten werden, möglich ist. Deaktivieren Sie hier die Cloud Services, geht ein Teil der Funktionalität wie der Versand von Supportdaten, Package Verify™ und das „Produkt-Neuigkeiten“-Dashboard-Widget verloren.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">CloudService</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code> (Cloud-Services aktivieren), <code class="docutils literal notranslate"><span class="pre">1</span></code> (Cloud-Services deaktivieren)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="cloudservice-admin-moduleregistration">
+<h2>CloudService::Admin::ModuleRegistration<a class="headerlink" href="#cloudservice-admin-moduleregistration" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CloudService-Admin-Module-100-SupportDataCollector">
+<span class="sig-name descname"><span class="pre">CloudService::Admin::Module###100-SupportDataCollector</span></span><a class="headerlink" href="#setting-CloudService-Admin-Module-100-SupportDataCollector" title="Link to this definition">¶</a></dt>
+<dd><p>Cloud-Service-Admin-Modulregistrierung für den Transport-Layer.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">CloudService::Admin::ModuleRegistration</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Support data collector</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure sending of support data to OTOBO Team for improved support.</span>
+<span class="nt">ConfigDialog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AdminCloudServiceSupportDataCollector</span>
+<span class="nt">Icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fa fa-compass</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core">
+<h2>Core<a class="headerlink" href="#core" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ConfigImportAllowed">
+<span class="sig-name descname"><span class="pre">ConfigImportAllowed</span></span><a class="headerlink" href="#setting-ConfigImportAllowed" title="Link to this definition">¶</a></dt>
+<dd><p>Kontrolliert, ob es dem Admin erlaubt ist, eine gespeicherte Systemkonfiguration in SysConfig zu importieren.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-DemoSystem">
+<span class="sig-name descname"><span class="pre">DemoSystem</span></span><a class="headerlink" href="#setting-DemoSystem" title="Link to this definition">¶</a></dt>
+<dd><p>Führt das System im „Demo“ Modus aus. Wenn die Einstellung aktivier ist, können Agenten Einstellungen, wie die Sprachauswahl oder das Design über die Agenten Weboberfläche ändern. Diese Einstellungen sind nur für die aktuelle Sitzung gültig. Agenten können ihr Passwort nicht ändern.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-EscalationSuspendStates">
+<span class="sig-name descname"><span class="pre">EscalationSuspendStates</span></span><a class="headerlink" href="#setting-EscalationSuspendStates" title="Link to this definition">¶</a></dt>
+<dd><p>Liste aller Status, für die eine Eskalation ausgesetzt werden soll.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pending auto close+</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pending auto close-</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pending reminder</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-FQDN">
+<span class="sig-name descname"><span class="pre">FQDN</span></span><a class="headerlink" href="#setting-FQDN" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Full Qualified Domain Name des OTOBO Systems. Diese Einstellung wird als Variable OTOBO_CONFIG_FQDN genutzt, welche in allen Nachrichten-Formularen zu finden ist oder um Links zu Tickets in Ihrem OTOBO System zu generieren.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">yourhost.example.com</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Template-GenerateBlockHooks-100-Znuny4OTOBOAdvancedDynamicFields">
+<span class="sig-name descname"><span class="pre">Frontend::Template::GenerateBlockHooks###100-Znuny4OTOBOAdvancedDynamicFields</span></span><a class="headerlink" href="#setting-Frontend-Template-GenerateBlockHooks-100-Znuny4OTOBOAdvancedDynamicFields" title="Link to this definition">¶</a></dt>
+<dd><p>Generiert HTML-Kommentar-Anker für die angegebenen Blöcke, damit Filter diese nutzen können.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdminDynamicField</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hint</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Organization">
+<span class="sig-name descname"><span class="pre">Organization</span></span><a class="headerlink" href="#setting-Organization" title="Link to this definition">¶</a></dt>
+<dd><p>Firmenname, welcher in ausgehenden E-Mails als X-Header gesetzt werden soll.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">Company</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ProductName">
+<span class="sig-name descname"><span class="pre">ProductName</span></span><a class="headerlink" href="#setting-ProductName" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Namen der Anwendung, die in der Weboberfläche, in Tabs und in der Titelleiste des Webbrowser angezeigt wird.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">OTOBO</span> <span class="pre">11</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Secure-DisableBanner">
+<span class="sig-name descname"><span class="pre">Secure::DisableBanner</span></span><a class="headerlink" href="#setting-Secure-DisableBanner" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, werden OTOBO-Versionsinformationen aus der Oberfläche und HTTP-Headern und X-Headern entfernt. Hinweis: Nach Änderung dieser Option muss der Cache gelöscht werden.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SecureMode">
+<span class="sig-name descname"><span class="pre">SecureMode</span></span><a class="headerlink" href="#setting-SecureMode" title="Link to this definition">¶</a></dt>
+<dd><p>Aktivieren des SecureMode deaktiviert den Web-Installer (<a class="reference external" href="http://yourhost.example.com/otobo/installer.pl">http://yourhost.example.com/otobo/installer.pl</a>) und die Migration. Dies geschieht, um zu verhindern, dass das System gehijackt werden kann. Ist der SecureMode nicht aktiviert, kann das System jederzeit neu aufgesetzt werden. In diesem Fall wird die aktuelle Grundkonfiguration verwendet, um das Installer-Skript vorzubefüllen. Mit der Aktivierung des SecureMode werden außerdem GenericAgent, PackageManager und SQL Box aktiviert.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemConfiguration-MaximumDeployments">
+<span class="sig-name descname"><span class="pre">SystemConfiguration::MaximumDeployments</span></span><a class="headerlink" href="#setting-SystemConfiguration-MaximumDeployments" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, wieviele Versionen von Inbetriebnahmen im System behalten werden sollen.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">20</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemID">
+<span class="sig-name descname"><span class="pre">SystemID</span></span><a class="headerlink" href="#setting-SystemID" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die System ID. Jede Ticketnummer und HTTP Sitzung enthält diese ID. Das stellt sicher, dass nur Tickets in das Ticketsystem aufgenommen werden, welche zum eigenen Ticketsystem gehören (nützlich, wenn zwischen zwei Instanzen von OTOBO kommuniziert wird).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">10</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Znuny4OTOBOAdvancedDynamicFields-DynamicFieldValid">
+<span class="sig-name descname"><span class="pre">Znuny4OTOBOAdvancedDynamicFields::DynamicFieldValid</span></span><a class="headerlink" href="#setting-Znuny4OTOBOAdvancedDynamicFields-DynamicFieldValid" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration definiert, ob nur gültige oder alle (ungültige) dynamischen Felder angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">1</span></code> (gültig), <code class="docutils literal notranslate"><span class="pre">0</span></code> (ungültig)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-autoload">
+<h2>Core::Autoload<a class="headerlink" href="#core-autoload" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-AutoloadPerlPackages-1000-Test">
+<span class="sig-name descname"><span class="pre">AutoloadPerlPackages###1000-Test</span></span><a class="headerlink" href="#setting-AutoloadPerlPackages-1000-Test" title="Link to this definition">¶</a></dt>
+<dd><p>Beispielhafte Autoload-Konfiguration für Pakete.</p>
+<div class="line-block">
+<div class="line">Liste · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Autoload</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kernel::Autoload::Test</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-cache">
+<h2>Core::Cache<a class="headerlink" href="#core-cache" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-InBackend">
+<span class="sig-name descname"><span class="pre">Cache::InBackend</span></span><a class="headerlink" href="#setting-Cache-InBackend" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, werden Cache-Daten im Cache Backend gespeichert.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-InMemory">
+<span class="sig-name descname"><span class="pre">Cache::InMemory</span></span><a class="headerlink" href="#setting-Cache-InMemory" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn aktiviert, werden Cache-Daten im Speicher gehalten.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-Module">
+<span class="sig-name descname"><span class="pre">Cache::Module</span></span><a class="headerlink" href="#setting-Cache-Module" title="Link to this definition">¶</a></dt>
+<dd><p>Gibt das zu verwendende Cache Backend an.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::Cache::FileStorable</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-Redis-DatabaseNumber">
+<span class="sig-name descname"><span class="pre">Cache::Redis###DatabaseNumber</span></span><a class="headerlink" href="#setting-Cache-Redis-DatabaseNumber" title="Link to this definition">¶</a></dt>
+<dd><p>Verwendet die angegebene logische Redis-Datenbank.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">0</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-Redis-RedisFast">
+<span class="sig-name descname"><span class="pre">Cache::Redis###RedisFast</span></span><a class="headerlink" href="#setting-Cache-Redis-RedisFast" title="Link to this definition">¶</a></dt>
+<dd><p>Verwendet Redis::Fast statt Redis.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-Redis-Server">
+<span class="sig-name descname"><span class="pre">Cache::Redis###Server</span></span><a class="headerlink" href="#setting-Cache-Redis-Server" title="Link to this definition">¶</a></dt>
+<dd><p>Adresse des Redis-Servers. Beispiel: 127.0.0.1:6379.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">127.0.0.1:6379</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Cache-SubdirLevels">
+<span class="sig-name descname"><span class="pre">Cache::SubdirLevels</span></span><a class="headerlink" href="#setting-Cache-SubdirLevels" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, wieviele Unterebenen in vom Cache erstellten Verzeichnissen verwendet werden sollen. Dies verhindert, dass innerhalb eines Verzeichnisses zu viele Dateien erstellt werden.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">2</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Cache</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-db-mirror">
+<h2>Core::DB::Mirror<a class="headerlink" href="#core-db-mirror" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-AdditionalMirrors-1">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::AdditionalMirrors###1</span></span><a class="headerlink" href="#setting-Core-MirrorDB-AdditionalMirrors-1" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie alle weiteren Readonly-Spiegeldatenbanken, die Sie verwenden möchten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:mysql:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-AdditionalMirrors-2">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::AdditionalMirrors###2</span></span><a class="headerlink" href="#setting-Core-MirrorDB-AdditionalMirrors-2" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie alle weiteren Readonly-Spiegeldatenbanken, die Sie verwenden möchten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:mysql:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-AdditionalMirrors-3">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::AdditionalMirrors###3</span></span><a class="headerlink" href="#setting-Core-MirrorDB-AdditionalMirrors-3" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie alle weiteren Readonly-Spiegeldatenbanken, die Sie verwenden möchten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:mysql:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-AdditionalMirrors-4">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::AdditionalMirrors###4</span></span><a class="headerlink" href="#setting-Core-MirrorDB-AdditionalMirrors-4" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie alle weiteren Readonly-Spiegeldatenbanken, die Sie verwenden möchten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:mysql:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-AdditionalMirrors-5">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::AdditionalMirrors###5</span></span><a class="headerlink" href="#setting-Core-MirrorDB-AdditionalMirrors-5" title="Link to this definition">¶</a></dt>
+<dd><p>Konfigurieren Sie alle weiteren Readonly-Spiegeldatenbanken, die Sie verwenden möchten.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:mysql:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DSN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span>
+<span class="nt">User</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_user</span>
+<span class="nt">Password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">some_password</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-DSN">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::DSN</span></span><a class="headerlink" href="#setting-Core-MirrorDB-DSN" title="Link to this definition">¶</a></dt>
+<dd><p>OTOBO kann eine oder mehrere Spiegeldatenbanken für aufwändige Operationen wie Volltextsuchen oder Statistikgenerierungen nutzen. Hier können Sie die DSN für die erste Spiegeldatenbank hinterlegen.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">DBI:mysql:database=mirrordb;host=mirrordbhost</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+<p>Neu: <code class="docutils literal notranslate"><span class="pre">DBI:MariaDB:database=mirrordb;host=mirrordbhost</span></code></p>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-Password">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::Password</span></span><a class="headerlink" href="#setting-Core-MirrorDB-Password" title="Link to this definition">¶</a></dt>
+<dd><p>Geben Sie das Passwort für die Authentifikation mit der ersten Spiegeldatenbank an.</p>
+<div class="line-block">
+<div class="line">Passwort · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">some_password</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Core-MirrorDB-User">
+<span class="sig-name descname"><span class="pre">Core::MirrorDB::User</span></span><a class="headerlink" href="#setting-Core-MirrorDB-User" title="Link to this definition">¶</a></dt>
+<dd><p>Geben Sie den Benutzernamen für die Authentifikation mit der ersten Spiegeldatenbank an.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">some_user</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::DB::Mirror</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-draft">
+<h2>Core::Draft<a class="headerlink" href="#core-draft" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-FormDraftTTL-Ticket">
+<span class="sig-name descname"><span class="pre">FormDraftTTL###Ticket</span></span><a class="headerlink" href="#setting-FormDraftTTL-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Zeit in Minuten seit der letzten Änderung von Entwürfen des gewählten Typs fest, bis diese als veraltet gelten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">10080</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Draft</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-elasticsearch-settings">
+<h2>Core::Elasticsearch::Settings<a class="headerlink" href="#core-elasticsearch-settings" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-Active">
+<span class="sig-name descname"><span class="pre">Elasticsearch::Active</span></span><a class="headerlink" href="#setting-Elasticsearch-Active" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert Elasticsearch.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-ArticleIndexCreationSettings">
+<span class="sig-name descname"><span class="pre">Elasticsearch::ArticleIndexCreationSettings</span></span><a class="headerlink" href="#setting-Elasticsearch-ArticleIndexCreationSettings" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für den Index. Hinweis: ‚Elasticsearch::ArticleIndexCreationSettings‘ wird nicht mehr genutzt. Verwenden Sie stattdessen ‚Elasticsearch::IndexSettings###Default‘, um die Kompatibilität mit neueren Versionen sicherzustellen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-CustomerCompanySearchFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::CustomerCompanySearchFields</span></span><a class="headerlink" href="#setting-Elasticsearch-CustomerCompanySearchFields" title="Link to this definition">¶</a></dt>
+<dd><p>Felder des Kundenindex, die für die Firmen-Volltextsuche verwendet werden. Auch die Felder werden gespeichert, sind aber für die Gesamtfunktionalität nicht erforderlich.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyURL</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyName</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyStreet</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyZIP</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyCity</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyCountry</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyComment</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-CustomerCompanyStoreFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::CustomerCompanyStoreFields</span></span><a class="headerlink" href="#setting-Elasticsearch-CustomerCompanyStoreFields" title="Link to this definition">¶</a></dt>
+<dd><p>Felder, die im Kundenindex gespeichert werden und für andere Belange neben der Volltextsuche genutzt werden. Alle Felder sind für die Gesamtfunktionalität erforderlich.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerID</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-CustomerUserSearchFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::CustomerUserSearchFields</span></span><a class="headerlink" href="#setting-Elasticsearch-CustomerUserSearchFields" title="Link to this definition">¶</a></dt>
+<dd><p>Zu durchsuchende Felder im Ticketindex. Auch die Felder werden gespeichert, sind für die Gesamtfunktionalität aber nicht erforderlich.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserFirstname</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserLastname</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserEmail</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserLogin</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserCustomerID</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-CustomerUserStoreFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::CustomerUserStoreFields</span></span><a class="headerlink" href="#setting-Elasticsearch-CustomerUserStoreFields" title="Link to this definition">¶</a></dt>
+<dd><p>Felder, die im Kundenbenutzerindex gespeichert werden und für andere Belange neben der Volltextsuche genutzt werden. Alle Felder sind für die Gesamtfunktionalität erforderlich.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserLogin</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserCustomerID</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-ExcludedQueues">
+<span class="sig-name descname"><span class="pre">Elasticsearch::ExcludedQueues</span></span><a class="headerlink" href="#setting-Elasticsearch-ExcludedQueues" title="Link to this definition">¶</a></dt>
+<dd><p>Tickets in den folgenden Queues werden nicht auf dem Elasticsearch-Server gespeichert. Um diese Einstellung für vorhandene Tickets zu übernehmen, muss nach erfolgter Änderung eine Ticketmigration über die Konsole ausgeführt werden.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Junk</span>
+</pre></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Standardwert geändert.</p>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-ConfigItem">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###ConfigItem</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-ConfigItem" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für den Index „Ticket“.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-Customer">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###Customer</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-Customer" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für den Index „Ticket“.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-CustomerUser">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###CustomerUser</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-CustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für den Index „Ticket“.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-Default">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###Default</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-Default" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für die Indizes. Diese Einstellung ersetzt ‚Elasticsearch::ArticleIndexCreationSettings‘ in neueren Versionen. Sind beide Einstellungen vorhanden und unterscheiden sie sich, wird diese priorisiert behandelt. Verwenden Sie ‚Elasticsearch::IndexSettings###…‘, um spezifische Einstellungen für einzelne Indizes zu definieren. ‚…‘ kann einer der folgenden Werte sein: ‚Customer‘, ‚CustomerUser‘, ‚Ticket‘ oder ‚ConfigItem‘.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-Ticket">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###Ticket</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards (NS), Replicas (NR) und Felderlimit für den Index „Ticket“.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IndexSettings-TmpAttachments">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IndexSettings###TmpAttachments</span></span><a class="headerlink" href="#setting-Elasticsearch-IndexSettings-TmpAttachments" title="Link to this definition">¶</a></dt>
+<dd><p>Anzahl der Shards — NS, Replikate — NR und Feldbegrenzung — für den Index tmpattachments.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">NS</span><span class="p">:</span><span class="w"> </span><span class="s">'1'</span>
+<span class="nt">NR</span><span class="p">:</span><span class="w"> </span><span class="s">'0'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IngestAttachmentFormat">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IngestAttachmentFormat</span></span><a class="headerlink" href="#setting-Elasticsearch-IngestAttachmentFormat" title="Link to this definition">¶</a></dt>
+<dd><p>Einzulesendes Format.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdf</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">txt</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rtf</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doc</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docx</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xls</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xlsx</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ppt</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pptx</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">odt</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ods</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">odp</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-IngestMaxFilesize">
+<span class="sig-name descname"><span class="pre">Elasticsearch::IngestMaxFilesize</span></span><a class="headerlink" href="#setting-Elasticsearch-IngestMaxFilesize" title="Link to this definition">¶</a></dt>
+<dd><p>Maximale Dateigröße für das Ingest Plugin.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">50000000</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-MaxArticleSearch">
+<span class="sig-name descname"><span class="pre">Elasticsearch::MaxArticleSearch</span></span><a class="headerlink" href="#setting-Elasticsearch-MaxArticleSearch" title="Link to this definition">¶</a></dt>
+<dd><p>Maximale Anzahl von ES pro Feld ausgegebener Ergebnisse.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">10000</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-QuickSearchCreatedFormat">
+<span class="sig-name descname"><span class="pre">Elasticsearch::QuickSearchCreatedFormat</span></span><a class="headerlink" href="#setting-Elasticsearch-QuickSearchCreatedFormat" title="Link to this definition">¶</a></dt>
+<dd><p>Format des zu Tickets angegebenen Erstellungsdatums. Beispiel: ‚%Y-%m-%d %H:%M:%S‘ wird als ‚2020-01-22 18:07:23‘ angezeigt. Weitere Informationen unter <a class="reference external" href="http://search.cpan.org/~drolsky/DateTime-1.21/lib/DateTime.pm#strftime_Patterns">http://search.cpan.org/~drolsky/DateTime-1.21/lib/DateTime.pm#strftime_Patterns</a>.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">%d.%m.%Y</span> <span class="pre">%H:%M</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-QuickSearchShow-CustomerCompany">
+<span class="sig-name descname"><span class="pre">Elasticsearch::QuickSearchShow###CustomerCompany</span></span><a class="headerlink" href="#setting-Elasticsearch-QuickSearchShow-CustomerCompany" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, nach welchen Objekten gesucht, wie viele Einträge und welche Attribute angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Count</span><span class="p">:</span><span class="w"> </span><span class="s">'5'</span>
+<span class="nt">Attributes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyName</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerCompanyComment</span>
+<span class="nt">AttributeHeader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">CustomerCompanyName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer Name</span>
+<span class="w">  </span><span class="nt">CustomerID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Customer ID</span>
+<span class="w">  </span><span class="nt">CustomerCompanyComment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Comment</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-QuickSearchShow-CustomerUser">
+<span class="sig-name descname"><span class="pre">Elasticsearch::QuickSearchShow###CustomerUser</span></span><a class="headerlink" href="#setting-Elasticsearch-QuickSearchShow-CustomerUser" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, nach welchen Objekten gesucht, wie viele Einträge und welche Attribute angezeigt werden sollen.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Count</span><span class="p">:</span><span class="w"> </span><span class="s">'5'</span>
+<span class="nt">Attributes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserLogin</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserFirstname</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserLastname</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserEmail</span>
+<span class="nt">AttributeHeader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">UserLogin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Login</span>
+<span class="w">  </span><span class="nt">UserFirstname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Firstname</span>
+<span class="w">  </span><span class="nt">UserLastname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lastname</span>
+<span class="w">  </span><span class="nt">UserEmail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Email</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-QuickSearchShow-Ticket">
+<span class="sig-name descname"><span class="pre">Elasticsearch::QuickSearchShow###Ticket</span></span><a class="headerlink" href="#setting-Elasticsearch-QuickSearchShow-Ticket" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, nach welchen Objekten gesucht wird, wie viele Einträge und welche Attribute angezeigt werden sollen. Alle Ticket-Attribute außer der Queue müssen explizit in Elasticsearch gespeichert werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Count</span><span class="p">:</span><span class="w"> </span><span class="s">'10'</span>
+<span class="nt">Attributes</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketNumber</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Title</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queue</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Age</span>
+<span class="nt">AttributeHeader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">TicketNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket Number</span>
+<span class="w">  </span><span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket Title</span>
+<span class="w">  </span><span class="nt">Queue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queue</span>
+<span class="w">  </span><span class="nt">Age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Age</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-TicketSearchFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::TicketSearchFields</span></span><a class="headerlink" href="#setting-Elasticsearch-TicketSearchFields" title="Link to this definition">¶</a></dt>
+<dd><p>Felder des Ticket-Index, die für die Ticket-Volltextsuche verwendet werden. Auch die Felder werden gespeichert, sind aber für die Gesamtfunktionalität nicht erforderlich. Werden Felder ergänzt, die aktualisiert werden können (insbesondere dynamische Felder), muss das entsprechende Update-Event zum TicketManagement-Invoker des Elasticsearch-Webservice hinzugefügt werden!</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Ticket</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Title</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketNumber</span>
+<span class="nt">Article</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">From</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">To</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Body</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Subject</span>
+<span class="nt">Attachment</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Content</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Filename</span>
+<span class="nt">DynamicField</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Elasticsearch-TicketStoreFields">
+<span class="sig-name descname"><span class="pre">Elasticsearch::TicketStoreFields</span></span><a class="headerlink" href="#setting-Elasticsearch-TicketStoreFields" title="Link to this definition">¶</a></dt>
+<dd><p>Felder des Ticket-Index, die für andere Zwecke als die Volltextsuche verwendet werden. Alle Felder sind für die Gesamtfunktionalität erforderlich. Werden Felder ergänzt, die aktualisiert werden können (insbesondere dynamische Felder), muss das entsprechende Update-Event zum TicketManagement-Invoker des Elasticsearch-Webservice hinzugefügt werden!</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Elasticsearch::Settings</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Ticket</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TicketNumber</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Created</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Age</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GroupID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">QueueID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Title</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerID</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerUserID</span>
+<span class="nt">Article</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">DynamicField</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-googlechrome">
+<h2>Core::GoogleChrome<a class="headerlink" href="#core-googlechrome" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-GoogleChrome-Bin">
+<span class="sig-name descname"><span class="pre">GoogleChrome::Bin</span></span><a class="headerlink" href="#setting-GoogleChrome-Bin" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad zum Google Chrome oder Chromium Binary. Bei Auswahl wird statt PhantomJS::Bin dieses Binary verwendet.</p>
+<div class="line-block">
+<div class="line">Datei · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/usr/bin/chromium</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::GoogleChrome</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-log">
+<h2>Core::Log<a class="headerlink" href="#core-log" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-CGILogPrefix">
+<span class="sig-name descname"><span class="pre">CGILogPrefix</span></span><a class="headerlink" href="#setting-CGILogPrefix" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Text fest, der im Protokoll einen CGI-Skripteintrag kennzeichnen soll.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">OTOBO-CGI</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule">
+<span class="sig-name descname"><span class="pre">LogModule</span></span><a class="headerlink" href="#setting-LogModule" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert das Log Module für das System. „Datei“ schreibt alle Meldungen in das angegebene Logfile, „SysLog“ nutzt den Syslog Daemon des Systems, z.B. syslogd.</p>
+<div class="line-block">
+<div class="line">Perl-Modul · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">Kernel::System::Log::SysLog</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-LogFile">
+<span class="sig-name descname"><span class="pre">LogModule::LogFile</span></span><a class="headerlink" href="#setting-LogModule-LogFile" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „Datei“ als LogModule konfiguriert wurde, muss hier eine Log-Datei hinterlegt werden. Existiert die Datei nicht, wird sie automatisch vom System erstellt.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">/tmp/otobo.log</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-LogFile-Date">
+<span class="sig-name descname"><span class="pre">LogModule::LogFile::Date</span></span><a class="headerlink" href="#setting-LogModule-LogFile-Date" title="Link to this definition">¶</a></dt>
+<dd><p>Fügt einen Suffix mit dem aktuellen Jahr und Monat in die OTOBO-Protokolldatei hinzu. Für jeden Monat wird eine eigene Log-Datei erstellt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-LogFile-MaxKeepRotated">
+<span class="sig-name descname"><span class="pre">LogModule::LogFile::MaxKeepRotated</span></span><a class="headerlink" href="#setting-LogModule-LogFile-MaxKeepRotated" title="Link to this definition">¶</a></dt>
+<dd><p>Wie viele rotierte otobo.log Dateien aufbewahrt werden. Standardwert ist 3.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">3</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-LogFile-MaxSize">
+<span class="sig-name descname"><span class="pre">LogModule::LogFile::MaxSize</span></span><a class="headerlink" href="#setting-LogModule-LogFile-MaxSize" title="Link to this definition">¶</a></dt>
+<dd><p>Maximale Größe in Byte — bis otobo.log rotiert wird. Standardwert ist 524288000 (500 MB = 500 * 1024 * 1024).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">524288000</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-SysLog-Charset">
+<span class="sig-name descname"><span class="pre">LogModule::SysLog::Charset</span></span><a class="headerlink" href="#setting-LogModule-SysLog-Charset" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „SysLog“ als LogModule konfiguriert wurde, kann hier der Zeichensatz, der für das Logging verwendet werden soll, festgelegt werden.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">utf-8</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">iso-8859-1</span></code>, <code class="docutils literal notranslate"><span class="pre">iso-8859-15</span></code>, <code class="docutils literal notranslate"><span class="pre">utf-8</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-LogModule-SysLog-Facility">
+<span class="sig-name descname"><span class="pre">LogModule::SysLog::Facility</span></span><a class="headerlink" href="#setting-LogModule-SysLog-Facility" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn „SysLog“ als LogModule konfiguriert wurde, kann hier eine eigene Kategorie (facility) festgelegt werden.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">user</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-MinimumLogLevel">
+<span class="sig-name descname"><span class="pre">MinimumLogLevel</span></span><a class="headerlink" href="#setting-MinimumLogLevel" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die minimale Protokoll-Ebene fest. Wählen Sie „Fehler“ aus, werden nur Fehler protokolliert. Mit „Debug“ erhalten Sie alle Log-Einträge. Die Reihenfolge der Ebenen ist Debug, Info, Hinweis und Fehler.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">error</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Log</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">error</span></code> (Fehler), <code class="docutils literal notranslate"><span class="pre">notice</span></code> (Hinweis), <code class="docutils literal notranslate"><span class="pre">info</span></code>, <code class="docutils literal notranslate"><span class="pre">debug</span></code> (Debug)</div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-package">
+<h2>Core::Package<a class="headerlink" href="#core-package" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-AllowLocalModifications">
+<span class="sig-name descname"><span class="pre">Package::AllowLocalModifications</span></span><a class="headerlink" href="#setting-Package-AllowLocalModifications" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn die Einstellung aktiv ist, werden lokale Änderungen in der Paketverwaltung und Supportdaten-Analyse nicht als Fehler angezeigt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-AllowNotVerifiedPackages">
+<span class="sig-name descname"><span class="pre">Package::AllowNotVerifiedPackages</span></span><a class="headerlink" href="#setting-Package-AllowNotVerifiedPackages" title="Link to this definition">¶</a></dt>
+<dd><p>Wenn diese Einstellung aktiviert ist, können auch Pakete installiert werden, die nicht vom OTOBO Team verifiziert wurden. Diese Pakete können Ihr gesamtes System gefährden!</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-FileUpload">
+<span class="sig-name descname"><span class="pre">Package::FileUpload</span></span><a class="headerlink" href="#setting-Package-FileUpload" title="Link to this definition">¶</a></dt>
+<dd><p>Erlaubt den Datei-Upload im Paket-Manager.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-Proxy">
+<span class="sig-name descname"><span class="pre">Package::Proxy</span></span><a class="headerlink" href="#setting-Package-Proxy" title="Link to this definition">¶</a></dt>
+<dd><p>Lädt Pakete über einen Proxy herunter. Überschreibt „WebUserAgent::Proxy“.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">http://proxy.sn.no:8001/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-RepositoryAccessRegExp">
+<span class="sig-name descname"><span class="pre">Package::RepositoryAccessRegExp</span></span><a class="headerlink" href="#setting-Package-RepositoryAccessRegExp" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Regular Expressions für IPs für den Zugriff auf das lokale Repository. Sie müssen diese Einstellungen aktivieren um Zugang zu Ihrem lokalen Repository zu haben, ebenfalls muss das Paket package::RepositoryList auf dem Remote-Host installiert sein.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">127\.0\.0\.1</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-RepositoryList">
+<span class="sig-name descname"><span class="pre">Package::RepositoryList</span></span><a class="headerlink" href="#setting-Package-RepositoryList" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert eine Liste von Online-Quellen. Andere Installationen können als Quelle genutzt werden z.B. Key=“<a class="reference external" href="http://example.com/otobo/public.pl?Action=PublicRepository;File=">http://example.com/otobo/public.pl?Action=PublicRepository;File=</a>“ and Content=“Irgendein Name“.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ftp://ftp.example.com/pub/otobo/misc/packages/</span><span class="p">:</span><span class="w"> </span><span class="s">'[Example]</span><span class="nv"> </span><span class="s">ftp://ftp.example.com/'</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-RepositoryRoot">
+<span class="sig-name descname"><span class="pre">Package::RepositoryRoot</span></span><a class="headerlink" href="#setting-Package-RepositoryRoot" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert die Adresse der Online-Repository-Liste für zusätzliche Pakete. Das erste verfügbare Ergebnis wird genutzt.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ftp.otobo.org/pub/otobo/misc/packages/repository.xml</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-ShowFeatureAddons">
+<span class="sig-name descname"><span class="pre">Package::ShowFeatureAddons</span></span><a class="headerlink" href="#setting-Package-ShowFeatureAddons" title="Link to this definition">¶</a></dt>
+<dd><p>Schaltet die Anzeige der OTOBO FeatureAddon-Liste in der Paket-Verwaltung um.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Package-Timeout">
+<span class="sig-name descname"><span class="pre">Package::Timeout</span></span><a class="headerlink" href="#setting-Package-Timeout" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert den Timeout (in Sekunden) für Paket-Downloads. Überschreibt „WebUserAgent::Timeout“.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">120</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Package</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-pdf">
+<h2>Core::PDF<a class="headerlink" href="#core-pdf" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-LogoFile">
+<span class="sig-name descname"><span class="pre">PDF::LogoFile</span></span><a class="headerlink" href="#setting-PDF-LogoFile" title="Link to this definition">¶</a></dt>
+<dd><p>Gibt den Pfad für die Datei mit dem Logo in der Kopfzeile der Webseite an. (gif|jpg|png, 700 x 100 Pixel).</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Home&gt;/var/logo-otobo.png</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-MaxPages">
+<span class="sig-name descname"><span class="pre">PDF::MaxPages</span></span><a class="headerlink" href="#setting-PDF-MaxPages" title="Link to this definition">¶</a></dt>
+<dd><p>Bestimmt die maximale Anzahl an Seiten pro PDF-Datei.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">100</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-PageSize">
+<span class="sig-name descname"><span class="pre">PDF::PageSize</span></span><a class="headerlink" href="#setting-PDF-PageSize" title="Link to this definition">¶</a></dt>
+<dd><p>Bestimmt die Standardgröße von PDF-Seiten.</p>
+<div class="line-block">
+<div class="line">Auswahl · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">a4</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+<div class="line"><em>Auswahl:</em> <code class="docutils literal notranslate"><span class="pre">a4</span></code> (DIN A4), <code class="docutils literal notranslate"><span class="pre">letter</span></code> (Letter)</div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-Monospaced">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###Monospaced</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-Monospaced" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von nichtproportionaler (monospace) Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSansMono.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-MonospacedBold">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###MonospacedBold</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-MonospacedBold" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von fett gedruckter nichtproportionaler (monospace) Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSansMono-Bold.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-MonospacedBoldItalic">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###MonospacedBoldItalic</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-MonospacedBoldItalic" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von fett und kursiv gedruckter nichtproportionaler Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSansMono-BoldOblique.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-MonospacedItalic">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###MonospacedItalic</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-MonospacedItalic" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von kursiv gedruckter nichtproportionaler (monospace) Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSansMono-Oblique.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-Proportional">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###Proportional</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-Proportional" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung proportionaler Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSans.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-ProportionalBold">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###ProportionalBold</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-ProportionalBold" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von fett gedruckter proportionaler Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSans-Bold.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-ProportionalBoldItalic">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###ProportionalBoldItalic</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-ProportionalBoldItalic" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von fett und kursiv gedruckter proportionaler Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSans-BoldOblique.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PDF-TTFontFile-ProportionalItalic">
+<span class="sig-name descname"><span class="pre">PDF::TTFontFile###ProportionalItalic</span></span><a class="headerlink" href="#setting-PDF-TTFontFile-ProportionalItalic" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad und die TTF Datei für die Handhabung von kursiv gedruckter proportionaler Schrift in PDF Dokumenten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">DejaVuSans-Oblique.ttf</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PDF</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-performancelog">
+<h2>Core::PerformanceLog<a class="headerlink" href="#core-performancelog" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PerformanceLog">
+<span class="sig-name descname"><span class="pre">PerformanceLog</span></span><a class="headerlink" href="#setting-PerformanceLog" title="Link to this definition">¶</a></dt>
+<dd><p>Aktiviert das Leistungsprotokoll zum Erfassen der Seiten-Antwortzeiten. Diese Einstellung beeinflusst die Gesamtleistung des Systems. Frontend::Module###AdminPerformanceLog muss aktiviert sein.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PerformanceLog</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PerformanceLog-File">
+<span class="sig-name descname"><span class="pre">PerformanceLog::File</span></span><a class="headerlink" href="#setting-PerformanceLog-File" title="Link to this definition">¶</a></dt>
+<dd><p>Hinterlegt den Pfad für die Datei des Leistungsprotokolls.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CONFIG_Home&gt;/var/log/Performance.log</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PerformanceLog</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PerformanceLog-FileMax">
+<span class="sig-name descname"><span class="pre">PerformanceLog::FileMax</span></span><a class="headerlink" href="#setting-PerformanceLog-FileMax" title="Link to this definition">¶</a></dt>
+<dd><p>Bestimmt die Maximalgröße (in MB) der Protokolldatei.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">25</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PerformanceLog</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-phantomjs">
+<h2>Core::PhantomJS<a class="headerlink" href="#core-phantomjs" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-PhantomJS-Bin">
+<span class="sig-name descname"><span class="pre">PhantomJS::Bin</span></span><a class="headerlink" href="#setting-PhantomJS-Bin" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert den Pfad zum PhantomJS Binary. Für eine einfach Installation können Sie einen Static Build von <a class="reference external" href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a> verwenden.</p>
+<div class="line-block">
+<div class="line">Datei · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">/usr/bin/phantomjs</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::PhantomJS</span></code></div>
+</div>
+<div class="version-11-1 admonition">
+<p class="admonition-title">OTOBO 11.1</p>
+<p>Diese Einstellung entfällt.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-referencedata">
+<h2>Core::ReferenceData<a class="headerlink" href="#core-referencedata" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ReferenceData-OwnCountryList">
+<span class="sig-name descname"><span class="pre">ReferenceData::OwnCountryList</span></span><a class="headerlink" href="#setting-ReferenceData-OwnCountryList" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Einstellung erlaubt das Überschreiben der eingebauten Länderliste. Durch Nutzung dieser Einstellung können Sie z. B. eine eigene, kürzere Länderliste nutzen, wenn dies für Sie passender ist.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · inaktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ReferenceData</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Austria</span>
+<span class="nt">DE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Germany</span>
+<span class="nt">CH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switzerland</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ReferenceData-TranslatedCountryNames">
+<span class="sig-name descname"><span class="pre">ReferenceData::TranslatedCountryNames</span></span><a class="headerlink" href="#setting-ReferenceData-TranslatedCountryNames" title="Link to this definition">¶</a></dt>
+<dd><p>Übersetzung der Ländernamen in der Länderauswahl. Die CLDR Ländercodes werden in der Datenbank hinterlegt. Setzt voraus, dass Locale::CLDR und die relevanten Sprachpakete installiert sind.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ReferenceData</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-ReferenceData-TranslatedLanguageNames">
+<span class="sig-name descname"><span class="pre">ReferenceData::TranslatedLanguageNames</span></span><a class="headerlink" href="#setting-ReferenceData-TranslatedLanguageNames" title="Link to this definition">¶</a></dt>
+<dd><p>Übersetzt die Sprachen in der Sprachwahl. Setzt voraus, dass Locale::CLDR und die relevanten Sprachpakete installiert sind.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · inaktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::ReferenceData</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-soap">
+<h2>Core::SOAP<a class="headerlink" href="#core-soap" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SOAP-Keep-Alive">
+<span class="sig-name descname"><span class="pre">SOAP::Keep-Alive</span></span><a class="headerlink" href="#setting-SOAP-Keep-Alive" title="Link to this definition">¶</a></dt>
+<dd><p>Keep-Alive-Verbindungsheader für SOAP-Responses aktivieren.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SOAP</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-supportdatacollector">
+<h2>Core::SupportDataCollector<a class="headerlink" href="#core-supportdatacollector" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SupportDataCollector-HTTPHostname">
+<span class="sig-name descname"><span class="pre">SupportDataCollector::HTTPHostname</span></span><a class="headerlink" href="#setting-SupportDataCollector-HTTPHostname" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den HTTP-Hostnamen fest, der für die Sammlung von Supportdaten über das freie Modul ‚PublicSupportDataCollector‘ genutzt wird (z. B. durch den OTOBO-Daemon).</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <em>(leer)</em></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SupportDataCollector</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SupportDataCollector-SkipMaskPasswordSettings">
+<span class="sig-name descname"><span class="pre">SupportDataCollector::SkipMaskPasswordSettings</span></span><a class="headerlink" href="#setting-SupportDataCollector-SkipMaskPasswordSettings" title="Link to this definition">¶</a></dt>
+<dd><p>When support data is collected via SupportDataCollector, certain SysConfig values marked with ValueType=“Password“ are automatically masked. This prevents passwords from appearing in plain text in the support data. This setting defines the settings that contain complex configuration hashes that should not be masked when generating the support data.</p>
+<div class="line-block">
+<div class="line">Liste · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SupportDataCollector</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PreferencesGroups###Password</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CustomerPreferencesGroups###Password</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SupportDataCollector-WebUserAgent-Timeout">
+<span class="sig-name descname"><span class="pre">SupportDataCollector::WebUserAgent::Timeout</span></span><a class="headerlink" href="#setting-SupportDataCollector-WebUserAgent-Timeout" title="Link to this definition">¶</a></dt>
+<dd><p>Legt den Timeout in Sekunden für die Sammlung von Supportdaten des öffentlichen Moduls ‚PublicSupportDataCollector‘ fest, das z. B. vom OTOBO Daemon genutzt wird (min. 20 Sekunden).</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">20</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SupportDataCollector</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-systemmaintenance">
+<h2>Core::SystemMaintenance<a class="headerlink" href="#core-systemmaintenance" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemMaintenance-IsActiveDefaultLoginErrorMessage">
+<span class="sig-name descname"><span class="pre">SystemMaintenance::IsActiveDefaultLoginErrorMessage</span></span><a class="headerlink" href="#setting-SystemMaintenance-IsActiveDefaultLoginErrorMessage" title="Link to this definition">¶</a></dt>
+<dd><p>Legt die Standard-Fehlermeldung fest, die auf der Anmeldemaske des Agenten- und Kundenbereichs angezeigt wird, wenn sich das System gerade im Wartungsmodus befindet.</p>
+<div class="line-block">
+<div class="line">Text · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SystemMaintenance</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">We are performing scheduled maintenance. Login is temporarily not available.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemMaintenance-IsActiveDefaultLoginMessage">
+<span class="sig-name descname"><span class="pre">SystemMaintenance::IsActiveDefaultLoginMessage</span></span><a class="headerlink" href="#setting-SystemMaintenance-IsActiveDefaultLoginMessage" title="Link to this definition">¶</a></dt>
+<dd><p>Setzt die Standard Nachricht für den Hinweis, der auf der Agenten- und Kunden-Oberfläche angezeigt wird, wenn sich das System im Wartungsmodus befindet.</p>
+<div class="line-block">
+<div class="line">Text · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SystemMaintenance</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">We are performing scheduled maintenance. We should be back online shortly.</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemMaintenance-IsActiveDefaultNotification">
+<span class="sig-name descname"><span class="pre">SystemMaintenance::IsActiveDefaultNotification</span></span><a class="headerlink" href="#setting-SystemMaintenance-IsActiveDefaultNotification" title="Link to this definition">¶</a></dt>
+<dd><p>Setzt die Standard Nachricht für den Hinweis, der angezeigt wird, wenn das System im Wartungsmodus läuft.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">are</span> <span class="pre">performing</span> <span class="pre">scheduled</span> <span class="pre">maintenance.</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SystemMaintenance</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SystemMaintenance-TimeNotifyUpcomingMaintenance">
+<span class="sig-name descname"><span class="pre">SystemMaintenance::TimeNotifyUpcomingMaintenance</span></span><a class="headerlink" href="#setting-SystemMaintenance-TimeNotifyUpcomingMaintenance" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert, wie lange (in Minuten) die Benachrichtigung über eine bevorstehende Wartungsphase angezeigt werden soll.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Standard: <code class="docutils literal notranslate"><span class="pre">120</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::SystemMaintenance</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-translations">
+<h2>Core::Translations<a class="headerlink" href="#core-translations" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Translations-AllowModifyAll">
+<span class="sig-name descname"><span class="pre">Translations::AllowModifyAll</span></span><a class="headerlink" href="#setting-Translations-AllowModifyAll" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert, ob Anwender alle möglichen Werte/Label dynamischer Felder in einer Datentabelle anpassen können.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Translations</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Translations-ObjectList">
+<span class="sig-name descname"><span class="pre">Translations::ObjectList</span></span><a class="headerlink" href="#setting-Translations-ObjectList" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, welche Datenobjekte zur Übersetzung angeboten werden.</p>
+<div class="line-block">
+<div class="line">Liste von Schlüssel/Wert-Paaren · aktiv · Pflicht</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Translations</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">DynamicFieldLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic Field Labels</span>
+<span class="nt">DynamicFieldContent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dynamic Field Contents</span>
+<span class="nt">GeneralLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">General Label</span>
+<span class="nt">Priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Priorities</span>
+<span class="nt">Queue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Queues</span>
+<span class="nt">Service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Services</span>
+<span class="nt">SLA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SLAs</span>
+<span class="nt">Template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Templates</span>
+<span class="nt">State</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket States</span>
+<span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ticket Types</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Translations-TranslateParentChild">
+<span class="sig-name descname"><span class="pre">Translations::TranslateParentChild</span></span><a class="headerlink" href="#setting-Translations-TranslateParentChild" title="Link to this definition">¶</a></dt>
+<dd><p>Legt fest, ob Eltern-Kind-Übersetzungen für Queues und Services automatisch erstellt werden sollen.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Standard: Ja</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Translations</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-web">
+<h2>Core::Web<a class="headerlink" href="#core-web" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-Frontend-Module-AdminSystemConfigurationUser">
+<span class="sig-name descname"><span class="pre">Frontend::Module###AdminSystemConfigurationUser</span></span><a class="headerlink" href="#setting-Frontend-Module-AdminSystemConfigurationUser" title="Link to this definition">¶</a></dt>
+<dd><p>Frontend-Modulregistrierung im Agent-Interface.</p>
+<div class="line-block">
+<div class="line">Modulregistrierung · aktiv</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Web</span></code></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Group</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="nt">GroupRo</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+<span class="nt">Title</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">System Configuration User Settings</span>
+<span class="nt">NavBarName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Admin</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-webuseragent">
+<h2>Core::WebUserAgent<a class="headerlink" href="#core-webuseragent" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-WebUserAgent-DisableSSLVerification">
+<span class="sig-name descname"><span class="pre">WebUserAgent::DisableSSLVerification</span></span><a class="headerlink" href="#setting-WebUserAgent-DisableSSLVerification" title="Link to this definition">¶</a></dt>
+<dd><p>Schaltet die SSL-Zertifikatsvalidierung ab, wenn Sie beispielsweise einen HTTPS-Proxy nutzen. Benutzung auf eigene Gefahr!</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::WebUserAgent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-WebUserAgent-Proxy">
+<span class="sig-name descname"><span class="pre">WebUserAgent::Proxy</span></span><a class="headerlink" href="#setting-WebUserAgent-Proxy" title="Link to this definition">¶</a></dt>
+<dd><p>Definiert Verbindungen für HTTP/FTP über einen Proxy.</p>
+<div class="line-block">
+<div class="line">Text · inaktiv · Standard: <code class="docutils literal notranslate"><span class="pre">http://proxy.sn.no:8001/</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::WebUserAgent</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-WebUserAgent-Timeout">
+<span class="sig-name descname"><span class="pre">WebUserAgent::Timeout</span></span><a class="headerlink" href="#setting-WebUserAgent-Timeout" title="Link to this definition">¶</a></dt>
+<dd><p>Steuert den Timeout (in Sekunden) für HTTP/FTP-Downloads.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">15</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::WebUserAgent</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="core-znuny4otobo-escalationsuspend">
+<h2>Core::Znuny4OTOBO::EscalationSuspend<a class="headerlink" href="#core-znuny4otobo-escalationsuspend" title="Link to this heading">¶</a></h2>
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-EscalationSuspendCancelEscalation">
+<span class="sig-name descname"><span class="pre">EscalationSuspendCancelEscalation</span></span><a class="headerlink" href="#setting-EscalationSuspendCancelEscalation" title="Link to this definition">¶</a></dt>
+<dd><p>Vollständiges Unterbinden der Eskalation, solange sich das Ticket in einem zum Aussetzen der Eskalation konfigurierten Status (EscalationSuspendStates) befindet. In all diesen Status wird die Ticketeskalation vollständig unterbrochen. Es werden keine Eskalationszeiten angezeigt und das Ticket wird nicht in der Übersicht eskalierter Tickets aufgeführt.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Znuny4OTOBO::EscalationSuspend</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-EscalationSuspendLoopProtection">
+<span class="sig-name descname"><span class="pre">EscalationSuspendLoopProtection</span></span><a class="headerlink" href="#setting-EscalationSuspendLoopProtection" title="Link to this definition">¶</a></dt>
+<dd><p>Diese Konfiguration definiert die maximale Anzahl der Durchläufe zur Berechnung der Arbeitszeit für ein Ticket. Achtung: Wird diese Einstellung auf hoch gesetzt, können Performance-Probleme auftreten.</p>
+<div class="line-block">
+<div class="line">Text · aktiv · Pflicht · Standard: <code class="docutils literal notranslate"><span class="pre">500</span></code></div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Znuny4OTOBO::EscalationSuspend</span></code></div>
+</div>
+</dd></dl>
+
+<dl class="std setting">
+<dt class="sig sig-object std" id="setting-SuspendEscalatedTickets">
+<span class="sig-name descname"><span class="pre">SuspendEscalatedTickets</span></span><a class="headerlink" href="#setting-SuspendEscalatedTickets" title="Link to this definition">¶</a></dt>
+<dd><p>Aussetzen der Eskalation bereits eskalierter Tickets.</p>
+<div class="line-block">
+<div class="line">Ja/Nein · aktiv · Pflicht · Standard: Nein</div>
+<div class="line"><em>Navigation:</em> <code class="docutils literal notranslate"><span class="pre">Core::Znuny4OTOBO::EscalationSuspend</span></code></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="anmeldung.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Anmeldung, Sitzungen und Sicherheit</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../themen/betrieb.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Daemon, Cache und Protokolle</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">System und Betrieb</a><ul>
+<li><a class="reference internal" href="#cloudservice">CloudService</a></li>
+<li><a class="reference internal" href="#cloudservice-admin-moduleregistration">CloudService::Admin::ModuleRegistration</a></li>
+<li><a class="reference internal" href="#core">Core</a></li>
+<li><a class="reference internal" href="#core-autoload">Core::Autoload</a></li>
+<li><a class="reference internal" href="#core-cache">Core::Cache</a></li>
+<li><a class="reference internal" href="#core-db-mirror">Core::DB::Mirror</a></li>
+<li><a class="reference internal" href="#core-draft">Core::Draft</a></li>
+<li><a class="reference internal" href="#core-elasticsearch-settings">Core::Elasticsearch::Settings</a></li>
+<li><a class="reference internal" href="#core-googlechrome">Core::GoogleChrome</a></li>
+<li><a class="reference internal" href="#core-log">Core::Log</a></li>
+<li><a class="reference internal" href="#core-package">Core::Package</a></li>
+<li><a class="reference internal" href="#core-pdf">Core::PDF</a></li>
+<li><a class="reference internal" href="#core-performancelog">Core::PerformanceLog</a></li>
+<li><a class="reference internal" href="#core-phantomjs">Core::PhantomJS</a></li>
+<li><a class="reference internal" href="#core-referencedata">Core::ReferenceData</a></li>
+<li><a class="reference internal" href="#core-soap">Core::SOAP</a></li>
+<li><a class="reference internal" href="#core-supportdatacollector">Core::SupportDataCollector</a></li>
+<li><a class="reference internal" href="#core-systemmaintenance">Core::SystemMaintenance</a></li>
+<li><a class="reference internal" href="#core-translations">Core::Translations</a></li>
+<li><a class="reference internal" href="#core-web">Core::Web</a></li>
+<li><a class="reference internal" href="#core-webuseragent">Core::WebUserAgent</a></li>
+<li><a class="reference internal" href="#core-znuny4otobo-escalationsuspend">Core::Znuny4OTOBO::EscalationSuspend</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script src="../../_static/otobo-link.js?v=ca3830a6"></script>
+    </body>
+</html>
