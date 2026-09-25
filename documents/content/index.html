@@ -255,8 +255,8 @@ Kapitelbaum, Drag &amp; Drop und Live-Seitenführung.</p></li>
 <li><p><strong>PDF-Export:</strong> Hochwertige PDFs mit Deckblatt, Kopf-/Fußzeilen und Seitenzahlen,
 erzeugt über WeasyPrint.</p></li>
 <li><p><strong>Revisionssicher:</strong> Jede Kompilierung erzeugt eine unveränderliche, versionierte Fassung.</p></li>
-<li><p><strong>Schnellanlage aus dem CI:</strong> Direkt aus der Config-Item-Ansicht lässt sich mit einem Klick
-ein passendes Dokument erzeugen.</p></li>
+<li><p><strong>Dokumente am Config Item:</strong> Die Config-Item-Ansicht zeigt die vorhandenen Dokumente des
+CI und erzeugt mit einem Klick ein passendes neues.</p></li>
 </ul>
 </section>
 <section id="einsatzszenarien">
@@ -278,7 +278,7 @@ Kopien.</p>
 <h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
 <section id="framework">
 <h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
-<p>OTOBO 11.0.x</p>
+<p>OTOBO 11.0.x und 11.1.x – dasselbe Paket läuft auf beiden Versionen.</p>
 </section>
 <section id="pakete">
 <h2>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h2>
@@ -306,7 +306,7 @@ mit dem Addon bereitgestellt und über die SysConfig angebunden.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#navigation-und-dokumentubersicht"><span class="std std-ref">Navigation und Dokumentübersicht</span></a></p></li>
 <li><p><a class="reference internal" href="#neues-dokument-anlegen"><span class="std std-ref">Neues Dokument anlegen</span></a></p></li>
-<li><p><a class="reference internal" href="#schnellanlage-aus-dem-config-item"><span class="std std-ref">Schnellanlage aus dem Config Item</span></a></p></li>
+<li><p><a class="reference internal" href="#dokumente-am-config-item"><span class="std std-ref">Dokumente am Config Item</span></a></p></li>
 <li><p><a class="reference internal" href="#kompilieren-und-revisionen"><span class="std std-ref">Kompilieren und Revisionen</span></a></p></li>
 <li><p><a class="reference internal" href="#vorschau-und-pdf-export"><span class="std std-ref">Vorschau und PDF-Export</span></a></p></li>
 </ul>
@@ -367,28 +367,40 @@ sein (siehe nächster Abschnitt), damit der PDF-Export funktioniert.</p>
 <td><p><code class="docutils literal notranslate"><span class="pre">30</span></code></p></td>
 <td><p>Timeout für Anfragen an WeasyPrint (Sekunden).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###MaxReferenceDepth</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Frontend###CIWidget###MaxDocuments</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td><p>Höchstzahl der Dokumente im Widget <strong>„Dokumente“</strong> der Config-Item-Ansicht; weitere
+erreicht man über den Link in die gefilterte Dokumentübersicht.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###MaxReferenceDepth</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 <td><p>Maximale Tiefe für verkettete Referenz-Platzhalter (Punkt-Notation).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###CacheTTL</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###CacheTTL</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">86400</span></code></p></td>
 <td><p>Cache-Lebensdauer des aus der CMDB abgeleiteten Platzhalter-Katalogs in Sekunden (<code class="docutils literal notranslate"><span class="pre">0</span></code> = aus).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###PickerExcludeFields</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###Placeholder###PickerExcludeFields</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">[^monitos]</span></code></p></td>
 <td><p>Reguläre Ausdrücke, die dynamische Felder <strong>nur im Picker</strong> ausblenden (der Compiler löst sie weiterhin auf).</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###Customer###*</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###Customer###*</span></code></p></td>
 <td><p>Musterfirma GmbH, Max Mustermann, Musterstraße 42, 76131, Karlsruhe</p></td>
 <td><p>Beispieldaten für die Vorlagen-Vorschau (Kunde).</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###ConfigItem###*</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###ConfigItem###*</span></code></p></td>
 <td><p>SRV-APP-001, Server, CI00012345</p></td>
 <td><p>Beispieldaten für die Vorlagen-Vorschau (Config Item).</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###ConfigItem###Class</span></code> ist mit <code class="docutils literal notranslate"><span class="pre">Server</span></code> vorbelegt. Existiert
+diese CI-Klasse auf dem System nicht – in einem frisch aufgesetzten OTOBO 11.1 heißen die
+mitgelieferten Klassen anders –, bleibt die <strong>Vorschau im Vorlagen-Editor leer, ohne
+Fehlermeldung</strong>. Tragen Sie dort eine Klasse ein, die es auf Ihrem System wirklich gibt.</p>
 </div>
 </section>
 <section id="admin-handbuch">
@@ -486,14 +498,14 @@ duplizieren – inklusive aller Kapitel und ihrer Hierarchie.</p>
 <h2>Standard-CI-Klassen zuordnen<a class="headerlink" href="#standard-ci-klassen-zuordnen" title="Link to this heading">¶</a></h2>
 <p>Über das Feld <strong>CI-Klassen</strong> im Reiter <em>Allgemein</em> wird eine Vorlage einer oder mehreren
 Config-Item-Klassen zugeordnet (z. B. <em>Server</em>, <em>Anwendung</em>). Diese Zuordnung steuert die
-<a class="reference internal" href="#schnellanlage-aus-dem-config-item"><span class="std std-ref">Schnellanlage aus dem Config Item</span></a>: Beim Aufruf eines Config Items
+<a class="reference internal" href="#dokumente-am-config-item"><span class="std std-ref">Dokumente am Config Item</span></a>: Beim Aufruf eines Config Items
 werden in der Seitenleiste genau die Vorlagen vorgeschlagen, deren Standard-Klasse zur
 Klasse des Config Items passt.</p>
 <figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="../_images/template-classes.png"><img alt="../_images/template-classes.png" src="../_images/template-classes.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Über <em>Standard-CI-Klassen</em> wird die Vorlage einer CI-Klasse zugeordnet – die Basis der Schnellanlage.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Über <em>Standard-CI-Klassen</em> wird die Vorlage einer CI-Klasse zugeordnet – die Basis der Vorschläge am Config Item.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -636,26 +648,41 @@ Platzhalter aufgelöst werden.</p></li>
 <p>Nach dem Speichern wird das Dokument im Status <em>Entwurf</em> angelegt und die Detailansicht
 geöffnet.</p>
 </section>
-<section id="schnellanlage-aus-dem-config-item">
-<h2>Schnellanlage aus dem Config Item<a class="headerlink" href="#schnellanlage-aus-dem-config-item" title="Link to this heading">¶</a></h2>
+<section id="dokumente-am-config-item">
+<h2>Dokumente am Config Item<a class="headerlink" href="#dokumente-am-config-item" title="Link to this heading">¶</a></h2>
 <p>In der <strong>Config-Item-Detailansicht</strong> (CMDB) erscheint in der Seitenleiste das Widget
-<strong>„Dokument erstellen“</strong>. Es bietet:</p>
+<strong>„Dokumente“</strong>. Es beantwortet zwei Fragen auf einen Blick – welche Dokumente es zu diesem
+Config Item schon gibt, und welches sich neu anlegen lässt:</p>
 <ul class="simple">
-<li><p>einen allgemeinen Button <strong>„Neues Dokument“</strong>, der die Anlagemaske mit dem aktuellen
-Config Item vorbefüllt öffnet,</p></li>
-<li><p>falls für die Klasse des Config Items Standard-Vorlagen hinterlegt sind, eine Liste dieser
-Vorlagen mit jeweils einem <code class="docutils literal notranslate"><span class="pre">+</span></code>-Button. Dieser öffnet die Anlagemaske direkt mit gewählter
-Vorlage, verknüpftem Config Item und vorbelegtem Titel („Vorlagenname – CI-Name“).</p></li>
+<li><p><strong>Vorhandene Dokumente:</strong> die zuletzt bearbeiteten Dokumente des Config Items, jeweils mit
+ihrem Status (<em>Entwurf</em> oder <em>Kompiliert</em>). Ein Klick auf den Namen öffnet das Dokument.
+Gibt es noch keines, steht dort ein kurzer Hinweis.</p></li>
+<li><p><strong>„Neues Dokument“</strong> öffnet die Anlagemaske mit dem aktuellen Config Item vorbefüllt.</p></li>
+<li><p><strong>Passende Vorlagen:</strong> Sind für die Klasse des Config Items Standard-Vorlagen hinterlegt,
+folgt eine Liste dieser Vorlagen mit jeweils einem <code class="docutils literal notranslate"><span class="pre">+</span></code>-Button. Er öffnet die Anlagemaske
+direkt mit gewählter Vorlage, verknüpftem Config Item und vorbelegtem Titel
+(„Vorlagenname – CI-Name“).</p></li>
 </ul>
 <figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="../_images/ci-quick-create.png"><img alt="../_images/ci-quick-create.png" src="../_images/ci-quick-create.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 12 </span><span class="caption-text">Schnellanlage direkt aus dem Config Item – vorgeschlagen werden die zur CI-Klasse passenden Vorlagen.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 12 </span><span class="caption-text">Das Widget „Dokumente“ am Config Item: die neuesten Dokumente mit Status, darunter die Anlage aus den passenden Vorlagen.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>So lässt sich aus einem konkreten Config Item heraus mit einem Klick das passende Dokument
-erzeugen.</p>
+<p>Damit das Widget auch bei vielen Dokumenten kompakt bleibt, zeigt es nur die neuesten fünf
+(einstellbar über <code class="docutils literal notranslate"><span class="pre">Documents###Frontend###CIWidget###MaxDocuments</span></code>, siehe
+<a class="reference internal" href="#konfiguration"><span class="std std-ref">Konfiguration</span></a>). Sind es mehr, führt der Link <strong>„Alle N Dokumente
+anzeigen“</strong> in die Dokumentübersicht – gefiltert auf dieses Config Item. Ein Hinweis über
+der Tabelle zeigt den Filter an und bietet den Weg zurück zum Config Item oder zu allen
+Dokumenten.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="../_images/document-list-filtered.png"><img alt="../_images/document-list-filtered.png" src="../_images/document-list-filtered.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 13 </span><span class="caption-text">Die Dokumentübersicht, gefiltert auf ein Config Item.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="kompilieren-und-revisionen">
 <h2>Kompilieren und Revisionen<a class="headerlink" href="#kompilieren-und-revisionen" title="Link to this heading">¶</a></h2>
@@ -666,11 +693,11 @@ werden. Mit der ersten Kompilierung wechselt der Status von <em>Entwurf</em> auf
 <p>Jede Revision ist eine <strong>unveränderliche Momentaufnahme</strong>. Das Revisions-Widget listet alle
 Fassungen (Nummer, Kommentar, Erstellt von, Datum, PDF-Download), neueste zuerst. Ein Klick
 auf eine Zeile lädt die jeweilige Fassung in die Vorschau.</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="../_images/document-revisions.png"><img alt="../_images/document-revisions.png" src="../_images/document-revisions.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 13 </span><span class="caption-text">Dokument-Detailansicht mit Revisions-Widget und eingebetteter PDF-Vorschau.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 14 </span><span class="caption-text">Dokument-Detailansicht mit Revisions-Widget und eingebetteter PDF-Vorschau.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -690,11 +717,11 @@ anzulegen. Die Anzeige ist mit „Aktueller Stand (Live)“ gekennzeichnet.</p><
 <li><p><strong>PDF exportieren</strong> – lädt die gewählte Revision als PDF herunter
 (Dateiname <code class="docutils literal notranslate"><span class="pre">Name_RevN.pdf</span></code>). Solange keine Revision existiert, ist der Export deaktiviert.</p></li>
 </ul>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="../_images/pdf-preview.png"><img alt="../_images/pdf-preview.png" src="../_images/pdf-preview.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 14 </span><span class="caption-text">Live-Vorschau des aktuellen Stands; der Export als PDF erfolgt je Revision.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 15 </span><span class="caption-text">Live-Vorschau des aktuellen Stands; der Export als PDF erfolgt je Revision.</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -726,8 +753,8 @@ für ein einheitliches Schriftbild, laufende Kopf-/Fußzeilen und Seitenzahl-Zä
 <li><p>Die <strong>Vorlagenverwaltung</strong> (Admin) ist auf die Gruppe <code class="docutils literal notranslate"><span class="pre">admin</span></code> beschränkt. Bei der
 Installation wird zusätzlich die Gruppe <code class="docutils literal notranslate"><span class="pre">documents_adm</span></code> angelegt.</p></li>
 <li><p>Die <strong>Dokumentübersicht</strong> der Agenten ist für alle angemeldeten Agenten sichtbar.</p></li>
-<li><p>Das <strong>Schnellanlage-Widget</strong> erscheint an jedem Config Item; die vorgeschlagene
-Vorlagenliste richtet sich nach der Klasse des Config Items.</p></li>
+<li><p>Das Widget <strong>„Dokumente“</strong> erscheint an jedem Config Item; es listet die Dokumente dieses
+Config Items, die vorgeschlagene Vorlagenliste richtet sich nach seiner Klasse.</p></li>
 </ul>
 </section>
 <section id="platzhalter-referenz">
