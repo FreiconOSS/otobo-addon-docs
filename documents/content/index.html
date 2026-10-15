@@ -257,6 +257,8 @@ erzeugt über WeasyPrint.</p></li>
 <li><p><strong>Revisionssicher:</strong> Jede Kompilierung erzeugt eine unveränderliche, versionierte Fassung.</p></li>
 <li><p><strong>Dokumente am Config Item:</strong> Die Config-Item-Ansicht zeigt die vorhandenen Dokumente des
 CI und erzeugt mit einem Klick ein passendes neues.</p></li>
+<li><p><strong>Vorlagen übertragen:</strong> Vorlagen wandern als eine YAML-Datei von einem OTOBO-System ins
+nächste – samt Kapiteln, Kategorie und CI-Klassen.</p></li>
 </ul>
 </section>
 <section id="einsatzszenarien">
@@ -269,6 +271,8 @@ aktuellen Stand der CMDB.</p></li>
 <li><p><strong>Übergabe- und Abnahmeprotokolle</strong> im Projektgeschäft, mit Kunden- und CI-Daten vorbefüllt.</p></li>
 <li><p><strong>Wartungs- und Inventarberichte</strong>, die Attribut-Tabellen aus Config Items übernehmen.</p></li>
 <li><p><strong>Standardisierte Steckbriefe</strong> für Assets, mit einheitlichem Corporate Layout.</p></li>
+<li><p><strong>Vorlagen einmal bauen, mehrfach nutzen:</strong> im Testsystem entwerfen und abnehmen, dann per
+Export-Datei ins Produktivsystem oder an weitere Standorte übernehmen.</p></li>
 </ul>
 <p>Der Nutzen: weniger manuelle Pflege, konsistentes Layout über alle Dokumente hinweg,
 nachvollziehbare Versionierung und eine einzige Datenquelle (die CMDB) statt verteilter
@@ -422,7 +426,7 @@ Platzhalter pflegt, nachdem das Documents-Modul über den Paketmanager installie
 <ul class="simple">
 <li><p><strong>links</strong> der Kategoriebaum (FancyTree),</p></li>
 <li><p><strong>rechts</strong> die Tabelle der Vorlagen mit den Spalten <em>Name</em>, <em>Kategorie</em>, <em>Gültigkeit</em>,
-<em>Erstellt</em> und <em>Geändert</em> sowie einer Aktion zum Kopieren.</p></li>
+<em>Erstellt</em> und <em>Geändert</em> sowie je einer Aktion zum Kopieren und zum Exportieren.</p></li>
 </ul>
 <p>Über das Filterfeld lassen sich Baum und Tabelle gleichzeitig durchsuchen.</p>
 <figure class="align-center" id="id2">
@@ -604,6 +608,140 @@ simulieren – so ist schon beim Schreiben erkennbar, wo ein Seitenumbruch fäll
 </figcaption>
 </figure>
 </section>
+<section id="vorlagen-exportieren-und-importieren">
+<h2>Vorlagen exportieren und importieren<a class="headerlink" href="#vorlagen-exportieren-und-importieren" title="Link to this heading">¶</a></h2>
+<p>Vorlagen lassen sich als <strong>eine YAML-Datei</strong> zwischen OTOBO-Systemen übertragen – etwa vom
+Test- ins Produktivsystem oder von einem Standort zum nächsten. Erzeugte Dokumente und ihre
+Revisionen gehören nicht dazu, übertragen werden nur Vorlagen.</p>
+<p><strong>Exportieren</strong></p>
+<p>In der Seitenleiste der Vorlagenverwaltung steht unter <strong>„Vorlage hinzufügen“</strong> eine
+Mehrfachauswahl der Vorlagen, gruppiert nach Kategorien; Vorlagen ohne Kategorie stehen unter
+<em>Ohne Kategorie</em>. Über <strong>„Alle auswählen“</strong> oder den Filter der Auswahlliste lassen sich viele
+Vorlagen auf einmal markieren. <strong>„Vorlagen exportieren“</strong> lädt die gewählten Vorlagen als eine
+Datei herunter – so, wie es aus dem Export der CI-Klassen bekannt ist.</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="../_images/template-transfer-select.png"><img alt="../_images/template-transfer-select.png" src="../_images/template-transfer-select.png" style="width: 50%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 10 </span><span class="caption-text">Die Export-Auswahl gruppiert die Vorlagen nach Kategorien.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Eine einzelne Vorlage exportiert das Download-Symbol in der Spalte <strong>Export</strong> der
+Vorlagentabelle direkt.</p>
+<p>Die Datei heißt <code class="docutils literal notranslate"><span class="pre">Export_DocumentTemplate_&lt;Name&gt;.yml</span></code> bei einer Vorlage und
+<code class="docutils literal notranslate"><span class="pre">Export_DocumentTemplates.yml</span></code> bei mehreren.</p>
+<p><strong>Importieren</strong></p>
+<p>Im Widget <strong>„Vorlagen-Import“</strong> der Seitenleiste wird die Datei ausgewählt und mit
+<strong>„Vorlagen importieren“</strong> eingelesen. Eine Meldung oben auf der Seite nennt die importierten
+Vorlagen und gegebenenfalls Hinweise.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../_images/template-transfer.png"><img alt="../_images/template-transfer.png" src="../_images/template-transfer.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 11 </span><span class="caption-text">Export und Import in der Vorlagenverwaltung: oben links die gewählten Vorlagen mit dem Knopf
+<em>Vorlagen exportieren</em>, unten links das Widget <em>Vorlagen-Import</em>, rechts die Spalte <em>Export</em>
+für eine einzelne Vorlage.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Was die Datei enthält</strong></p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Bestandteil</p></th>
+<th class="head"><p>Übertragung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Name, Beschreibung, Gültigkeit</p></td>
+<td><p>unverändert</p></td>
+</tr>
+<tr class="row-odd"><td><p>Deckblatt, Kopf-/Fußzeile, Kapitelinhalte</p></td>
+<td><p>als HTML; eingefügte Bilder werden in die Datei eingebettet, sie ist damit in sich
+vollständig</p></td>
+</tr>
+<tr class="row-even"><td><p>Kapitelbaum</p></td>
+<td><p>mit bis zu drei Ebenen, in der angezeigten Reihenfolge und mit der Einstellung zum
+Seitenumbruch</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eigene Felder</p></td>
+<td><p>Name, Typ, Standardwert und Pflichtangabe</p></td>
+</tr>
+<tr class="row-even"><td><p>Kategorie</p></td>
+<td><p>über ihren <strong>Pfad aus Namen</strong> (z. B. <em>Übergabe › Arbeitsplatz</em>), nicht über eine
+interne Nummer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Standard-CI-Klassen</p></td>
+<td><p>über den <strong>Klassennamen</strong>, nicht über eine interne Nummer</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Weil Kategorie und CI-Klassen über ihre Namen übertragen werden, passt die Datei auch auf ein
+System, auf dem dieselben Einträge andere interne Nummern haben.</p>
+<p><strong>Wie sich der Import verhält</strong></p>
+<ul class="simple">
+<li><p><strong>Er legt immer neue Vorlagen an.</strong> Vorhandene Vorlagen und die daraus erzeugten Dokumente
+bleiben unberührt. Ist der Name schon vergeben, heißt die importierte Vorlage
+<em>Name (Import)</em>, beim nächsten Mal <em>Name (Import 2)</em> und so weiter.</p></li>
+<li><p><strong>Kategorie:</strong> Eine Kategorie mit demselben Pfad wird wiederverwendet, fehlende Ebenen
+werden angelegt.</p></li>
+<li><p><strong>CI-Klassen:</strong> Gibt es eine Klasse auf dem Zielsystem nicht, wird sie übergangen. Die
+Vorlage wird trotzdem importiert, ein Hinweis nennt die fehlende Klasse. Legen Sie die Klasse
+an und ordnen Sie sie der Vorlage danach zu.</p></li>
+<li><p><strong>Die ganze Datei wird geprüft, bevor etwas geschrieben wird.</strong> Ist eine Vorlage darin
+fehlerhaft, wird nichts importiert.</p></li>
+<li><p>Scheitert das Schreiben einer Vorlage mittendrin, wird diese Vorlage wieder entfernt – halb
+importierte Vorlagen gibt es nicht. Die übrigen Vorlagen der Datei werden weiter importiert.</p></li>
+</ul>
+<div class="table-wrapper colwidths-given docutils container" id="id12">
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-number">Tab. 1 </span><span class="caption-text">Meldungen beim Import</span><a class="headerlink" href="#id12" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Meldung</p></th>
+<th class="head"><p>Ursache</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Die Datei ist kein Export von Dokumentenvorlagen.</em></p></td>
+<td><p>Keine YAML-Datei oder eine YAML-Datei aus einer anderen Quelle, etwa ein ACL-Export.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Die Datei stammt aus einer neueren Version des Documents-Pakets (Formatversion N).</em></p></td>
+<td><p>Das Quellsystem nutzt ein neueres Paket mit neuerem Dateiformat. Aktualisieren Sie
+zuerst das Paket auf dem Zielsystem.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Vorlage „X“: Das Kapitel „Y“ liegt tiefer als 3 Ebenen.</em></p></td>
+<td><p>Die Datei wurde von Hand bearbeitet; Kapitel haben höchstens drei Ebenen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Vorlage „X“: Der Name ist N Zeichen lang, erlaubt sind höchstens M.</em>
+(ebenso für Beschreibung, Kategoriename, Kapiteltitel und eigene Felder)</p></td>
+<td><p>Ein Wert ist länger als erlaubt (Name 200 Zeichen, Kapiteltitel 250, Beschreibung
+2000, Name eines eigenen Felds 200, Standardwert 2000). Es wird nichts importiert.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Vorlage „X“: Die CI-Klasse „Y“ gibt es auf diesem System nicht, sie wurde
+übersprungen.</em></p></td>
+<td><p>Nur ein Hinweis, die Vorlage ist importiert.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Über die Konsole</strong></p>
+<p>Für Skripte und Umzüge gibt es beide Wege auch als Konsolenbefehl:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># alle Vorlagen, oder einzelne mit --template-id (mehrfach angebbar)</span>
+bin/otobo.Console.pl<span class="w"> </span>Admin::Documents::TemplateExport<span class="w"> </span>--target-path<span class="w"> </span>/tmp/vorlagen.yml
+bin/otobo.Console.pl<span class="w"> </span>Admin::Documents::TemplateExport<span class="w"> </span>--template-id<span class="w"> </span><span class="m">3</span><span class="w"> </span>--template-id<span class="w"> </span><span class="m">7</span><span class="w"> </span>--target-path<span class="w"> </span>/tmp/vorlagen.yml
+
+bin/otobo.Console.pl<span class="w"> </span>Admin::Documents::TemplateImport<span class="w"> </span>--source-path<span class="w"> </span>/tmp/vorlagen.yml
+</pre></div>
+</div>
+</section>
 </section>
 <section id="anwender-handbuch">
 <span id="user-guide"></span><h1>Anwender-Handbuch<a class="headerlink" href="#anwender-handbuch" title="Link to this heading">¶</a></h1>
@@ -618,11 +756,11 @@ geteilt aufgebaut:</p>
 <li><p><strong>rechts</strong> die Liste der Dokumente mit den Spalten <em>Name</em>, <em>Vorlage</em>, <em>Verknüpftes Objekt</em>,
 <em>Status</em>, <em>Erstellt</em> und <em>Geändert</em>.</p></li>
 </ul>
-<figure class="align-center" id="id10">
+<figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="../_images/agent-overview.png"><img alt="../_images/agent-overview.png" src="../_images/agent-overview.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 10 </span><span class="caption-text">Dokumentübersicht der Agenten mit Kategoriebaum und Statusspalte.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 12 </span><span class="caption-text">Dokumentübersicht der Agenten mit Kategoriebaum und Statusspalte.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -638,11 +776,11 @@ unter „Ohne Kategorie“.</p></li>
 CI-Nummer). Das Dokument wird zwingend einem Config Item zugeordnet, da daraus die
 Platzhalter aufgelöst werden.</p></li>
 </ul>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="../_images/document-new.png"><img alt="../_images/document-new.png" src="../_images/document-new.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 11 </span><span class="caption-text">Neues Dokument: Titel, Vorlage (hierarchische Auswahl) und verpflichtendes Config Item.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 13 </span><span class="caption-text">Neues Dokument: Titel, Vorlage (hierarchische Auswahl) und verpflichtendes Config Item.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Nach dem Speichern wird das Dokument im Status <em>Entwurf</em> angelegt und die Detailansicht
@@ -663,11 +801,11 @@ folgt eine Liste dieser Vorlagen mit jeweils einem <code class="docutils literal
 direkt mit gewählter Vorlage, verknüpftem Config Item und vorbelegtem Titel
 („Vorlagenname – CI-Name“).</p></li>
 </ul>
-<figure class="align-center" id="id12">
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="../_images/ci-quick-create.png"><img alt="../_images/ci-quick-create.png" src="../_images/ci-quick-create.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 12 </span><span class="caption-text">Das Widget „Dokumente“ am Config Item: die neuesten Dokumente mit Status, darunter die Anlage aus den passenden Vorlagen.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 14 </span><span class="caption-text">Das Widget „Dokumente“ am Config Item: die neuesten Dokumente mit Status, darunter die Anlage aus den passenden Vorlagen.</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Damit das Widget auch bei vielen Dokumenten kompakt bleibt, zeigt es nur die neuesten fünf
@@ -676,11 +814,11 @@ direkt mit gewählter Vorlage, verknüpftem Config Item und vorbelegtem Titel
 anzeigen“</strong> in die Dokumentübersicht – gefiltert auf dieses Config Item. Ein Hinweis über
 der Tabelle zeigt den Filter an und bietet den Weg zurück zum Config Item oder zu allen
 Dokumenten.</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id16">
 <a class="reference internal image-reference" href="../_images/document-list-filtered.png"><img alt="../_images/document-list-filtered.png" src="../_images/document-list-filtered.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 13 </span><span class="caption-text">Die Dokumentübersicht, gefiltert auf ein Config Item.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 15 </span><span class="caption-text">Die Dokumentübersicht, gefiltert auf ein Config Item.</span><a class="headerlink" href="#id16" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -693,11 +831,11 @@ werden. Mit der ersten Kompilierung wechselt der Status von <em>Entwurf</em> auf
 <p>Jede Revision ist eine <strong>unveränderliche Momentaufnahme</strong>. Das Revisions-Widget listet alle
 Fassungen (Nummer, Kommentar, Erstellt von, Datum, PDF-Download), neueste zuerst. Ein Klick
 auf eine Zeile lädt die jeweilige Fassung in die Vorschau.</p>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id17">
 <a class="reference internal image-reference" href="../_images/document-revisions.png"><img alt="../_images/document-revisions.png" src="../_images/document-revisions.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 14 </span><span class="caption-text">Dokument-Detailansicht mit Revisions-Widget und eingebetteter PDF-Vorschau.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 16 </span><span class="caption-text">Dokument-Detailansicht mit Revisions-Widget und eingebetteter PDF-Vorschau.</span><a class="headerlink" href="#id17" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -717,11 +855,11 @@ anzulegen. Die Anzeige ist mit „Aktueller Stand (Live)“ gekennzeichnet.</p><
 <li><p><strong>PDF exportieren</strong> – lädt die gewählte Revision als PDF herunter
 (Dateiname <code class="docutils literal notranslate"><span class="pre">Name_RevN.pdf</span></code>). Solange keine Revision existiert, ist der Export deaktiviert.</p></li>
 </ul>
-<figure class="align-center" id="id15">
+<figure class="align-center" id="id18">
 <a class="reference internal image-reference" href="../_images/pdf-preview.png"><img alt="../_images/pdf-preview.png" src="../_images/pdf-preview.png" style="width: 100%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Abb. 15 </span><span class="caption-text">Live-Vorschau des aktuellen Stands; der Export als PDF erfolgt je Revision.</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 17 </span><span class="caption-text">Live-Vorschau des aktuellen Stands; der Export als PDF erfolgt je Revision.</span><a class="headerlink" href="#id18" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
