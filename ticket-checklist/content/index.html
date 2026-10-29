@@ -1,0 +1,939 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO TicketChecklist Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d62e1945" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO TicketChecklist  Dokumentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO TicketChecklist  Dokumentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-ticketchecklist">
+<h1>OTOBO TicketChecklist<a class="headerlink" href="#otobo-ticketchecklist" title="Link to this heading">¶</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Open Source</p>
+<p>TicketChecklist steht unter der GNU Affero General Public License v3.0
+(AGPL-3.0). Quelltext, Paket und Lizenztext:
+<a class="reference external" href="https://github.com/FreiconOSS/otobo-addon-ticket-checklist">https://github.com/FreiconOSS/otobo-addon-ticket-checklist</a> — siehe auch
+<a class="reference internal" href="#lizenz"><span class="std std-ref">Lizenz und Herkunft</span></a>.</p>
+</div>
+</section>
+<section id="beschreibung">
+<h1>Beschreibung<a class="headerlink" href="#beschreibung" title="Link to this heading">¶</a></h1>
+<p><strong>TicketChecklist</strong> gibt OTOBO-Tickets eine Checkliste: eine Liste von Aufgaben, jede mit einem
+Status und auf Wunsch mit verantwortlichem Agenten, Priorität, Startdatum und Fälligkeit.</p>
+<p>Ein typischer Fall: Jedes Onboarding-Ticket braucht dieselben Schritte — Benutzerkonto,
+Postfach, Notebook, Zugangskarte, Telefon und so weiter. Eine Administratorin legt sie einmal
+als <strong>Checklisten-Vorlage</strong> an. Entsteht das Ticket — durch einen Agenten, per E-Mail, durch
+einen Prozess oder den GenericAgent —, kommt die Vorlage auf das Ticket. Die Agenten haken die
+Schritte in der Ticketansicht ab, die Verantwortlichen eines Schritts werden benachrichtigt,
+wenn er fällig wird, und das Ticket zeigt auf einen Blick, ob noch etwas offen ist.</p>
+<p><strong>Auf einen Blick</strong></p>
+<ul class="simple">
+<li><p>Aufgabenliste je Ticket mit Status, Verantwortlichem, Priorität, Startdatum und Fälligkeit</p></li>
+<li><p>Vorlagen für wiederkehrende Abläufe, auf Gruppen beschränkbar, als JSON exportier- und
+importierbar</p></li>
+<li><p>Bedingungen und Aktionen in der Vorlage, z. B. „ist Aufgabe X <em>erledigt</em>, wird das Ticket
+<em>erfolgreich geschlossen</em>“</p></li>
+<li><p>Checkliste kommt per Agent, Ticketmaske, E-Mail-Header, GenericAgent oder Prozess aufs Ticket</p></li>
+<li><p>Benachrichtigungen vor der Fälligkeit und zum Startdatum</p></li>
+<li><p>Übersichten „Meine Checklisten-Aufgaben“ und „Tickets mit Checkliste“, Dashboard-Widgets,
+Einträge im Ereigniskalender</p></li>
+<li><p>Export als PDF, Excel und Kalender-Aufgabe; Ticket-PDF mit Checkliste</p></li>
+<li><p>Anzeige der Checkliste im Kundenportal, wenn der Agent sie freigibt</p></li>
+<li><p>Ein Paket für OTOBO 11.0 und 11.1, kein Core-Override</p></li>
+</ul>
+<p>TicketChecklist ist die Portierung von <strong>TicketChecklist 10.1.3 von Perl-Services.de</strong> (Renée
+Bäcker) auf OTOBO 11. Freicon GmbH &amp; Co. KG pflegt sie unter derselben Lizenz weiter.</p>
+</section>
+<section id="einsatzszenarien">
+<h1>Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Link to this heading">¶</a></h1>
+<p><strong>Onboarding und Offboarding.</strong> Ein neuer Mitarbeiter braucht Konto, Postfach, Notebook,
+Telefon und Zugangskarte — jedes Mal dieselben Schritte, verteilt auf mehrere Personen. Die
+Vorlage bringt alle Schritte samt Verantwortlichen und Fristen aufs Ticket; nichts wird
+vergessen, und jeder sieht, was noch fehlt.</p>
+<p><strong>Wiederkehrende Wartung.</strong> Patchday, Zertifikatstausch, Jahresinventur: Eine Checkliste je
+Ticket hält fest, welcher Server schon erledigt ist und wer den nächsten übernimmt.</p>
+<p><strong>Arbeitsplatzumzug.</strong> Netzwerkdose, Telefon, Drucker, Möbel — verschiedene Teams, ein
+Ticket. Mit Startdatum werden Aufgaben erst zum richtigen Zeitpunkt aktiv und ihre
+Verantwortlichen erst dann benachrichtigt.</p>
+<p><strong>Freigaben im Prozess.</strong> Ein Prozess legt per Übergangsaktion die passende Checkliste an;
+Bedingungen in der Vorlage setzen den Ticketstatus, sobald die letzte Aufgabe erledigt ist.</p>
+<section id="uberblick">
+<span id="ueberblick"></span><h2>Überblick<a class="headerlink" href="#uberblick" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#user-guide"><span class="std std-ref">Die Checkliste im Alltag</span></a> — Aufgaben abhaken, Checkliste bearbeiten, Übersichten, Drucken</p></li>
+<li><p><a class="reference internal" href="#admin-guide"><span class="std std-ref">Einrichten: Vorlagen, Wege aufs Ticket, Benachrichtigungen</span></a> — Vorlagen anlegen, wie die Checkliste aufs Ticket kommt, Kundenportal,
+Benachrichtigungen</p></li>
+<li><p><a class="reference internal" href="#beispiel"><span class="std std-ref">Beispiel: Onboarding</span></a> — Onboarding von der Vorlage bis zur letzten Aufgabe</p></li>
+<li><p><a class="reference internal" href="#worauf-achten"><span class="std std-ref">Worauf achten</span></a> — was man wissen sollte</p></li>
+<li><p><a class="reference internal" href="#technik"><span class="std std-ref">Technische Referenz</span></a> — Voraussetzungen, Installation, alle Einstellungen, Meldungen im Protokoll</p></li>
+</ul>
+</section>
+</section>
+<section id="die-checkliste-im-alltag">
+<span id="user-guide"></span><h1>Die Checkliste im Alltag<a class="headerlink" href="#die-checkliste-im-alltag" title="Link to this heading">¶</a></h1>
+<section id="die-checkliste-im-ticket">
+<h2>Die Checkliste im Ticket<a class="headerlink" href="#die-checkliste-im-ticket" title="Link to this heading">¶</a></h2>
+<p>Rechts in der Ticketansicht zeigt das Widget <em>Ticket Checkliste</em> die Aufgaben des Tickets mit
+ihrem Status in Farbe; <strong>Details</strong> zeigt Verantwortlichen, Fälligkeit und Kommentar. Der
+Ticketbesitzer und der Verantwortliche einer Aufgabe ändern den Status direkt dort.</p>
+<ul class="simple">
+<li><p><strong>Kundenportal</strong> — gibt die Checkliste für den Kunden frei (nur mit
+<code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::CustomerVisibility</span></code>).</p></li>
+<li><p><strong>Nur meine Aufgaben</strong> — blendet die Aufgaben anderer Verantwortlicher aus.</p></li>
+<li><p><strong>Exportieren als</strong> — die Checkliste als PDF, Excel-Datei oder Kalender-Aufgabe.</p></li>
+</ul>
+<figure class="align-center" id="id4">
+<img alt="../_images/ticket-zoom.png" src="../_images/ticket-zoom.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Das Onboarding-Ticket mit seiner Checkliste: zwei Aufgaben erledigt, eine in Bearbeitung, drei offen.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="checkliste-bearbeiten">
+<h2>Checkliste bearbeiten<a class="headerlink" href="#checkliste-bearbeiten" title="Link to this heading">¶</a></h2>
+<p>Der Menüpunkt <strong>Checkliste</strong> im Ticketmenü öffnet die Maske für die ganze Liste:</p>
+<ul class="simple">
+<li><p><strong>Vorlage</strong> — eine Vorlage wählen und ihre Aufgaben übernehmen (ersetzt die vorhandenen,
+außer <code class="docutils literal notranslate"><span class="pre">KeepEntriesOnTemplateChange</span></code> ist an),</p></li>
+<li><p><strong>+</strong> fügt eine Aufgabe hinzu, <strong>–</strong> entfernt sie, die Pfeile sortieren,</p></li>
+<li><p>das Augen-Symbol klappt die Details einer Aufgabe auf: Kommentar, Artikel, Verantwortlicher,
+Fälligkeit, Startdatum (mit <code class="docutils literal notranslate"><span class="pre">Feature::DateStart</span></code>) und Priorität; <strong>Verschiebe Aufgabe
+nach Ticket</strong> hängt sie an ein anderes Ticket,</p></li>
+<li><p><strong>Zeige/Verstecke alle Details</strong> und <strong>Checkliste löschen</strong> wirken auf die ganze Liste.</p></li>
+</ul>
+<p>Gespeichert wird mit <strong>Abschicken</strong>.</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/checklist-mask.png" src="../_images/checklist-mask.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Die Checklisten-Maske: oben die Vorlagenauswahl, darunter die Aufgaben mit ihren Details.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Fälligkeiten und Startdaten erscheinen in der Zeitzone des Agenten.</p>
+</section>
+<section id="ubersichten-und-dashboard">
+<h2>Übersichten und Dashboard<a class="headerlink" href="#ubersichten-und-dashboard" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Tickets → Meine Checklisten-Aufgaben</strong> listet alle Aufgaben, für die der Agent
+verantwortlich ist.</p></li>
+<li><p><strong>Tickets → Suche Tickets mit Checkliste</strong> listet Tickets mit offenen Aufgaben.</p></li>
+<li><p>Zwei Dashboard-Widgets zeigen dasselbe auf der Startseite; der Ereigniskalender des
+Dashboards zeigt die Fälligkeiten.</p></li>
+</ul>
+</section>
+<section id="drucken-und-export">
+<h2>Drucken und Export<a class="headerlink" href="#drucken-und-export" title="Link to this heading">¶</a></h2>
+<p><strong>Checkliste drucken</strong> im Ticketmenü erzeugt ein PDF nur der Checkliste. Das Ticket-PDF mit der
+Checkliste vor den Artikeln ist der Menüeintrag <code class="docutils literal notranslate"><span class="pre">210-PrintChecklist</span></code> — ausgeliefert
+abgeschaltet. Ist zusätzlich <code class="docutils literal notranslate"><span class="pre">ChecklistSelectArticle</span></code> aktiv, wählt der Agent in der
+Artikelliste aus, welche Artikel ins PDF kommen.</p>
+</section>
+</section>
+<section id="einrichten-vorlagen-wege-aufs-ticket-benachrichtigungen">
+<span id="admin-guide"></span><h1>Einrichten: Vorlagen, Wege aufs Ticket, Benachrichtigungen<a class="headerlink" href="#einrichten-vorlagen-wege-aufs-ticket-benachrichtigungen" title="Link to this heading">¶</a></h1>
+<section id="checklisten-vorlagen">
+<h2>Checklisten-Vorlagen<a class="headerlink" href="#checklisten-vorlagen" title="Link to this heading">¶</a></h2>
+<p><strong>Admin → Checklisten-Vorlagen</strong> verwaltet benannte Listen von Aufgaben. Jede Aufgabe einer
+Vorlage hat einen Titel und optional:</p>
+<ul class="simple">
+<li><p><strong>Status</strong> — der Anfangsstatus auf dem Ticket,</p></li>
+<li><p><strong>Verantwortlicher</strong> — ein Agent,</p></li>
+<li><p><strong>Priorität</strong>,</p></li>
+<li><p><strong>Fälligkeit</strong> und <strong>Startdatum</strong> — in Minuten ab dem Zeitpunkt, an dem die Vorlage aufs
+Ticket kommt (1440 = ein Tag),</p></li>
+<li><p><strong>Kommentar</strong> — ein Hinweis zur Aufgabe.</p></li>
+</ul>
+<p>Eine Vorlage lässt sich auf <strong>Gruppen</strong> beschränken: Agenten sehen beim Laden nur die
+Vorlagen ihrer Gruppen.</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/template-form.png" src="../_images/template-form.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Die Vorlage <em>Onboarding neuer Mitarbeiter</em>: sechs Aufgaben mit Verantwortlichen, Priorität und Fälligkeit in Minuten.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Bedingungen und Aktionen.</strong> Eine Vorlage kann Regeln mitbringen: Erreicht eine bestimmte
+Aufgabe einen bestimmten Status, läuft eine Aktion — etwa „Ticketstatus auf <em>erfolgreich
+geschlossen</em> setzen“. Die Regeln werden beim Laden der Vorlage ans Ticket übernommen.</p>
+<p><strong>Export und Import.</strong> Vorlagen lassen sich einzeln oder alle zusammen als JSON exportieren
+und auf einem anderen System importieren. Gibt es dort schon eine Vorlage gleichen Namens,
+wird sie ersetzt (<code class="docutils literal notranslate"><span class="pre">TicketChecklist::OverrideExistingTemplatesOnImport</span></code>). Verweist eine
+importierte Vorlage auf einen Agenten, eine Queue, einen Status oder eine Priorität, die es
+nicht gibt, bleibt dieser Wert leer, und das Protokoll vermerkt es.</p>
+</section>
+<section id="wie-die-checkliste-aufs-ticket-kommt">
+<span id="wege"></span><h2>Wie die Checkliste aufs Ticket kommt<a class="headerlink" href="#wie-die-checkliste-aufs-ticket-kommt" title="Link to this heading">¶</a></h2>
+<p><strong>Agent.</strong> Im Ticketmenü <em>Checkliste</em> Aufgaben von Hand anlegen oder eine Vorlage laden.</p>
+<p><strong>Ticket anlegen.</strong> Mit <code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowChecklistInTicketCreate</span></code> zeigen die Masken
+<em>Neues Telefon-Ticket</em> und <em>Neues E-Mail-Ticket</em> ganz oben das Feld <em>Checkliste</em>. Rechts
+erscheint eine Vorschau der Aufgaben, die sich vor dem Anlegen noch bearbeiten lässt; wer den
+Kunden erst danach auswählt, behält die gewählte Vorlage.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/ticket-create.png" src="../_images/ticket-create.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Neues Telefon-Ticket mit der Vorlage <em>Onboarding neuer Mitarbeiter</em>.</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>E-Mail.</strong> Ein neues Ticket bekommt die Vorlage über den Header
+<code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistID:</span> <span class="pre">&lt;Vorlagen-ID&gt;</span></code> oder <code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistName:</span> <span class="pre">&lt;Vorlagenname&gt;</span></code>;
+eine Folge-E-Mail über <code class="docutils literal notranslate"><span class="pre">X-OTRS-FollowUp-TicketChecklistID</span></code> bzw. <code class="docutils literal notranslate"><span class="pre">-Name</span></code>.</p>
+<p><strong>E-Mail, Aufgaben ändern.</strong> <code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistItem-&lt;n&gt;:</span> <span class="pre">&lt;Titel</span> <span class="pre">der</span> <span class="pre">Aufgabe&gt;</span></code> plus
+<code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistItem-&lt;n&gt;-Status</span></code>, <code class="docutils literal notranslate"><span class="pre">-StatusID</span></code>, <code class="docutils literal notranslate"><span class="pre">-DueDate</span></code>, <code class="docutils literal notranslate"><span class="pre">-ResponsibleID</span></code>,
+<code class="docutils literal notranslate"><span class="pre">-PriorityID</span></code> (n = 1 … 20) ändert die Aufgabe dieses Titels am Ticket, zu dem die E-Mail gehört.</p>
+<p><strong>GenericAgent.</strong> Modul <code class="docutils literal notranslate"><span class="pre">Kernel::System::GenericAgent::AddChecklistToTicket</span></code> mit dem
+Parameter <code class="docutils literal notranslate"><span class="pre">TemplateID</span></code> bringt eine Vorlage aufs Ticket. Modul
+<code class="docutils literal notranslate"><span class="pre">Kernel::System::GenericAgent::ChangeChecklistItems</span></code> ändert Aufgaben: <code class="docutils literal notranslate"><span class="pre">Item_1</span></code> (Titel der
+Aufgabe) mit <code class="docutils literal notranslate"><span class="pre">Status_1</span></code>, <code class="docutils literal notranslate"><span class="pre">DueDate_1</span></code>, <code class="docutils literal notranslate"><span class="pre">Responsible_1</span></code> (Login), <code class="docutils literal notranslate"><span class="pre">Priority_1</span></code> (Name);
+<code class="docutils literal notranslate"><span class="pre">Item_2</span></code> … ebenso.</p>
+<p><strong>Prozess.</strong> Übergangsaktion <code class="docutils literal notranslate"><span class="pre">AddChecklist</span></code> (Konfiguration <code class="docutils literal notranslate"><span class="pre">TemplateID</span></code>) und
+<code class="docutils literal notranslate"><span class="pre">ChangeChecklistItems</span></code> (dieselben <code class="docutils literal notranslate"><span class="pre">Item_&lt;n&gt;</span></code>-Schlüssel wie beim GenericAgent).</p>
+<p>Die E-Mail-Header behalten das Präfix <code class="docutils literal notranslate"><span class="pre">X-OTRS-</span></code> des Originals; bestehende Postmaster-Filter
+und sendende Systeme arbeiten unverändert weiter.</p>
+</section>
+<section id="kundenportal">
+<h2>Kundenportal<a class="headerlink" href="#kundenportal" title="Link to this heading">¶</a></h2>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::CustomerVisibility</span></code> kann ein Agent die Checkliste eines
+Tickets für den Kunden freigeben. Der Kunde sieht dann in seiner Ticketansicht die Aufgaben und
+ihren Status — bearbeiten kann er sie nicht. Mit <code class="docutils literal notranslate"><span class="pre">Queues::CustomerVisibility</span></code> ist die
+Checkliste in ausgewählten Queues von vornherein sichtbar.</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/customer-ticket.png" src="../_images/customer-ticket.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Dasselbe Onboarding-Ticket im Kundenportal: Die Personalabteilung sieht, welche Schritte
+erledigt sind.</span><a class="headerlink" href="#id8" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="checklisten-status">
+<h2>Checklisten-Status<a class="headerlink" href="#checklisten-status" title="Link to this heading">¶</a></h2>
+<p><strong>Admin → Checklisten-Status</strong> verwaltet die Status der Aufgaben samt Farbe. Installiert sind
+<em>offen</em>, <em>erledigt</em>, <em>abgelehnt</em>, <em>warten</em> und <em>in Bearbeitung</em>. Ein Status, den eine Aufgabe
+noch verwendet, lässt sich nicht löschen.</p>
+<p>Welche Status als „offen“, „wartend“ oder „versteckt“ zählen, legen <code class="docutils literal notranslate"><span class="pre">OpenStates</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WaitingStates</span></code> und <code class="docutils literal notranslate"><span class="pre">HiddenStates</span></code> fest (siehe <a class="reference internal" href="#konfiguration"><span class="std std-ref">Konfiguration</span></a>).</p>
+</section>
+<section id="checklisten-benachrichtigungen">
+<h2>Checklisten-Benachrichtigungen<a class="headerlink" href="#checklisten-benachrichtigungen" title="Link to this heading">¶</a></h2>
+<p><strong>Admin → Checklistenbenachrichtigungen</strong> verwaltet die Texte, die verschickt werden, wenn eine
+Aufgabe fällig wird, ihr Startdatum erreicht oder geändert wird — je Ereignis und Sprache.
+Installiert sind deutsche Texte für <em>Verantwortlicher geändert</em>, <em>Status geändert</em> und <em>Fälligkeit
+naht</em>. Gibt es für ein Ereignis keinen Text in der Sprache des Agenten, wird nichts
+verschickt.</p>
+<p>Agenten schalten die Benachrichtigungen in ihren persönlichen Einstellungen ein und aus
+(Gruppe <em>Checklisten-Benachrichtigungen</em>).</p>
+</section>
+</section>
+<section id="beispiel-onboarding">
+<span id="beispiel"></span><h1>Beispiel: Onboarding<a class="headerlink" href="#beispiel-onboarding" title="Link to this heading">¶</a></h1>
+<ol class="arabic simple">
+<li><p><strong>Admin → Checklisten-Vorlagen → Vorlage hinzufügen</strong>: Name <em>Onboarding neuer
+Mitarbeiter</em>, Aufgaben <em>Benutzerkonto anlegen</em> (Verantwortlich: IT, Fälligkeit 1440 =
+ein Tag), <em>Notebook bereitstellen</em> (Fälligkeit 4320 = drei Tage), <em>Zugangskarte ausstellen</em>
+(Startdatum 7200 = fünf Tage, Fälligkeit 10080 = sieben Tage). Gruppe: <em>users</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowChecklistInTicketCreate</span></code> einschalten und, für das Startdatum,
+<code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::DateStart</span></code>.</p></li>
+<li><p>Ein Telefon-Ticket anlegen und im Feld für die Checkliste <em>Onboarding neuer Mitarbeiter</em>
+wählen. Die Ticketansicht zeigt die drei Aufgaben; <em>Zugangskarte ausstellen</em> steht auf
+<em>warten</em>.</p></li>
+<li><p>Die IT bekommt eine Stunde vor der Fälligkeit von <em>Benutzerkonto anlegen</em> eine
+Benachrichtigung (<code class="docutils literal notranslate"><span class="pre">TicketChecklist::DueDateBefore</span></code>) und setzt die Aufgabe im Widget auf
+<em>erledigt</em>.</p></li>
+<li><p>Fünf Tage später stellt der Daemon <em>Zugangskarte ausstellen</em> auf <em>offen</em> und benachrichtigt
+den Verantwortlichen.</p></li>
+<li><p><em>Tickets → Suche Tickets mit Checkliste</em> führt das Ticket, bis alle Aufgaben erledigt sind;
+das dynamische Feld <code class="docutils literal notranslate"><span class="pre">TicketHasOpenTodos</span></code> steht für Suchen, ACLs und den GenericAgent
+bereit.</p></li>
+</ol>
+<p>Dieselbe Vorlage kann auch per E-Mail kommen (<code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistName:</span> <span class="pre">Onboarding</span> <span class="pre">neuer</span>
+<span class="pre">Mitarbeiter</span></code>) oder aus einem Prozess (Übergangsaktion <code class="docutils literal notranslate"><span class="pre">AddChecklist</span></code> mit der ID der Vorlage).</p>
+</section>
+<section id="worauf-achten">
+<span id="id1"></span><h1>Worauf achten<a class="headerlink" href="#worauf-achten" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Der Titel ist der Schlüssel.</strong> E-Mail-Header, GenericAgent und Prozess finden eine
+Aufgabe über ihren Titel. Stehen zwei Aufgaben gleichen Titels auf einem Ticket, wird nur
+die erste geändert.</p></li>
+<li><p><strong>Höchstens 20 Aufgaben je E-Mail</strong> lassen sich mit <code class="docutils literal notranslate"><span class="pre">X-OTRS-TicketChecklistItem-&lt;n&gt;</span></code>
+ändern.</p></li>
+<li><p><strong>Die E-Mail-Header</strong> behalten das Präfix <code class="docutils literal notranslate"><span class="pre">X-OTRS-</span></code> des Originals.</p></li>
+<li><p><strong>Kunden sehen, bearbeiten aber nicht.</strong> Im Kundenportal ist die Checkliste nur eine Anzeige.</p></li>
+<li><p><strong>Ohne Daemon keine Benachrichtigungen</strong> und keine Startdaten.</p></li>
+<li><p><strong>Alles drin.</strong> Prioritäten, Verantwortliche, Fälligkeiten, Benachrichtigungen, Übersichten,
+Sortierung und Vorlagen — beim Original als <em>Pro</em>-Funktionen verkauft — gehören zu diesem
+Paket.</p></li>
+</ul>
+</section>
+<section id="technische-referenz">
+<span id="technik"></span><h1>Technische Referenz<a class="headerlink" href="#technische-referenz" title="Link to this heading">¶</a></h1>
+<p>Dieser Teil richtet sich an Administratoren: Voraussetzungen, Installation, wie das Addon
+intern arbeitet, alle Einstellungen der Systemkonfiguration, Meldungen im Protokoll und die
+gespeicherten Daten.</p>
+<section id="systemvoraussetzungen">
+<h2>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h2>
+<section id="framework">
+<h3>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h3>
+<p>OTOBO 11.0.x oder 11.1.x — ein Paket für beide Versionen.</p>
+</section>
+<section id="pakete">
+<h3>Pakete<a class="headerlink" href="#pakete" title="Link to this heading">¶</a></h3>
+<p>Keine.</p>
+</section>
+<section id="software-von-drittanbietern">
+<h3>Software von Drittanbietern<a class="headerlink" href="#software-von-drittanbietern" title="Link to this heading">¶</a></h3>
+<p>Das Perl-Modul <code class="docutils literal notranslate"><span class="pre">Net::LDAP</span></code> — nur, wenn Verantwortliche aus einem LDAP-Verzeichnis gewählt
+werden sollen (ein optionales Modul von OTOBO, siehe <code class="docutils literal notranslate"><span class="pre">bin/otobo.CheckModules.pl</span></code>).</p>
+</section>
+</section>
+<section id="installation">
+<span id="id2"></span><h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>Das Paket wird wie jedes OTOBO-Paket über <strong>Admin → Paketverwaltung</strong> installiert. Es legt
+seine Tabellen, die Status <em>offen</em>, <em>erledigt</em>, <em>abgelehnt</em>, <em>warten</em> und <em>in Bearbeitung</em>,
+deutsche Benachrichtigungstexte und vier interne dynamische Felder an (siehe
+<a class="reference internal" href="#daten"><span class="std std-ref">Gespeicherte Daten</span></a>). Die E-Mail-Header für Checklisten trägt es in <code class="docutils literal notranslate"><span class="pre">PostmasterX-Header</span></code> ein.</p>
+<p>Damit Benachrichtigungen und Startdaten wirken, muss der OTOBO-Daemon laufen.</p>
+<section id="umstieg-von-version-10-1-3">
+<h3>Umstieg von Version 10.1.3<a class="headerlink" href="#umstieg-von-version-10-1-3" title="Link to this heading">¶</a></h3>
+<p>Das Paket wird über die alte Version installiert. Das Upgrade holt die Dateien aus
+<code class="docutils literal notranslate"><span class="pre">Custom/</span></code>, stellt den Gruppenschlüssel der Vorlagen auf die OTOBO-11-Tabelle um und entfernt
+die alte Einstellung <code class="docutils literal notranslate"><span class="pre">Ticket::CustomModule###10001-TicketChecklist</span></code>. Vorlagen, Aufgaben und
+Status bleiben erhalten. Die Beispieldatei <code class="docutils literal notranslate"><span class="pre">Kernel/Config/Files/ZZZChecklist.pm</span></code> der alten
+Version entfällt.</p>
+</section>
+</section>
+<section id="wie-das-addon-arbeitet">
+<h2>Wie das Addon arbeitet<a class="headerlink" href="#wie-das-addon-arbeitet" title="Link to this heading">¶</a></h2>
+<p>Die Aufgaben einer Checkliste gehören zu genau einem Ticket. Jede Änderung — neue Aufgabe,
+neuer Status, neuer Verantwortlicher, neue Fälligkeit — löst ein Checklisten-Ereignis aus. Daran
+hängen Tickethistorie, Änderungsnotiz, Benachrichtigungen, die dynamischen Felder und die
+Bedingungen der Vorlage.</p>
+<p>Der Daemon prüft alle zehn Minuten die Fälligkeiten und Startdaten: Er benachrichtigt den
+Besitzer bzw. Verantwortlichen einer Aufgabe, deren Fälligkeit naht, und stellt Aufgaben, deren
+Startdatum erreicht ist, von <em>warten</em> auf <em>offen</em>.</p>
+<p>Die Checkliste erscheint als Widget rechts in der Ticketansicht, in zwei Dashboard-Widgets, in
+den Übersichten <em>Meine Checklisten-Aufgaben</em> und <em>Suche Tickets mit Checkliste</em>, im
+Ereigniskalender, im PDF — und im Kundenportal, wenn sie dort freigegeben ist.</p>
+</section>
+<section id="konfiguration">
+<span id="id3"></span><h2>Konfiguration<a class="headerlink" href="#konfiguration" title="Link to this heading">¶</a></h2>
+<p>Alle Einstellungen stehen in der Systemkonfiguration unter <strong>Core → TicketChecklist</strong> und
+ihren Untergruppen. Angegeben sind die ausgelieferten Standardwerte.</p>
+<section id="allgemein-core-ticketchecklist">
+<h3>Allgemein — Core → TicketChecklist<a class="headerlink" href="#allgemein-core-ticketchecklist" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DefaultState</span></code> — Standard: <em>open</em></dt><dd><p>Status einer neuen Aufgabe.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DefaultPriority</span></code> — Standard: <em>3 normal</em></dt><dd><p>Priorität einer neuen Aufgabe (es gelten die Ticketprioritäten). Auch der Rückfallwert,
+wenn eine Aufgabe ohne Priorität gespeichert wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::PrioritySource</span></code> — Standard: <em>DefaultPriority</em></dt><dd><p>Woher die Priorität einer neuen Aufgabe kommt: aus der Einstellung oben oder aus der
+Priorität des Tickets.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::OpenStates</span></code> — Standard: <em>open</em></dt><dd><p>Status, die als „offen“ zählen (Übersichten, dynamisches Feld <code class="docutils literal notranslate"><span class="pre">TicketHasOpenTodos</span></code>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::WaitingStates</span></code> — Standard: <em>waiting</em></dt><dd><p>Status von Aufgaben, die auf ihr Startdatum warten.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::HiddenStates</span></code> — Standard: leer, deaktiviert</dt><dd><p>Aufgaben in diesen Status erscheinen nicht im Widget der Ticketansicht.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ClosedState</span></code> — Standard: <em>done</em></dt><dd><p>Status, den die Aufgaben bekommen, wenn das Ticket geschlossen wird (Ereignis
+<code class="docutils literal notranslate"><span class="pre">1032-CloseChecklistItems</span></code>, standardmäßig aus).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Theme</span></code> — Standard: <em>Standard</em></dt><dd><p>Aussehen der Checklisten-Maske: <em>Standard</em> oder <em>Slim</em>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DetailsInWidget</span></code> — Standard: <em>Link</em></dt><dd><p>Wie das Widget die Details einer Aufgabe zeigt: als Link, beim Überfahren mit der Maus oder
+gar nicht.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Widget::ShowResponsibleFullname</span></code> — Standard: aus</dt><dd><p>Zeigt im Widget den vollen Namen des Verantwortlichen statt des Logins.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ReloadChecklist</span></code> — Standard: aus</dt><dd><p>Lädt das Widget neu, nachdem eine Aufgabe geändert wurde.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ReloadTicketZoom</span></code> — Standard: aus</dt><dd><p>Lädt die ganze Ticketansicht neu, nachdem eine Aufgabe geändert wurde.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::AllUsersForResponsibles</span></code> — Standard: an</dt><dd><p>Alle Agenten sind als Verantwortliche wählbar. Aus: nur Agenten mit Leserecht (<code class="docutils literal notranslate"><span class="pre">ro</span></code>) auf
+die Queue des Tickets.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::AllAgentsStatusChange</span></code> — Standard: aus</dt><dd><p>Jeder Agent darf den Status jeder Aufgabe ändern. Aus: nur der Ticketbesitzer und der
+Verantwortliche der Aufgabe.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::RWGroups</span></code> — Standard: leer, deaktiviert</dt><dd><p>Nur Mitglieder dieser Gruppen (mit <code class="docutils literal notranslate"><span class="pre">rw</span></code>) dürfen die Checkliste bearbeiten.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::HardDeleteItems</span></code> — Standard: an</dt><dd><p>An: Eine in der Maske entfernte Aufgabe wird sofort gelöscht. Aus: erst beim Speichern der
+Checkliste.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ConfirmDeleteItems</span></code> — Standard: aus</dt><dd><p>Fragt nach, bevor eine Aufgabe entfernt wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::KeepEntriesOnTemplateChange</span></code> — Standard: aus</dt><dd><p>Beim Laden einer Vorlage werden ihre Aufgaben ergänzt, statt die vorhandenen zu ersetzen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowChecklistInTicketCreate</span></code> — Standard: aus</dt><dd><p>Vorlagenauswahl in den Masken <em>Neues Telefon-Ticket</em> und <em>Neues E-Mail-Ticket</em>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::AllowMultiChecklistsInTicketCreate</span></code> — Standard: aus</dt><dd><p>Zeigt neben dieser Auswahl „Fügt Punkte zur bestehenden Checkliste hinzu“.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::OverrideExistingTemplatesOnImport</span></code> — Standard: an</dt><dd><p>Ein Vorlagen-Import ersetzt Vorlagen mit gleichem Namen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowExportIcons</span></code> — Standard: Ticketansicht an, Dashboard (Meine Aufgaben) aus</dt><dd><p>Wo die Symbole für PDF, Excel und Kalender-Aufgabe erscheinen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::PrintItemComment</span></code> — Standard: aus</dt><dd><p>Druckt den Kommentar einer Aufgabe im Ticket-PDF mit.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::PastDueDatesAllowed</span></code> — Standard: an</dt><dd><p>Aus: Eine Fälligkeit in der Vergangenheit wird abgelehnt.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DueDateYearsInPast</span></code> — Standard: 0</dt><dd><p>Wie viele Jahre zurück die Datumsauswahl anbietet.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DynamicFieldHasOpenTodos</span></code> — Standard: <em>TicketHasOpenTodos</em></dt><dd><p>Dynamisches Feld, das festhält, ob das Ticket offene Aufgaben hat.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Condition::MultiState</span></code> — Standard: aus</dt><dd><p>Eine Bedingung in der Vorlage darf mehrere Status nennen (oder-verknüpft).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::AllowTicketsAsItems</span></code> — Standard: aus</dt><dd><p>Als Titel einer Aufgabe darf eine Ticketnummer stehen; die Aufgabe folgt dann diesem Ticket.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::LinkTickets</span></code> — Standard: aus</dt><dd><p>Zusammen mit der Option oben: das genannte Ticket als Kind mit diesem verknüpfen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::TicketStateToItemState</span></code> — Standard: neu/offen/warten → <em>open</em>, zusammengefasst/erfolgreich geschlossen → <em>done</em>, …</dt><dd><p>Ticketstatus → Aufgabenstatus, für Tickets als Aufgaben.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ItemStateToTicketState</span></code> — Standard: <em>open</em> → offen, <em>done</em> → erfolgreich geschlossen, <em>rejected</em> → erfolglos geschlossen</dt><dd><p>Aufgabenstatus → Ticketstatus, für Tickets als Aufgaben.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Debug</span></code> — Standard: aus</dt><dd><p>Debug-Ausgaben ins OTOBO-Protokoll.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::HistoryTypes###212-Checklist</span></code></dt><dd><p>Zeigt die Checklisten-Einträge in der Tickethistorie.</p>
+</dd>
+</dl>
+</section>
+<section id="funktionen-core-ticketchecklist-features">
+<h3>Funktionen — Core → TicketChecklist → Features<a class="headerlink" href="#funktionen-core-ticketchecklist-features" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::DateStart</span></code> — Standard: aus</dt><dd><p>Aufgaben bekommen ein Startdatum. Bis dahin stehen sie auf <em>warten</em>; der Daemon öffnet sie.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::CustomerVisibility</span></code> — Standard: aus</dt><dd><p>Agenten können die Checkliste eines Tickets im Kundenportal anzeigen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Feature::FromTextarea</span></code> — Standard: aus</dt><dd><p>Aufgaben lassen sich als Zeilen eines Textfelds eingeben.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Queues::CustomerVisibility</span></code> (Untergruppe <em>CustomerVisibility</em>) — Standard: deaktiviert, Beispiel <em>Misc</em> → 1</dt><dd><p>Queues, in denen die Checkliste standardmäßig für den Kunden sichtbar ist.</p>
+</dd>
+</dl>
+</section>
+<section id="benachrichtigungen-core-ticketchecklist-notifications">
+<h3>Benachrichtigungen — Core → TicketChecklist → Notifications<a class="headerlink" href="#benachrichtigungen-core-ticketchecklist-notifications" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DueDateBefore</span></code> — Standard: 60</dt><dd><p>Minuten vor der Fälligkeit, zu denen benachrichtigt wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::NotificationTimes</span></code> — Standard: deaktiviert, Beispiel <em>-60m</em>, <em>-5d</em></dt><dd><p>Mehrere Zeitpunkte vor der Fälligkeit statt des einen oben.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::NotificationTimesSpan</span></code> — Standard: 10</dt><dd><p>Minuten, die um jeden dieser Zeitpunkte geprüft werden — sollte dem Daemon-Intervall
+entsprechen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::DateStartBefore</span></code> — Standard: 60</dt><dd><p>Minuten vor dem Startdatum, zu denen benachrichtigt wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::StartNotificationTimes</span></code> — Standard: deaktiviert, Beispiel <em>-60m</em>, <em>-5d</em></dt><dd><p>Wie <code class="docutils literal notranslate"><span class="pre">NotificationTimes</span></code>, für das Startdatum.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::StartNotificationTimesSpan</span></code> — Standard: 10</dt><dd><p>Wie <code class="docutils literal notranslate"><span class="pre">NotificationTimesSpan</span></code>, für das Startdatum.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::NotificationQueueExclude</span></code> — Standard: deaktiviert, Beispiel <em>Junk</em></dt><dd><p>Keine Checklisten-Benachrichtigungen für Tickets in diesen Queues.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PreferencesGroups###ChecklistNotifications</span></code> — Standard: aktiv</dt><dd><p>Die persönliche Einstellung, mit der Agenten die Benachrichtigungen ein- und ausschalten.</p>
+</dd>
+</dl>
+</section>
+<section id="startdatum-core-ticketchecklist-startdate">
+<h3>Startdatum — Core → TicketChecklist → StartDate<a class="headerlink" href="#startdatum-core-ticketchecklist-startdate" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::StartDate::NewState</span></code> — Standard: <em>open</em></dt><dd><p>Status, den eine Aufgabe bekommt, wenn ihr Startdatum erreicht ist.</p>
+</dd>
+</dl>
+</section>
+<section id="anderungsnotizen-core-ticketchecklist-changenote">
+<h3>Änderungsnotizen — Core → TicketChecklist → ChangeNote<a class="headerlink" href="#anderungsnotizen-core-ticketchecklist-changenote" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowChangeNotes</span></code> — Standard: aus</dt><dd><p>Agenten können eine Notiz erfassen, wenn sie eine Aufgabe in der Maske ändern.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ShowChangeNotesWidget</span></code> — Standard: aus</dt><dd><p>Dasselbe, wenn der Status im Widget geändert wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNoteAsArticle</span></code> — Standard: aus</dt><dd><p>Die Notiz wird ein Artikel am Ticket.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNoteArticle###Type</span></code> — Standard: <em>note-internal</em></dt><dd><p>Artikeltyp dieses Artikels.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNoteArticle###Subject</span></code> — Standard: <em>TODO changed</em></dt><dd><p>Betreff dieses Artikels.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNoteAsNotification</span></code> — Standard: an</dt><dd><p>Die Notiz ist Teil der Änderungsbenachrichtigung.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::SaveChangeNote</span></code> — Standard: aus</dt><dd><p>Die Notiz wird an der Aufgabe gespeichert.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::EditChangeNote</span></code> — Standard: aus</dt><dd><p>Eine gespeicherte Notiz lässt sich bearbeiten.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNoteDialogRows</span></code> / <code class="docutils literal notranslate"><span class="pre">…Cols</span></code> — Standard: 10 / 40</dt><dd><p>Größe des Notizfelds.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNote::ASCII2HTML</span></code> — Standard: aus</dt><dd><p>Zeigt die Notiz mit Zeilenumbrüchen und maskiertem HTML.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ChangeNote::URLAutolink</span></code> — Standard: aus</dt><dd><p>Macht Adressen in der Notiz zu Links (braucht die Option oben).</p>
+</dd>
+</dl>
+</section>
+<section id="kommentare-core-ticketchecklist-comment">
+<h3>Kommentare — Core → TicketChecklist → Comment<a class="headerlink" href="#kommentare-core-ticketchecklist-comment" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Comment::ASCII2HTML</span></code> — Standard: aus</dt><dd><p>Zeigt den Kommentar einer Aufgabe mit Zeilenumbrüchen und maskiertem HTML.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Comment::URLAutolink</span></code> — Standard: aus</dt><dd><p>Macht Adressen im Kommentar zu Links (braucht die Option oben).</p>
+</dd>
+</dl>
+</section>
+<section id="verantwortliche-core-ticketchecklist-responsible">
+<h3>Verantwortliche — Core → TicketChecklist → Responsible<a class="headerlink" href="#verantwortliche-core-ticketchecklist-responsible" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ResponsibleAutocomplete</span></code> — Standard: aus</dt><dd><p>Ersetzt die Auswahlliste der Verantwortlichen durch ein Suchfeld mit Vorschlägen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::ResponsibleAutocompleteModule</span></code> — Standard: <em>Agent</em></dt><dd><p>Quelle dieses Suchfelds: <em>Agent</em>, <em>LDAP</em>, <em>Groups</em> oder <em>Roles</em>.</p>
+</dd>
+</dl>
+<p>Die Quelle <em>LDAP</em> liest ihre Verbindung aus dem Hash <code class="docutils literal notranslate"><span class="pre">TicketChecklist::ResponsibleLDAP</span></code>.
+Er ist <strong>keine</strong> Einstellung der Systemkonfiguration und hat keinen Standardwert; er gehört in
+<code class="docutils literal notranslate"><span class="pre">Kernel/Config.pm</span></code>, im selben Aufbau wie ein LDAP-Backend für Kundenbenutzer:</p>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$Self</span><span class="o">-&gt;</span><span class="p">{</span><span class="s">&#39;TicketChecklist::ResponsibleLDAP&#39;</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Params</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Host</span><span class="w">   </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;ldap.example.com&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">BaseDN</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;ou=people,dc=example,dc=com&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">SSCOPE</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;sub&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">UserDN</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="w">            </span><span class="c1"># leer = anonymer Bind</span>
+<span class="w">        </span><span class="n">UserPw</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">AlwaysFilter</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="w">      </span><span class="c1"># z. B. &#39;(objectclass=user)&#39;</span>
+<span class="w">        </span><span class="n">Die</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Params</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">389</span><span class="p">,</span><span class="w"> </span><span class="n">timeout</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w"> </span><span class="n">async</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="n">UserKey</span><span class="w">             </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;uid&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">UserListFields</span><span class="w">      </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;cn&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mail&#39;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="n">UserSearchFields</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;uid&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;cn&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;mail&#39;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="n">UserSearchPrefix</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">UserSearchSuffix</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&#39;*&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">UserSearchListLimit</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<span class="w">    </span><span class="n">UserNameFields</span><span class="w">      </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s">&#39;givenname&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;sn&#39;</span><span class="w"> </span><span class="p">],</span>
+<span class="w">    </span><span class="n">CacheTTL</span><span class="w">            </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Map</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="p">],</span><span class="w">          </span><span class="c1"># wie in einem LDAP-Backend für Kundenbenutzer</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="kalender-core-ticketchecklist-calendar">
+<h3>Kalender — Core → TicketChecklist → Calendar<a class="headerlink" href="#kalender-core-ticketchecklist-calendar" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Calendar::Color</span></code> — Standard: <em>#cdcdcd</em></dt><dd><p>Farbe der Checklisten-Einträge im Ereigniskalender des Dashboards.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Calendar::TitleFormat</span></code> — Standard: <code class="docutils literal notranslate"><span class="pre">#[%</span> <span class="pre">Data.TicketNumber</span> <span class="pre">%]</span> <span class="pre">-</span> <span class="pre">[%</span> <span class="pre">Data.Title</span> <span class="pre">%]</span></code></dt><dd><p>Titel eines Eintrags.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketChecklist::Calendar::InfoFormat</span></code> — Standard: <code class="docutils literal notranslate"><span class="pre">[%</span> <span class="pre">Data.TicketNumber</span> <span class="pre">%]</span> <span class="pre">-</span> <span class="pre">[%</span> <span class="pre">Data.Title</span> <span class="pre">%]</span></code></dt><dd><p>Text beim Überfahren eines Eintrags mit der Maus.</p>
+</dd>
+</dl>
+</section>
+<section id="ereignisse-core-event">
+<h3>Ereignisse — Core → Event<a class="headerlink" href="#ereignisse-core-event" title="Link to this heading">¶</a></h3>
+<p>Ticket-Ereignisse (<code class="docutils literal notranslate"><span class="pre">Ticket::EventModulePost###…</span></code>):</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">1031-MergeTicketChecklists</span></code> — an</dt><dd><p>Verschiebt die Aufgaben eines zusammengefassten Tickets ins Zielticket.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">1032-CloseChecklistItems</span></code> — <strong>aus</strong></dt><dd><p>Setzt alle Aufgaben auf <code class="docutils literal notranslate"><span class="pre">TicketChecklist::ClosedState</span></code>, wenn das Ticket geschlossen wird.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">1033-UpdateChecklistItems</span></code> — an</dt><dd><p>Hält Aufgaben, die für ein Ticket stehen, mit diesem Ticket gleich.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">1037-SetTicketChecklists</span></code> — an</dt><dd><p>Bringt die in der Ticketmaske gewählte Vorlage auf das neue Ticket.</p>
+</dd>
+</dl>
+<p>Checklisten-Ereignisse (<code class="docutils literal notranslate"><span class="pre">TicketChecklist::EventModule###…</span></code>), alle an: <code class="docutils literal notranslate"><span class="pre">001-Notifications</span></code>,
+<code class="docutils literal notranslate"><span class="pre">002-TicketHistory</span></code>, <code class="docutils literal notranslate"><span class="pre">003-ChangeNote</span></code>, <code class="docutils literal notranslate"><span class="pre">004-SetHasOpenTodos</span></code>, <code class="docutils literal notranslate"><span class="pre">005-ConditionAction</span></code>
+(Bedingungen und Aktionen der Vorlage), <code class="docutils literal notranslate"><span class="pre">006-SetHasChecklist</span></code>,
+<code class="docutils literal notranslate"><span class="pre">007-SetDefaultCustomerVisibility</span></code>, <code class="docutils literal notranslate"><span class="pre">011-SetTicketState</span></code>, <code class="docutils literal notranslate"><span class="pre">012-ForeignTickets</span></code>,
+<code class="docutils literal notranslate"><span class="pre">020-RemoveTicketInfoFlags</span></code>.</p>
+</section>
+<section id="daemon-daemon-schedulercrontaskmanager-task">
+<h3>Daemon — Daemon → SchedulerCronTaskManager → Task<a class="headerlink" href="#daemon-daemon-schedulercrontaskmanager-task" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ChecklistNotifications</span></code> — alle 10 Minuten</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Maint::Ticket::ChecklistNotifications</span></code>: Benachrichtigungen zur Fälligkeit.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ChecklistStartDateNotifications</span></code> — alle 10 Minuten</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Maint::Ticket::ChecklistStartDateNotifications</span></code>: Benachrichtigungen zum Startdatum.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ChecklistSetStartDateStatus</span></code> — alle 10 Minuten</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Maint::Ticket::ChecklistSetStartDateStatus</span></code>: <em>warten</em> → <code class="docutils literal notranslate"><span class="pre">StartDate::NewState</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ChecklistClearPreferences</span></code> — sonntags, zwischen 0 und 1 Uhr alle 10 Minuten</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Maint::Ticket::ChecklistClearPreferences</span></code>: setzt zurück, für welche Tickets ein Agent
+sich alle Aufgaben anzeigen lässt.</p>
+</dd>
+</dl>
+</section>
+<section id="registrierung">
+<h3>Registrierung<a class="headerlink" href="#registrierung" title="Link to this heading">¶</a></h3>
+<p>Diese Einstellungen melden die Teile des Addons in OTOBO an. Sie werden nur geändert, um einen
+Menüeintrag oder ein Widget zu verschieben oder abzuschalten.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Module###AgentTicketChecklist</span></code> und die übrigen Agentenmodule</dt><dd><p>Checklisten-Maske, Vorlagen laden, Statuswechsel, Verantwortlichen-Suche, Kundenportal-Schalter,
+Kalender, Druck, Export, Übersichten — alle an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Module###AdminTicketChecklistStates</span></code>, <code class="docutils literal notranslate"><span class="pre">…Templates</span></code>, <code class="docutils literal notranslate"><span class="pre">…Notifications</span></code></dt><dd><p>Die drei Admin-Masken und ihre Kacheln in der Admin-Übersicht — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Navigation###AgentChecklistTickets###002-TicketChecklist</span></code>, <code class="docutils literal notranslate"><span class="pre">###AgentChecklistMyTodo###002-TicketChecklist</span></code></dt><dd><p>Hauptmenü <em>Tickets → Suche Tickets mit Checkliste</em> und <em>Meine Checklisten-Aufgaben</em> — an.
+Alle anderen <code class="docutils literal notranslate"><span class="pre">Frontend::Navigation###…###002-TicketChecklist</span></code>-Einträge sind ausgeliefert
+deaktiviert.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::MenuModule###212-Checklist</span></code>, <code class="docutils literal notranslate"><span class="pre">###213-ChecklistPrint</span></code></dt><dd><p>Ticketmenü <em>Checkliste</em> und <em>Checkliste drucken</em> — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::MenuModule###210-PrintChecklist</span></code></dt><dd><p>Ticketmenü <em>Drucken</em>: Ticket-PDF mit der Checkliste vor den Artikeln — aus.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketZoom###Widgets###002-TicketChecklist</span></code></dt><dd><p>Widget in der Ticketansicht — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DashboardBackend###0991-ChecklistItems</span></code>, <code class="docutils literal notranslate"><span class="pre">###0992-ChecklistTicket</span></code></dt><dd><p>Dashboard-Widgets — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###OutputFilterTicketChecklistDropdown</span></code></dt><dd><p>Vorlagenauswahl in den Ticketmasken — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###TicketChecklistCalendar</span></code></dt><dd><p>Aufgaben im Ereigniskalender des Dashboards — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###CustomerTicketChecklist</span></code></dt><dd><p>Checkliste in der Ticketansicht des Kundenportals — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###ChecklistSelectArticle</span></code></dt><dd><p>Auswahlkästchen in der Artikelliste, um die Artikel fürs Ticket-PDF zu wählen — aus.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Template::GenerateBlockHooks###132-TicketChecklist</span></code></dt><dd><p>Block-Hooks, die die Ausgabefilter brauchen — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Loader::Module::…###00x-TicketChecklist</span></code>, <code class="docutils literal notranslate"><span class="pre">Loader::Agent::CommonCSS###100001-TicketChecklist</span></code>, <code class="docutils literal notranslate"><span class="pre">Loader::Customer::CommonCSS###100001-TicketChecklist</span></code></dt><dd><p>JavaScript und CSS — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PostMaster::PostFilterModule###015-TicketChecklist</span></code>, <code class="docutils literal notranslate"><span class="pre">###016-TicketChecklistItem</span></code></dt><dd><p>Die E-Mail-Header aus <a class="reference internal" href="#wege"><span class="std std-ref">Wie die Checkliste aufs Ticket kommt</span></a> — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Stats::DynamicObjectRegistration###TicketChecklistStatusFilter</span></code></dt><dd><p>Ticketstatistik mit Filter auf den Aufgabenstatus — an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">AutoloadPerlPackages###2000-TicketChecklist</span></code></dt><dd><p>Entfernt die Checkliste, wenn ein Ticket gelöscht wird — an.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="meldungen-im-protokoll">
+<h2>Meldungen im Protokoll<a class="headerlink" href="#meldungen-im-protokoll" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Need</span> <span class="pre">TicketChecklist::ResponsibleLDAP-&gt;Params-&gt;Host</span> <span class="pre">in</span> <span class="pre">Kernel/Config.pm</span></code> (ebenso <code class="docutils literal notranslate"><span class="pre">BaseDN</span></code>, <code class="docutils literal notranslate"><span class="pre">SSCOPE</span></code>, <code class="docutils literal notranslate"><span class="pre">UserKey</span></code>)</dt><dd><p>Als Quelle der Verantwortlichen ist <em>LDAP</em> gewählt, der Hash
+<code class="docutils literal notranslate"><span class="pre">TicketChecklist::ResponsibleLDAP</span></code> fehlt aber oder ist unvollständig.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Can't</span> <span class="pre">connect</span> <span class="pre">to</span> <span class="pre">&lt;host&gt;:</span> <span class="pre">…</span></code> / <code class="docutils literal notranslate"><span class="pre">First</span> <span class="pre">bind</span> <span class="pre">failed!</span> <span class="pre">…</span></code> / <code class="docutils literal notranslate"><span class="pre">Search</span> <span class="pre">failed!</span> <span class="pre">…</span></code></dt><dd><p>LDAP-Server nicht erreichbar, falscher Bind-Benutzer oder falsche Base-DN.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Need</span> <span class="pre">UserID!</span></code></dt><dd><p>Ein GenericAgent-Job oder eine Übergangsaktion ist ohne diesen Parameter eingerichtet.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Need</span> <span class="pre">TemplateID!</span></code></dt><dd><p>GenericAgent-Modul oder Übergangsaktion <code class="docutils literal notranslate"><span class="pre">AddChecklist</span></code> ohne <code class="docutils literal notranslate"><span class="pre">TemplateID</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Templatename</span> <span class="pre">already</span> <span class="pre">exists</span></code></dt><dd><p>Eine Vorlage wurde unter einem vergebenen Namen gespeichert. Beim Import siehe
+<code class="docutils literal notranslate"><span class="pre">OverrideExistingTemplatesOnImport</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Import:</span> <span class="pre">Can'</span> <span class="pre">find</span> <span class="pre">user/queue/state/priority</span> <span class="pre">…</span></code></dt><dd><p>Die importierte Vorlage nennt etwas, das es auf diesem System nicht gibt; der Wert bleibt leer.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">notification</span> <span class="pre">for</span> <span class="pre">&lt;event&gt;</span> <span class="pre">(&lt;language&gt;)</span></code> (nur im Debug-Protokoll)</dt><dd><p>Für dieses Ereignis gibt es keinen Benachrichtigungstext in der Sprache des Agenten, also
+wird keine verschickt. Soll eine verschickt werden: Text unter <strong>Admin →
+Checklistenbenachrichtigungen</strong> anlegen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">State</span> <span class="pre">name</span> <span class="pre">alread</span> <span class="pre">in</span> <span class="pre">use</span></code></dt><dd><p>Einen Status dieses Namens gibt es schon.</p>
+</dd>
+</dl>
+<p><strong>Gar keine Benachrichtigungen?</strong> Prüfen, ob der Daemon läuft (<code class="docutils literal notranslate"><span class="pre">bin/otobo.Daemon.pl</span>
+<span class="pre">status</span></code>), ob der Agent sie in seinen Einstellungen abgeschaltet hat und ob die Queue des
+Tickets in <code class="docutils literal notranslate"><span class="pre">TicketChecklist::NotificationQueueExclude</span></code> steht.</p>
+</section>
+<section id="gespeicherte-daten">
+<span id="daten"></span><h2>Gespeicherte Daten<a class="headerlink" href="#gespeicherte-daten" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">ps_ticketchecklist</span></code></dt><dd><p>Die Aufgaben: Ticket, Titel, Position, Status, Priorität, Verantwortlicher, Start und
+Fälligkeit, Kommentar, Änderungsnotiz.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ps_ticketchecklist_status</span></code></dt><dd><p>Status und Farben.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ps_checklist_template</span></code>, <code class="docutils literal notranslate"><span class="pre">ps_checklist_tmpl_grp</span></code></dt><dd><p>Vorlagen und ihre Gruppen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ps_checklist_notify</span></code></dt><dd><p>Benachrichtigungstexte je Ereignis und Sprache.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ps_checklist_ticket_info</span></code></dt><dd><p>Je Ticket: ob die Checkliste im Kundenportal sichtbar ist.</p>
+</dd>
+</dl>
+<p>Bei der Installation entstehen vier interne dynamische Felder am Ticket:
+<code class="docutils literal notranslate"><span class="pre">TicketHasOpenTodos</span></code>, <code class="docutils literal notranslate"><span class="pre">TicketHasChecklist</span></code>, <code class="docutils literal notranslate"><span class="pre">TicketChecklistTemplates</span></code> (die verwendeten
+Vorlagen) und <code class="docutils literal notranslate"><span class="pre">TicketChecklistConditionActions</span></code> (die aus den Vorlagen übernommenen
+Bedingungen und Aktionen). Die ersten beiden eignen sich für Suchen, ACLs und den GenericAgent.</p>
+<p>Zeiten werden in OTOBO-Zeit gespeichert (<code class="docutils literal notranslate"><span class="pre">OTOBOTimeZone</span></code>) und in der Zeitzone des Agenten
+angezeigt.</p>
+</section>
+</section>
+<section id="lizenz-und-herkunft">
+<span id="lizenz"></span><h1>Lizenz und Herkunft<a class="headerlink" href="#lizenz-und-herkunft" title="Link to this heading">¶</a></h1>
+<p>TicketChecklist wurde von Renée Bäcker (Perl-Services.de) geschrieben und unter der GNU Affero
+General Public License v3.0 veröffentlicht. Das Repository beginnt mit der unveränderten
+Version 10.1.3; darauf folgen die Änderungen für OTOBO 11 durch Freicon GmbH &amp; Co. KG
+(Oktober 2026): Zeitverarbeitung auf <code class="docutils literal notranslate"><span class="pre">Kernel::System::DateTime</span></code>, die umbenannte
+Gruppentabelle, das Ticket-PDF auf dem PDF-Backend von OTOBO 11, ein Autoload statt
+<code class="docutils literal notranslate"><span class="pre">Ticket::CustomModule</span></code>, Dateien aus <code class="docutils literal notranslate"><span class="pre">Custom/</span></code> heraus, die Navigation der
+Systemkonfiguration, keine LDAP-Beispielkonfiguration mehr, und einige Fehler, die dabei
+auffielen. Jede geänderte Datei trägt einen Änderungsvermerk mit Datum.</p>
+<p>Das ganze Werk bleibt unter AGPL-3.0. Der Lizenztext liegt im Repository und wird im Paket als
+<code class="docutils literal notranslate"><span class="pre">var/doc/TicketChecklist/COPYING</span></code> mitgeliefert. Wer eine veränderte Fassung Benutzern über ein
+Netzwerk anbietet, muss ihnen nach §13 der AGPL den Quelltext dieser Fassung zugänglich machen.</p>
+<p>Mitwirkende am Original: Denny Bresch (Übersetzungen, HTML), Balázs Úr (ungarische Übersetzung).</p>
+<div class="line-block">
+<div class="line"><strong>Quelltext:</strong> <a class="reference external" href="https://github.com/FreiconOSS/otobo-addon-ticket-checklist">https://github.com/FreiconOSS/otobo-addon-ticket-checklist</a></div>
+<div class="line"><strong>Lizenz:</strong> GNU Affero General Public License v3.0</div>
+</div>
+</section>
+<section id="uber">
+<h1>Über<a class="headerlink" href="#uber" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Pflege:</strong> Freicon GmbH &amp; Co.KG</div>
+<div class="line"><strong>Web:</strong> <a class="reference external" href="https://freicon.de">https://freicon.de</a></div>
+<div class="line"><strong>Kontakt:</strong> Bei Fragen zu Einrichtung, Schulung und Betrieb unterstützt Sie das Freicon-Consulting-Team.</div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon; original work by Perl-Services.de
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
