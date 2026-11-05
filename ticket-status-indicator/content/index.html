@@ -1,0 +1,833 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>OTOBO Ticket-Ampel Dokumentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d62e1945" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #1b6f8f;
+  --color-brand-content: #2d9fc7;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #45b4da;
+  --color-brand-content: #45b4da;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">OTOBO Ticket-Ampel  Dokumentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">OTOBO Ticket-Ampel  Dokumentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <img alt="../_images/otobo-logo.png" class="align-center otobo-logo" src="../_images/otobo-logo.png" />
+<div class="toctree-wrapper compound">
+</div>
+<section id="otobo-ticket-ampel">
+<h1>OTOBO Ticket-Ampel<a class="headerlink" href="#otobo-ticket-ampel" title="Link to this heading">¶</a></h1>
+</section>
+<section id="beschreibung">
+<h1>Beschreibung<a class="headerlink" href="#beschreibung" title="Link to this heading">¶</a></h1>
+<p>Die <strong>Ticket-Ampel</strong> zeigt an jedem Ticket, ob sich jemand darum kümmert: <strong>grün</strong>, solange
+zuletzt ein Agent daran gearbeitet hat, <strong>gelb</strong>, wenn es seit einigen Arbeitstagen liegt, und
+<strong>rot</strong>, wenn es zu lange liegt. Liegengebliebene Tickets fallen damit sofort auf — als farbiger
+Punkt in allen Ticketlisten, im Ticket neben dem Titel und in der Toolbar mit der Zahl der roten
+und gelben Tickets. Erreicht ein Ticket eine Stufe, benachrichtigt die Ampel auf Wunsch den
+Besitzer, das Team oder die Teamleitung.</p>
+<p>Gezählt wird echte Bearbeitung: eine Notiz, eine Antwort, eine Statusänderung. Nachfragen des
+Kunden, Antworten aus dem Kundenportal und Automatik setzen die Ampel nicht zurück — sonst
+stünde ein Ticket schon auf Grün, nur weil der Kunde alle zwei Tage nachfragt. Wer aus dem
+Mailprogramm antwortet und OTOBO in Kopie setzt, gilt dagegen als Bearbeiter: Die Mail des
+Ticket-Besitzers zählt immer, die des Teams nach Auswahl von Rollen oder Gruppen.</p>
+<p>Wann ein Ticket gelb oder rot wird und wer dann Bescheid bekommt, steht in <strong>Regeln</strong>, die der
+Administrator in einer eigenen Maske pflegt.</p>
+<p><strong>Auf einen Blick</strong></p>
+<ul class="simple">
+<li><p>Ampel grün / gelb / rot an jedem Ticket der erfassten Queues — in Ticketlisten, im Ticket
+und in der Toolbar</p></li>
+<li><p>Regeln je Queue und Besitzer, in <strong>Arbeitstagen</strong> mit Kalender und Feiertagen</p></li>
+<li><p>Benachrichtigungen sind normale OTOBO-Ticketbenachrichtigungen; jede Regel benachrichtigt
+nur einmal pro Liegezeit</p></li>
+<li><p>Nur echte Bearbeitung durch Agenten zählt — auch Antworten aus dem Mailprogramm mit OTOBO
+in Kopie, Abwesenheitsnotizen nie</p></li>
+<li><p>Eigene Übersicht der roten und gelben Tickets; die Ampel ist filter- und suchbar</p></li>
+<li><p>Ein Tooltip am Ampelpunkt erklärt, warum ein Ticket seine Farbe hat</p></li>
+<li><p>Kein Core-Override, keine Änderung an bestehenden Masken</p></li>
+</ul>
+</section>
+<section id="einsatzszenarien">
+<h1>Einsatzszenarien<a class="headerlink" href="#einsatzszenarien" title="Link to this heading">¶</a></h1>
+<p><strong>Reaktionszeiten ohne SLA.</strong> Ein Service-Team will Tickets nicht liegen lassen, hat aber keine
+vertraglichen Fristen. Tickets ohne Besitzer werden nach drei Arbeitstagen gelb und das Team
+bekommt eine Mail; nach sechs Arbeitstagen werden sie rot und die Teamleitung erfährt es.</p>
+<p><strong>Teamleitung behält den Überblick.</strong> Statt Suchen zu bauen, sieht die Teamleitung in der
+Toolbar, wie viele Tickets rot und gelb sind, und öffnet mit einem Klick die Liste.</p>
+<p><strong>Besitzer erinnern.</strong> Ein Ticket mit Besitzer meldet sich zuerst bei seinem Besitzer, erst
+später beim Team und zuletzt bei der Teamleitung.</p>
+<p><strong>Arbeiten aus dem Mailprogramm.</strong> Ein Team beantwortet Kundenanfragen aus Outlook und setzt
+OTOBO in Kopie. Die Antworten des Teams halten die Ampel grün; fragt der Kunde nach, ändert
+das nichts.</p>
+</section>
+<section id="systemvoraussetzungen">
+<h1>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Link to this heading">¶</a></h1>
+<section id="framework">
+<h2>Framework<a class="headerlink" href="#framework" title="Link to this heading">¶</a></h2>
+<p>OTOBO 11.0.x oder 10.1.x</p>
+</section>
+<section id="weitere-voraussetzungen">
+<h2>Weitere Voraussetzungen<a class="headerlink" href="#weitere-voraussetzungen" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Ein laufender OTOBO-Daemon — er bemerkt, dass Zeit vergangen ist</p></li>
+<li><p>Keine weiteren Pakete</p></li>
+</ul>
+</section>
+</section>
+<section id="so-funktioniert-die-ampel">
+<h1>So funktioniert die Ampel<a class="headerlink" href="#so-funktioniert-die-ampel" title="Link to this heading">¶</a></h1>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Agent arbeitet am Ticket ──► Ampel wird sofort neu berechnet (meist: grün)
+                                       │
+Daemon, alle 10 Minuten ──► alle Tickets der erfassten Queues
+                                       ▼
+           Arbeitstage seit der letzten Bearbeitung (oder Erstellung)
+                                       │
+                  Regeln der Queue des Tickets, Bedingung „Besitzer“
+                                       │
+      erreichte Regeln ──► schlechteste Farbe in das Feld „Ampel“
+                       └─► Benachrichtigungen neu erreichter Regeln (einmal je Liegezeit)
+</pre></div>
+</div>
+<section id="was-als-bearbeitung-zahlt">
+<h2>Was als Bearbeitung zählt<a class="headerlink" href="#was-als-bearbeitung-zahlt" title="Link to this heading">¶</a></h2>
+<p>Als Bearbeitung zählt, was ein Agent in OTOBO am Ticket tut: eine Notiz, eine Antwort, ein
+Telefonat, eine Weiterleitung, eine Änderung an Status, Priorität, Queue, Besitzer,
+Verantwortlichem, Titel, Typ, Service, SLA, Kunde oder einem dynamischen Feld, eine Wartezeit.
+Welche Einträge der Ticket-Historie das sind, legt eine Einstellung fest.</p>
+<p><strong>Nicht</strong> als Bearbeitung zählen eingehende Kundenmails, Antworten aus dem Kundenportal und
+alles, was OTOBO selbst erledigt — etwa ein Generic Agent. Auch Sperren und Entsperren eines
+Tickets zählen nicht. Übergibt ein Agent ein Ticket an einen <em>anderen</em> Agenten, ist das
+dagegen Bearbeitung.</p>
+<p>Hat noch nie jemand an einem Ticket gearbeitet, zählt seine Erstellung.</p>
+</section>
+<section id="mails-von-mitarbeitern">
+<h2>Mails von Mitarbeitern<a class="headerlink" href="#mails-von-mitarbeitern" title="Link to this heading">¶</a></h2>
+<p>Viele Teams antworten aus ihrem Mailprogramm und setzen OTOBO in Kopie. Die Antwort kommt dann
+als eingehende Mail ins Ticket — genau wie eine Kundenmail. Damit sie trotzdem als Bearbeitung
+zählt, prüft die Ampel bei jeder eingehenden Mail den <strong>Absender</strong>:</p>
+<ul class="simple">
+<li><p>Ist er der <strong>Besitzer</strong> des Tickets, zählt die Mail immer.</p></li>
+<li><p>Ist er Mitglied einer der unter <strong>Mails von Mitarbeitern</strong> gewählten <strong>Rollen</strong> oder hat er
+Schreibrecht (rw) in einer der gewählten <strong>Gruppen</strong> — auch über eine Rolle —, zählt sie
+ebenfalls.</p></li>
+<li><p><strong>Automatische Antworten</strong> wie Abwesenheitsnotizen zählen nie.</p></li>
+</ul>
+<p>Erkannt wird der Absender an der E-Mail-Adresse im Agentenprofil. Ob dieselbe Person im Ticket
+auch als Kunde eingetragen ist, spielt keine Rolle — entscheidend ist, wer die Mail geschickt
+hat.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/mail-activity-ticket.png"><img alt="../_images/mail-activity-ticket.png" src="../_images/mail-activity-ticket.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 1 </span><span class="caption-text">Der Kunde fragt nach, die Besitzerin antwortet aus dem Mailprogramm mit OTOBO in Kopie. Die
+Antwort landet als E-Mail-Artikel im Ticket, und die Ampel steht auf Grün.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="arbeitstage">
+<h2>Arbeitstage<a class="headerlink" href="#arbeitstage" title="Link to this heading">¶</a></h2>
+<p>Ein Arbeitstag ist ein Tag, an dem der Kalender Geschäftszeiten hat und der kein Feiertag ist.
+Ein Arbeitstag ist vergangen, wenn am nächsten Arbeitstag dieselbe Uhrzeit erreicht ist: Eine
+Bearbeitung am Montag um 14:00 ist am Donnerstag um 14:00 drei Arbeitstage alt, eine am Freitag
+um 14:00 am Mittwoch um 14:00. Wahlweise zählt die Ampel einfache Kalendertage zu 24 Stunden.</p>
+<p>Welcher Kalender gilt, steht in einer Einstellung; ohne sie gilt der Kalender der Queue des
+Tickets, sonst der Standardkalender. Arbeitstage, Zeitzone und Feiertage kommen alle aus diesem
+Kalender (siehe <a class="reference internal" href="#kalender"><span class="std std-ref">Kalender und Feiertage</span></a>).</p>
+</section>
+<section id="mit-und-ohne-besitzer">
+<h2>Mit und ohne Besitzer<a class="headerlink" href="#mit-und-ohne-besitzer" title="Link to this heading">¶</a></h2>
+<p>In OTOBO hat jedes Ticket einen Besitzer. Tickets, um die sich niemand kümmert, gehören einem
+Platzhalter — standardmäßig <code class="docutils literal notranslate"><span class="pre">root&#64;localhost</span></code>, dem OTOBO ein Ticket auch beim Entsperren
+zurückgibt, wenn das so eingestellt ist. Für die Regeln gilt deshalb:</p>
+<ul class="simple">
+<li><p><strong>ohne Besitzer</strong> — das Ticket gehört einem Platzhalter (Einstellung, Standard
+<code class="docutils literal notranslate"><span class="pre">root&#64;localhost</span></code>),</p></li>
+<li><p><strong>mit Besitzer</strong> — das Ticket gehört einem anderen Agenten, <strong>egal ob gesperrt oder nicht</strong>.</p></li>
+</ul>
+<p>Parkt Ihr Team Tickets bei einem eigenen Platzhalter-Agenten, etwa „Nicht zugewiesen“, tragen
+Sie dessen Login in derselben Einstellung ein.</p>
+</section>
+<section id="tickets-ohne-ampel">
+<h2>Tickets ohne Ampel<a class="headerlink" href="#tickets-ohne-ampel" title="Link to this heading">¶</a></h2>
+<p>Tickets in Queues, die keine Regel erfasst, haben keine Farbe. Ebenso Tickets in den Status
+<em>warten zur Erinnerung</em>, <em>geschlossen</em>, <em>zusammengefasst</em> und <em>entfernt</em> — sie senden auch
+nichts.</p>
+</section>
+<section id="wann-neu-berechnet-wird">
+<h2>Wann neu berechnet wird<a class="headerlink" href="#wann-neu-berechnet-wird" title="Link to this heading">¶</a></h2>
+<p>Gleich nach jeder Änderung am Ticket und alle 10 Minuten für alle Tickets über den Daemon.
+Dass Zeit vergangen ist, bemerkt nur der Daemon — ein Ticket wird also bis zu 10 Minuten nach
+Ablauf der Frist gelb.</p>
+</section>
+<section id="benachrichtigungen">
+<h2>Benachrichtigungen<a class="headerlink" href="#benachrichtigungen" title="Link to this heading">¶</a></h2>
+<p>Benachrichtigungen sind ganz normale OTOBO-Ticketbenachrichtigungen mit dem Ereignis
+<code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code>. Empfänger (Besitzer, Agenten, Rollen, Gruppen), Texte, Bedingungen
+und Versandwege werden dort wie gewohnt gepflegt. OTOBO selbst löst dieses Ereignis nie aus —
+nur die Ampel, und nur für die Benachrichtigungen, die eine Regel nennt.</p>
+<p>Jede Regel benachrichtigt <strong>einmal pro Liegezeit</strong>: Ist sie für ein Ticket erreicht, merkt sich
+die Ampel das, bis wieder ein Agent am Ticket arbeitet. Danach darf jede Regel erneut melden.
+Hat ein Ticket zwischendurch keine Farbe — es liegt in einer anderen Queue oder wartet —, bleibt
+der Merker stehen; kehrt es ohne Bearbeitung zurück, meldet es sich nicht noch einmal.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/notification.png"><img alt="../_images/notification.png" src="../_images/notification.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 2 </span><span class="caption-text">Eine Benachrichtigung der Ampel: Ereignis <code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code>, Empfänger wie gewohnt —
+hier alle Mitglieder der Rolle <em>Service-Team</em>.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="installation-und-einrichtung">
+<h1>Installation und Einrichtung<a class="headerlink" href="#installation-und-einrichtung" title="Link to this heading">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Paket über <em>Admin › Paketverwaltung</em> installieren. Es legt das dynamische Feld
+<em>Ampel</em> an und blendet es in den Ticketlisten, im Ticket und in der Ticketsuche ein.</p></li>
+<li><p>Den Kalender prüfen: Geschäftszeiten, Zeitzone und Feiertage (siehe <a class="reference internal" href="#kalender"><span class="std std-ref">Kalender und Feiertage</span></a>).</p></li>
+<li><p>Unter <em>Admin › Ticket-Benachrichtigungen</em> die Benachrichtigungen mit dem Ereignis
+<strong>TicketStatusIndicator</strong> anlegen — eine je Empfängerkreis, zum Beispiel <em>an den Besitzer</em>,
+<em>an das Team</em>, <em>an die Teamleitung</em>.</p></li>
+<li><p>Unter <em>Admin › Ticket-Ampel</em> die Regeln anlegen.</p></li>
+<li><p>Bis zu 10 Minuten warten — dann haben alle Tickets ihre Farbe.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p><strong>Der erste Lauf einer neuen Regel.</strong> Eine neue Regel greift sofort bei allen Tickets, die
+schon lange genug liegen — und jedes davon schickt einmal ihre Benachrichtigungen. Soll das
+nicht passieren, die Regel zuerst <strong>ohne</strong> Benachrichtigungen speichern, einen Lauf abwarten
+und die Benachrichtigungen erst dann zuweisen. Die schon erreichten Tickets gelten dann als
+gemeldet; benachrichtigt werden nur noch Tickets, die die Regel neu erreichen.</p>
+<p>Wer eine Regel <strong>löscht</strong> und neu anlegt, löst diese Welle erneut aus; eine ungültig gesetzte
+Regel behält ihr Gedächtnis.</p>
+</div>
+</section>
+<section id="admin-handbuch">
+<h1>Admin-Handbuch<a class="headerlink" href="#admin-handbuch" title="Link to this heading">¶</a></h1>
+<section id="regeln-verwalten">
+<h2>Regeln verwalten<a class="headerlink" href="#regeln-verwalten" title="Link to this heading">¶</a></h2>
+<p><em>Admin › Ticket-Ampel</em> (Bereich <em>Automatisierung</em>) zeigt alle Regeln mit Queues, Besitzer,
+Arbeitstagen, Farbe, Benachrichtigungen und Gültigkeit — mit Filter und einem Schalter für
+ungültige Regeln. Darüber steht, wessen Mails als Bearbeitung zählen.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/admin-rules.png"><img alt="../_images/admin-rules.png" src="../_images/admin-rules.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 3 </span><span class="caption-text">Die Regeln eines Service-Teams; darüber der Kasten <em>Mails von Mitarbeitern</em>.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Treffen mehrere Regeln auf ein Ticket zu, gilt die schlechteste Farbe.</p>
+</section>
+<section id="eine-regel-anlegen">
+<h2>Eine Regel anlegen<a class="headerlink" href="#eine-regel-anlegen" title="Link to this heading">¶</a></h2>
+<p>Über <strong>Regel hinzufügen</strong>. Eine Regel sagt:</p>
+<blockquote>
+<div><p><em>Tickets in</em> <strong>diesen Queues</strong>, <strong>mit / ohne / mit oder ohne Besitzer</strong>, <em>an denen seit</em>
+<strong>N Arbeitstagen</strong> <em>kein Agent gearbeitet hat, werden</em> <strong>gelb / rot</strong> <em>und bekommen</em>
+<strong>diese Benachrichtigungen</strong>.</p>
+</div></blockquote>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../_images/admin-rule-form.png"><img alt="../_images/admin-rule-form.png" src="../_images/admin-rule-form.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Eine Regel: Queues, Besitzer, Arbeitstage, Farbe und Benachrichtigungen.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<dl class="simple">
+<dt>Queues</dt><dd><p>Die Regel gilt für Tickets in diesen Queues. Unter-Queues müssen mit ausgewählt werden.</p>
+</dd>
+<dt>Besitzer</dt><dd><p><em>ohne Besitzer</em>, <em>mit Besitzer</em> oder <em>mit oder ohne Besitzer</em> — siehe
+<a class="reference internal" href="#mit-und-ohne-besitzer">Mit und ohne Besitzer</a>.</p>
+</dd>
+<dt>Arbeitstage ohne Aktivität</dt><dd><p>Eine ganze Zahl von 1 bis 250.</p>
+</dd>
+<dt>Farbe</dt><dd><p>Gelb oder Rot.</p>
+</dd>
+<dt>Benachrichtigungen</dt><dd><p>Angeboten werden nur gültige Ticketbenachrichtigungen mit dem Ereignis
+<code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code>.</p>
+</dd>
+<dt>Regel löschen</dt><dd><p>Entfernt die Regel samt ihrem Gedächtnis, welche Tickets schon benachrichtigt wurden.
+Ungültig setzen behält es.</p>
+</dd>
+</dl>
+</section>
+<section id="mails-von-mitarbeitern-einstellen">
+<h2>Mails von Mitarbeitern einstellen<a class="headerlink" href="#mails-von-mitarbeitern-einstellen" title="Link to this heading">¶</a></h2>
+<p>Über <strong>Mails von Mitarbeitern</strong> links unter <em>Aktionen</em> wählen Sie in zwei Mehrfachauswahlen die
+<strong>Rollen</strong> und <strong>Gruppen</strong>, deren Mitglieder als Team gelten. Die Mail des Ticket-Besitzers zählt
+ohnehin immer; sind beide Felder leer, zählt nur sie.</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/admin-mail-activity.png"><img alt="../_images/admin-mail-activity.png" src="../_images/admin-mail-activity.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Mails der Mitglieder der Rolle <em>Service-Team</em> zählen als Bearbeitung.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Wählen Sie nur das Team, das die Tickets bearbeitet — keine allgemeinen Gruppen wie
+<em>users</em>. Sonst setzt jede Mail eines beliebigen Kollegen die Ampel zurück.</p>
+</div>
+<p>Die Auswahl wirkt auch auf Mails, die schon im Ticket liegen: Hat das Team seit der letzten
+Bearbeitung bereits per Mail geantwortet, wird das Ticket beim nächsten Lauf grün.
+Benachrichtigungen löst das nicht aus.</p>
+</section>
+</section>
+<section id="anwender-handbuch">
+<h1>Anwender-Handbuch<a class="headerlink" href="#anwender-handbuch" title="Link to this heading">¶</a></h1>
+<section id="die-ampel-im-ticket-und-in-listen">
+<h2>Die Ampel im Ticket und in Listen<a class="headerlink" href="#die-ampel-im-ticket-und-in-listen" title="Link to this heading">¶</a></h2>
+<p>Die Farbe erscheint als Punkt ohne Text in den Ticketlisten (Queue-Ansicht, Status-Ansicht,
+Suchergebnisse …) und im Ticket — dort in den Ticket-Informationen und vor Ticketnummer und
+Titel.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../_images/zoom-headline.png"><img alt="../_images/zoom-headline.png" src="../_images/zoom-headline.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Der Ampelpunkt vor Ticketnummer und Titel und noch einmal in den Ticket-Informationen.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="warum-hat-ein-ticket-seine-farbe">
+<h2>Warum hat ein Ticket seine Farbe?<a class="headerlink" href="#warum-hat-ein-ticket-seine-farbe" title="Link to this heading">¶</a></h2>
+<p>Fährt man mit der Maus über den Punkt, nennt der Tooltip die Farbe und den Grund, zum Beispiel:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Ampel: Rot
+Letzte Aktivität eines Agenten: 23.10.2026 14:00, vor 7 Arbeitstagen
+Ohne Besitzer
+Erreichte Regeln:
+• Ohne Besitzer, 3 Tage
+• Ohne Besitzer, 6 Tage
+</pre></div>
+</div>
+<p>Hat zuletzt eine Mail aus dem Team gezählt, steht dort „Letzte Aktivität: Mail von …“ mit dem
+Namen des Absenders. Die Zahl der Tage endet bei der größten Regel; sehr alte Tickets zeigen
+„vor mindestens 9 Arbeitstagen“.</p>
+</section>
+<section id="ubersicht-und-toolbar">
+<h2>Übersicht und Toolbar<a class="headerlink" href="#ubersicht-und-toolbar" title="Link to this heading">¶</a></h2>
+<p>In der Toolbar zeigt ein Punkt die schlechteste Farbe unter den Tickets, die Sie sehen dürfen,
+dazu die Zahl der roten und gelben Tickets. Ein Klick öffnet die Übersicht mit den Reitern
+<em>Rot und gelb</em>, <em>Rot</em> und <em>Gelb</em>.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../_images/overview-red-yellow.png"><img alt="../_images/overview-red-yellow.png" src="../_images/overview-red-yellow.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Die Übersicht der roten und gelben Tickets; oben in der Toolbar „1 / 1“ (rot / gelb).</span><a class="headerlink" href="#id7" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Die Ampel ist ein gewöhnliches dynamisches Feld: Ticketlisten lassen sich danach filtern, die
+Ticketsuche kann danach suchen, Exporte zeigen den Namen der Farbe.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Die Ampel nicht von Hand setzen und nicht in Bearbeitungsmasken einblenden. Sie wird aus der
+Zeit berechnet; der nächste Lauf überschreibt jeden von Hand gesetzten Wert, und eine
+Benachrichtigung löst das Setzen nicht aus.</p>
+</div>
+</section>
+</section>
+<section id="beispiel">
+<h1>Beispiel<a class="headerlink" href="#beispiel" title="Link to this heading">¶</a></h1>
+<p>Ein Service-Team mit Teamleitung, alle Regeln auf den Queues des Teams:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 12.0%" />
+<col style="width: 28.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Regel</p></th>
+<th class="head"><p>Besitzer</p></th>
+<th class="head"><p>Arbeitstage</p></th>
+<th class="head"><p>Farbe</p></th>
+<th class="head"><p>Benachrichtigung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ohne Besitzer, 3 Tage</p></td>
+<td><p>ohne</p></td>
+<td><p>3</p></td>
+<td><p>gelb</p></td>
+<td><p>an das Team</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ohne Besitzer, 6 Tage</p></td>
+<td><p>ohne</p></td>
+<td><p>6</p></td>
+<td><p>rot</p></td>
+<td><p>an die Teamleitung</p></td>
+</tr>
+<tr class="row-even"><td><p>Mit Besitzer, 3 Tage</p></td>
+<td><p>mit</p></td>
+<td><p>3</p></td>
+<td><p>gelb</p></td>
+<td><p>an den Besitzer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mit Besitzer, 6 Tage</p></td>
+<td><p>mit</p></td>
+<td><p>6</p></td>
+<td><p>gelb</p></td>
+<td><p>an das Team</p></td>
+</tr>
+<tr class="row-even"><td><p>Mit Besitzer, 9 Tage</p></td>
+<td><p>mit</p></td>
+<td><p>9</p></td>
+<td><p>rot</p></td>
+<td><p>an die Teamleitung</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kalender Montag bis Freitag. Eine Kundenmail legt am Montag um 10:00 ein freies Ticket an:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14.0%" />
+<col style="width: 50.0%" />
+<col style="width: 12.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Wann</p></th>
+<th class="head"><p>Was passiert</p></th>
+<th class="head"><p>Farbe</p></th>
+<th class="head"><p>Benachrichtigt</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mo 10:00</p></td>
+<td><p>Ticket angelegt</p></td>
+<td><p>grün</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mi 09:00</p></td>
+<td><p>Der Kunde schreibt erneut — keine Bearbeitung</p></td>
+<td><p>grün</p></td>
+<td><p>–</p></td>
+</tr>
+<tr class="row-even"><td><p>Do 10:00</p></td>
+<td><p>3 Arbeitstage</p></td>
+<td><p>gelb</p></td>
+<td><p>Team</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fr 08:00</p></td>
+<td><p>Ein Agent sperrt das Ticket und wird so Besitzer — keine Bearbeitung, aber jetzt
+„mit Besitzer“</p></td>
+<td><p>gelb</p></td>
+<td><p>Besitzer</p></td>
+</tr>
+<tr class="row-even"><td><p>Di 10:00</p></td>
+<td><p>6 Arbeitstage (mit Besitzer)</p></td>
+<td><p>gelb</p></td>
+<td><p>Team</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mi 11:00</p></td>
+<td><p>Der Agent schreibt eine Notiz</p></td>
+<td><p>grün</p></td>
+<td><p>– (Gedächtnis gelöscht)</p></td>
+</tr>
+<tr class="row-even"><td><p>Mo 11:00</p></td>
+<td><p>3 Arbeitstage seit der Notiz</p></td>
+<td><p>gelb</p></td>
+<td><p>Besitzer</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mo 11:30</p></td>
+<td><p>Der Agent setzt „warten zur Erinnerung“</p></td>
+<td><p>keine</p></td>
+<td><p>–</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="einstellungen">
+<h1>Einstellungen<a class="headerlink" href="#einstellungen" title="Link to this heading">¶</a></h1>
+<p>Alle Einstellungen stehen in der Systemkonfiguration; Suchbegriff <code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###ActivityHistoryTypes</span></code></dt><dd><p>Einträge der Ticket-Historie, die als Bearbeitung zählen, wenn ein echter Agent sie
+schreibt. Standard: NewTicket, AddNote, SendAnswer, EmailAgent, PhoneCallAgent,
+PhoneCallCustomer, Forward, Bounce, StateUpdate, PriorityUpdate, Move, OwnerUpdate,
+ResponsibleUpdate, TitleUpdate, TypeUpdate, ServiceUpdate, SLAUpdate, CustomerUpdate,
+SetPendingTime, TicketDynamicFieldUpdate. Sperren und Entsperren fehlen absichtlich.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###NoOwnerUsers</span></code></dt><dd><p>Logins der Agenten, die für „kein Besitzer“ stehen. Standard: <code class="docutils literal notranslate"><span class="pre">root&#64;localhost</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###MailActivityRoles</span></code></dt><dd><p>Rollen, deren Mitglieder als Absender von Bearbeitungsmails gelten — neben dem Besitzer.
+Gepflegt unter <em>Admin › Ticket-Ampel › Mails von Mitarbeitern</em>. Standard: leer.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###MailActivityGroups</span></code></dt><dd><p>Gruppen, deren Mitglieder mit Schreibrecht (auch über eine Rolle) als Absender von
+Bearbeitungsmails gelten. Gepflegt in derselben Maske. Standard: leer.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###MailActivityHistoryTypes</span></code></dt><dd><p>Einträge der Ticket-Historie für eingehende Mails, deren Absender geprüft wird.
+Standard: FollowUp, EmailCustomer.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###ExcludedStateTypes</span></code></dt><dd><p>Statustypen ohne Ampel. Standard: warten zur Erinnerung, geschlossen, zusammengefasst,
+entfernt.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###CountWorkingDays</span></code></dt><dd><p>Arbeitstage des Kalenders zählen. Aus: Kalendertage zu 24 Stunden. Standard: an.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator###Calendar</span></code></dt><dd><p>Kalendernummer 1–9. Leer: Kalender der Queue, sonst der Standardkalender.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::EventModulePost###9992-TicketStatusIndicator</span></code></dt><dd><p>Berechnet ein Ticket gleich nach einer Änderung neu. Ohne diese Einstellung folgt die
+Ampel nur dem Daemon.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Daemon::SchedulerCronTaskManager::Task###TicketStatusIndicatorUpdate</span></code></dt><dd><p>Berechnet alle erfassten Tickets neu und versendet die Benachrichtigungen. Standard: alle
+10 Minuten.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::Output::FilterElementPost###TicketStatusIndicator</span></code></dt><dd><p>Setzt den Punkt vor Ticketnummer und Titel im Ticket. Ungültig setzen entfernt ihn dort.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Frontend::ToolBarModule###195-Ticket::TicketStatusIndicator</span></code></dt><dd><p>Der Toolbar-Eintrag. Er erscheint nur bei Agenten, die mindestens eine erfasste Queue sehen
+dürfen. Mit einem zusätzlichen Schlüssel <code class="docutils literal notranslate"><span class="pre">Group</span></code> (etwa <code class="docutils literal notranslate"><span class="pre">rw:support</span></code>) lässt er sich
+weiter einschränken; ungültig setzen entfernt ihn.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketStatusIndicatorView###DefaultColumns</span></code></dt><dd><p>Spalten der Übersicht der roten und gelben Tickets; Agenten können sie in der Liste ändern.</p>
+</dd>
+</dl>
+<p>Bei der Installation ergänzt das Paket außerdem — nur, wenn es noch fehlt — das Ereignis
+<code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code> für Ticketbenachrichtigungen und das Feld <em>Ampel</em> in den kleinen
+Ticketlisten, im Ticket und in der Ticketsuche. Wer das Feld dort wieder ausblendet, behält
+das auch nach Updates.</p>
+<section id="kalender-und-feiertage">
+<span id="kalender"></span><h2>Kalender und Feiertage<a class="headerlink" href="#kalender-und-feiertage" title="Link to this heading">¶</a></h2>
+<p>Für den Kalender <code class="docutils literal notranslate"><span class="pre">&lt;n&gt;</span></code> (ohne Zusatz für den Standardkalender):</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TimeWorkingHours::Calendar&lt;n&gt;</span></code></dt><dd><p>Ein Wochentag mit mindestens einer Geschäftsstunde ist ein Arbeitstag.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TimeZone::Calendar&lt;n&gt;</span></code></dt><dd><p>Zeitzone, in der die Tage gezählt werden, zum Beispiel <code class="docutils literal notranslate"><span class="pre">Europe/Berlin</span></code>. Fehlt sie, zählt
+die Ampel in der OTOBO-Zeitzone (oft UTC), und ein Tag kann ein bis zwei Stunden zu früh
+wechseln.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TimeVacationDays::Calendar&lt;n&gt;</span></code></dt><dd><p>Feiertage mit festem Datum.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TimeVacationDaysOneTime::Calendar&lt;n&gt;</span></code></dt><dd><p>Bewegliche Feiertage (Ostern, Himmelfahrt, Pfingsten). OTOBO berechnet sie nicht; sie werden
+je Jahr eingetragen. Regionale Feiertage hängen vom Standort ab.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="fehlersuche">
+<h1>Fehlersuche<a class="headerlink" href="#fehlersuche" title="Link to this heading">¶</a></h1>
+<dl class="simple">
+<dt>Keine Farben</dt><dd><p>Es gibt keine gültige Regel, das Feld <em>Ampel</em> ist ungültig, oder der Daemon läuft nicht.</p>
+</dd>
+<dt>Ein Ticket wird gelb, obwohl der Kunde gestern geschrieben hat</dt><dd><p>So gewollt: Nur Bearbeitung durch Agenten zählt; eine Kundenmail setzt die Ampel weder
+zurück noch hält sie sie auf.</p>
+</dd>
+<dt>Ein Ticket wird gelb, obwohl ein Kollege per Mail geantwortet hat</dt><dd><p>Der Absender ist weder Besitzer noch Mitglied einer Rolle oder Gruppe unter <em>Mails von
+Mitarbeitern</em>; die Mail kam aus einem Sammelpostfach, über eine Aliasadresse oder „im
+Auftrag von“, sodass die Absenderadresse nicht der im Agentenprofil entspricht; oder es war
+eine automatische Antwort. Der Tooltip zeigt, was zuletzt gezählt hat.</p>
+</dd>
+<dt>Ein Ticket bleibt grün, obwohl nichts passiert ist</dt><dd><p>Ein Agent hat etwas geändert, das als Bearbeitung zählt (etwa ein dynamisches Feld), eine
+Mail aus dem Team kam an, oder das Ticket ist neu in der Queue. Die Ticket-Historie und der
+Tooltip zeigen den letzten Eintrag.</p>
+</dd>
+<dt>Die Farbe wechselt ein bis zwei Stunden zu früh oder zu spät</dt><dd><p>Die Zeitzone des Kalenders ist nicht gesetzt.</p>
+</dd>
+<dt>Die Tage laufen über Ostern oder Weihnachten weiter</dt><dd><p>Der Feiertag fehlt im Kalender.</p>
+</dd>
+<dt>Eine Benachrichtigung wird in der Regel nicht angeboten</dt><dd><p>Sie ist ungültig oder nicht für das Ereignis <code class="docutils literal notranslate"><span class="pre">TicketStatusIndicator</span></code> eingerichtet.</p>
+</dd>
+<dt>Eine Benachrichtigung kam für dieselbe Liegezeit zweimal</dt><dd><p>Zwei Regeln nennen dieselbe Benachrichtigung — jede Regel sendet ihre eigene.</p>
+</dd>
+<dt>Viele Benachrichtigungen auf einmal nach dem Anlegen einer Regel</dt><dd><p>Der erste Lauf: Alle Tickets, die schon lange genug liegen, erreichen die Regel gemeinsam.
+Das passiert einmal — siehe den Hinweis unter <a class="reference internal" href="#installation-und-einrichtung">Installation und Einrichtung</a>.</p>
+</dd>
+<dt>Die Ampel von Hand zu setzen, löst keine Benachrichtigung aus</dt><dd><p>So gewollt: Benachrichtigungen folgen der Zeit seit der letzten Bearbeitung, nicht dem Feld.
+Der nächste Lauf schreibt die berechnete Farbe zurück.</p>
+</dd>
+<dt>Viele gleiche Benachrichtigungsartikel in einem Ticket (bis Version 11.0.2)</dt><dd><p>Die Benachrichtigung hatte eine zusätzliche Empfänger-E-Mail-Adresse und hat sich darüber
+immer wieder selbst ausgelöst. Ab 11.0.3 behoben. Nach dem Update entfernt der Befehl
+<code class="docutils literal notranslate"><span class="pre">Maint::TicketStatusIndicator::ArticleCleanup</span> <span class="pre">--since</span> <span class="pre">&lt;Datum&gt;</span></code> die überzähligen Artikel —
+zuerst nur als Liste, mit <code class="docutils literal notranslate"><span class="pre">--delete</span></code> endgültig. Vorher eine Datenbanksicherung machen.</p>
+</dd>
+</dl>
+</section>
+<section id="worauf-achten">
+<h1>Worauf achten<a class="headerlink" href="#worauf-achten" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Die Ampel betrachtet nur die Bearbeitung durch Agenten, nicht Kundennachrichten oder SLAs.
+Sie ist unabhängig von der OTOBO-Eskalation.</p></li>
+<li><p>Mails von Mitarbeitern werden nur an der Absenderadresse erkannt. Die Adresse im
+Agentenprofil muss die sein, mit der gesendet wird.</p></li>
+<li><p>Dass Zeit vergangen ist, bemerkt der Daemon alle 10 Minuten.</p></li>
+<li><p>Eine Regel braucht mindestens eine Queue; „alle Queues“ gibt es nicht.</p></li>
+<li><p>Jeder Farbwechsel ist eine Änderung am Ticket durch den System-Benutzer: Er setzt die
+Änderungszeit und schreibt einen Historien-Eintrag. Statistiken oder Generic-Agent-Jobs,
+die auf die Änderungszeit schauen, sehen auch diese Änderungen; die Ampel selbst zählt sie
+nicht als Bearbeitung.</p></li>
+<li><p>Eine Regel wartet höchstens 250 Arbeitstage.</p></li>
+<li><p>Die Werte des Feldes sind fest (grün, gelb, rot).</p></li>
+<li><p>Beim Deinstallieren werden das Feld mit allen Werten, das Ereignis und die Regeln entfernt.</p></li>
+<li><p>Seit Version 11.0.4 zählt für „mit Besitzer“ der Besitzer, nicht die Sperre. Beim Update
+von einer älteren Version wechseln freie Tickets, die einem Agenten gehören, in die Regeln
+„mit Besitzer“ und melden sich dort einmal. Wer das vermeiden will, nimmt die
+Benachrichtigungen für einen Lauf von den Regeln.</p></li>
+</ul>
+</section>
+<section id="uber">
+<h1>Über<a class="headerlink" href="#uber" title="Link to this heading">¶</a></h1>
+<div class="line-block">
+<div class="line"><strong>Hersteller:</strong> Freicon GmbH &amp; Co.KG</div>
+<div class="line"><strong>Web:</strong> <a class="reference external" href="https://freicon.de">https://freicon.de</a></div>
+<div class="line"><strong>Kontakt:</strong> Bei Fragen zu Einrichtung, Schulung und Betrieb unterstützt Sie das Freicon-Consulting-Team.</div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Freicon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=9fe942fc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
