@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html">
 
-    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+    <!-- Generated with Sphinx 9.2.0 and Furo 2025.12.19 -->
         <title>OTOBO Documents Dokumentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
@@ -259,6 +259,9 @@ erzeugt über WeasyPrint.</p></li>
 CI und erzeugt mit einem Klick ein passendes neues.</p></li>
 <li><p><strong>Vorlagen übertragen:</strong> Vorlagen wandern als eine YAML-Datei von einem OTOBO-System ins
 nächste – samt Kapiteln, Kategorie und CI-Klassen.</p></li>
+<li><p><strong>Unterschrift anfordern:</strong> Ein Prozess legt aus einer Vorlage je Gerät ein Dokument an und
+bittet den Kunden, es zu unterschreiben. Der Kunde findet es im Kundenportal unter
+<strong>„Meine Dokumente“</strong>.</p></li>
 </ul>
 </section>
 <section id="einsatzszenarien">
@@ -313,6 +316,10 @@ mit dem Addon bereitgestellt und über die SysConfig angebunden.</p>
 <li><p><a class="reference internal" href="#dokumente-am-config-item"><span class="std std-ref">Dokumente am Config Item</span></a></p></li>
 <li><p><a class="reference internal" href="#kompilieren-und-revisionen"><span class="std std-ref">Kompilieren und Revisionen</span></a></p></li>
 <li><p><a class="reference internal" href="#vorschau-und-pdf-export"><span class="std std-ref">Vorschau und PDF-Export</span></a></p></li>
+</ul>
+<p><strong>Unterschriften</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#unterschriften-anfordern-und-meine-dokumente"><span class="std std-ref">Unterschriften anfordern und „Meine Dokumente“</span></a></p></li>
 </ul>
 <p><strong>Referenz</strong></p>
 <ul class="simple">
@@ -395,6 +402,31 @@ erreicht man über den Link in die gefilterte Dokumentübersicht.</p></td>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Documents###PreviewData###ConfigItem###*</span></code></p></td>
 <td><p>SRV-APP-001, Server, CI00012345</p></td>
 <td><p>Beispieldaten für die Vorlagen-Vorschau (Config Item).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Ticket::Frontend::AgentTicketZoom###Widgets###0250-DocumentSignatureRequests</span></code></p></td>
+<td><p>an</p></td>
+<td><p>Widget <strong>„Unterschriften“</strong> in der Seitenleiste der Ticketansicht. Es erscheint nur bei
+Tickets mit Anforderungen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Loader::Module::AgentTicketZoom###005-Documents</span></code></p></td>
+<td><p>an</p></td>
+<td><p>Lädt die Dialoge <strong>„Zurückziehen“</strong> und <strong>„Erneut anfordern“</strong> in die Ticketansicht. Ist
+es aus, öffnen die Links eine eigene Bestätigungsseite.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Frontend::Module###AgentDocumentSignatureRequest</span></code></p></td>
+<td><p>an</p></td>
+<td><p>Agentenmodul hinter <strong>„Zurückziehen“</strong> und <strong>„Erneut anfordern“</strong>; prüft das Schreibrecht
+am Ticket.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">DynamicFields::Driver###LinkedConfigItem</span></code></p></td>
+<td><p>an</p></td>
+<td><p>Registriert den Feldtyp <strong>„Verknüpfte Config Items“</strong> (nur für Tickets).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CustomerFrontend::Module###CustomerDocumentOverview</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CustomerFrontend::Navigation###CustomerDocumentOverview###005-Documents</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Loader::Module::CustomerDocumentOverview###005-Documents</span></code></p></td>
+<td><p>an</p></td>
+<td><p>Seite <strong>„Meine Dokumente“</strong> im Kundenportal, ihr Menüeintrag und ihr Stylesheet.</p></td>
 </tr>
 </tbody>
 </table>
@@ -864,6 +896,370 @@ anzulegen. Die Anzeige ist mit „Aktueller Stand (Live)“ gekennzeichnet.</p><
 </figure>
 </section>
 </section>
+<section id="unterschriften-anfordern-und-meine-dokumente">
+<h1>Unterschriften anfordern und „Meine Dokumente“<a class="headerlink" href="#unterschriften-anfordern-und-meine-dokumente" title="Link to this heading">¶</a></h1>
+<p>Ein Prozess kann den Kundenbenutzer eines Tickets bitten, ein Dokument zu unterschreiben – etwa
+eine Nutzungsvereinbarung für ein neues Notebook oder ein Übergabeprotokoll. Der Kunde findet das
+Dokument im Kundenportal unter <strong>„Meine Dokumente“</strong>, die Agenten sehen den Stand am Ticket.</p>
+<div class="admonition important">
+<p class="admonition-title">Wichtig</p>
+<p>Das Unterschreiben selbst gehört noch nicht zu diesem Funktionsumfang, ebenso wenig
+Erinnerungen. Eine Anforderung bleibt <em>offen</em>, bis sie über die Programmierschnittstelle
+abgeschlossen wird (siehe <a class="reference internal" href="#anforderung-abschlieszen-api"><span class="std std-ref">Anforderung abschließen (API)</span></a>).</p>
+</div>
+<section id="so-lauft-es-ab">
+<h2>So läuft es ab<a class="headerlink" href="#so-lauft-es-ab" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Der Agent verknüpft die Geräte als Config Items mit dem Ticket und führt den Prozess bis zum
+Übergang mit der Übergangs-Aktion <code class="docutils literal notranslate"><span class="pre">DocumentSignatureRequest</span></code>.</p></li>
+<li><p>Das Addon ermittelt die Vorlage und die Config Items: alle mit dem Ticket verknüpften (auf
+Wunsch nur einer Klasse) oder nur die, die der Agent im Dialog ausgewählt hat.</p></li>
+<li><p>Je Config Item entsteht aus der Vorlage ein Dokument mit kompilierter erster Revision.</p></li>
+<li><p>Je Dokument entsteht eine offene Anforderung für den Kundenbenutzer des Tickets.</p></li>
+<li><p>Die Ticket-Historie vermerkt <code class="docutils literal notranslate"><span class="pre">Signature</span> <span class="pre">requested:</span> <span class="pre">&lt;Dokument&gt;</span> <span class="pre">(&lt;Kundenbenutzer&gt;)</span></code>.</p></li>
+</ol>
+</section>
+<section id="was-der-kunde-sieht">
+<h2>Was der Kunde sieht<a class="headerlink" href="#was-der-kunde-sieht" title="Link to this heading">¶</a></h2>
+<p>Im Kundenportal zeigt <strong>„Meine Dokumente“</strong> je Anforderung eine Kachel mit Status, Dokumentname,
+Config Item, Ticket und Datum. Die Filter <strong>„Zu unterschreiben“</strong>, <strong>„Unterschrieben“</strong> und
+<strong>„Alle“</strong> zeigen jeweils die Anzahl. <strong>„Dokument öffnen“</strong> zeigt das PDF in einem neuen Tab: bei
+offenen Anforderungen die kompilierte Revision, bei unterschriebenen das unterschriebene PDF aus
+dem Ticket.</p>
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="../_images/signature-portal.png"><img alt="../_images/signature-portal.png" src="../_images/signature-portal.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 18 </span><span class="caption-text">„Meine Dokumente“ im Kundenportal: offene Anforderungen in Orange, unterschriebene in Grün.</span><a class="headerlink" href="#id19" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Ein Kundenbenutzer sieht nur seine eigenen Anforderungen, nicht die von Kollegen derselben Firma
+und auch keine anderen Dokumente seiner Config Items. Auch der PDF-Link prüft das; eine fremde
+Anforderung antwortet mit „Dieses Dokument ist nicht verfügbar“.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Der Kunde bekommt zu einer neuen Anforderung keine Nachricht vom Addon; er sieht sie unter
+„Meine Dokumente“.</p>
+</div>
+</section>
+<section id="was-der-agent-sieht">
+<h2>Was der Agent sieht<a class="headerlink" href="#was-der-agent-sieht" title="Link to this heading">¶</a></h2>
+<p><strong>Am Ticket</strong> zeigt das Widget <strong>„Unterschriften“</strong> in der Seitenleiste jedes angeforderte Dokument
+mit Status, Kundenbenutzer und Datum. Es erscheint nur bei Tickets mit Anforderungen.</p>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="../_images/signature-widget.png"><img alt="../_images/signature-widget.png" src="../_images/signature-widget.png" style="width: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 19 </span><span class="caption-text">Das Widget „Unterschriften“ mit einer zurückgezogenen, einer offenen und einer unterschriebenen
+Anforderung.</span><a class="headerlink" href="#id20" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>Am Config Item und in der Dokumentübersicht</strong> tragen die Dokumente statt ihres normalen Status
+<strong>„Wartet auf Unterschrift“</strong> oder <strong>„Unterschrieben“</strong>. Die Detailansicht des Dokuments nennt
+außerdem Kundenbenutzer, Ticket und Daten.</p>
+</section>
+<section id="im-prozess-einrichten">
+<h2>Im Prozess einrichten<a class="headerlink" href="#im-prozess-einrichten" title="Link to this heading">¶</a></h2>
+<p>Unter <strong>Admin → Prozessmanagement → Übergangs-Aktionen</strong> legen Sie eine Übergangs-Aktion mit dem
+Modul <code class="docutils literal notranslate"><span class="pre">DocumentSignatureRequest</span></code> und diesen Parametern an:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 16.0%" />
+<col style="width: 62.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Schlüssel</p></th>
+<th class="head"><p>Pflicht</p></th>
+<th class="head"><p>Bedeutung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Template</span></code></p></td>
+<td><p>ja, oder <code class="docutils literal notranslate"><span class="pre">TemplateID</span></code></p></td>
+<td><p>Name einer <strong>gültigen</strong> Dokumentvorlage.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">TemplateID</span></code></p></td>
+<td><p>statt <code class="docutils literal notranslate"><span class="pre">Template</span></code></p></td>
+<td><p>ID der Vorlage.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DocumentName</span></code></p></td>
+<td><p>nein</p></td>
+<td><p>Name des erzeugten Dokuments. Ticket-Platzhalter sind möglich, z. B.
+<code class="docutils literal notranslate"><span class="pre">Nutzungsvereinbarung</span> <span class="pre">&lt;OTOBO_TICKET_TicketNumber&gt;</span></code>. Standard: Vorlagenname und Name des
+Config Items (<code class="docutils literal notranslate"><span class="pre">Nutzungsvereinbarung</span> <span class="pre">-</span> <span class="pre">NB-0815</span></code>), ohne Config Item Vorlagenname und
+Ticketnummer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code></p></td>
+<td><p>nein</p></td>
+<td><p>Berücksichtigt nur Config Items dieser Klasse, z. B. <code class="docutils literal notranslate"><span class="pre">Computer</span></code> – verknüpfte ebenso wie im
+<code class="docutils literal notranslate"><span class="pre">ConfigItemField</span></code> ausgewählte. Empfohlen, denn an Tickets hängen oft weitere Config Items
+(Benutzerkonto, Standort).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ConfigItemField</span></code></p></td>
+<td><p>nein</p></td>
+<td><p>Nur wenn der Agent eine <strong>Teilmenge</strong> der verknüpften Geräte wählen soll: Name eines
+dynamischen Ticket-Felds vom Typ <em>Verknüpfte Config Items</em> (oder <em>Config Item</em>), mit oder ohne
+<code class="docutils literal notranslate"><span class="pre">DynamicField_</span></code>. Enthält es einen Wert, entsteht je <strong>ausgewähltem</strong> Config Item ein
+Dokument; ist es leer, je verknüpftem wie ohne diese Einstellung.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">UserID</span></code></p></td>
+<td><p>nein</p></td>
+<td><p>Agent, unter dem Dokument und Anforderung angelegt werden. Standard: wer den Übergang auslöst.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Welche Felder der Dialog zeigt – das Gerätefeld, den Folgestatus, eine Wartezeit mit dem Status
+<em>warten zur Erinnerung</em> – und welche Bedingung den Übergang startet, legen Sie im Prozess fest,
+nicht in diesem Addon. Eine Wartezeit erscheint nur in einem Dialog, der das Feld <code class="docutils literal notranslate"><span class="pre">PendingTime</span></code>
+enthält.</p>
+<section id="ein-dokument-je-gerat">
+<h3>Ein Dokument je Gerät<a class="headerlink" href="#ein-dokument-je-gerat" title="Link to this heading">¶</a></h3>
+<p>Ohne weitere Einrichtung bekommt <strong>jedes mit dem Ticket verknüpfte Config Item</strong> (der Klasse aus
+<code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code>) ein eigenes Dokument: Zwei verknüpfte Notebooks ergeben zwei Dokumente, zwei
+Kacheln im Portal und zwei Einträge im Widget <strong>„Unterschriften“</strong>. Der Kunde unterschreibt jedes
+einzeln. Welche Geräte übergeben werden, entscheidet der Agent über die Verknüpfungen.</p>
+</section>
+<section id="optional-der-agent-wahlt-einen-teil-der-verknupften-gerate">
+<h3>Optional: Der Agent wählt einen Teil der verknüpften Geräte<a class="headerlink" href="#optional-der-agent-wahlt-einen-teil-der-verknupften-gerate" title="Link to this heading">¶</a></h3>
+<p>Soll der Agent im Dialog wählen – drei Notebooks sind verknüpft, zwei werden jetzt übergeben –,
+bringt das Addon den Feldtyp <strong>„Verknüpfte Config Items“</strong> mit. Seine Auswahl bietet nur die
+Config Items an, die mit dem gerade bearbeiteten Ticket verknüpft sind.</p>
+<ol class="arabic simple">
+<li><p>Unter <strong>Admin → Dynamische Felder → Ticket → Verknüpfte Config Items</strong> ein Feld anlegen:
+<em>Eingabemodus des Editierfelds</em> auf <em>Mehrfachauswahl</em>, die <em>Klasseneinschränkungen</em> auf die
+Geräteklasse (z. B. <em>Computer</em>).</p></li>
+<li><p>Das Feld in den Aktivitäts-Dialog aufnehmen, der zum Übergang führt.</p></li>
+<li><p>In der Übergangs-Aktion <code class="docutils literal notranslate"><span class="pre">ConfigItemField</span></code> auf den Feldnamen setzen.</p></li>
+</ol>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="../_images/signature-device-select.png"><img alt="../_images/signature-device-select.png" src="../_images/signature-device-select.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 20 </span><span class="caption-text">Der Aktivitäts-Dialog bietet nur die Geräte an, die mit dem Ticket verknüpft sind.</span><a class="headerlink" href="#id21" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>In einem Dialog, der das Ticket erst anlegt, bietet das Feld nichts an, weil noch nichts verknüpft
+ist. Im Kundenportal erscheint es nicht und seine Suche antwortet Kundenbenutzern leer; Agenten
+bekommen nur für Tickets eine Antwort, die sie lesen dürfen. Von den Feldeinstellungen wirken die
+Einschränkungen auf Klasse und Verwendungsstatus und der Eingabemodus; <em>Beim Autocomplete
+durchsuchtes Attribut</em>, <em>Referenzfilter</em> und <em>External-source key</em> haben keine Wirkung. Ein normales Feld vom Typ <em>Config Item</em>
+funktioniert ebenfalls, bietet aber alle Config Items der Klasse an.</p>
+</section>
+<section id="beispiel">
+<h3>Beispiel<a class="headerlink" href="#beispiel" title="Link to this heading">¶</a></h3>
+<p>Ein Prozess „Neues Notebook“ verknüpft das Config Item des Notebooks mit dem Ticket. Am Übergang
+<em>Notebook übergeben</em> trägt die Übergangs-Aktion <code class="docutils literal notranslate"><span class="pre">Template</span></code> = <code class="docutils literal notranslate"><span class="pre">Nutzungsvereinbarung</span></code> und
+<code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code> = <code class="docutils literal notranslate"><span class="pre">Computer</span></code>. Nimmt der Agent diesen Übergang, erhält der Kundenbenutzer des
+Tickets unter „Meine Dokumente“ die Kachel <em>Nutzungsvereinbarung - NB-0815</em>, markiert mit
+<em>Unterschrift erforderlich</em>, mit dem Notebook und der Ticketnummer darauf. In der
+Dokumentübersicht der Agenten erscheint das Dokument am Notebook.</p>
+</section>
+</section>
+<section id="regeln">
+<h2>Regeln<a class="headerlink" href="#regeln" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Wer gefragt wird:</strong> der Kundenbenutzer, dem das Ticket im Moment des Übergangs gehört. Ein
+Ticket ohne Kundenbenutzer ist ein Fehler.</p></li>
+<li><p><strong>Welche Config Items:</strong> alle mit dem Ticket verknüpften (der Klasse aus <code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code>,
+falls gesetzt), je eines ein Dokument. Enthält <code class="docutils literal notranslate"><span class="pre">ConfigItemField</span></code> einen Wert, nur die dort
+ausgewählten; solche, die nicht mehr existieren oder nicht zu <code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code> passen, werden
+mit einem Hinweis im Log übersprungen. Ganz ohne Config Item entsteht ein Dokument ohne CI, und
+seine <code class="docutils literal notranslate"><span class="pre">CI:</span></code>-Platzhalter bleiben leer.</p></li>
+<li><p><strong>Dokumentname bei mehreren Config Items:</strong> Der Standardname enthält das Config Item ohnehin. An
+einen eingestellten <code class="docutils literal notranslate"><span class="pre">DocumentName</span></code> wird ein Bindestrich mit dem Namen des Config Items angehängt, sobald mehr als ein
+Dokument entsteht, damit sich die Kacheln unterscheiden lassen.</p></li>
+<li><p><strong>Keine Doppelten:</strong> Hat das Ticket schon eine offene Anforderung für dieselbe Vorlage, <strong>dasselbe
+Config Item und denselben Kundenbenutzer</strong>, entsteht dafür nichts, und das zählt als Erfolg. Ein
+Prozess, der den Übergang zweimal durchläuft, fragt nicht zweimal.</p></li>
+<li><p><strong>Anderer Kundenbenutzer am Ticket:</strong> Anforderungen bleiben bei dem, an den sie gerichtet waren.
+Er behält Kachel und PDF, bis ein Agent die Anforderung zurückzieht; das Widget zeigt, wer gefragt
+wurde. Läuft der Übergang nach dem Wechsel erneut, wird zusätzlich der neue Kundenbenutzer gefragt.
+<strong>„Erneut anfordern“</strong> fragt den Kundenbenutzer dieser Anforderung, nicht den aktuellen des Tickets.</p></li>
+<li><p><strong>Teilweiser Fehler:</strong> Scheitert bei mehreren Config Items ein Dokument, hält das die anderen nicht
+auf. Die Übergangs-Aktion meldet dann einen Fehler (siehe Log), die erzeugten Dokumente bleiben.</p></li>
+</ul>
+</section>
+<section id="zuruckziehen">
+<h2>Zurückziehen<a class="headerlink" href="#zuruckziehen" title="Link to this heading">¶</a></h2>
+<p>Im Widget <strong>„Unterschriften“</strong> steht unter dem Status jeder offenen Anforderung
+<strong>„Zurückziehen“</strong> (für Agenten mit Schreibrecht am Ticket). Die Nachfrage kommt als Dialog, ohne
+JavaScript als eigene Seite.</p>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="../_images/signature-withdraw.png"><img alt="../_images/signature-withdraw.png" src="../_images/signature-withdraw.png" style="width: 506px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Abb. 21 </span><span class="caption-text">Die Nachfrage vor dem Zurückziehen.</span><a class="headerlink" href="#id22" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Nach dem Bestätigen:</p>
+<ul class="simple">
+<li><p>Die Anforderung ist <em>zurückgezogen</em>. Der Kunde sieht die Kachel nicht mehr, und ihr PDF-Link
+antwortet mit „Dieses Dokument ist nicht verfügbar“.</p></li>
+<li><p>Das Dokument bleibt am Config Item und zeigt wieder seinen normalen Status.</p></li>
+<li><p>Die Ticket-Historie vermerkt <code class="docutils literal notranslate"><span class="pre">Signature</span> <span class="pre">request</span> <span class="pre">withdrawn:</span> <span class="pre">&lt;Dokument&gt;</span> <span class="pre">(&lt;Kundenbenutzer&gt;)</span></code>. Der
+Kunde bekommt keine Nachricht.</p></li>
+<li><p>Das Widget behält die Zeile, ausgegraut und als <em>Zurückgezogen</em> markiert, mit
+<strong>„Erneut anfordern“</strong>.</p></li>
+<li><p>Läuft die Übergangs-Aktion noch einmal, entsteht eine neue Anforderung.</p></li>
+</ul>
+<p>Unterschriebene Anforderungen lassen sich nicht zurückziehen.</p>
+</section>
+<section id="erneut-anfordern">
+<h2>Erneut anfordern<a class="headerlink" href="#erneut-anfordern" title="Link to this heading">¶</a></h2>
+<p><strong>„Erneut anfordern“</strong> im Widget (gleicher Dialog, gleiches Recht) öffnet eine zurückgezogene
+Anforderung wieder – etwa wenn sie versehentlich zurückgezogen wurde oder erst Daten am Config Item
+zu korrigieren waren:</p>
+<ul class="simple">
+<li><p>Das Dokument wird <strong>neu kompiliert</strong>, der Kunde unterschreibt also den aktuellen Stand des Config
+Items. Die Anforderung zeigt auf diese neue Revision.</p></li>
+<li><p>Die Anforderung ist wieder <em>offen</em>, mit heutigem Anforderungsdatum, und die Kachel ist zurück im
+Portal.</p></li>
+<li><p>Die Ticket-Historie vermerkt <code class="docutils literal notranslate"><span class="pre">Signature</span> <span class="pre">requested</span> <span class="pre">again:</span> <span class="pre">&lt;Dokument&gt;</span> <span class="pre">(&lt;Kundenbenutzer&gt;)</span></code>.</p></li>
+</ul>
+<p>Das geht nicht, solange das Ticket eine andere offene Anforderung für dieselbe Vorlage, dasselbe
+Config Item und denselben Kundenbenutzer hat, etwa weil der Prozessschritt inzwischen erneut lief.</p>
+</section>
+<section id="anforderung-abschlieszen-api">
+<h2>Anforderung abschließen (API)<a class="headerlink" href="#anforderung-abschlieszen-api" title="Link to this heading">¶</a></h2>
+<div class="highlight-perl notranslate"><div class="highlight"><pre><span></span><span class="nv">$</span><span class="nn">Kernel::</span><span class="nv">OM</span><span class="o">-&gt;</span><span class="n">Get</span><span class="p">(</span><span class="s">'Kernel::System::Documents::SignatureRequest'</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">RequestComplete</span><span class="p">(</span>
+<span class="w">    </span><span class="n">RequestID</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nv">$RequestID</span><span class="p">,</span>
+<span class="w">    </span><span class="n">PDF</span><span class="w">       </span><span class="o">=&gt;</span><span class="w"> </span><span class="nv">$SignedPDFBytes</span><span class="p">,</span><span class="w">   </span><span class="c1"># raw PDF bytes</span>
+<span class="w">    </span><span class="n">UserID</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Das legt das unterschriebene PDF als internen, <strong>für den Kunden sichtbaren</strong> Artikel am Ticket ab
+(Absender <em>system</em>, Betreff <em>Unterschriebenes Dokument: &lt;Dokument&gt;</em>) und setzt die Anforderung auf
+<em>unterschrieben</em>. Das Dokument bleibt am Config Item, die Verbindung zwischen unterschriebenem
+Dokument und Config Item bleibt also erhalten.</p>
+<p>Wurde die Anforderung inzwischen zurückgezogen oder anderweitig abgeschlossen, wird der Artikel
+wieder entfernt, und der Aufruf liefert nichts zurück. Abschließen lässt sich nur eine offene
+Anforderung; ein zweiter Aufruf erzeugt also keinen zweiten Artikel.</p>
+</section>
+<section id="fehler-und-log-meldungen">
+<h2>Fehler und Log-Meldungen<a class="headerlink" href="#fehler-und-log-meldungen" title="Link to this heading">¶</a></h2>
+<p>Alle Meldungen der Übergangs-Aktion beginnen mit
+<code class="docutils literal notranslate"><span class="pre">Process:</span> <span class="pre">…</span> <span class="pre">Activity:</span> <span class="pre">…</span> <span class="pre">Transition:</span> <span class="pre">…</span> <span class="pre">TransitionAction:</span> <span class="pre">…</span> <span class="pre">-</span></code>.</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Log-Meldung</p></th>
+<th class="head"><p>Ursache</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">valid</span> <span class="pre">document</span> <span class="pre">template</span> <span class="pre">named</span> <span class="pre">'…'!</span></code></p></td>
+<td><p>Die Vorlage existiert nicht oder ist ungültig. Prüfen Sie den Namen unter
+<strong>Admin → Dokumentenvorlagen</strong> (genaue Schreibweise).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Document</span> <span class="pre">template</span> <span class="pre">N</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist</span> <span class="pre">or</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">valid!</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TemplateID</span></code> zeigt auf eine fehlende oder ungültige Vorlage.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Template</span> <span class="pre">or</span> <span class="pre">TemplateID</span> <span class="pre">configured!</span></code></p></td>
+<td><p>Die Übergangs-Aktion hat keinen der beiden Parameter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ticket</span> <span class="pre">N</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">customer</span> <span class="pre">user,</span> <span class="pre">nobody</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">asked</span> <span class="pre">to</span> <span class="pre">sign!</span></code></p></td>
+<td><p>Das Ticket hat im Moment des Übergangs keinen Kundenbenutzer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">create</span> <span class="pre">document</span> <span class="pre">'…'</span> <span class="pre">for</span> <span class="pre">ticket</span> <span class="pre">N!</span></code></p></td>
+<td><p>Das Dokument konnte nicht geschrieben werden, z. B. ein Datenbankfehler. Für dieses Config
+Item entsteht nichts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">compile</span> <span class="pre">document</span> <span class="pre">N:</span> <span class="pre">…</span></code></p></td>
+<td><p>Das Kompilieren ist fehlgeschlagen; das halbfertige Dokument wird wieder entfernt.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">store</span> <span class="pre">the</span> <span class="pre">revision</span> <span class="pre">of</span> <span class="pre">document</span> <span class="pre">N!</span></code></p></td>
+<td><p>Das kompilierte PDF konnte nicht gespeichert werden; das halbfertige Dokument wird wieder
+entfernt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">set</span> <span class="pre">document</span> <span class="pre">N</span> <span class="pre">to</span> <span class="pre">'compiled'!</span></code></p></td>
+<td><p>Nur der Status für die Agenten stimmt nicht; die Revision existiert, die Anforderung entsteht.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">create</span> <span class="pre">the</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">for</span> <span class="pre">document</span> <span class="pre">N</span> <span class="pre">on</span> <span class="pre">ticket</span> <span class="pre">N!</span></code></p></td>
+<td><p>Die Anforderung konnte nicht geschrieben werden, z. B. ein Datenbankfehler; das Dokument wird
+wieder entfernt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">…</span> <span class="pre">already</span> <span class="pre">has</span> <span class="pre">an</span> <span class="pre">open</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">for</span> <span class="pre">template</span> <span class="pre">'…'</span></code> (Hinweis)</p></td>
+<td><p>Erwartet, wenn der Übergang zweimal läuft; es wurde nichts angelegt.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ConfigItemField</span> <span class="pre">'…'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">ticket</span> <span class="pre">dynamic</span> <span class="pre">field</span> <span class="pre">of</span> <span class="pre">type</span> <span class="pre">Linked</span> <span class="pre">Config</span> <span class="pre">Items</span> <span class="pre">or</span> <span class="pre">Config</span> <span class="pre">Item!</span></code></p></td>
+<td><p>Das Feld existiert nicht, gehört zu einem anderen Objekt oder hat einen anderen Typ. Es wird
+nichts angelegt.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Config</span> <span class="pre">Item</span> <span class="pre">N</span> <span class="pre">selected</span> <span class="pre">in</span> <span class="pre">'…'</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist,</span> <span class="pre">skipped.</span></code> (Hinweis)</p></td>
+<td><p>Das ausgewählte Config Item wurde inzwischen gelöscht.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Config</span> <span class="pre">Item</span> <span class="pre">…</span> <span class="pre">selected</span> <span class="pre">in</span> <span class="pre">'…'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">of</span> <span class="pre">class</span> <span class="pre">'…',</span> <span class="pre">skipped.</span></code> (Hinweis)</p></td>
+<td><p>Das Feld erlaubt mehr Klassen als <code class="docutils literal notranslate"><span class="pre">ConfigItemClass</span></code>; schränken Sie auch die Klassen des
+Felds ein.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RequestReopen:</span> <span class="pre">Ticket</span> <span class="pre">N</span> <span class="pre">already</span> <span class="pre">has</span> <span class="pre">an</span> <span class="pre">open</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">for</span> <span class="pre">this</span> <span class="pre">template,</span> <span class="pre">Config</span> <span class="pre">Item</span> <span class="pre">and</span> <span class="pre">customer</span> <span class="pre">user,</span> <span class="pre">…</span></code></p></td>
+<td><p><strong>„Erneut anfordern“</strong>, während der Prozess inzwischen neu gefragt hat; die offene Anforderung
+ist die aktuelle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RequestReopen:</span> <span class="pre">Could</span> <span class="pre">not</span> <span class="pre">compile</span> <span class="pre">document</span> <span class="pre">N:</span> <span class="pre">…</span></code></p></td>
+<td><p>Das Kompilieren ist fehlgeschlagen (z. B. WeasyPrint oder Vorlage); die Anforderung bleibt
+zurückgezogen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RequestWithdraw:</span> <span class="pre">Signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">is</span> <span class="pre">signed,</span> <span class="pre">only</span> <span class="pre">open</span> <span class="pre">requests</span> <span class="pre">can</span> <span class="pre">be</span> <span class="pre">withdrawn!</span></code></p></td>
+<td><p>Die Anforderung wurde inzwischen unterschrieben; der Agent sieht „konnte nicht zurückgezogen
+werden“.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CustomerDocumentOverview:</span> <span class="pre">…</span> <span class="pre">asked</span> <span class="pre">for</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">of</span> <span class="pre">another</span> <span class="pre">customer</span> <span class="pre">user.</span></code> (Hinweis)</p></td>
+<td><p>Jemand hat einen fremden PDF-Link geöffnet, z. B. einen weitergeleiteten.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">CustomerDocumentOverview:</span> <span class="pre">no</span> <span class="pre">PDF</span> <span class="pre">for</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">N:</span> <span class="pre">…</span></code></p></td>
+<td><p>Das PDF einer offenen Anforderung ließ sich nicht erzeugen, z. B. weil WeasyPrint nicht
+erreichbar ist. Der Kunde sieht eine Fehlermeldung.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">CustomerDocumentOverview:</span> <span class="pre">the</span> <span class="pre">signed</span> <span class="pre">PDF</span> <span class="pre">of</span> <span class="pre">signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">is</span> <span class="pre">missing</span> <span class="pre">(article</span> <span class="pre">…).</span></code></p></td>
+<td><p>Artikel oder Anhang einer unterschriebenen Anforderung fehlen. Der Kunde sieht eine
+Fehlerseite und nie die unsignierte Revision.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RequestComplete:</span> <span class="pre">Need</span> <span class="pre">PDF!</span></code> (ebenso <code class="docutils literal notranslate"><span class="pre">RequestID</span></code>, <code class="docutils literal notranslate"><span class="pre">UserID</span></code>)</p></td>
+<td><p>Dem Aufruf fehlt ein Pflichtparameter.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RequestComplete:</span> <span class="pre">Signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">exist!</span></code></p></td>
+<td><p>Falsche <code class="docutils literal notranslate"><span class="pre">RequestID</span></code>, oder die Anforderung wurde mit ihrem Dokument gelöscht.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RequestComplete:</span> <span class="pre">Signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">is</span> <span class="pre">already</span> <span class="pre">signed!</span></code> (oder <code class="docutils literal notranslate"><span class="pre">withdrawn</span></code>)</p></td>
+<td><p>Nur offene Anforderungen lassen sich abschließen; es entsteht kein Artikel.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RequestComplete:</span> <span class="pre">Could</span> <span class="pre">not</span> <span class="pre">store</span> <span class="pre">the</span> <span class="pre">signed</span> <span class="pre">PDF</span> <span class="pre">on</span> <span class="pre">ticket</span> <span class="pre">N</span> <span class="pre">(signature</span> <span class="pre">request</span> <span class="pre">N)!</span></code></p></td>
+<td><p>Der Artikel konnte nicht angelegt werden; die Anforderung bleibt offen.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">RequestComplete:</span> <span class="pre">Signature</span> <span class="pre">request</span> <span class="pre">N</span> <span class="pre">changed</span> <span class="pre">meanwhile</span> <span class="pre">and</span> <span class="pre">is</span> <span class="pre">…,</span> <span class="pre">the</span> <span class="pre">signed</span> <span class="pre">PDF</span> <span class="pre">was</span> <span class="pre">not</span> <span class="pre">kept!</span></code></p></td>
+<td><p>Die Anforderung wurde im selben Moment zurückgezogen oder abgeschlossen; der Artikel wird
+wieder entfernt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="grenzen">
+<h2>Grenzen<a class="headerlink" href="#grenzen" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Das Unterschreiben selbst und Erinnerungen sind noch nicht enthalten.</p></li>
+<li><p>Zurückgezogene Anforderungen bleiben als Nachweis gespeichert und werden erst mit ihrem Dokument
+gelöscht.</p></li>
+<li><p>Es unterschreibt nur der Kundenbenutzer des Tickets; eine Anforderung lässt sich nicht an eine
+andere Person der Firma richten.</p></li>
+<li><p>Ändert sich der Login eines Kundenbenutzers, sieht er seine alten Anforderungen nicht mehr, denn
+sie sind am Login gespeichert. Groß- und Kleinschreibung spielen keine Rolle.</p></li>
+<li><p>Das Löschen eines Tickets lässt seine Anforderungen unberührt: Eine offene bleibt im Portal
+sichtbar, und ohne Ticket fehlt das Widget zum Zurückziehen.</p></li>
+<li><p><em>Verknüpfte Config Items</em> behält die Auswahl des Agenten: Ein Config Item, dessen Verknüpfung nach
+der Auswahl gelöst wurde, bekommt trotzdem sein Dokument.</p></li>
+</ul>
+</section>
+</section>
 <section id="referenz">
 <h1>Referenz<a class="headerlink" href="#referenz" title="Link to this heading">¶</a></h1>
 <section id="pdf-erzeugung-mit-weasyprint">
@@ -893,6 +1289,8 @@ Installation wird zusätzlich die Gruppe <code class="docutils literal notransla
 <li><p>Die <strong>Dokumentübersicht</strong> der Agenten ist für alle angemeldeten Agenten sichtbar.</p></li>
 <li><p>Das Widget <strong>„Dokumente“</strong> erscheint an jedem Config Item; es listet die Dokumente dieses
 Config Items, die vorgeschlagene Vorlagenliste richtet sich nach seiner Klasse.</p></li>
+<li><p><strong>„Meine Dokumente“</strong> zeigt jedem Kundenbenutzer nur seine eigenen Anforderungen. Unterschriften
+zurückziehen und erneut anfordern dürfen Agenten mit Schreibrecht am Ticket.</p></li>
 </ul>
 </section>
 <section id="platzhalter-referenz">
