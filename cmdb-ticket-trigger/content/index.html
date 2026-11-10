@@ -519,6 +519,107 @@ Tickets.</p>
 Mehrfachauswahl bekommt alle Werte, jedes andere Feld bekommt sie mit Komma verbunden.</p>
 <p>Die Werte werden <strong>einmal</strong> beim Anlegen übernommen. Ändert sich das Config Item später,
 bleibt das Ticket, wie es ist.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Übergänge der Startaktivität sehen die übernommenen Felder.</strong> OTOBO prüft die Übergänge
+eines Prozesstickets am Ende der Anfrage, die es angelegt hat — mit allen Feldern. Ein
+Übergang, dessen Bedingung die übernommenen Werte schon erfüllen, feuert sofort, und der
+Agent bekommt den Startdialog nie zu sehen. Die Bedingungen der Startaktivität deshalb auf
+das stützen, was der Agent im Dialog einträgt, nicht auf Felder, die diese Regel füllt.</p>
+</div>
+</section>
+<section id="ein-set-vorbelegen">
+<span id="set-vorbelegen"></span><h2>Ein Set vorbelegen<a class="headerlink" href="#ein-set-vorbelegen" title="Link to this heading">¶</a></h2>
+<p>Ein Feld vom Typ <strong>Set</strong> fasst Felder zusammen, die der Agent in einem Prozessdialog Zeile für
+Zeile wiederholt — etwa Seriennummer, MAC-Adresse und CI-Klasse je Gerät. Wählen Sie in der
+Feldübernahme ein solches Set als Ticketfeld, fragt die Zeile statt eines Werts zwei Dinge ab:</p>
+<ul class="simple">
+<li><p><strong>Anzahl Zeilen</strong> — eine ganze Zahl oder genau ein Platzhalter, typischerweise die
+Bestellmenge. <code class="docutils literal notranslate"><span class="pre">2,5</span></code>, <code class="docutils literal notranslate"><span class="pre">1.000</span></code> oder <code class="docutils literal notranslate"><span class="pre">-3</span></code> werden nicht geraten und ergeben eine Zeile.</p></li>
+<li><p><strong>Felder im Set</strong> — ein oder mehrere Felder des Sets, jedes mit einem Wert (Text mit
+Platzhaltern wie überall) und auf Wunsch einer <strong>Wertzuordnung</strong>.</p></li>
+</ul>
+<p>Jede Zeile bekommt dieselben Werte. Der Prozessdialog öffnet sich dann mit so vielen Zeilen;
+der Agent muss bei zehn Geräten nicht mehr zehnmal auf <em>+</em> drücken, überzählige Zeilen
+entfernt er mit <em>−</em>.</p>
+<p>Das Beispiel: Eine Bestellposition kommt mit <em>Menge</em> <code class="docutils literal notranslate"><span class="pre">3</span></code> und <em>Geräteart</em> <code class="docutils literal notranslate"><span class="pre">PC</span></code>. Der Dialog
+<em>Wareneingang erfassen</em> hat ein Set <em>Geräte</em> mit Seriennummer, MAC-Adresse und CI-Klasse je
+Gerät. Er soll sich mit drei Zeilen öffnen, in jeder die Klasse <em>Client</em>.</p>
+<p><strong>1. Das Set erlaubt mehrere Zeilen.</strong> Unter <em>Admin → Dynamische Felder</em> das Set öffnen.
+<em>Mehrfachwerte</em> muss auf <em>Ja</em> stehen, sonst zeigt der Dialog nur eine Zeile — und die Regel
+lässt sich nicht speichern.</p>
+<figure class="align-center" id="id10">
+<img alt="../_images/set-field-multivalue.png" src="../_images/set-field-multivalue.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Das Set: die Felder einer Zeile, darunter <em>Mehrfachwerte</em> auf <em>Ja</em>.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p><strong>2. Die Regel füllt das Set.</strong> In der Feldübernahme der Regel das Set als Ticketfeld wählen.
+Die Zeile ändert ihre Form: Statt eines Werts fragt sie die Anzahl der Zeilen ab und darunter
+die Felder des Sets.</p>
+<figure class="align-center" id="id11">
+<img alt="../_images/set-rule-mapping.png" src="../_images/set-rule-mapping.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Die Regel: Platzhalter, das Set als Ziel mit der Anzahl der Zeilen, ein Feld des Sets mit seinem Wert und einer Wertzuordnung.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>In das Feld klicken, das gefüllt werden soll, dann einen Platzhalter anklicken — er wird an
+der Cursorposition eingesetzt. Hier kommt <em>Menge (Bestellmenge)</em> in die Anzahl der Zeilen.</p></li>
+<li><p>Ticketfeld <em>Geräte</em>, Anzahl der Zeilen <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CI_DynamicField_Bestellmenge&gt;</span></code>.</p></li>
+<li><p><em>Feld im Set hinzufügen</em> → die CI-Klasse bekommt <code class="docutils literal notranslate"><span class="pre">&lt;OTOBO_CI_DynamicField_Geraeteart&gt;</span></code>.</p></li>
+<li><p>Die Wertzuordnung darunter übersetzt die Geräteart der Bestellung in eine CI-Klasse, ein
+Paar je Zeile: <em>Wert aus dem Config Item = Wert im Set</em>. <em>Geräteart</em> ist eine Auswahlliste,
+deshalb liefert der Platzhalter ihren <strong>Schlüssel</strong> (<code class="docutils literal notranslate"><span class="pre">PC</span></code>), und die Wertzuordnung nennt
+Schlüssel. <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> braucht keine Zeile, weil es eine CI-Klasse dieses Namens gibt.</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Drucker = Printer
+Monitor = Display
+PC = Client
+</pre></div>
+</div>
+<p><strong>3. Das Ergebnis</strong> zeigt der Abschnitt <a class="reference internal" href="#set-dialog"><span class="std std-ref">Der Dialog mit vorbereiteten Zeilen</span></a>.</p>
+<p><strong>4. Übergang und CIs.</strong> Das Paket <em>FreiconCMDBTransitionActions</em> ergänzt zwei Bausteine: eine
+Bedingung, die den Übergang hinter dem Dialog erst zulässt, wenn mindestens eine Zeile eine
+Seriennummer hat, und eine Übergangsaktion, die je ausgefüllter Zeile ein CI anlegt und leere
+Zeilen überspringt. Ohne die Bedingung liefe das Ticket sofort weiter: Ein vorbelegtes Set
+erfüllt die übliche Bedingung „im Set steht etwas“ schon beim Anlegen.</p>
+<p>Was sonst noch gilt:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Fall</p></th>
+<th class="head"><p>Was passiert</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Anzahl leer, <code class="docutils literal notranslate"><span class="pre">0</span></code> oder keine ganze Zahl</p></td>
+<td><p>eine Zeile (Hinweis im Protokoll, wenn Text angegeben war)</p></td>
+</tr>
+<tr class="row-odd"><td><p>mehr als <strong>50</strong> Zeilen</p></td>
+<td><p>50 Zeilen (Hinweis im Protokoll) — die Grenze verhindert einen unbrauchbaren Dialog</p></td>
+</tr>
+<tr class="row-even"><td><p>Feld vom Typ <strong>General Catalog</strong> im Set (etwa die CI-Klasse)</p></td>
+<td><p>Wert ist der <strong>Name</strong> des Eintrags (Groß-/Kleinschreibung egal) oder seine ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wertzuordnung angegeben</p></td>
+<td><p>zuerst genauer Vergleich, dann ohne Groß-/Kleinschreibung; ein Wert ohne Eintrag bleibt, wie er ist</p></td>
+</tr>
+<tr class="row-even"><td><p>kein Feld des Sets bekommt einen Wert</p></td>
+<td><p>das Set bleibt leer (Hinweis im Protokoll) — OTOBO behält eine Zeile nur, wenn eines ihrer Felder gefüllt ist</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ein vorbelegtes Feld des Sets darf im Dialog <strong>nicht schreibgeschützt</strong> sein. Ein
+schreibgeschütztes Auswahlfeld schickt der Browser nicht mit; der vorbelegte Wert ginge beim
+Absenden verloren.</p>
+<p>Eine Regel füllt ein Set mit genau einer Zeile der Feldübernahme und nennt jedes Feld des Sets
+einmal. Felder mit Mehrfachauswahl im Set lassen sich nicht vorbelegen.</p>
 </section>
 <section id="verknupfung">
 <h2>Verknüpfung<a class="headerlink" href="#verknupfung" title="Link to this heading">¶</a></h2>
@@ -533,12 +634,14 @@ Betrieb genommen.</p>
 und jede Regel mindestens eine Klasse nennt. Danach prüft OTOBO jede Regel gegen das System:
 Gibt es die Klassen, den Prozess, Queue, Status, Priorität, Sperre, Typ und Verknüpfungsart?
 Hat jede Bedingung ein Feld und ein gültiges Muster, jede Feldübernahme ein vorhandenes
-Ticketfeld und einen Wert? Ist etwas falsch, wird die ganze Einstellung nicht gespeichert, und
-die Meldung nennt jede Regel und jeden Grund.</p>
-<figure class="align-center" id="id10">
+Ticketfeld und einen Wert? Eine Feldübernahme in ein Set braucht zusätzlich: Das Ziel ist ein
+Set mit Mehrfachwerten, jedes genannte Feld gibt es darin, mindestens ein Feld hat einen Wert,
+und die Anzahl ist eine ganze Zahl oder genau ein Platzhalter. Ist etwas falsch, wird die ganze
+Einstellung nicht gespeichert, und die Meldung nennt jede Regel und jeden Grund.</p>
+<figure class="align-center" id="id12">
 <img alt="../_images/save-check.png" src="../_images/save-check.png" />
 <figcaption>
-<p><span class="caption-number">Abb. 4 </span><span class="caption-text">Eine Regel ohne Namen und ohne Klasse: Das Formular speichert nicht und nennt beide Gründe.</span><a class="headerlink" href="#id10" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Eine Regel ohne Namen und ohne Klasse: Das Formular speichert nicht und nennt beide Gründe.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Tastatur: Im Regel-Formular speichert die Eingabetaste <strong>nicht</strong> und Escape bricht <strong>nicht</strong>
@@ -556,29 +659,43 @@ wie jedes andere Ticket.</p>
 Beispiel wartet es in <em>Lieferung erwartet</em>; die Schaltfläche <em>Wareneingang erfassen</em> öffnet
 den Startdialog. Die Notiz der Regel ist der erste Artikel, die Bestellung hängt als
 verknüpftes Config Item am Ticket.</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id13">
 <img alt="../_images/process-ticket.png" src="../_images/process-ticket.png" />
 <figcaption>
-<p><span class="caption-number">Abb. 5 </span><span class="caption-text">Das Prozessticket aus der Regel: Titel aus der Bestellung, Startaktivität <em>Lieferung erwartet</em>, die Notiz der Regel als erster Artikel und die Bestellung als verknüpftes Config Item.</span><a class="headerlink" href="#id11" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Das Prozessticket aus der Regel: Titel aus der Bestellung, Startaktivität <em>Lieferung erwartet</em>, die Notiz der Regel als erster Artikel und die Bestellung als verknüpftes Config Item.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Im Startdialog ist die <em>Bestellreferenz</em> bereits aus der Feldübernahme ausgefüllt. Der Agent
 erfasst die gelieferte Menge; danach geht der Prozess weiter.</p>
-<figure class="align-center" id="id12">
+<figure class="align-center" id="id14">
 <img alt="../_images/start-dialog.png" src="../_images/start-dialog.png" />
 <figcaption>
-<p><span class="caption-number">Abb. 6 </span><span class="caption-text">Der Startdialog: Die Bestellreferenz ist aus der Feldübernahme bereits ausgefüllt, der Agent ergänzt nur die gelieferte Menge.</span><a class="headerlink" href="#id12" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 8 </span><span class="caption-text">Der Startdialog: Die Bestellreferenz ist aus der Feldübernahme bereits ausgefüllt, der Agent ergänzt nur die gelieferte Menge.</span><a class="headerlink" href="#id14" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="der-dialog-mit-vorbereiteten-zeilen">
+<span id="set-dialog"></span><h2>Der Dialog mit vorbereiteten Zeilen<a class="headerlink" href="#der-dialog-mit-vorbereiteten-zeilen" title="Link to this heading">¶</a></h2>
+<p>Füllt die Regel ein Set vor (siehe <a class="reference internal" href="#set-vorbelegen"><span class="std std-ref">Ein Set vorbelegen</span></a>), stehen im
+Dialog bereits so viele Zeilen, wie bestellt wurden — mit der CI-Klasse aus der Bestellung.</p>
+<figure class="align-center" id="id15">
+<img alt="../_images/set-dialog-prefilled.png" src="../_images/set-dialog-prefilled.png" />
+<figcaption>
+<p><span class="caption-number">Abb. 9 </span><span class="caption-text">Drei bestellte PCs: drei Zeilen, in jeder die Klasse <em>Client</em>.</span><a class="headerlink" href="#id15" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Der Agent scannt die Seriennummern der gelieferten Geräte in die Zeilen und entfernt die
+übrigen oder lässt sie leer. Die Klasse kann er je Zeile ändern, wenn doch ein anderes Gerät
+dabei war.</p>
 </section>
 <section id="die-bestellung-kennt-ihr-ticket">
 <h2>Die Bestellung kennt ihr Ticket<a class="headerlink" href="#die-bestellung-kennt-ihr-ticket" title="Link to this heading">¶</a></h2>
 <p>Weil Regel und Ticket verknüpft sind, steht das Ticket auch im Config Item: Wer die Bestellung
 öffnet, sieht sofort, welcher Wareneingang zu ihr gehört.</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id16">
 <img alt="../_images/order-ci.png" src="../_images/order-ci.png" />
 <figcaption>
-<p><span class="caption-number">Abb. 7 </span><span class="caption-text">Die Bestellposition mit ihrem automatisch angelegten Ticket.</span><a class="headerlink" href="#id13" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Abb. 10 </span><span class="caption-text">Die Bestellposition mit ihrem automatisch angelegten Ticket.</span><a class="headerlink" href="#id16" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -626,6 +743,14 @@ und Config-Item-ID. Eine fehlgeschlagene Regel hinterlässt kein halbes Ticket.<
 <dt><code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">mapping</span> <span class="pre">target</span> <span class="pre">'…'</span> <span class="pre">is</span> <span class="pre">no</span> <span class="pre">ticket</span> <span class="pre">field</span></code></dt><dd><p>Das Ticketfeld wurde nach dem Speichern der Regel gelöscht.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">customer</span> <span class="pre">user</span> <span class="pre">'…'</span> <span class="pre">not</span> <span class="pre">found</span></code></dt><dd><p>Das Ticket wurde ohne Kunden angelegt (Hinweis, kein Fehler).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'…'</span> <span class="pre">gives</span> <span class="pre">no</span> <span class="pre">row</span> <span class="pre">count</span> <span class="pre">of</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">1</span> <span class="pre">for</span> <span class="pre">set</span> <span class="pre">'…'</span> <span class="pre">-</span> <span class="pre">one</span> <span class="pre">row</span> <span class="pre">is</span> <span class="pre">prepared</span></code></dt><dd><p>Die Anzahl ist leer oder keine ganze Zahl; das Set bekommt eine Zeile.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">…</span> <span class="pre">rows</span> <span class="pre">for</span> <span class="pre">set</span> <span class="pre">'…'</span> <span class="pre">exceed</span> <span class="pre">the</span> <span class="pre">limit</span> <span class="pre">-</span> <span class="pre">50</span> <span class="pre">are</span> <span class="pre">prepared</span></code></dt><dd><p>Mehr als 50 Zeilen bestellt; der Dialog bekommt 50.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'…'</span> <span class="pre">is</span> <span class="pre">no</span> <span class="pre">entry</span> <span class="pre">of</span> <span class="pre">catalog</span> <span class="pre">class</span> <span class="pre">'…'</span> <span class="pre">(field</span> <span class="pre">'…')</span> <span class="pre">-</span> <span class="pre">field</span> <span class="pre">skipped</span></code></dt><dd><p>Der Wert ist kein Eintrag des Katalogs, etwa keine CI-Klasse. Wertzuordnung ergänzen.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">field</span> <span class="pre">of</span> <span class="pre">set</span> <span class="pre">'…'</span> <span class="pre">got</span> <span class="pre">a</span> <span class="pre">value,</span> <span class="pre">so</span> <span class="pre">no</span> <span class="pre">row</span> <span class="pre">would</span> <span class="pre">be</span> <span class="pre">kept</span> <span class="pre">-</span> <span class="pre">set</span> <span class="pre">left</span> <span class="pre">empty</span></code></dt><dd><p>Kein Feld des Sets hat einen Wert bekommen; das Set bleibt leer.</p>
 </dd>
 </dl>
 </section>
