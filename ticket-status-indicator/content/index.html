@@ -387,6 +387,10 @@ nur die Ampel, und nur für die Benachrichtigungen, die eine Regel nennt.</p>
 die Ampel das, bis wieder ein Agent am Ticket arbeitet. Danach darf jede Regel erneut melden.
 Hat ein Ticket zwischendurch keine Farbe — es liegt in einer anderen Queue oder wartet —, bleibt
 der Merker stehen; kehrt es ohne Bearbeitung zurück, meldet es sich nicht noch einmal.</p>
+<p>Für die Mails der gelben Regeln bringt die Ampel eine eigene E-Mail-Vorlage <strong>Warning</strong> mit:
+die OTOBO-Vorlage <em>Alert</em> mit gelbem statt rotem Banner und der Überschrift <em>Warnung</em>. So passt
+die Mail zur Farbe der Ampel. Ausgewählt wird sie in der Benachrichtigung unter
+<em>Benachrichtigungsmethoden › E-Mail</em>; die Benachrichtigungen der roten Regeln behalten <em>Alert</em>.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/notification.png"><img alt="../_images/notification.png" src="../_images/notification.png" style="width: 100%;" />
 </a>
@@ -405,7 +409,8 @@ hier alle Mitglieder der Rolle <em>Service-Team</em>.</span><a class="headerlink
 <li><p>Den Kalender prüfen: Geschäftszeiten, Zeitzone und Feiertage (siehe <a class="reference internal" href="#kalender"><span class="std std-ref">Kalender und Feiertage</span></a>).</p></li>
 <li><p>Unter <em>Admin › Ticket-Benachrichtigungen</em> die Benachrichtigungen mit dem Ereignis
 <strong>TicketStatusIndicator</strong> anlegen — eine je Empfängerkreis, zum Beispiel <em>an den Besitzer</em>,
-<em>an das Team</em>, <em>an die Teamleitung</em>.</p></li>
+<em>an das Team</em>, <em>an die Teamleitung</em>. Für die gelben Regeln als E-Mail-Vorlage <strong>Warning</strong>
+wählen, für die roten <em>Alert</em>.</p></li>
 <li><p>Unter <em>Admin › Ticket-Ampel</em> die Regeln anlegen.</p></li>
 <li><p>Bis zu 10 Minuten warten — dann haben alle Tickets ihre Farbe.</p></li>
 </ol>
